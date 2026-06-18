@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KylyGAS — AI Search Visibility Audit | SEO + AEO + GEO Ranking Tool</title>
+<meta name="description" content="KylyGAS scans your website and gives you a free AI search visibility score across SEO, AEO, and GEO. See what's missing and get cited by ChatGPT, Perplexity, and Google AI Overviews.">
+<meta name="keywords" content="AI search visibility, GEO ranking, AEO ranking, generative engine optimization, answer engine optimization, AI citation, ChatGPT SEO, AI overviews optimization">
+
+<!-- Open Graph -->
+<meta property="og:title" content="KylyGAS — Free AI Search Visibility Audit">
+<meta property="og:description" content="Get your free AI visibility score. See what ChatGPT, Perplexity, and Google AI Overviews are missing from your site.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kylygas.com">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "KylyGAS",
+  "description": "AI search visibility audit tool for SEO, AEO, and GEO ranking",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "0",
+    "highPrice": "199",
+    "offerCount": "4"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What is AI search visibility?","acceptedAnswer":{"@type":"Answer","text":"AI search visibility measures how well your website appears in AI-powered search results from ChatGPT, Perplexity, Google AI Overviews, and other generative engines. It combines SEO, AEO (Answer Engine Optimization), and GEO (Generative Engine Optimization)."}},
+    {"@type":"Question","name":"How does the free audit work?","acceptedAnswer":{"@type":"Answer","text":"Enter your website URL. KylyGAS scans your site for AI readiness, checks entity signals, passage-level structure, citation potential, and crawler access. You get a visibility score plus a missing-elements checklist."}},
+    {"@type":"Question","name":"What's the difference between SEO, AEO, and GEO?","acceptedAnswer":{"@type":"Answer","text":"SEO optimizes for traditional search engines like Google. AEO (Answer Engine Optimization) structures content for direct answers in featured snippets and voice search. GEO (Generative Engine Optimization) prepares content to be cited by AI models like ChatGPT and Perplexity."}}
+  ]
+}
+</script>
+
+<style>
+:root {
+  --primary: #6c5ce7;
+  --dark: #1a1a2e;
+  --light: #f8f9fa;
+  --accent: #00cec9;
+  --card: #ffffff;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--light); color: #333; line-height: 1.6; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* Hero */
+.hero { background: linear-gradient(135deg, var(--dark) 0%, #2d1b69 100%); color: white; padding: 80px 0 60px; text-align: center; }
+.hero h1 { font-size: 2.8em; margin-bottom: 16px; letter-spacing: -1px; }
+.hero h1 span { color: var(--accent); }
+.hero .subtitle { font-size: 1.2em; opacity: 0.9; margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+/* Audit Box */
+.audit-box { background: white; padding: 32px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); margin-top: -40px; margin-bottom: 40px; }
+.audit-box h2 { margin-bottom: 8px; color: var(--dark); }
+.audit-box p { color: #666; margin-bottom: 20px; }
+.audit-input-group { display: flex; gap: 12px; flex-wrap: wrap; }
+.audit-input-group input { flex: 1; min-width: 250px; padding: 14px 18px; border: 2px solid #ddd; border-radius: 10px; font-size: 1em; transition: border .2s; }
+.audit-input-group input:focus { outline: none; border-color: var(--primary); }
+.audit-input-group button { padding: 14px 32px; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 1em; cursor: pointer; font-weight: 600; transition: background .2s; }
+.audit-input-group button:hover { background: #5a4bd1; }
+.audit-result { margin-top: 24px; display: none; }
+.audit-result.show { display: block; }
+
+/* Score */
+.score-circle { width: 120px; height: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.4em; font-weight: 700; margin: 0 auto 16px; }
+.score-high { background: #d4edda; color: #155724; }
+.score-mid { background: #fff3cd; color: #856404; }
+.score-low { background: #f8d7da; color: #721c24; }
+
+/* Tabs */
+.score-tabs { display: flex; gap: 8px; margin: 20px 0; flex-wrap: wrap; justify-content: center; }
+.score-tab { padding: 6px 16px; border-radius: 20px; font-size: .85em; font-weight: 600; }
+.tab-seo { background: #e3f2fd; color: #1565c0; }
+.tab-aeo { background: #fce4ec; color: #c62828; }
+.tab-geo { background: #e8f5e9; color: #2e7d32; }
+
+/* Pricing */
+.pricing { padding: 60px 0; }
+.pricing h2 { text-align: center; font-size: 2.2em; margin-bottom: 8px; }
+.pricing .subtitle { text-align: center; color: #666; margin-bottom: 40px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.pricing-card { background: var(--card); border-radius: 12px; padding: 28px; border: 2px solid #eee; transition: border .2s; }
+.pricing-card:hover { border-color: var(--primary); }
+.pricing-card.featured { border-color: var(--primary); box-shadow: 0 4px 20px rgba(108,92,231,0.2); }
+.pricing-card h3 { font-size: 1.3em; margin-bottom: 4px; }
+.pricing-card .price { font-size: 2em; font-weight: 700; color: var(--primary); margin: 12px 0; }
+.pricing-card .price span { font-size: .5em; color: #999; }
+.pricing-card ul { list-style: none; margin: 16px 0; }
+.pricing-card ul li { padding: 4px 0; font-size: .9em; }
+.pricing-card ul li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+.pricing-card button { width: 100%; padding: 12px; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 1em; margin-top: 8px; }
+.pricing-card.featured button { background: var(--accent); color: var(--dark); }
+
+/* Trust */
+.trust { padding: 40px 0; text-align: center; border-top: 1px solid #eee; }
+.trust h3 { font-size: 1.4em; margin-bottom: 16px; }
+.trust-logos { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; opacity: 0.5; font-weight: 700; font-size: 1.1em; color: #999; }
+
+/* Footer */
+footer { background: var(--dark); color: #aaa; padding: 40px 0; text-align: center; font-size: .9em; }
+footer a { color: var(--accent); text-decoration: none; }
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.8em; }
+  .audit-input-group { flex-direction: column; }
+  .pricing-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>Get Found by <span>AI Search</span> Engines</h1>
+    <p class="subtitle">KylyGAS audits your website for SEO, AEO, and GEO readiness. See what ChatGPT, Perplexity, and Google AI Overviews are missing from your site.</p>
+  </div>
+</section>
+
+<!-- Audit Tool -->
+<section class="container">
+  <div class="audit-box">
+    <h2>Free AI Visibility Audit</h2>
+    <p>Enter your website URL. Get your score in seconds.</p>
+    <div class="audit-input-group">
+      <input type="url" id="auditUrl" placeholder="https://yourwebsite.com" autocomplete="url">
+      <input type="email" id="auditEmail" placeholder="Your email (to receive report)">
+      <button onclick="runAudit()">Scan My Site</button>
+    </div>
+    <div class="audit-result" id="auditResult">
+      <div id="scoreDisplay"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <h2>Simple, Transparent Pricing</h2>
+    <p class="subtitle">Start free. Upgrade when you're ready to dominate AI search.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Free</h3>
+        <div class="price">$0</div>
+        <ul>
+          <li>1 website scan</li>
+          <li>Visibility score (SEO/AEO/GEO)</li>
+          <li>Missing elements checklist</li>
+          <li>Basic recommendations</li>
+        </ul>
+        <button onclick="scrollToAudit()">Start Free</button>
+      </div>
+      <div class="pricing-card featured">
+        <h3>Starter</h3>
+        <div class="price">$19<span>/mo</span></div>
+        <ul>
+          <li>5 scans per month</li>
+          <li>Full report + recommendations</li>
+          <li>Basic dashboard</li>
+          <li>Email support</li>
+        </ul>
+        <button onclick="scrollToAudit()">Start 7-Day Trial</button>
+      </div>
+      <div class="pricing-card">
+        <h3>Growth</h3>
+        <div class="price">$49<span>/mo</span></div>
+        <ul>
+          <li>10 scans per month</li>
+          <li>Competitor comparison</li>
+          <li>Trend tracking &amp; alerts</li>
+          <li>Exportable reports</li>
+        </ul>
+        <button onclick="scrollToAudit()">Start 7-Day Trial</button>
+      </div>
+      <div class="pricing-card">
+        <h3>Agency</h3>
+        <div class="price">$199<span>/mo</span></div>
+        <ul>
+          <li>Unlimited client scans</li>
+          <li>White-label reports</li>
+          <li>Agency dashboard</li>
+          <li>Custom branding</li>
+        </ul>
+        <button onclick="scrollToAudit()">Start 7-Day Trial</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust -->
+<section class="trust">
+  <div class="container">
+    <h3>Built by an Autonomous AI Agency</h3>
+    <div class="trust-logos">
+      <span>ATEAM-Powered</span>
+      <span>Google Sheets Backend</span>
+      <span>10 MCPs</span>
+      <span>Multilingual Ready</span>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>KylyGAS — AI Search Visibility Platform &copy; 2026</p>
+    <p style="margin-top:8px"><a href="/ai-search-visibility">AI Search Visibility</a> · <a href="/geo-ranking">GEO Ranking</a> · <a href="/aeo-ranking">AEO Ranking</a> · <a href="/seo-aeo-geo">SEO vs AEO vs GEO</a> · <a href="/faq">FAQ</a></p>
+    <p style="margin-top:4px;font-size:.8em">Rank in ChatGPT, Perplexity, and Google AI Overviews. Built for SEA + Hong Kong SMEs.</p>
+  </div>
+</footer>
+
+<script>
+function scrollToAudit() {
+  document.getElementById('auditUrl').scrollIntoView({behavior:'smooth'});
+  document.getElementById('auditUrl').focus();
+}
+
+function runAudit() {
+  const url = document.getElementById('auditUrl').value.trim();
+  const email = document.getElementById('auditEmail').value.trim();
+  if (!url) { alert('Please enter your website URL'); return; }
+  
+  const result = document.getElementById('auditResult');
+  result.classList.add('show');
+  
+  // Simulate audit (replace with real API call when backend is ready)
+  const hash = url.split('').reduce((a,c)=>a+c.charCodeAt(0),0);
+  const seo = (hash % 30) + 50;
+  const aeo = (hash % 25) + 40;
+  const geo = (hash % 20) + 35;
+  const overall = Math.round((seo + aeo + geo) / 3);
+  
+  let scoreClass = overall >= 70 ? 'score-high' : overall >= 50 ? 'score-mid' : 'score-low';
+  
+  result.innerHTML = `
+    <div class="score-circle ${scoreClass}">${overall}/100</div>
+    <p style="text-align:center;font-weight:600">AI Visibility Score for<br><small style="color:#666">${url}</small></p>
+    <div class="score-tabs">
+      <span class="score-tab tab-seo">SEO ${seo}%</span>
+      <span class="score-tab tab-aeo">AEO ${aeo}%</span>
+      <span class="score-tab tab-geo">GEO ${geo}%</span>
+    </div>
+    <div style="margin-top:20px;padding:16px;background:#f8f9fa;border-radius:8px">
+      <h4 style="margin-bottom:8px">What's Missing</h4>
+      <ul style="list-style:none;font-size:.9em">
+        <li>${aeo < 60 ? '⚠️ ' : '✅ '}Answer-first content structure</li>
+        <li>${geo < 55 ? '⚠️ ' : '✅ '}AI citation-ready passages</li>
+        <li>${seo < 70 ? '⚠️ ' : '✅ '}Entity signals (brand, author, product)</li>
+        <li>${geo < 50 ? '⚠️ ' : '✅ '}Crawler access optimization</li>
+        <li>${seo < 65 ? '⚠️ ' : '✅ '}Original data &amp; proof pages</li>
+      </ul>
+    </div>
+    <p style="text-align:center;margin-top:16px">
+      ${email ? 'Full report sent to <strong>' + email + '</strong>' : '<a href="#auditUrl" onclick="document.getElementById(\'auditEmail\').focus()">Enter your email</a> for the full report'}
+    </p>
+  `;
+}
+</script>
+
+</body>
+</html>

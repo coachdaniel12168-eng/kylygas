@@ -277,7 +277,7 @@ function runAudit() {
       </ul>
     </div>
     <p style="text-align:center;margin-top:16px">
-      ${email ? '✅ Full report sent to <strong>' + email + '</strong>' : '<a href="#auditUrl" onclick="document.getElementById(\\'auditEmail\\').focus()">Enter your email</a> for the complete 5-dimension report with fix recommendations'}
+      ${email ? '✅ Full report sent to <strong>' + email + '</strong>' : '<a href="#" onclick="event.preventDefault();document.getElementById(\'auditEmail\').focus()">Enter your email</a> for the complete 5-dimension report with fix recommendations'}
     </p>
   `;
 }

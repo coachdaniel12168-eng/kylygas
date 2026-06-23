@@ -171,7 +171,7 @@ footer a { color: var(--accent); text-decoration: none; }
           <li>Basic dashboard</li>
           <li>Email support</li>
         </ul>
-        <button onclick="scrollToAudit()">Start 7-Day Trial</button>
+        <a href="https://pay.airwallex.com/sghjplzdcz2v" class="pricing-btn" style="display:block;width:100%;padding:12px;background:var(--accent);color:var(--dark);border:none;border-radius:8px;cursor:pointer;font-weight:600;font-size:1em;margin-top:8px;text-align:center;text-decoration:none">Subscribe $19/mo</a>
       </div>
       <div class="pricing-card">
         <h3>Growth</h3>
@@ -182,7 +182,7 @@ footer a { color: var(--accent); text-decoration: none; }
           <li>Trend tracking &amp; alerts</li>
           <li>Exportable reports</li>
         </ul>
-        <button onclick="scrollToAudit()">Start 7-Day Trial</button>
+        <a href="https://pay.airwallex.com/sghjplzdlqmj" class="pricing-btn" style="display:block;width:100%;padding:12px;background:var(--primary);color:white;border:none;border-radius:8px;cursor:pointer;font-weight:600;font-size:1em;margin-top:8px;text-align:center;text-decoration:none">Subscribe $49/mo</a>
       </div>
       <div class="pricing-card">
         <h3>Agency</h3>
@@ -193,7 +193,7 @@ footer a { color: var(--accent); text-decoration: none; }
           <li>Agency dashboard</li>
           <li>Custom branding</li>
         </ul>
-        <button onclick="scrollToAudit()">Start 7-Day Trial</button>
+        <a href="https://pay.airwallex.com/sghjplze8l75" class="pricing-btn" style="display:block;width:100%;padding:12px;background:var(--primary);color:white;border:none;border-radius:8px;cursor:pointer;font-weight:600;font-size:1em;margin-top:8px;text-align:center;text-decoration:none">Subscribe $199/mo</a>
       </div>
     </div>
   </div>
@@ -222,64 +222,89 @@ footer a { color: var(--accent); text-decoration: none; }
 </footer>
 
 <script>
+const API_BASE = 'https://kenneth-loan-dis-amendments.trycloudflare.com'; // ATEAM Backend via Cloudflare Tunnel
+
 function scrollToAudit() {
   document.getElementById('auditUrl').scrollIntoView({behavior:'smooth'});
   document.getElementById('auditUrl').focus();
 }
 
-function runAudit() {
+async function runAudit() {
   const url = document.getElementById('auditUrl').value.trim();
   const email = document.getElementById('auditEmail').value.trim();
   if (!url) { alert('Please enter your website URL'); return; }
-  
+
   const result = document.getElementById('auditResult');
   result.classList.add('show');
-  
-  // Multi-dimension scoring engine
+  result.innerHTML = '<div class="score-circle" style="animation:pulse 1.5s infinite">⚡</div><p style="text-align:center;color:#666">Analyzing ' + url + '…<br><small>Fetching page, scanning 7 dimensions</small></p>';
+
+  try {
+    const resp = await fetch(API_BASE + '/audit/kylygas', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url, email: email || undefined }),
+    });
+    const data = await resp.json();
+
+    if (data.error) {
+      result.innerHTML = '<div class="score-circle score-low">!</div><p style="text-align:center;color:#c62828">' + data.error + '</p>';
+      return;
+    }
+
+    const dims = data.dimensions || [];
+    const colorMap = { SEO: '#1565c0', AEO: '#c62828', GEO: '#2e7d32', Entity: '#e65100', Structure: '#6c5ce7', Citation: '#f57c00', Crawler: '#00838f' };
+    const scoreClass = data.overall_score >= 70 ? 'score-high' : data.overall_score >= 50 ? 'score-mid' : 'score-low';
+
+    let dimGrid = '';
+    dims.forEach(d => {
+      const c = colorMap[d.name] || '#6c5ce7';
+      dimGrid += '<div style="text-align:center;padding:10px;background:white;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06)"><strong style="color:' + c + ';font-size:1.2em">' + d.score + '%</strong><br><small>' + d.name + '</small></div>';
+    });
+
+    let bars = dims.map(d => makeBar(d.name + ': ' + (d.findings[0] || 'OK'), d.score, colorMap[d.name] || '#6c5ce7')).join('');
+
+    let fixesHtml = '';
+    dims.forEach(d => {
+      if (d.fixes && d.fixes.length > 0) {
+        fixesHtml += '<div style="margin-bottom:10px"><strong>' + d.name + '</strong><ul style="list-style:none;font-size:.85em;margin:4px 0">';
+        d.fixes.forEach(f => { fixesHtml += '<li>🔧 ' + f + '</li>'; });
+        fixesHtml += '</ul></div>';
+      }
+    });
+
+    result.innerHTML = `
+      <div class="score-circle ${scoreClass}">${data.overall_score}/100</div>
+      <p style="text-align:center;font-weight:600;font-size:1.1em">AI Visibility Score<br><small style="color:#666">${data.url}</small></p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0">${dimGrid}</div>
+      <h4 style="margin-bottom:8px">7-Dimension Breakdown</h4>${bars}
+      <div style="margin-top:16px;padding:16px;background:#f8f9fa;border-radius:8px">
+        <h4 style="margin-bottom:8px">Recommended Fixes</h4>${fixesHtml}
+      </div>
+      <p style="text-align:center;margin-top:12px;font-size:.85em">${data.sheet_saved ? '✅ Saved to KylyGAS dashboard' : '⚡ Real audit — powered by ATEAM engine'}</p>
+    `;
+  } catch (err) {
+    // Fallback: offline or API unreachable — use demo mode
+    fallbackAudit(url, email, result);
+  }
+}
+
+function fallbackAudit(url, email, el) {
   const hash = url.split('').reduce((a,c)=>a+c.charCodeAt(0),0);
-  const seo = Math.min(95, (hash % 35) + 45);
-  const aeo = Math.min(90, (hash % 30) + 35);
-  const geo = Math.min(85, (hash % 25) + 30);
-  const entity = Math.min(90, (hash % 28) + 38);
-  const structure = Math.min(88, (hash % 32) + 40);
-  const citation = Math.min(80, (hash % 22) + 28);
-  const crawler = Math.min(95, (hash % 20) + 50);
-  const overall = Math.round((seo + aeo + geo + entity + structure + citation + crawler) / 7);
-  
-  let scoreClass = overall >= 70 ? 'score-high' : overall >= 50 ? 'score-mid' : 'score-low';
-  
-  result.innerHTML = `
-    <div class="score-circle ${scoreClass}">${overall}/100</div>
-    <p style="text-align:center;font-weight:600;font-size:1.1em">AI Visibility Score<br><small style="color:#666">${url}</small></p>
-    
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0">
-      <div style="text-align:center;padding:10px;background:#e3f2fd;border-radius:8px"><strong style="color:#1565c0;font-size:1.2em">${seo}%</strong><br><small>SEO</small></div>
-      <div style="text-align:center;padding:10px;background:#fce4ec;border-radius:8px"><strong style="color:#c62828;font-size:1.2em">${aeo}%</strong><br><small>AEO</small></div>
-      <div style="text-align:center;padding:10px;background:#e8f5e9;border-radius:8px"><strong style="color:#2e7d32;font-size:1.2em">${geo}%</strong><br><small>GEO</small></div>
-      <div style="text-align:center;padding:10px;background:#fff3e0;border-radius:8px"><strong style="color:#e65100;font-size:1.2em">${citation}%</strong><br><small>Citation</small></div>
-    </div>
-
-    <h4 style="margin-bottom:12px">5-Dimension Breakdown</h4>
-    ${makeBar('SEO: Traditional search foundation', seo, '#1565c0')}
-    ${makeBar('AEO: Answer engine readiness', aeo, '#c62828')}
-    ${makeBar('GEO: Generative AI readiness', geo, '#2e7d32')}
-    ${makeBar('Entity Signals: Brand & author consistency', entity, '#e65100')}
-    ${makeBar('Content Structure: Passage-level extractability', structure, '#6c5ce7')}
-
-    <div style="margin-top:20px;padding:16px;background:#f8f9fa;border-radius:8px">
-      <h4 style="margin-bottom:8px">Priority Fixes</h4>
-      <ul style="list-style:none;font-size:.9em">
-        ${aeo < 60 ? '<li>⚠️ Add FAQPage and HowTo schema markup</li>' : '<li>✅ Answer engine structure active</li>'}
-        ${geo < 55 ? '<li>⚠️ Publish original data or proprietary research</li>' : '<li>✅ Generative AI readiness detected</li>'}
-        ${entity < 55 ? '<li>⚠️ Strengthen brand entity signals across platforms</li>' : '<li>✅ Entity signals present</li>'}
-        ${citation < 50 ? '<li>⚠️ Create quotable, citation-ready content blocks</li>' : '<li>✅ Citation structure detected</li>'}
-        ${crawler < 60 ? '<li>⚠️ Check robots.txt for AI crawler access</li>' : '<li>✅ AI crawlers have access</li>'}
-      </ul>
-    </div>
-    <p style="text-align:center;margin-top:16px">
-      ${email ? '✅ Full report sent to <strong>' + email + '</strong>' : '<a href="#" onclick="event.preventDefault();document.getElementById(\'auditEmail\').focus()">Enter your email</a> for the complete 5-dimension report with fix recommendations'}
-    </p>
-  `;
+  const dims = [
+    { name:'SEO', score:Math.min(95,(hash%35)+45) },
+    { name:'AEO', score:Math.min(90,(hash%30)+35) },
+    { name:'GEO', score:Math.min(85,(hash%25)+30) },
+    { name:'Entity', score:Math.min(90,(hash%28)+38) },
+    { name:'Structure', score:Math.min(88,(hash%32)+40) },
+    { name:'Citation', score:Math.min(80,(hash%22)+28) },
+    { name:'Crawler', score:Math.min(95,(hash%20)+50) },
+  ];
+  const overall = Math.round(dims.reduce((s,d)=>s+d.score,0)/dims.length);
+  const sc = overall >= 70 ? 'score-high' : overall >= 50 ? 'score-mid' : 'score-low';
+  const colorMap = { SEO:'#1565c0', AEO:'#c62828', GEO:'#2e7d32', Entity:'#e65100', Structure:'#6c5ce7', Citation:'#f57c00', Crawler:'#00838f' };
+  let grid='', bars='';
+  dims.forEach(d=>{const c=colorMap[d.name];grid+='<div style="text-align:center;padding:10px;background:white;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06)"><strong style="color:'+c+';font-size:1.2em">'+d.score+'%</strong><br><small>'+d.name+'</small></div>';bars+=makeBar(d.name,d.score,c);});
+  el.innerHTML='<div class="score-circle '+sc+'">'+overall+'/100</div><p style="text-align:center;font-weight:600;font-size:1.1em">AI Visibility Score (Demo)<br><small style="color:#666">'+url+'</small></p><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0">'+grid+'</div><h4 style="margin-bottom:8px">7-Dimension Breakdown</h4>'+bars+'<p style="text-align:center;margin-top:12px;font-size:.8em;color:#999">⚡ Demo mode — connect to ATEAM backend for real audits</p>';
 }
 
 function makeBar(label, score, color) {

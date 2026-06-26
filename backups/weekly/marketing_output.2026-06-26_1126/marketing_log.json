@@ -1,0 +1,160 @@
+{
+  "runs": [
+    {
+      "id": "mkt-singapore-1782432456",
+      "country": "singapore",
+      "at": "2026-06-26T08:07:36.953152",
+      "ads_count": 5,
+      "posts_count": 3
+    },
+    {
+      "id": "mkt-hong_kong-1782432456",
+      "country": "hong_kong",
+      "at": "2026-06-26T08:07:36.953316",
+      "ads_count": 5,
+      "posts_count": 3
+    },
+    {
+      "id": "mkt-australia-1782432456",
+      "country": "australia",
+      "at": "2026-06-26T08:07:36.953463",
+      "ads_count": 5,
+      "posts_count": 3
+    },
+    {
+      "id": "mkt-malaysia-1782432456",
+      "country": "malaysia",
+      "at": "2026-06-26T08:07:36.953603",
+      "ads_count": 5,
+      "posts_count": 3
+    },
+    {
+      "id": "mkt-philippines-1782432456",
+      "country": "philippines",
+      "at": "2026-06-26T08:07:36.953736",
+      "ads_count": 5,
+      "posts_count": 3
+    },
+    {
+      "id": "mkt-vietnam-1782432456",
+      "country": "vietnam",
+      "at": "2026-06-26T08:07:36.953869",
+      "ads_count": 5,
+      "posts_count": 3
+    },
+    {
+      "id": "mkt-thailand-1782432456",
+      "country": "thailand",
+      "at": "2026-06-26T08:07:36.954114",
+      "ads_count": 5,
+      "posts_count": 3
+    }
+  ],
+  "content_log": {
+    "mkt-singapore-1782432456": {
+      "country": "singapore",
+      "ad_headlines": [
+        "Government Pays Up to 70% of Your Business Costs",
+        "Struggling with CPF contribution burden?",
+        "Your Competitors Are Claiming This. Are You?",
+        "Hundreds of Singapore Businesses Already Scanned",
+        "Funding Windows Close. Don't Miss Out."
+      ],
+      "post_types": [
+        "educational",
+        "case_study_style",
+        "question_hook"
+      ]
+    },
+    "mkt-hong_kong-1782432456": {
+      "country": "hong_kong",
+      "ad_headlines": [
+        "Government Pays Up to 70% of Your Business Costs",
+        "Struggling with Rising operational?",
+        "Your Competitors Are Claiming This. Are You?",
+        "Hundreds of Hong Kong Businesses Already Scanned",
+        "Funding Windows Close. Don't Miss Out."
+      ],
+      "post_types": [
+        "educational",
+        "case_study_style",
+        "question_hook"
+      ]
+    },
+    "mkt-australia-1782432456": {
+      "country": "australia",
+      "ad_headlines": [
+        "Government Pays Up to 70% of Your Business Costs",
+        "Struggling with State-by-state grant complexity?",
+        "Your Competitors Are Claiming This. Are You?",
+        "Hundreds of Australia Businesses Already Scanned",
+        "Funding Windows Close. Don't Miss Out."
+      ],
+      "post_types": [
+        "educational",
+        "case_study_style",
+        "question_hook"
+      ]
+    },
+    "mkt-malaysia-1782432456": {
+      "country": "malaysia",
+      "ad_headlines": [
+        "Government Pays Up to 70% of Your Business Costs",
+        "Struggling with Export market access?",
+        "Your Competitors Are Claiming This. Are You?",
+        "Hundreds of Malaysia Businesses Already Scanned",
+        "Funding Windows Close. Don't Miss Out."
+      ],
+      "post_types": [
+        "educational",
+        "case_study_style",
+        "question_hook"
+      ]
+    },
+    "mkt-philippines-1782432456": {
+      "country": "philippines",
+      "ad_headlines": [
+        "Government Pays Up to 70% of Your Business Costs",
+        "Struggling with Working capital access?",
+        "Your Competitors Are Claiming This. Are You?",
+        "Hundreds of Philippines Businesses Already Scanned",
+        "Funding Windows Close. Don't Miss Out."
+      ],
+      "post_types": [
+        "educational",
+        "case_study_style",
+        "question_hook"
+      ]
+    },
+    "mkt-vietnam-1782432456": {
+      "country": "vietnam",
+      "ad_headlines": [
+        "Government Pays Up to 70% of Your Business Costs",
+        "Struggling with Export certification?",
+        "Your Competitors Are Claiming This. Are You?",
+        "Hundreds of Vietnam Businesses Already Scanned",
+        "Funding Windows Close. Don't Miss Out."
+      ],
+      "post_types": [
+        "educational",
+        "case_study_style",
+        "question_hook"
+      ]
+    },
+    "mkt-thailand-1782432456": {
+      "country": "thailand",
+      "ad_headlines": [
+        "Government Pays Up to 70% of Your Business Costs",
+        "Struggling with FBA restrictions?",
+        "Your Competitors Are Claiming This. Are You?",
+        "Hundreds of Thailand Businesses Already Scanned",
+        "Funding Windows Close. Don't Miss Out."
+      ],
+      "post_types": [
+        "educational",
+        "case_study_style",
+        "question_hook"
+      ]
+    }
+  }
+}

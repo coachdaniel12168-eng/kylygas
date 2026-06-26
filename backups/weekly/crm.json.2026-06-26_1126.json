@@ -1,0 +1,74 @@
+{
+  "companies": [
+    {
+      "id": "540e330452f5",
+      "email": "client@example.com",
+      "company_name": "",
+      "industry": "",
+      "country": "unknown",
+      "revenue_tier": "",
+      "employee_count": "",
+      "grant_matches": [],
+      "applications_started": 0,
+      "applications_submitted": 0,
+      "payment_tier": "standard",
+      "total_paid": 997.0,
+      "last_contact_date": "2026-06-26T08:07:42.077784",
+      "nurture_stage": "active_client",
+      "contacted": false,
+      "created_at": "2026-06-26T03:26:49.671269+00:00",
+      "updated_at": "2026-06-26T03:26:49.671288+00:00",
+      "scan_history": [],
+      "app_history": [],
+      "payment_history": [
+        {
+          "id": "61249a4b",
+          "amount_usd": 997.0,
+          "project": "GovFund",
+          "date": "2026-06-26T08:07:42.077784"
+        }
+      ]
+    },
+    {
+      "id": "55502f40dc8b",
+      "email": "test@example.com",
+      "company_name": "",
+      "industry": "",
+      "country": "singapore",
+      "revenue_tier": "",
+      "employee_count": "",
+      "grant_matches": [
+        "sg-edg"
+      ],
+      "applications_started": 1,
+      "applications_submitted": 0,
+      "payment_tier": "free",
+      "total_paid": 0.0,
+      "last_contact_date": "2026-06-26T07:56:20.661865",
+      "nurture_stage": "applying",
+      "contacted": false,
+      "created_at": "2026-06-26T03:26:49.671259+00:00",
+      "updated_at": "2026-06-26T03:26:49.671281+00:00",
+      "scan_history": [],
+      "app_history": [
+        {
+          "id": "c3a721e4cb45",
+          "grant_id": "sg-edg",
+          "grant_name": "Enterprise Development Grant (EDG)",
+          "status": "preparing",
+          "country": "singapore",
+          "completion_pct": 21
+        }
+      ],
+      "payment_history": []
+    }
+  ],
+  "meta": {
+    "total_scans": 0,
+    "total_companies": 2,
+    "total_bought": 1,
+    "total_revenue_usd": 997.0,
+    "last_scan_at": null,
+    "last_updated": "2026-06-26T03:26:49.671294+00:00"
+  }
+}

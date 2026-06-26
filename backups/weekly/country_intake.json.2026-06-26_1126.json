@@ -1,0 +1,761 @@
+{
+  "singapore": {
+    "flag": "🇸🇬",
+    "name": "Singapore",
+    "currency": "SGD",
+    "currency_symbol": "S$",
+    "fields": [
+      {
+        "id": "company_name",
+        "label": "Company Name",
+        "type": "text",
+        "required": true,
+        "consultant_note": "Official ACRA-registered name — I'll cross-reference eligibility against government databases."
+      },
+      {
+        "id": "industry",
+        "label": "Industry / Sector",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Food Manufacturing", "Food Services (F&B)", "Retail", "Wholesale Trade",
+          "Logistics & Transport", "Construction & Built Environment",
+          "Maritime & Offshore", "Precision Engineering", "Electronics",
+          "Healthcare & Biomedical", "Pharmaceuticals", "Chemicals",
+          "Infocomm & Media (Tech)", "Financial Services", "Fintech",
+          "Professional Services", "Education", "Tourism & Hospitality",
+          "Environmental Services", "Energy & Clean Tech",
+          "Aerospace", "Real Estate", "Social Services", "Events & MICE",
+          "Agriculture & Aquaculture", "Manufacturing (General)", "Other"
+        ],
+        "consultant_note": "Different grants target different sectors. Food businesses have dedicated funds. Tech has IMDA/EDB support. Tell me exactly what you do."
+      },
+      {
+        "id": "local_shareholding",
+        "label": "Local Shareholding %",
+        "type": "select",
+        "required": true,
+        "options": ["100% Singaporean/PR", "51-99%", "30-50%", "Below 30%", "Foreign-owned"],
+        "consultant_note": "This is critical. Most Enterprise Singapore grants require ≥30% local shareholding. Below that, your options narrow significantly."
+      },
+      {
+        "id": "employees_sg",
+        "label": "Number of Employees (Singapore)",
+        "type": "select",
+        "required": true,
+        "options": ["1-10", "11-50", "51-100", "101-200", "201-500", "500+"],
+        "consultant_note": "SME definition: ≤200 employees OR ≤S$100M annual turnover. Some workforce grants scale with headcount."
+      },
+      {
+        "id": "annual_revenue_sgd",
+        "label": "Annual Revenue (S$)",
+        "type": "select",
+        "required": false,
+        "options": [
+          "Under S$1M", "S$1M - S$5M", "S$5M - S$10M", "S$10M - S$50M",
+          "S$50M - S$100M", "S$100M - S$500M", "Above S$500M"
+        ],
+        "consultant_note": "Revenue determines SME vs non-SME status. Non-SMEs lose access to PSG, MRA, and many other grants."
+      },
+      {
+        "id": "years_in_business",
+        "label": "Years in Business",
+        "type": "select",
+        "required": true,
+        "options": ["Less than 1 year", "1-3 years", "3-5 years", "5-10 years", "10+ years"],
+        "consultant_note": "Startup grants (<3 years) vs growth grants (3-10 years) vs expansion grants (10+). Different doors open at different stages."
+      },
+      {
+        "id": "challenges",
+        "label": "What do you need help with? (Select all that apply)",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "Hiring & retaining staff", "Training & upskilling employees",
+          "Digital transformation (CRM, ERP, e-commerce)", "AI / automation adoption",
+          "Expanding overseas (export / internationalisation)", "Innovation & R&D",
+          "Energy efficiency & sustainability", "Financing / working capital / loans",
+          "Productivity improvement", "Starting a new business (startup)",
+          "ESG / sustainability reporting", "Older worker employment & CPF costs"
+        ],
+        "consultant_note": "The more specific you are, the more targeted my recommendations. A food manufacturer wanting to automate is a very different grant path from one wanting to export."
+      },
+      {
+        "id": "previous_grants",
+        "label": "Have you received government grants before?",
+        "type": "select",
+        "required": false,
+        "options": ["Yes", "No", "Not sure"],
+        "consultant_note": "Some grants have stacking rules — you can't double-claim for the same expense. I'll flag conflicts."
+      },
+      {
+        "id": "urgent_needs",
+        "label": "Anything specific you're looking for?",
+        "type": "text",
+        "required": false,
+        "consultant_note": "Free text. Tell me what's actually on your mind — specific grant names, pain points, timelines."
+      }
+    ],
+    "eligibility_checks": {
+      "min_local_shareholding_for_esg": 30,
+      "sme_employees_max": 200,
+      "sme_revenue_max_sgd": 100000000
+    }
+  },
+
+  "hong_kong": {
+    "flag": "🇭🇰",
+    "name": "Hong Kong",
+    "currency": "HKD",
+    "currency_symbol": "HK$",
+    "fields": [
+      {
+        "id": "company_name",
+        "label": "Company Name",
+        "type": "text",
+        "required": true,
+        "consultant_note": "Your Business Registration Certificate name — required for all HK government schemes."
+      },
+      {
+        "id": "industry",
+        "label": "Industry / Sector",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Trading & Import/Export", "Manufacturing", "Food & Beverage",
+          "Retail", "Logistics & Supply Chain", "Information Technology",
+          "Financial Services", "Professional Services", "Construction",
+          "Creative Industries", "Healthcare", "Education",
+          "Tourism & Hospitality", "Environmental Services", "Other"
+        ],
+        "consultant_note": "HK has dedicated funds for trading, manufacturing, and tech. Exporters get extra support."
+      },
+      {
+        "id": "hk_registered",
+        "label": "Business Registration Status",
+        "type": "select",
+        "required": true,
+        "options": ["Registered in HK with BR", "Registered overseas with HK branch", "Not yet registered"],
+        "consultant_note": "Must have a valid Business Registration Certificate for most schemes."
+      },
+      {
+        "id": "employees_hk",
+        "label": "Number of Employees (Hong Kong)",
+        "type": "select",
+        "required": true,
+        "options": ["1-10", "11-50", "51-100", "101-500", "500+"],
+        "consultant_note": "Under HK's SME definition: <100 employees (manufacturing) or <50 (non-manufacturing)."
+      },
+      {
+        "id": "years_in_business",
+        "label": "Years in Business",
+        "type": "select",
+        "required": true,
+        "options": ["Less than 1 year", "1-3 years", "3-5 years", "5-10 years", "10+ years"],
+        "consultant_note": "BUD Fund and EMF are accessible early. TIP requires operational history."
+      },
+      {
+        "id": "challenges",
+        "label": "What do you need help with?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "Expanding to Mainland China / GBA", "Expanding to ASEAN / overseas markets",
+          "Digital transformation / e-commerce", "Technology upgrading / automation",
+          "R&D and innovation", "Branding and marketing",
+          "Working capital / trade financing", "SME loan guarantees",
+          "Sustainability / ESG", "Hiring and training staff"
+        ],
+        "consultant_note": "HK grants are heavily export/GBA-focused. BUD Fund and EMF are your best friends for market expansion."
+      },
+      {
+        "id": "mpf_contributions",
+        "label": "Do you make MPF contributions for HK employees?",
+        "type": "select",
+        "required": true,
+        "options": ["Yes", "No", "No HK employees"],
+        "consultant_note": "Some workforce schemes require MPF contributions as proof of genuine HK operations."
+      },
+      {
+        "id": "urgent_needs",
+        "label": "Anything specific you're looking for?",
+        "type": "text",
+        "required": false,
+        "consultant_note": "BUD Fund? SME Loan Guarantee? Tell me what you've heard about or are curious about."
+      }
+    ]
+  },
+
+  "indonesia": {
+    "flag": "🇮🇩",
+    "name": "Indonesia",
+    "currency": "IDR",
+    "currency_symbol": "Rp",
+    "fields": [
+      {
+        "id": "company_name",
+        "label": "Company Name",
+        "type": "text",
+        "required": true,
+        "consultant_note": "Your business registration name. Required for all government schemes."
+      },
+      {
+        "id": "industry",
+        "label": "Industry / Sector",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Manufacturing", "Agriculture & Food Processing",
+          "Technology & Digital", "Retail & Wholesale",
+          "Logistics & Transport", "Tourism & Hospitality",
+          "Creative Economy", "Fisheries & Marine",
+          "Construction", "Other"
+        ],
+        "consultant_note": "Indonesia has dedicated programs for manufacturing, agriculture, and halal certification."
+      },
+      {
+        "id": "enterprise_type",
+        "label": "Enterprise Type",
+        "type": "select",
+        "required": true,
+        "options": [
+          "100% Indonesian-owned (UMKM)",
+          "Foreign-owned (PMA)",
+          "Joint Venture (Indonesian + Foreign)",
+          "Cooperative"
+        ],
+        "consultant_note": "UMKM vs PMA — different rulebooks. Some grants are domestic-only."
+      },
+      {
+        "id": "umkm_size",
+        "label": "UMKM Size Classification",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Micro (revenue ≤ Rp2B or assets ≤ Rp1B)",
+          "Small (revenue Rp2B-Rp15B or assets Rp1B-Rp5B)",
+          "Medium (revenue Rp15B-Rp50B or assets Rp5B-Rp15B)",
+          "Large / Non-UMKM"
+        ],
+        "consultant_note": "Micro enterprises get priority for digitalisation and KUR loans."
+      },
+      {
+        "id": "employees_id",
+        "label": "Number of Employees",
+        "type": "select",
+        "required": true,
+        "options": ["1-4 (micro)", "5-19 (small)", "20-99 (medium)", "100+"],
+        "consultant_note": "Indonesia micro ≤4, small 5-19, medium 20-99."
+      },
+      {
+        "id": "years_in_business",
+        "label": "Years in Business",
+        "type": "select",
+        "required": true,
+        "options": ["Less than 1 year", "1-3 years", "3-5 years", "5-10 years", "10+ years"],
+        "consultant_note": "KUR loans accessible from day 1. LINK & Match requires at least 1 year."
+      },
+      {
+        "id": "challenges",
+        "label": "What do you need help with?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "Digital transformation / e-commerce onboarding",
+          "Export development / international trade",
+          "Technology upgrading / automation",
+          "Halal certification (BPJPH)",
+          "Business financing / KUR microloans",
+          "Innovation & R&D / LINK & Match",
+          "Workforce training (Kartu Prakerja)",
+          "SME capacity building",
+          "Startup incubation"
+        ],
+        "consultant_note": "Bantuan Digitalisasi UMKM covers digital. BRI KUR for microfinance. LINK & Match for industry partnerships. Kartu Prakerja for training."
+      },
+      {
+        "id": "urgent_needs",
+        "label": "Anything specific you're looking for?",
+        "type": "text",
+        "required": false,
+        "consultant_note": "KUR loan? Halal certification? BPOM registration? Kartu Prakerja? Specific is better."
+      }
+    ]
+  },
+
+  "malaysia": {
+    "flag": "🇲🇾",
+    "name": "Malaysia",
+    "currency": "MYR",
+    "currency_symbol": "RM",
+    "fields": [
+      {
+        "id": "company_name",
+        "label": "Company Name",
+        "type": "text",
+        "required": true,
+        "consultant_note": "SSM-registered name. I'll check your SME status against SME Corp definitions."
+      },
+      {
+        "id": "industry",
+        "label": "Industry / Sector",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Manufacturing", "Agriculture & Plantation", "Food Processing",
+          "Technology & Digital", "Halal Products & Services", "Construction",
+          "Retail & Wholesale", "Logistics & Transport", "Tourism",
+          "Oil & Gas", "Healthcare", "Professional Services",
+          "Creative & Media", "Education", "Other"
+        ],
+        "consultant_note": "Halal certification support, automation grants for manufacturing, MSC status for tech — Malaysia has industry-specific schemes."
+      },
+      {
+        "id": "bumiputera",
+        "label": "Bumiputera Status",
+        "type": "select",
+        "required": true,
+        "options": [
+          "100% Bumiputera-owned", "51%+ Bumiputera-owned",
+          "Non-Bumiputera (Malaysian-owned)", "Foreign-owned"
+        ],
+        "consultant_note": "This matters enormously. TERAJU, MARA, PUNB, and many state grants are Bumiputera-specific. Non-Bumi and foreign companies have different grant pathways."
+      },
+      {
+        "id": "sme_status",
+        "label": "SME Classification (SME Corp)",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Micro (revenue < RM300K or <5 staff)",
+          "Small (revenue RM300K-RM15M or 5-75 staff)",
+          "Medium (revenue RM15M-RM50M or 75-200 staff)",
+          "Large / Non-SME (above thresholds)",
+          "Not sure — help me check"
+        ],
+        "consultant_note": "SME Corp redefined thresholds in 2026. Manufacturing: revenue ≤RM50M or ≤200 staff. Services: revenue ≤RM20M or ≤75 staff."
+      },
+      {
+        "id": "years_in_business",
+        "label": "Years in Business",
+        "type": "select",
+        "required": true,
+        "options": ["Less than 1 year", "1-3 years", "3-5 years", "5-10 years", "10+ years"],
+        "consultant_note": "Startup grants (like SUPERB, CIP Spark) vs growth grants (like ITG, MDEC GAIN)."
+      },
+      {
+        "id": "challenges",
+        "label": "What do you need help with?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "Automation / Industry 4.0", "Digital transformation / e-commerce",
+          "Export / internationalisation", "Halal certification & expansion",
+          "R&D and innovation", "Working capital / SME financing",
+          "Branding and packaging", "Workforce training and development",
+          "MSC status / tech acceleration", "Sustainability / green technology"
+        ],
+        "consultant_note": "Malaysia has strong automation grants (MATRADE, MITI) and the world's only dedicated Halal ecosystem support."
+      },
+      {
+        "id": "export_oriented",
+        "label": "Export-Oriented?",
+        "type": "select",
+        "required": true,
+        "options": ["Yes, already exporting", "Planning to export", "Domestic only"],
+        "consultant_note": "MATRADE has dedicated export development grants not available to domestic-only businesses."
+      },
+      {
+        "id": "urgent_needs",
+        "label": "Anything specific you're looking for?",
+        "type": "text",
+        "required": false,
+        "consultant_note": "TERAJU? MATRADE MDG? SME Bank financing? Tell me what you need."
+      }
+    ]
+  },
+
+  "thailand": {
+    "flag": "🇹🇭",
+    "name": "Thailand",
+    "currency": "THB",
+    "currency_symbol": "฿",
+    "fields": [
+      {
+        "id": "company_name",
+        "label": "Company Name",
+        "type": "text",
+        "required": true,
+        "consultant_note": "DBD-registered name. I'll check your BOI and SME status."
+      },
+      {
+        "id": "industry",
+        "label": "Industry / Sector",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Agriculture & Food Processing", "Automotive & Parts",
+          "Electronics & Electrical", "Digital & Software",
+          "Tourism & Hospitality", "Healthcare & Medical Devices",
+          "Biotechnology", "Renewable Energy", "Robotics & Automation",
+          "Logistics & Aviation", "Creative & Design", "Construction",
+          "Retail & Wholesale", "Manufacturing (General)", "Other"
+        ],
+        "consultant_note": "BOI targets specific industries for promotion. S-Curve and New S-Curve sectors get the best incentives."
+      },
+      {
+        "id": "boi_status",
+        "label": "BOI Promotion Status",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Already BOI-promoted", "Applied for BOI", "Not BOI-promoted",
+          "Not sure what BOI is"
+        ],
+        "consultant_note": "BOI promotion unlocks tax holidays, work permit fast-tracks, and land ownership rights. If you're not BOI-promoted, that's a priority recommendation."
+      },
+      {
+        "id": "thai_shareholding",
+        "label": "Thai Shareholding %",
+        "type": "select",
+        "required": true,
+        "options": ["51%+ Thai-owned", "Less than 51% (Foreign majority)", "100% Foreign-owned"],
+        "consultant_note": "Foreign Business Act restricts some sectors. BOI promotion can override FBA restrictions. Critical for eligibility."
+      },
+      {
+        "id": "employees_th",
+        "label": "Number of Employees (Thailand)",
+        "type": "select",
+        "required": true,
+        "options": ["1-10", "11-50", "51-200", "200+"],
+        "consultant_note": "Thai SME definition: manufacturing ≤200 staff or ≤฿500M revenue. Services ≤100 staff or ≤฿300M revenue."
+      },
+      {
+        "id": "challenges",
+        "label": "What do you need help with?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "BOI promotion application", "Tax incentives & exemptions",
+          "Factory automation / IR 4.0", "Digital transformation",
+          "R&D and technology development", "SME financing / soft loans",
+          "Export promotion", "Workforce skills development",
+          "Energy efficiency / green manufacturing", "Startup incubation"
+        ],
+        "consultant_note": "BOI is the gateway to most major incentives. DEPA covers digital. OSMEP covers SME development."
+      },
+      {
+        "id": "urgent_needs",
+        "label": "Anything specific you're looking for?",
+        "type": "text",
+        "required": false,
+        "consultant_note": "BOI tax holiday? DEPA digital grant? SME Bank loan? Specific is better."
+      }
+    ]
+  },
+
+  "vietnam": {
+    "flag": "🇻🇳",
+    "name": "Vietnam",
+    "currency": "VND",
+    "currency_symbol": "₫",
+    "fields": [
+      {
+        "id": "company_name",
+        "label": "Company Name",
+        "type": "text",
+        "required": true,
+        "consultant_note": "Your Enterprise Registration Certificate name — required for all government schemes."
+      },
+      {
+        "id": "industry",
+        "label": "Industry / Sector",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Manufacturing & Processing", "Agriculture & Aquaculture",
+          "Information Technology & Software", "Food Processing",
+          "Textiles & Garments", "Electronics Assembly",
+          "Renewable Energy", "Construction & Real Estate",
+          "Logistics & Transport", "Tourism & Hospitality",
+          "Healthcare & Pharmaceuticals", "Education & Training",
+          "Retail & E-commerce", "Other"
+        ],
+        "consultant_note": "Priority sectors (high-tech, green energy, agriculture) get the best tax incentives. Location matters as much as sector."
+      },
+      {
+        "id": "enterprise_type",
+        "label": "Enterprise Type",
+        "type": "select",
+        "required": true,
+        "options": [
+          "100% Vietnamese-owned (domestic enterprise)",
+          "Foreign-Invested Enterprise (FDI)",
+          "Joint Venture (Vietnamese + Foreign)",
+          "State-Owned Enterprise"
+        ],
+        "consultant_note": "This is the most important question for Vietnam. FDI companies face different rules than domestic enterprises. Some grants are domestic-only."
+      },
+      {
+        "id": "province",
+        "label": "Province / Location",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Ho Chi Minh City", "Hanoi", "Da Nang",
+          "Binh Duong / Dong Nai (Southern industrial zone)",
+          "Northern industrial provinces (Bac Ninh, Hai Phong, etc.)",
+          "Central region", "Mekong Delta", "Other province"
+        ],
+        "consultant_note": "Provincial incentives vary enormously. Difficult/special economic zones offer CIT rates as low as 10%. HCMC and Hanoi have different schemes than rural provinces."
+      },
+      {
+        "id": "employees_vn",
+        "label": "Number of Employees",
+        "type": "select",
+        "required": true,
+        "options": ["1-10", "11-50", "51-100", "101-200", "201-500", "500+"],
+        "consultant_note": "Vietnam SME definition: micro ≤10, small ≤100, medium ≤200. Different grant tiers."
+      },
+      {
+        "id": "challenges",
+        "label": "What do you need help with?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "Technology upgrading / automation", "R&D and innovation",
+          "Digital transformation", "Export development",
+          "SME financing / credit guarantee", "Tax incentives (CIT, import duty)",
+          "Investment incentives in special zones", "Clean energy / environmental technology",
+          "Startup incubation / acceleration", "Workforce training"
+        ],
+        "consultant_note": "NATIF covers technology. SME Development Fund covers financing. Provincial People's Committees handle local incentives."
+      },
+      {
+        "id": "tech_level",
+        "label": "Technology Level",
+        "type": "select",
+        "required": false,
+        "options": [
+          "High-tech (recognised by MOST)", "Medium-tech",
+          "Low-tech / traditional", "Not technology-focused"
+        ],
+        "consultant_note": "High-tech enterprises get the best CIT rates (10% for 15 years) and priority access to NATIF."
+      },
+      {
+        "id": "urgent_needs",
+        "label": "Anything specific you're looking for?",
+        "type": "text",
+        "required": false,
+        "consultant_note": "NATIF funding? CIT holiday? Provincial land incentives? Tell me."
+      }
+    ]
+  },
+
+  "philippines": {
+    "flag": "🇵🇭",
+    "name": "Philippines",
+    "currency": "PHP",
+    "currency_symbol": "₱",
+    "fields": [
+      {
+        "id": "company_name",
+        "label": "Company Name",
+        "type": "text",
+        "required": true,
+        "consultant_note": "SEC or DTI registered name. Registration type determines your grant access."
+      },
+      {
+        "id": "industry",
+        "label": "Industry / Sector",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Agriculture & Agri-processing", "Food Manufacturing",
+          "Manufacturing (General)", "Information Technology / BPO",
+          "Retail & Wholesale", "Construction",
+          "Tourism & Hospitality", "Healthcare & Wellness",
+          "Creative Industries", "Logistics & Transport",
+          "Renewable Energy", "Fisheries & Aquaculture", "Other"
+        ],
+        "consultant_note": "DOST SETUP targets manufacturing/processing. DTI OTOP targets regional products. IT-BPO has PEZA programs."
+      },
+      {
+        "id": "registration_type",
+        "label": "Business Registration",
+        "type": "select",
+        "required": true,
+        "options": [
+          "DTI Registered (sole proprietorship / single prop)",
+          "SEC Registered (corporation / partnership)",
+          "Cooperative (CDA registered)",
+          "Not yet registered"
+        ],
+        "consultant_note": "Sole props have different eligibility than corporations. Cooperatives have dedicated programs."
+      },
+      {
+        "id": "bmbe_status",
+        "label": "Barangay Micro Business Enterprise (BMBE)",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Already BMBE registered",
+          "Eligible but not registered (assets < ₱3M)",
+          "Not eligible (assets above ₱3M)",
+          "What is BMBE?"
+        ],
+        "consultant_note": "BMBE registration is the lowest-hanging fruit in the Philippines — instant income tax exemption and minimum wage exemption. If you qualify and haven't registered, that's your first step."
+      },
+      {
+        "id": "employees_ph",
+        "label": "Number of Employees",
+        "type": "select",
+        "required": true,
+        "options": ["1-9 (micro)", "10-99 (small)", "100-199 (medium)", "200+"],
+        "consultant_note": "Philippine SME definition: micro ≤9 staff & ≤₱3M assets, small ≤99 & ≤₱15M, medium ≤199 & ≤₱100M."
+      },
+      {
+        "id": "challenges",
+        "label": "What do you need help with?",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "Equipment & machinery upgrading (DOST SETUP)", "Business financing / microloans",
+          "Product development & packaging", "Export development",
+          "Digital transformation / ICT adoption", "Tax incentives (BOI / PEZA)",
+          "Shared facilities / co-manufacturing", "Women's entrepreneurship",
+          "Barangay-level microenterprise support", "Startup and innovation"
+        ],
+        "consultant_note": "DOST SETUP is the flagship — grants for equipment. SB Corp handles microfinance (P3/RISE UP). PEZA/BOI handle tax incentives."
+      },
+      {
+        "id": "peza_boi",
+        "label": "PEZA / BOI Registration",
+        "type": "select",
+        "required": false,
+        "options": [
+          "PEZA registered", "BOI registered",
+          "Neither but interested", "Not relevant to my business"
+        ],
+        "consultant_note": "PEZA/BOI registration unlocks income tax holidays (4-7 years) and duty-free imports. Worth pursuing for exporters and strategic industries."
+      },
+      {
+        "id": "urgent_needs",
+        "label": "Anything specific you're looking for?",
+        "type": "text",
+        "required": false,
+        "consultant_note": "DOST SETUP? P3/RISE UP loan? BMBE registration? PEZA incentives? Tell me."
+      }
+    ]
+  },
+  "australia": {
+    "flag": "🇦🇺",
+    "name": "Australia",
+    "currency": "AUD",
+    "currency_symbol": "A$",
+    "fields": [
+      {
+        "id": "company_name",
+        "label": "Company Name",
+        "type": "text",
+        "required": true,
+        "consultant_note": "Your ABN-registered business name. Required for all government schemes."
+      },
+      {
+        "id": "industry",
+        "label": "Industry / Sector",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Mining & Resources", "Agriculture & Agritech", "Food & Beverage Manufacturing",
+          "Technology & Software", "Fintech & Financial Services", "Clean Energy & Renewables",
+          "Healthcare & Medtech", "Defence & Space", "Advanced Manufacturing",
+          "Construction & Infrastructure", "Education & Edtech", "Tourism & Hospitality",
+          "Retail & E-commerce", "Cybersecurity", "Creative Industries", "Professional Services",
+          "Logistics & Transport", "Biotechnology", "Other"
+        ],
+        "consultant_note": "Australia has dedicated programs for mining, agritech, defence, space, and clean energy. Industry-specific grants are the moat."
+      },
+      {
+        "id": "state",
+        "label": "State / Territory",
+        "type": "select",
+        "required": true,
+        "options": [
+          "New South Wales (NSW)", "Victoria (VIC)", "Queensland (QLD)",
+          "Western Australia (WA)", "South Australia (SA)", "Tasmania (TAS)",
+          "Northern Territory (NT)", "Australian Capital Territory (ACT)"
+        ],
+        "consultant_note": "Each state runs its own grant programs — completely separate from federal. NSW has MVP Ventures, VIC has LaunchVic, QLD has Ignite Ideas. Your state IS your moat."
+      },
+      {
+        "id": "annual_turnover_aud",
+        "label": "Annual Turnover (A$)",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Under A$2M", "A$2M - A$10M", "A$10M - A$20M",
+          "A$20M - A$50M", "A$50M - A$250M", "Above A$250M"
+        ],
+        "consultant_note": "Critical for R&D Tax Incentive: under A$20M turnover = 43.5% refundable offset. Over A$20M = 38.5% non-refundable. This is the single most valuable Australian grant."
+      },
+      {
+        "id": "employees_au",
+        "label": "Number of Employees (Australia)",
+        "type": "select",
+        "required": true,
+        "options": ["1-5", "6-20", "21-50", "51-200", "200+"],
+        "consultant_note": "SME definition: <200 employees OR <A$10M turnover. Different grants have different thresholds."
+      },
+      {
+        "id": "years_in_business",
+        "label": "Years in Business",
+        "type": "select",
+        "required": true,
+        "options": ["Less than 1 year", "1-3 years", "3-5 years", "5-10 years", "10+ years"],
+        "consultant_note": "Early Stage Innovation Company (ESIC) tax incentives for young companies. R&D Tax Incentive has no minimum age."
+      },
+      {
+        "id": "indigenous_business",
+        "label": "Indigenous Business Status",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Indigenous-owned (Supply Nation / IBA registered)",
+          "Not Indigenous-owned"
+        ],
+        "consultant_note": "Indigenous Business Australia provides dedicated loans and support. Supply Nation registration opens procurement doors. If Indigenous-owned, this is a significant advantage."
+      },
+      {
+        "id": "export_oriented",
+        "label": "Export-Oriented?",
+        "type": "select",
+        "required": true,
+        "options": ["Yes, already exporting", "Planning to export within 12 months", "Domestic only"],
+        "consultant_note": "Export Market Development Grant (EMDG) reimburses up to 50% of export promotion spend. Austrade and Export Finance Australia have dedicated export financing."
+      },
+      {
+        "id": "challenges",
+        "label": "What do you need help with? (Check all that apply)",
+        "type": "multiselect",
+        "required": true,
+        "options": [
+          "R&D and innovation (tax offset or grant)", "Export / international expansion",
+          "Commercialising research / new product", "Clean energy / sustainability projects",
+          "Digital transformation / cybersecurity", "Hiring and workforce development",
+          "Manufacturing / industry growth", "Defence / space industry capability",
+          "Indigenous business support", "Startup / early-stage funding",
+          "Regional development", "Working capital / business loans"
+        ],
+        "consultant_note": "Australia's R&D Tax Incentive is the crown jewel — 43.5% cash refund for small companies. EMDG for exporters. CSIRO Kick-Start for research. State grants vary enormously."
+      },
+      {
+        "id": "urgent_needs",
+        "label": "Anything specific you're looking for?",
+        "type": "text",
+        "required": false,
+        "consultant_note": "R&D Tax Incentive? EMDG? CSIRO Kick-Start? NSW MVP Grant? Specific is better."
+      }
+    ]
+  }
+}

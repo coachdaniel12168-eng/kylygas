@@ -1,0 +1,18 @@
+{
+  "ad_runs": [
+    {
+      "campaign_id": "ateam-camp-61249a4b",
+      "at": "2026-06-26T08:07:42.078035",
+      "payment_trigger": "61249a4b",
+      "payment_amount": 997.0,
+      "reinvest_amount": 199.4,
+      "image_ads": 3,
+      "video_ad": "The 7-Country AI"
+    }
+  ],
+  "payment_triggers": [
+    "61249a4b"
+  ],
+  "total_ad_spend": 199.4,
+  "total_reinvested": 199.4
+}

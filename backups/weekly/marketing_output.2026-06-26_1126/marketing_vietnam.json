@@ -1,0 +1,238 @@
+{
+  "country": "vietnam",
+  "flag": "\ud83c\uddfb\ud83c\uddf3",
+  "generated_at": "2026-06-26T08:07:36.953760",
+  "fb_ads": [
+    {
+      "id": "fb-ad-vietnam-001",
+      "country": "vietnam",
+      "country_flag": "\ud83c\uddfb\ud83c\uddf3",
+      "angle": "free_money",
+      "headline": "Government Pays Up to 70% of Your Business Costs",
+      "body": "NATIF: up to \u20ab10B for technology innovation \u2014 domestic enterprises priority. Free 60-second scan shows everything you qualify for. No obligation.",
+      "cta": "Scan Now",
+      "image_description": "Clean dark card with big green number showing funding amount in VND. \ud83c\uddfb\ud83c\uddf3 flag subtle in corner. Minimal design, premium feel. Text: 'Up to [AMOUNT]' in bold white.",
+      "audience": {
+        "name": "Manufacturing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Textiles",
+          "Electronics",
+          "Food Processing",
+          "Furniture"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-vietnam-002",
+      "country": "vietnam",
+      "country_flag": "\ud83c\uddfb\ud83c\uddf3",
+      "angle": "pain_point",
+      "headline": "Struggling with Export certification?",
+      "body": "Government schemes cover this. Provincial CIT as low as 10% for 15 years in high-tech zones. Free eligibility check \u2014 takes 60 seconds.",
+      "cta": "Scan Now",
+      "image_description": "Professional office/workspace photo in Vietnam. Warm lighting. Overlay semi-transparent dark card with green text: '[SOLUTION]'. Human element, relatable setting.",
+      "audience": {
+        "name": "Manufacturing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Textiles",
+          "Electronics",
+          "Food Processing",
+          "Furniture"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-vietnam-003",
+      "country": "vietnam",
+      "country_flag": "\ud83c\uddfb\ud83c\uddf3",
+      "angle": "fear",
+      "headline": "Your Competitors Are Claiming This. Are You?",
+      "body": "Your FDI competitor got provincial incentives you didn't know about. Free GovFund scan shows what you're missing. 26+ schemes, 1 minute.",
+      "cta": "Start Free Scan",
+      "image_description": "Split screen: left side grey/empty, right side green/successful. \ud83c\uddfb\ud83c\uddf3 on right. Text: 'Don't Get Left Behind'. Strong contrast, emotional pull.",
+      "audience": {
+        "name": "Manufacturing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Textiles",
+          "Electronics",
+          "Food Processing",
+          "Furniture"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-vietnam-004",
+      "country": "vietnam",
+      "country_flag": "\ud83c\uddfb\ud83c\uddf3",
+      "angle": "social_proof",
+      "headline": "Hundreds of Vietnam Businesses Already Scanned",
+      "body": "Join them. 10 Vietnam government schemes active. GovFund's AI scans every government scheme. Free eligibility check.",
+      "cta": "Start Free Scan",
+      "image_description": "Grid of company logos or profile avatars (generic). Text: 'X,XXX businesses scanned'. \ud83c\uddfb\ud83c\uddf3. Trust-building design. Testimonial-style.",
+      "audience": {
+        "name": "Manufacturing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Textiles",
+          "Electronics",
+          "Food Processing",
+          "Furniture"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-vietnam-005",
+      "country": "vietnam",
+      "country_flag": "\ud83c\uddfb\ud83c\uddf3",
+      "angle": "urgency",
+      "headline": "Funding Windows Close. Don't Miss Out.",
+      "body": "Government funding for Vietnam businesses doesn't wait. Scan now, apply while funds are available.",
+      "cta": "Start Free Scan",
+      "image_description": "Calendar or countdown visual. Red accent for urgency. \ud83c\uddfb\ud83c\uddf3 subtle. Text: 'Applications Close Soon'. Clean, time-pressure design.",
+      "audience": {
+        "name": "Manufacturing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Textiles",
+          "Electronics",
+          "Food Processing",
+          "Furniture"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    }
+  ],
+  "social_posts": [
+    {
+      "id": "social-vietnam-001",
+      "country": "vietnam",
+      "country_flag": "\ud83c\uddfb\ud83c\uddf3",
+      "type": "educational",
+      "content": "Did you know? NATIF: up to \u20ab10B for technology innovation \u2014 domestic enterprises priority\n\nMost Vietnam business owners miss at least 60% of the government schemes they qualify for.\n\nI built a free tool that scans all 7 government agencies in Vietnam and tells you exactly what you can claim.\n\nTakes 60 seconds. No signup. No spam.\n\nLink in first comment \ud83d\udc47",
+      "hashtags": [
+        "#GovFund",
+        "#BusinessGrants",
+        "#SMEfunding",
+        "#GovernmentGrants",
+        "#Vietnam",
+        "#VietnamBusiness",
+        "#NATIF",
+        "#SMEDevelopmentFund"
+      ],
+      "platforms": [
+        "Facebook Group",
+        "LinkedIn"
+      ],
+      "language": "English",
+      "best_time": "Weekday 8-10 AM or 12-2 PM local time"
+    },
+    {
+      "id": "social-vietnam-002",
+      "country": "vietnam",
+      "country_flag": "\ud83c\uddfb\ud83c\uddf3",
+      "type": "case_study_style",
+      "content": "A Vietnam food manufacturer came to us last month. They had NO idea they qualified for 7 different government schemes.\n\nTotal eligible: VND1.2M+ in grants and tax incentives.\n\nAll found in 60 seconds with our free scan.\n\nDon't leave money on the table. Link below.",
+      "hashtags": [
+        "#GovFund",
+        "#BusinessGrants",
+        "#SMEfunding",
+        "#GovernmentGrants",
+        "#Vietnam",
+        "#VietnamBusiness",
+        "#NATIF",
+        "#SMEDevelopmentFund"
+      ],
+      "platforms": [
+        "Facebook Group",
+        "LinkedIn"
+      ],
+      "language": "English",
+      "best_time": "Weekday 8-10 AM or 12-2 PM local time"
+    },
+    {
+      "id": "social-vietnam-003",
+      "country": "vietnam",
+      "country_flag": "\ud83c\uddfb\ud83c\uddf3",
+      "type": "question_hook",
+      "content": "When was the last time you checked what government funding your Vietnam business qualifies for?\n\nIf the answer is 'never' or 'last year' \u2014 you're probably missing out.\n\nSchemes change. New ones launch. Old ones expire.\n\nFree scan takes 60 seconds. Updated daily.\n\nCheck now \ud83d\udc47",
+      "hashtags": [
+        "#GovFund",
+        "#BusinessGrants",
+        "#SMEfunding",
+        "#GovernmentGrants",
+        "#Vietnam",
+        "#VietnamBusiness",
+        "#NATIF",
+        "#SMEDevelopmentFund"
+      ],
+      "platforms": [
+        "Facebook Group",
+        "LinkedIn"
+      ],
+      "language": "English",
+      "best_time": "Weekday 8-10 AM or 12-2 PM local time"
+    }
+  ],
+  "landing_page_copy": {
+    "country": "vietnam",
+    "flag": "\ud83c\uddfb\ud83c\uddf3",
+    "hero_headline": "Government Funding for Your Vietnam Business \u2014 Found in 60 Seconds",
+    "hero_subheadline": "GovFund's AI scans all government schemes in Vietnam. Grants, loans, tax incentives, rebates, wage subsidies \u2014 all in one scan.",
+    "hero_cta": "Check My Eligibility \u2014 Free",
+    "pain_point_section": {
+      "headline": "Running a Business in Vietnam Is Expensive",
+      "points": [
+        "\ud83d\udcb8 Technology upgrading costs",
+        "\ud83d\udcb8 Export certification",
+        "\ud83d\udcb8 FDI vs domestic enterprise rules",
+        "\ud83d\udcb8 Working capital"
+      ]
+    },
+    "solution_section": {
+      "headline": "The Government Has Money for This. We Find It.",
+      "points": [
+        "\u2705 NATIF: up to \u20ab10B for technology innovation \u2014 domestic enterprises priority",
+        "\u2705 Provincial CIT as low as 10% for 15 years in high-tech zones",
+        "\u2705 SME Development Fund: loans up to \u20ab20B at preferential rates",
+        "\u2705 10 Vietnam government schemes active"
+      ]
+    },
+    "trust_section": {
+      "headline": "Why {profile['name']} Businesses Trust GovFund",
+      "points": [
+        "Covers all 7 government agencies",
+        "AI-powered matching \u2014 no human bias, no missed schemes",
+        "60-second scan, results instantly",
+        "Full application handling available"
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is GovFund a Vietnam government agency?",
+        "a": "No. GovFund is a private consultancy. We are NOT a government agency. We help businesses navigate government schemes."
+      },
+      {
+        "q": "Is the scan really free?",
+        "a": "Yes. The eligibility scan is free and takes 60 seconds. Full application support is available through our paid plans."
+      },
+      {
+        "q": "What if I'm not eligible for anything?",
+        "a": "The scan will tell you exactly that \u2014 no cost, no obligation. But most businesses qualify for at least 3-5 schemes they didn't know about."
+      }
+    ],
+    "generated_at": "2026-06-26T08:07:36.953757"
+  },
+  "outreach_script": "Hey everyone \ud83d\udc4b\n\nI built a free tool that scans all government funding schemes in Vietnam and tells you what your business qualifies for.\n\nNATIF: up to \u20ab10B for technology innovation \u2014 domestic enterprises priority\n\nIt covers grants, loans, tax incentives, rebates, wage subsidies \u2014 everything. Takes 60 seconds.\n\nI've been sharing it with Vietnam business owners and the average business qualifies for 8-12 schemes they didn't know existed.\n\nNo catch. No spam. Just a free scan.\n\nDrop a comment if you want the link or DM me directly.\n\n\ud83c\uddfb\ud83c\uddf3 \ud83c\uddfb\ud83c\uddf3"
+}

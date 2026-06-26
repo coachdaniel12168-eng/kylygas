@@ -1,0 +1,88 @@
+{
+  "id_grants": [
+    {
+      "id": "digital_msme",
+      "name": "Bantuan Digitalisasi UMKM",
+      "agency": "Kementerian Koperasi dan UKM",
+      "max_amount_idr": 50000000,
+      "description": "Digitalisation grant for micro and small enterprises — covers e-commerce onboarding, digital payments setup, social media marketing tools, and basic IT equipment.",
+      "eligible_sectors": ["all"],
+      "eligible_uses": ["digital_transformation", "ecommerce", "marketing", "software"],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.kemenkopukm.go.id",
+      "application_time": "4-8 weeks",
+      "funding_ratio": "Up to 100% matched, max Rp50,000,000"
+    },
+    {
+      "id": "export_umkm",
+      "name": "UMKM Export Development Grant",
+      "agency": "Ministry of Trade (Kemendag)",
+      "max_amount_idr": 150000000,
+      "description": "Supports Indonesian SMEs expanding to export markets — trade fair participation, export training, product certification, and international marketing.",
+      "eligible_sectors": ["all"],
+      "eligible_uses": ["export", "overseas_markets", "trade_shows", "marketing", "certification"],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.kemendag.go.id",
+      "application_time": "8-12 weeks",
+      "funding_ratio": "Up to 70% reimbursable, max Rp150,000,000"
+    },
+    {
+      "id": "link_match",
+      "name": "LINK & Match Industry Grant",
+      "agency": "Ministry of Industry (Kemenperin)",
+      "max_amount_idr": 500000000,
+      "description": "Supports SMEs partnering with large industries or research institutions for technology transfer, production upgrades, and industrial innovation projects.",
+      "eligible_sectors": ["manufacturing", "technology", "food"],
+      "eligible_uses": ["technology", "innovation", "manufacturing", "automation", "r&d"],
+      "min_employees": 5,
+      "min_years": 1,
+      "url": "https://www.kemenperin.go.id",
+      "application_time": "12-16 weeks",
+      "funding_ratio": "Up to 60% matching, max Rp500,000,000"
+    },
+    {
+      "id": "halal_id",
+      "name": "Halal Certification Grant (BPJPH)",
+      "agency": "Badan Penyelenggara Jaminan Produk Halal (BPJPH)",
+      "max_amount_idr": 25000000,
+      "description": "Subsidises Halal certification costs for food, beverage, and consumer goods SMEs. Covers application fees, lab testing, and certification audit expenses.",
+      "eligible_sectors": ["food", "manufacturing"],
+      "eligible_uses": ["certification", "export", "expansion"],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://bpjph.halal.go.id",
+      "application_time": "4-8 weeks",
+      "funding_ratio": "Up to 100% of certification costs covered"
+    },
+    {
+      "id": "bri_ultra",
+      "name": "BRI Ultra Mikro KUR Financing",
+      "agency": "Bank Rakyat Indonesia (BRI)",
+      "max_amount_idr": 50000000,
+      "description": "Government-subsidised micro loans for small enterprises — low interest rate (3-6%), minimal collateral, quick approval. For working capital, equipment, or expansion.",
+      "eligible_sectors": ["all"],
+      "eligible_uses": ["working_capital", "expansion", "equipment"],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.bri.co.id",
+      "application_time": "2-4 weeks",
+      "funding_ratio": "Subsidised loan at 3-6% p.a., up to Rp50,000,000"
+    },
+    {
+      "id": "pelatihan",
+      "name": "Kartu Prakerja — Training & Upskilling Grant",
+      "agency": "PMO Kartu Prakerja / Ministry of Manpower",
+      "max_amount_idr": 4200000,
+      "description": "Individual training voucher for employees and jobseekers. Covers online courses, certification, and provides post-training cash incentives.",
+      "eligible_sectors": ["all"],
+      "eligible_uses": ["training", "staff", "upskilling", "digital_skills"],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.prakerja.go.id",
+      "application_time": "Immediate — online registration",
+      "funding_ratio": "Free training + Rp600,000 cash incentive per person"
+    }
+  ]
+}

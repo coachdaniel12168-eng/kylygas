@@ -1,0 +1,122 @@
+{
+  "payments": [
+    {
+      "id": "61249a4b",
+      "amount_usd": 997.0,
+      "reinvest_usd": 199.4,
+      "client": "client@example.com",
+      "project": "GovFund",
+      "timestamp": "2026-06-26T08:07:42.077784",
+      "fb_daily_budget": 28.49,
+      "campaign_days": 7
+    }
+  ],
+  "funded_ads": [
+    {
+      "campaign_id": "ateam-camp-61249a4b",
+      "name": "ATEAM Self-Marketing \u2014 Funded by GovFund Payment",
+      "objective": "CONVERSIONS",
+      "daily_budget": 28.49,
+      "duration_days": 7,
+      "total_budget": 199.4,
+      "audience": {
+        "countries": [
+          "Singapore",
+          "Hong Kong",
+          "Australia",
+          "Malaysia"
+        ],
+        "age": "25-55",
+        "interests": [
+          "Artificial intelligence",
+          "Business automation",
+          "SaaS",
+          "Startup",
+          "Digital transformation",
+          "No-code development"
+        ],
+        "job_titles": [
+          "Founder",
+          "CEO",
+          "Business Owner",
+          "Director",
+          "CTO"
+        ],
+        "languages": [
+          "English"
+        ]
+      },
+      "image_ads": [
+        {
+          "id": "ateam-img-61249a4b-1",
+          "angle": "cost_savings",
+          "headline": "$30,000/Month Team. Replaced by AI. $0/Month.",
+          "body": "Grant writer: replaced. Marketing manager: replaced. Ads specialist: replaced. CRM manager: replaced. Hermes does it all. See what AI can replace in your business.",
+          "cta": "Replace Your Team With AI",
+          "image_prompt": "Split comparison: Left side shows 5 human employee photos with salary figures ($5K-$8K each, total $30K). Right side shows one sleek AI interface with '$0/month' displayed. Clean, minimal, high-contrast design. Dark background. Green accent for the AI side.",
+          "budget": "US$28.49/day",
+          "payment_funded_by": "61249a4b"
+        },
+        {
+          "id": "ateam-img-61249a4b-2",
+          "angle": "social_proof",
+          "headline": "GovFund Was Built by AI. 7 Countries. 120+ Grant Schemes. Zero Human Staff.",
+          "body": "Hermes Agent built an entire government funding consultancy. From scratch. It finds grants, writes applications, runs marketing, manages CRM. What could it build for you?",
+          "cta": "Try Hermes Agent",
+          "image_prompt": "World map with 7 country flags highlighted (SG, HK, AU, MY, PH, VN, TH). Connected by glowing lines to a central AI core. Subtle grant data visualizations. Clean infographic style. Text: '7 Countries. 1 AI.'",
+          "budget": "US$28.49/day",
+          "payment_funded_by": "61249a4b"
+        },
+        {
+          "id": "ateam-img-61249a4b-3",
+          "angle": "ai_replaces_team",
+          "headline": "This AI Team Costs Less Than One Intern",
+          "body": "9 autonomous AI agents. Grant writing. Marketing. Ads. CRM. All running 24/7. Hermes orchestrates everything. What team do you need?",
+          "cta": "Try Hermes Agent",
+          "image_prompt": "Futuristic dark command center dashboard with 9 agent avatars displayed on screens. Each avatar labeled: Marketing, Ads, CRM, Grants, Research, Content, Security, Backup, Strategy. Central 'HERMES' orchestrator node. Clean dark UI. Professional cyberpunk aesthetic. Text overlay: '9 Agents. $0 Salary. 24/7.'",
+          "budget": "US$28.49/day",
+          "payment_funded_by": "61249a4b"
+        }
+      ],
+      "video_ad": {
+        "title": "The 7-Country AI",
+        "duration_sec": 15,
+        "scenes": [
+          {
+            "time": "0-3s",
+            "visual": "World map. 7 countries pulse green: SG, HK, AU, MY, PH, VN, TH.",
+            "audio": "Quick beat. 'Seven countries.'"
+          },
+          {
+            "time": "3-7s",
+            "visual": "Zoom into each country. Grant amounts appear: S$1M, HK$7M, A$150K, RM1M, \u20b15M, \u20ab10B, \u0e3f",
+            "audio": "'120+ government schemes. One AI finds them all.'"
+          },
+          {
+            "time": "7-10s",
+            "visual": "All country data flows into a central AI core. GovFund logo appears.",
+            "audio": "'GovFund. Built by Hermes. Running 24/7.'"
+          },
+          {
+            "time": "10-15s",
+            "visual": "CTA: 'Your AI can do this too. scalesmes.com'",
+            "audio": "'What's your AI going to build?'"
+          }
+        ],
+        "targeting": "International business owners, exporters, multi-country operators, 30-60"
+      },
+      "schedule": {
+        "start": "2026-06-26T08:07:42.077806",
+        "end": "2026-07-03T08:07:42.077806"
+      },
+      "funded_by": {
+        "payment_id": "61249a4b",
+        "amount": 997.0,
+        "reinvest_pct": 20.0,
+        "client": "client@example.com",
+        "project": "GovFund"
+      },
+      "posting_instructions": "## How to Post These ATEAM Ads to Facebook\n\n**Campaign Budget:** US$28.49/day for 7 days\n**Total Spend:** US$199.4\n\n### Step 1: Create Campaign in Facebook Ads Manager\n- Go to https://business.facebook.com/adsmanager\n- Click '+ Create' \u2192 Choose 'Conversions' objective\n- Set daily budget: US$28.49\n- Campaign name: 'ATEAM Self-Marketing \u2014 [Date]'\n\n### Step 2: Set Audience\n- Location: Singapore, Hong Kong, Australia, Malaysia\n- Age: 25-55\n- Interests: Artificial intelligence, Business automation, SaaS, Startup, Digital transformation, No-code development\n- Job titles: Founder, CEO, Business Owner, Director, CTO\n- Languages: English\n\n### Step 3: Upload Creatives\n\n**Image Ad 1: $30,000/Month Team. Replaced by AI. $0/Month.**\n- Headline: $30,000/Month Team. Replaced by AI. $0/Month.\n- Primary text: Grant writer: replaced. Marketing manager: replaced. Ads specialist: replaced. CRM manager: replaced. Hermes does it all. See what AI can replace in your business.\n- CTA button: Replace Your Team With AI\n- Image brief: Split comparison: Left side shows 5 human employee photos with salary figures ($5K-$8K each, total $30K). Right side shows one sleek AI interface with...\n\n**Image Ad 2: GovFund Was Built by AI. 7 Countries. 120+ Grant Schemes. Zero Human Staff.**\n- Headline: GovFund Was Built by AI. 7 Countries. 120+ Grant Schemes. Zero Human Staff.\n- Primary text: Hermes Agent built an entire government funding consultancy. From scratch. It finds grants, writes applications, runs marketing, manages CRM. What could it build for you?\n- CTA button: Try Hermes Agent\n- Image brief: World map with 7 country flags highlighted (SG, HK, AU, MY, PH, VN, TH). Connected by glowing lines to a central AI core. Subtle grant data visualizat...\n\n**Image Ad 3: This AI Team Costs Less Than One Intern**\n- Headline: This AI Team Costs Less Than One Intern\n- Primary text: 9 autonomous AI agents. Grant writing. Marketing. Ads. CRM. All running 24/7. Hermes orchestrates everything. What team do you need?\n- CTA button: Try Hermes Agent\n- Image brief: Futuristic dark command center dashboard with 9 agent avatars displayed on screens. Each avatar labeled: Marketing, Ads, CRM, Grants, Research, Conten...\n\n**Video Ad: The 7-Country AI**\n- Duration: 15s\n- Use the video script to produce or generate the video\n\n### Step 4: Set Landing Page\n- URL: https://scalesmes.com (or current ATEAM landing page)\n\n### Step 5: Publish & Monitor\n- Check after 24 hours for CTR > 1%\n- Kill ads with CTR < 0.5% after 48 hours\n- Scale winners by 20% every 3 days"
+    }
+  ]
+}

@@ -1,0 +1,406 @@
+{
+  "hk_grants": [
+    {
+      "id": "tvp",
+      "name": "Technology Voucher Programme (TVP)",
+      "agency": "Innovation and Technology Commission",
+      "max_amount_hkd": 600000,
+      "description": "Subsidises SMEs to use technology to improve productivity and upgrade business processes.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "technology",
+        "software",
+        "it_systems",
+        "digital_transformation",
+        "online_systems",
+        "automation"
+      ],
+      "min_employees": 1,
+      "min_years": 0,
+      "url": "https://www.itf.gov.hk/en/funding-programmes/facilitating-technology/tvp/",
+      "application_time": "2-3 months",
+      "funding_ratio": "75% government, 25% company",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "bud",
+      "name": "BUD Fund (Branding, Upgrading, Domestic Sales)",
+      "agency": "Trade and Industry Department",
+      "max_amount_hkd": 7000000,
+      "description": "Helps HK enterprises develop brands, upgrade operations, and promote sales in mainland China and other economies.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "branding",
+        "expansion",
+        "overseas_markets",
+        "marketing",
+        "ecommerce",
+        "trade_shows",
+        "china_market"
+      ],
+      "min_employees": 0,
+      "min_years": 1,
+      "url": "https://www.bud.hkpc.org/",
+      "application_time": "3-6 months",
+      "funding_ratio": "50% government, 50% company (max HK$1M per project)",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "emf",
+      "name": "SME Export Marketing Fund (EMF)",
+      "agency": "Trade and Industry Department",
+      "max_amount_hkd": 1000000,
+      "description": "Subsidises SMEs in export promotion activities including trade exhibitions, online advertising, and trade publications.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "marketing",
+        "export",
+        "trade_shows",
+        "advertising",
+        "overseas_markets",
+        "digital_marketing"
+      ],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.smefund.tid.gov.hk/english/emf/emf_objective.html",
+      "application_time": "1-2 months",
+      "funding_ratio": "50% government, 50% company",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "ess",
+      "name": "Employment Support Scheme (ESS)",
+      "agency": "Labour Department",
+      "max_amount_hkd": 250000,
+      "description": "Wage subsidies for SMEs hiring and retaining employees, especially from disadvantaged groups.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "hiring",
+        "staff",
+        "wages",
+        "training",
+        "employment"
+      ],
+      "min_employees": 1,
+      "min_years": 0,
+      "url": "https://www.labour.gov.hk/",
+      "application_time": "1-2 months",
+      "funding_ratio": "Varies by scheme",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "rtp",
+      "name": "ReTAAS (Retraining & Training Allowance)",
+      "agency": "Employees Retraining Board",
+      "max_amount_hkd": 35000,
+      "description": "Training subsidies and allowances for SMEs to upskill employees in new technologies and processes.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "training",
+        "staff",
+        "upskilling",
+        "digital_skills"
+      ],
+      "min_employees": 1,
+      "min_years": 0,
+      "url": "https://www.erb.org/",
+      "application_time": "2-4 weeks",
+      "funding_ratio": "100% training cost covered",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "dedit",
+      "name": "Dedicated Fund on Branding, Upgrading, Domestic Sales (Mainland)",
+      "agency": "Trade and Industry Department",
+      "max_amount_hkd": 1000000,
+      "description": "Specifically for HK enterprises expanding into mainland China markets \u2014 branding, upgrading, and sales.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "china_market",
+        "branding",
+        "expansion",
+        "marketing",
+        "ecommerce",
+        "trade_shows"
+      ],
+      "min_employees": 0,
+      "min_years": 1,
+      "url": "https://www.bud.hkpc.org/",
+      "application_time": "3-6 months",
+      "funding_ratio": "50% government, 50% company",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "cstf",
+      "name": "Cyberport Creative Micro Fund (CCMF)",
+      "agency": "Cyberport",
+      "max_amount_hkd": 100000,
+      "description": "Seed funding for digital tech startups and SMEs developing innovative technology products or services.",
+      "eligible_sectors": [
+        "technology",
+        "digital",
+        "startup",
+        "innovation"
+      ],
+      "eligible_uses": [
+        "technology",
+        "product_development",
+        "prototyping",
+        "digital_transformation"
+      ],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.cyberport.hk/en/about-cyberport/entrepreneurship/cyberport-creative-micro-fund",
+      "application_time": "1-2 months",
+      "funding_ratio": "100% grant, no matching required",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "step",
+      "name": "SME Technology Support Programme",
+      "agency": "Hong Kong Productivity Council (HKPC)",
+      "max_amount_hkd": 500000,
+      "description": "Supports SMEs in adopting productivity-enhancing technologies across manufacturing, logistics, and services.",
+      "eligible_sectors": [
+        "manufacturing",
+        "logistics",
+        "services",
+        "retail",
+        "food"
+      ],
+      "eligible_uses": [
+        "technology",
+        "automation",
+        "productivity",
+        "hardware",
+        "manufacturing"
+      ],
+      "min_employees": 5,
+      "min_years": 1,
+      "url": "https://www.hkpc.org/",
+      "application_time": "2-4 months",
+      "funding_ratio": "50-75% government funded",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sfdf",
+      "name": "SME Financing Guarantee Scheme (SFGS)",
+      "agency": "HKMC Insurance Ltd",
+      "max_amount_hkd": 18000000,
+      "description": "Government-guaranteed loans for SMEs \u2014 90% guarantee for working capital, equipment, and business expansion.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "working_capital",
+        "expansion",
+        "equipment",
+        "cash_flow"
+      ],
+      "min_employees": 0,
+      "min_years": 1,
+      "url": "https://www.hkmc.com.hk/eng/our_business/sme_financing_guarantee_scheme.html",
+      "application_time": "1-3 months",
+      "funding_ratio": "90% government guaranteed loan",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "gba",
+      "name": "Greater Bay Area Youth Employment Scheme",
+      "agency": "Labour Department",
+      "max_amount_hkd": 12000,
+      "description": "Monthly salary subsidy for hiring university graduates and posting them to GBA cities.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "hiring",
+        "graduates",
+        "china_market",
+        "expansion",
+        "staff"
+      ],
+      "min_employees": 1,
+      "min_years": 0,
+      "url": "https://www.labour.gov.hk/",
+      "application_time": "1-2 months",
+      "funding_ratio": "HK$12,000/month per graduate for 18 months",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "rthk",
+      "name": "RTHK SME Digital Marketing Grant",
+      "agency": "RTHK / CreateHK",
+      "max_amount_hkd": 100000,
+      "description": "Grants for SMEs to produce digital content and run digital marketing campaigns on local media platforms.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "marketing",
+        "digital_marketing",
+        "advertising",
+        "content",
+        "social_media"
+      ],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.createhk.gov.hk/",
+      "application_time": "1-2 months",
+      "funding_ratio": "Varies by campaign",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "green",
+      "name": "Green Tech Fund",
+      "agency": "Environmental Protection Department",
+      "max_amount_hkd": 500000,
+      "description": "Subsidises SMEs adopting green technologies \u2014 energy efficiency, waste reduction, sustainable operations.",
+      "eligible_sectors": [
+        "manufacturing",
+        "construction",
+        "logistics",
+        "retail",
+        "food"
+      ],
+      "eligible_uses": [
+        "green_tech",
+        "energy",
+        "sustainability",
+        "waste_reduction",
+        "equipment"
+      ],
+      "min_employees": 1,
+      "min_years": 1,
+      "url": "https://www.gtf.gov.hk/",
+      "application_time": "3-6 months",
+      "funding_ratio": "Up to 70% government funded",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "export_marketing",
+      "name": "Export Marketing and Trade Promotion Grant",
+      "agency": "Hong Kong Trade Development Council (HKTDC)",
+      "max_amount_hkd": 500000,
+      "description": "Funding for SMEs to participate in HKTDC trade fairs, business missions, and overseas exhibitions.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "export",
+        "trade_shows",
+        "marketing",
+        "overseas_markets",
+        "exhibitions"
+      ],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.hktdc.com/",
+      "application_time": "1-2 months",
+      "funding_ratio": "50% government subsidised",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "smart_production",
+      "name": "Smart Production Technology Grant",
+      "agency": "Innovation and Technology Commission",
+      "max_amount_hkd": 1500000,
+      "description": "Supports manufacturers adopting smart production lines, IoT sensors, and Industry 4.0 technologies.",
+      "eligible_sectors": [
+        "manufacturing",
+        "logistics"
+      ],
+      "eligible_uses": [
+        "technology",
+        "automation",
+        "manufacturing",
+        "iot",
+        "industry_4.0"
+      ],
+      "min_employees": 10,
+      "min_years": 2,
+      "url": "https://www.itf.gov.hk/",
+      "application_time": "3-6 months",
+      "funding_ratio": "50% matching",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sme_reach",
+      "name": "SME ReachOut Programme",
+      "agency": "Trade and Industry Department",
+      "max_amount_hkd": 150000,
+      "description": "One-on-one advisory and matching service connecting SMEs with suitable government funding schemes. Free consultation.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "consulting",
+        "advisory",
+        "funding_navigation"
+      ],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.smeoutreach.hk/",
+      "application_time": "Immediate \u2014 free advisory",
+      "funding_ratio": "100% free government service",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    }
+  ]
+}

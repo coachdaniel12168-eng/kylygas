@@ -1,0 +1,281 @@
+{
+  "applications": [
+    {
+      "id": "c3a721e4cb45",
+      "grant_id": "sg-edg",
+      "grant_name": "Enterprise Development Grant (EDG)",
+      "agency": "Enterprise Singapore",
+      "country": "singapore",
+      "client_email": "test@example.com",
+      "status": "preparing",
+      "completion_pct": 21,
+      "known_count": 6,
+      "missing_count": 23,
+      "created_at": 1782431780.6618645,
+      "updated_at": 1782431780.6618648,
+      "package": {
+        "grant_id": "sg-edg",
+        "grant_name": "Enterprise Development Grant (EDG)",
+        "agency": "Enterprise Singapore",
+        "country": "singapore",
+        "portal": {
+          "name": "Business Grants Portal (BGP)",
+          "url": "https://www.businessgrants.gov.sg",
+          "auth_required": true,
+          "auth_type": "CorpPass",
+          "form_type": "web_form",
+          "notes": "All ESG/EDB/STB grants go through BGP. Client needs CorpPass + SingPass."
+        },
+        "known_fields": {
+          "company_name": {
+            "value": "test@example.com",
+            "source": "Client profile: company_name",
+            "confidence": "high"
+          },
+          "director_email": {
+            "value": "test@example.com",
+            "source": "Client profile: email",
+            "confidence": "medium"
+          },
+          "grant_name": {
+            "value": "Enterprise Development Grant (EDG)",
+            "source": "Grant database",
+            "confidence": "high"
+          },
+          "grant_agency": {
+            "value": "Enterprise Singapore",
+            "source": "Grant database",
+            "confidence": "high"
+          },
+          "portal_name": {
+            "value": "Business Grants Portal (BGP)",
+            "source": "Government portal registry",
+            "confidence": "high"
+          },
+          "portal_auth": {
+            "value": "CorpPass",
+            "source": "Government portal registry",
+            "confidence": "high"
+          }
+        },
+        "missing_fields": [
+          {
+            "field": "industry_sector",
+            "label": "Industry / sector classification code",
+            "required": true,
+            "why": "Not provided in your GovFund scan",
+            "how_to_get": "Provide your industry / sector classification code"
+          },
+          {
+            "field": "employee_count",
+            "label": "Total number of employees",
+            "required": true,
+            "why": "Not provided in your GovFund scan",
+            "how_to_get": "Provide your total number of employees"
+          },
+          {
+            "field": "director_name",
+            "label": "Full name of director / authorised signatory",
+            "required": true,
+            "why": "Not provided in your GovFund scan",
+            "how_to_get": "Provide your full name of director / authorised signatory"
+          },
+          {
+            "field": "director_phone",
+            "label": "Director's contact number",
+            "required": true,
+            "why": "Not provided in your GovFund scan",
+            "how_to_get": "Provide your director's contact number"
+          },
+          {
+            "field": "local_shareholding_pct",
+            "label": "Percentage of local shareholding",
+            "required": true,
+            "why": "Not provided in your GovFund scan",
+            "how_to_get": "Provide your percentage of local shareholding"
+          },
+          {
+            "field": "annual_revenue",
+            "label": "Annual revenue (past FY)",
+            "required": true,
+            "why": "Not provided in your GovFund scan",
+            "how_to_get": "Provide your annual revenue (past fy)"
+          },
+          {
+            "field": "cpf_contributions",
+            "label": "Number of local employees with CPF",
+            "required": false,
+            "why": "Country-specific field for singapore",
+            "how_to_get": "Provide your number of local employees with cpf"
+          },
+          {
+            "field": "psg_solution",
+            "label": "Pre-approved PSG solution name (for PSG applications)",
+            "required": false,
+            "why": "Country-specific field for singapore",
+            "how_to_get": "Provide your pre-approved psg solution name (for psg applications)"
+          },
+          {
+            "field": "sme_status",
+            "label": "SME status (revenue \u2264S$100M or \u2264200 staff)",
+            "required": false,
+            "why": "Country-specific field for singapore",
+            "how_to_get": "Provide your sme status (revenue \u2264s$100m or \u2264200 staff)"
+          },
+          {
+            "field": "project_title",
+            "label": "Project Title",
+            "required": true,
+            "why": "Project-specific \u2014 must come from client",
+            "how_to_get": "What are you calling this project?"
+          },
+          {
+            "field": "project_description",
+            "label": "Project Description",
+            "required": true,
+            "why": "Project-specific \u2014 must come from client",
+            "how_to_get": "Describe what you plan to do (200-500 words)"
+          },
+          {
+            "field": "project_objectives",
+            "label": "Project Objectives",
+            "required": true,
+            "why": "Project-specific \u2014 must come from client",
+            "how_to_get": "What are the expected outcomes?"
+          },
+          {
+            "field": "project_start_date",
+            "label": "Project Start Date",
+            "required": true,
+            "why": "Project-specific \u2014 must come from client",
+            "how_to_get": "When do you plan to start?"
+          },
+          {
+            "field": "project_duration_months",
+            "label": "Project Duration",
+            "required": true,
+            "why": "Project-specific \u2014 must come from client",
+            "how_to_get": "How many months will the project take?"
+          },
+          {
+            "field": "total_project_cost",
+            "label": "Total Project Cost",
+            "required": true,
+            "why": "Project-specific \u2014 must come from client",
+            "how_to_get": "What is your total budget for this?"
+          },
+          {
+            "field": "funding_requested",
+            "label": "Funding Requested",
+            "required": true,
+            "why": "Project-specific \u2014 must come from client",
+            "how_to_get": "How much are you requesting? (Max: Up to 70% of qualifying costs. Typically S$30K\u2013S$1M per project.)"
+          },
+          {
+            "field": "cost_breakdown",
+            "label": "Cost Breakdown",
+            "required": true,
+            "why": "Project-specific \u2014 must come from client",
+            "how_to_get": "Break down costs: consultancy, equipment, software, manpower, etc."
+          },
+          {
+            "field": "doc_acra/bizfile_busines",
+            "label": "ACRA/BizFile business profile",
+            "required": true,
+            "why": "Standard supporting document",
+            "how_to_get": "Upload your ACRA/BizFile business profile"
+          },
+          {
+            "field": "doc_latest_financial_sta",
+            "label": "Latest financial statements",
+            "required": true,
+            "why": "Standard supporting document",
+            "how_to_get": "Upload your Latest financial statements"
+          },
+          {
+            "field": "doc_consultant_quotation",
+            "label": "Consultant quotation (3 quotes recommended)",
+            "required": true,
+            "why": "Standard supporting document",
+            "how_to_get": "Upload your Consultant quotation (3 quotes recommended)"
+          },
+          {
+            "field": "doc_director's_nric_(fro",
+            "label": "Director's NRIC (front and back)",
+            "required": true,
+            "why": "Standard supporting document",
+            "how_to_get": "Upload your Director's NRIC (front and back)"
+          },
+          {
+            "field": "doc_bank_statement_for_d",
+            "label": "Bank statement for disbursement",
+            "required": true,
+            "why": "Standard supporting document",
+            "how_to_get": "Upload your Bank statement for disbursement"
+          },
+          {
+            "field": "doc_cpf_contribution_sta",
+            "label": "CPF contribution statements",
+            "required": true,
+            "why": "Standard supporting document",
+            "how_to_get": "Upload your CPF contribution statements"
+          }
+        ],
+        "total_known": 6,
+        "total_missing": 23,
+        "completion_pct": 21,
+        "page_data": {
+          "url": "https://www.enterprisesg.gov.sg/financial-support/enterprise-development-grant",
+          "scraped": true,
+          "form_fields": [
+            "necessary information for your preferred mode of disbursement",
+            "project summary report and documentation of project deliverables under &ldquo",
+            "claim and record the claim number for future reference",
+            "necessary details on BGP when claims are being submitted",
+            "cost items documentation (e",
+            "to sign in to your Corppass account to transact on the BGP portal",
+            "your details via Business Grants Portal (BGP) claim form",
+            "your application on the Business Grants Portal (BGP) now",
+            "claims Log on to the Business Grants Portal (BGP) and select &ldquo",
+            "for schemes offered by EnterpriseSG"
+          ],
+          "required_docs": [
+            "ACRA",
+            "financial statements?",
+            "quotation",
+            "NRIC",
+            "bank statement",
+            "CPF",
+            "certificate"
+          ],
+          "portal_info": {
+            "name": "Business Grants Portal (BGP)",
+            "url": "https://www.businessgrants.gov.sg",
+            "auth_required": true,
+            "auth_type": "CorpPass",
+            "form_type": "web_form",
+            "notes": "All ESG/EDB/STB grants go through BGP. Client needs CorpPass + SingPass."
+          },
+          "raw_text": "Enterprise Development Grant (EDG) x Grow Your Business Boost Capabilities Overview Growth &amp; Transformation Productivity &amp; Digitalisation Talent Attraction &amp; Development Quality &amp; Standards Sustainability Innovate with Us Overview Innovation Capabilities Innovation Talent Market Access &amp; Networks Go Global Overview Market Guides Market Entry Support International Agreements Partner with Singapore Why Singapore Innovation &amp; Startups Trade Infrastructure Home Industries Financial Support Resources About Us Grow Your Business Boost Capabilities Overview Growth &amp; Transformation Productivity &amp; Digitalisation Talent Attraction &amp; Development Quality &amp; Standards Sustainability Innovate with Us Overview Innovation Capabilities Innovation Talent Market Access &amp; Networks Go Global Overview Market Guides Market Entry Support International Agreements Partner with Singapore Why Singapore Innovation &amp; Startups Trade Infrastructure Home Industries Financial Support Resources About Us Financial Support / Enterprise Development Grant (EDG) / Enterprise Development Grant For Singapore companies starting new projects to upgrade their business, explore new growth, or expand overseas Funds individual projects tailored to your business Visit the Business Grants Portal for application status. Successful applications are subject to grant conditions. Incomplete applications will be rejected and may be resubmitted with complete documents. EDGE launches in 2H2026. Existing grants (EDG, MRA, PSG) remain accessible until launch. More info here . Apply now About this programme The Enterprise Development Grant (EDG) supports projects that help you upgrade, innovate, grow and transform your business. Submit your individual project proposals with details on your business plans and project outcomes to take your business further. EDG funds qualifying project costs namely third-party consultancy fees, software and equipment, and internal manpower cost. Up to 50% of eligible costs for local SMEs From 1 April 2023, SMEs can receive up to 50% support for EDG (support period for sustainability-related projects has been extended, and will be supported at up to 70%). Please refer to the Enterprise Sustainability Programme page for more details. Note: The previously-enhanced grant support levels were extended for a time-limited period given the exceptional disruptions brought about by the COVID-19 pandemic, to encourage the transformation of the economy and to help businesses emerge stronger from the pandemic. Eligibility Business entity registered and operating in Singapore Company has at least 30% local equity held directly or indirectly by Singaporean(s) and/or Singapore PR(s), determined by the ultimate individual ownership Company is financially ready to start and complete the project. Commonly used financial indicators, such as the current ratio, will be used for assessment. Note: Applications will be assessed by EnterpriseSG based on project scope, project outcomes and competency of the service provider. Employers eligible for the SkillsFuture Enterprise Credit can qualify for additional subsidies under the scheme. Project categories Today and into the future, companies that thrive are the ones that have strong business foundations and strategies, adopt technology and innovative processes, and grow their overseas presence.&#160;&#160; EDG helps Singapore companies grow and transform. This grant supports projects that help you upgrade your business, innovate or venture overseas, under three categories: Core Capabilities Innovation &amp; Productivity&nbsp; Market Access Projects under Core Capabilities help you prepare for growth and transformation by strengthening your business foundations. These include business strategy, financial management, human capital development, service excellence, strategic brand and marketing development. Business Strategy Development Formulate growth strategies and processes to improve your business development, better manage your intellectual property assets, optimise R&amp;D operations, and implement sustainable practices. Projects accepted: Diagnosis and gap analysis in your company Assessment of internal and external factors, such as strengths and weaknesses, and competition Development of a strategic roadmap, business frameworks, policies or processes Recommendations and plans for implementation Sustainability strategy projects that include one or more of the following components: Assessment of sustainability risks and opportunities Strategy development Governance framework Setting metrics and targets What is not covered: Stand-alone IP registration costs Stand-alone reports/assurance Stand-alone set-up of sustainability unit and/or hiring of Chief Sustainability Officer/Sustainability Lead Resources: IP Business Guides IP Clinics (Business/Legal) IP Management Guide Intangibles Disclosure Framework Financial Management Optimise your company&rsquo;s financial perf"
+        }
+      },
+      "client_email_text": {
+        "subject": "[GovFund] Pre-filled Enterprise Development Grant (EDG) Application \u2014 23 items needed from you",
+        "body": "Hi test@example.com,\n\nWe've pre-filled your **Enterprise Development Grant (EDG)** application as much as possible.\nYour application is currently **21% complete**.\n\n**What we've filled from your scan:**\n\u2705 Official registered company name: test@example.com\n\u2705 Director's email address: test@example.com\n\u2705 grant_agency: Enterprise Singapore\n\u2705 grant_name: Enterprise Development Grant (EDG)\n\u2705 portal_auth: CorpPass\n\u2705 portal_name: Business Grants Portal (BGP)\n\n**What we need from you (20 required):**\n1. **Industry / sector classification code** \u2014 Provide your industry / sector classification code\n2. **Total number of employees** \u2014 Provide your total number of employees\n3. **Full name of director / authorised signatory** \u2014 Provide your full name of director / authorised signatory\n4. **Director's contact number** \u2014 Provide your director's contact number\n5. **Percentage of local shareholding** \u2014 Provide your percentage of local shareholding\n6. **Annual revenue (past FY)** \u2014 Provide your annual revenue (past fy)\n7. **Project Title** \u2014 What are you calling this project?\n8. **Project Description** \u2014 Describe what you plan to do (200-500 words)\n9. **Project Objectives** \u2014 What are the expected outcomes?\n10. **Project Start Date** \u2014 When do you plan to start?\n11. **Project Duration** \u2014 How many months will the project take?\n12. **Total Project Cost** \u2014 What is your total budget for this?\n13. **Funding Requested** \u2014 How much are you requesting? (Max: Up to 70% of qualifying costs. Typically S$30K\u2013S$1M per project.)\n14. **Cost Breakdown** \u2014 Break down costs: consultancy, equipment, software, manpower, etc.\n15. **ACRA/BizFile business profile** \u2014 Upload your ACRA/BizFile business profile\n16. **Latest financial statements** \u2014 Upload your Latest financial statements\n17. **Consultant quotation (3 quotes recommended)** \u2014 Upload your Consultant quotation (3 quotes recommended)\n18. **Director's NRIC (front and back)** \u2014 Upload your Director's NRIC (front and back)\n19. **Bank statement for disbursement** \u2014 Upload your Bank statement for disbursement\n20. **CPF contribution statements** \u2014 Upload your CPF contribution statements\n\n**Optional (but helpful):**\n1. Number of local employees with CPF \u2014 Provide your number of local employees with cpf\n2. Pre-approved PSG solution name (for PSG applications) \u2014 Provide your pre-approved psg solution name (for psg applications)\n3. SME status (revenue \u2264S$100M or \u2264200 staff) \u2014 Provide your sme status (revenue \u2264s$100m or \u2264200 staff)\n\n**How to submit:**\nYou'll need **CorpPass** to access **Business Grants Portal (BGP)**.\nPortal: https://www.businessgrants.gov.sg\n\nReply to this email with the missing information, or send your documents as attachments.\nWe'll compile everything and give you a submission-ready package.\n\n\u2014 GovFund Team",
+        "to": "test@example.com"
+      },
+      "timeline": [
+        {
+          "status": "preparing",
+          "at": 1782431780.6618648,
+          "note": "Application started for Enterprise Development Grant (EDG)"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "submitted": 0,
+    "approved": 0
+  }
+}

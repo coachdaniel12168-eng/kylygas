@@ -1,0 +1,18 @@
+{
+  "permanently_dead": {
+    "singapore": [
+      {"id": "sg-pic", "name": "Productivity and Innovation Credit (PIC)", "reason": "Expired YA 2018. Replaced by EIS."},
+      {"id": "sg-jgi", "name": "Jobs Growth Incentive (JGI)", "reason": "COVID-era scheme. Ended."},
+      {"id": "sg-wcs", "name": "Wage Credit Scheme (WCS)", "reason": "Ended. Replaced by Progressive Wage Credit Scheme."},
+      {"id": "sg-jss", "name": "Jobs Support Scheme (JSS)", "reason": "COVID-era. Ended."},
+      {"id": "sg-sec-2020", "name": "Senior Employment Credit (2020 version)", "reason": "Superseded by updated SEC."}
+    ],
+    "hong_kong": [],
+    "malaysia": [],
+    "thailand": [],
+    "vietnam": [],
+    "philippines": []
+  },
+  "suspected_dead": [],
+  "last_updated": "2026-06-26"
+}

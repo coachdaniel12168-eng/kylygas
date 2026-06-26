@@ -1,0 +1,82 @@
+{
+  "pages": [
+    {
+      "slug": "singapore-sme-grants",
+      "filename": "singapore-sme-grants.html",
+      "title": "Singapore Government Grants for SMEs \u2014 Complete 2026 Guide",
+      "seo_query": "Singapore government grants for SMEs",
+      "country": "Singapore",
+      "category": "overview",
+      "aeo_schema": true,
+      "geo_table": true,
+      "entity_block": true,
+      "word_count": 1100,
+      "gov_links": 10,
+      "internal_links": [
+        "/edg-application-guide",
+        "/psg-eligible-solutions",
+        "/singapore-fnb-grants"
+      ],
+      "data_points": 2,
+      "date_generated": "2026-06-26",
+      "last_verified": "2026-06-26"
+    },
+    {
+      "slug": "government-grants-singapore",
+      "filepath": "/home/amber/ateam-backend/../grantbot/pages/government-grants-singapore.html",
+      "type": "country",
+      "country": "singapore",
+      "generated_at": "2026-06-26T11:23:11.776846",
+      "phase": "blitz"
+    },
+    {
+      "slug": "government-grants-hong-kong",
+      "filepath": "/home/amber/ateam-backend/../grantbot/pages/government-grants-hong-kong.html",
+      "type": "country",
+      "country": "hong-kong",
+      "generated_at": "2026-06-26T11:23:11.776851",
+      "phase": "blitz"
+    },
+    {
+      "slug": "government-grants-australia",
+      "filepath": "/home/amber/ateam-backend/../grantbot/pages/government-grants-australia.html",
+      "type": "country",
+      "country": "australia",
+      "generated_at": "2026-06-26T11:23:11.776853",
+      "phase": "blitz"
+    },
+    {
+      "slug": "government-grants-malaysia",
+      "filepath": "/home/amber/ateam-backend/../grantbot/pages/government-grants-malaysia.html",
+      "type": "country",
+      "country": "malaysia",
+      "generated_at": "2026-06-26T11:23:11.776855",
+      "phase": "blitz"
+    },
+    {
+      "slug": "government-grants-philippines",
+      "filepath": "/home/amber/ateam-backend/../grantbot/pages/government-grants-philippines.html",
+      "type": "country",
+      "country": "philippines",
+      "generated_at": "2026-06-26T11:23:11.776856",
+      "phase": "blitz"
+    }
+  ],
+  "last_generated": "2026-06-26",
+  "total_pages": 1,
+  "countries_covered": [
+    "Singapore"
+  ],
+  "queries_covered": [
+    "Singapore government grants for SMEs"
+  ],
+  "remaining_priority_queries": [
+    "EDG grant application guide Singapore",
+    "PSG grant eligible solutions",
+    "Malaysia SME grant 2026",
+    "Philippines DOST SETUP application",
+    "Thailand BOI promotion benefits",
+    "Vietnam FDI tax incentives",
+    "Hong Kong BUD Fund guide"
+  ]
+}

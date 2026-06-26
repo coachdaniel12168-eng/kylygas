@@ -1,0 +1,882 @@
+{
+  "country": "Singapore",
+  "currency": "SGD",
+  "last_updated": "2026-06-26",
+  "total_grants": 34,
+  "grants": [
+    {
+      "id": "sg-edg",
+      "name": "Enterprise Development Grant (EDG)",
+      "agency": "Enterprise Singapore",
+      "category": "Capability Development",
+      "description": "Core grant for Singapore companies to upgrade, innovate, and internationalise. Supports projects in three pillars: Core Capabilities, Innovation & Productivity, and Market Access. Covers consultancy, training, certification, and equipment costs.",
+      "max_amount": 1000000,
+      "amount_note": "Up to 70% of qualifying costs. Typically S$30K–S$1M per project.",
+      "eligibility": [
+        "Registered in Singapore",
+        "At least 30% local shareholding",
+        "Financially viable"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "No minimum",
+      "url": "https://www.enterprisesg.gov.sg/financial-support/enterprise-development-grant",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-psg",
+      "name": "Productivity Solutions Grant (PSG)",
+      "agency": "Enterprise Singapore / IMDA",
+      "category": "Digital Transformation",
+      "description": "Adopt pre-approved IT solutions and equipment to improve productivity. Sector-specific solutions (retail, F&B, logistics, construction) and cross-sector solutions (CRM, ERP, HRMS, accounting, cybersecurity, data analytics).",
+      "max_amount": 30000,
+      "amount_note": "Up to 50% of qualifying costs (70% for advanced solutions like AI/robotics). Per solution per year.",
+      "eligibility": [
+        "Registered in Singapore",
+        "At least 30% local shareholding",
+        "SME (turnover ≤ S$100M or ≤ 200 employees)"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Max 200 employees",
+      "url": "https://www.gobusiness.gov.sg/productivity-solutions-grant/",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-mra",
+      "name": "Market Readiness Assistance (MRA)",
+      "agency": "Enterprise Singapore",
+      "category": "Internationalisation",
+      "description": "Help SMEs expand overseas through support for market setup, business matching, in-market promotion, and partner identification. Covers market assessment, legal/documentation, and market entry costs.",
+      "max_amount": 100000,
+      "amount_note": "Up to 70% of qualifying costs, capped at S$100K per company per new market. Max 2 applications per market.",
+      "eligibility": [
+        "Registered in Singapore",
+        "At least 30% local shareholding",
+        "SME",
+        "New overseas market entry"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "SME criteria",
+      "url": "https://www.enterprisesg.gov.sg/financial-support/market-readiness-assistance",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-efs",
+      "name": "Enterprise Financing Scheme (EFS)",
+      "agency": "Enterprise Singapore",
+      "category": "Financing / Loans",
+      "description": "Government-backed low-interest loans across 7 areas: Trade Loan, Working Capital Loan, Fixed Assets Loan, Project Loan, Venture Debt, M&A Loan, and Green Loan. Government shares 50–70% risk with banks. Working capital up to S$500K, trade up to S$10M, projects up to S$50M.",
+      "max_amount": 50000000,
+      "amount_note": "Working Capital: up to S$500K. Trade: S$10M. Project/M&A: up to S$50M. Government risk-share 50–70%.",
+      "eligibility": [
+        "Registered in Singapore",
+        "At least 30% local shareholding",
+        "Group revenue ≤ S$500M"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "No minimum",
+      "url": "https://www.enterprisesg.gov.sg/financial-support/enterprise-financing-scheme",
+      "currency": "SGD",
+      "funding_type": "loan",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-srg",
+      "name": "Sustainability Reporting Grant",
+      "agency": "Enterprise Singapore",
+      "category": "Sustainability",
+      "description": "Co-funds first sustainability report for SMEs. Covers consultancy for ESG disclosure aligned with international standards. Prepares businesses for regulatory and market ESG requirements.",
+      "max_amount": 35000,
+      "amount_note": "Up to 70% co-funding for first sustainability report, capped at S$35K.",
+      "eligibility": [
+        "Registered in Singapore",
+        "At least 30% local shareholding",
+        "SME",
+        "First sustainability report"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "SME criteria",
+      "url": "https://www.enterprisesg.gov.sg/financial-support/sustainability-reporting-grant",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-esp",
+      "name": "Enterprise Sustainability Programme (ESP)",
+      "agency": "Enterprise Singapore",
+      "category": "Sustainability",
+      "description": "Build sustainability capabilities and capture green economy opportunities. Covers sustainability workshops, playbooks, capability development, and project funding. Supports ESG reporting readiness and green transformation.",
+      "max_amount": 50000,
+      "amount_note": "Playbook/strategy: up to 70% co-funding. Project implementation via EDG sustainability track.",
+      "eligibility": [
+        "Registered in Singapore",
+        "At least 30% local shareholding",
+        "Committed to sustainability"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.enterprisesg.gov.sg/grow-your-business/enterprise-sustainability-programme",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-sec",
+      "name": "Senior Employment Credit (SEC)",
+      "agency": "MOM / CPF Board",
+      "category": "Hiring / Workforce",
+      "description": "Automatic wage offset for employers hiring Singaporean workers aged 55+ earning ≤ S$4,000/month. Offsets up to 8% of wages for workers aged 67+. Reduces employer CPF burden. No application needed — auto-disbursed.",
+      "max_amount": 0,
+      "amount_note": "Wage offset: age 55–59 (2%), 60–64 (3%), 65–66 (5%), 67+ (8%). Automatic — no application needed.",
+      "eligibility": [
+        "Employer of Singaporean workers aged 55+",
+        "Worker earns ≤ S$4,000/month"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.mom.gov.sg/employment-practices/senior-employment-credit",
+      "currency": "SGD",
+      "funding_type": "wage_subsidy",
+      "assist_tier": "diy",
+      "assist_label": "📋 DIY Guide",
+      "assist_price": "$497",
+      "assist_desc": "Step-by-step guide — you apply yourself"
+    },
+    {
+      "id": "sg-cpf-offset",
+      "name": "CPF Transition Offset",
+      "agency": "MOM / CPF Board",
+      "category": "Hiring / Workforce",
+      "description": "Government offset to help employers manage CPF rate increases for senior workers aged 55–70. Automatically covers 50% of the increase in employer CPF rates. Transitional through 2030.",
+      "max_amount": 0,
+      "amount_note": "Automatic offset: covers 50% of employer CPF rate increases for workers aged 55–70. Phased through 2030.",
+      "eligibility": [
+        "Employer of Singaporean/PR workers aged 55–70",
+        "Automatic"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.mom.gov.sg/employment-practices/cpf-contributions-for-older-workers",
+      "currency": "SGD",
+      "funding_type": "rebate",
+      "assist_tier": "diy",
+      "assist_label": "📋 DIY Guide",
+      "assist_price": "$497",
+      "assist_desc": "Step-by-step guide — you apply yourself"
+    },
+    {
+      "id": "sg-eec",
+      "name": "Enabling Employment Credit (EEC)",
+      "agency": "MOM / SG Enable",
+      "category": "Hiring / Workforce",
+      "description": "Wage offset for employers hiring Singaporean persons with disabilities earning ≤ S$4,000/month. Offsets up to 20% of wages. Encourages inclusive hiring. Automatic disbursement.",
+      "max_amount": 0,
+      "amount_note": "Up to 20% wage offset for hiring persons with disabilities. Automatic disbursement.",
+      "eligibility": [
+        "Employer of Singaporean persons with disabilities",
+        "Worker earns ≤ S$4,000/month"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.mom.gov.sg/employment-practices/enabling-employment-credit",
+      "currency": "SGD",
+      "funding_type": "wage_subsidy",
+      "assist_tier": "diy",
+      "assist_label": "📋 DIY Guide",
+      "assist_price": "$497",
+      "assist_desc": "Step-by-step guide — you apply yourself"
+    },
+    {
+      "id": "sg-ptrg",
+      "name": "Part-time Re-employment Grant",
+      "agency": "MOM / WSG",
+      "category": "Hiring / Workforce",
+      "description": "Grant for employers implementing part-time re-employment policies for senior workers transitioning to retirement. Covers restructuring, training, and policy implementation. Up to S$125K per company.",
+      "max_amount": 125000,
+      "amount_note": "Base S$25K + additional per senior worker on part-time. Max S$125K per company.",
+      "eligibility": [
+        "Registered in Singapore",
+        "Commitment to part-time re-employment",
+        "Senior workers aged 60+"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.mom.gov.sg/employment-practices/part-time-re-employment-grant",
+      "currency": "SGD",
+      "funding_type": "wage_subsidy",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-ccp",
+      "name": "Career Conversion Programme (CCP)",
+      "agency": "Workforce Singapore (WSG)",
+      "category": "Hiring / Workforce",
+      "description": "Salary support + training subsidy for reskilling mid-career workers (including PMETs, mature workers) for new job roles. Up to 90% salary support during training + course fee subsidies.",
+      "max_amount": 36000,
+      "amount_note": "Up to 90% salary support (capped S$6K/month × 6 months = S$36K). Course fees subsidised 70–90%.",
+      "eligibility": [
+        "Registered in Singapore",
+        "Hiring for new role with reskilling",
+        "Mid-career individual"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.wsg.gov.sg/career-conversion-programme",
+      "currency": "SGD",
+      "funding_type": "wage_subsidy",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-wlg",
+      "name": "Work-Life Grant",
+      "agency": "MOM / TAFEP",
+      "category": "Hiring / Workforce",
+      "description": "Supports implementation of Flexible Work Arrangements (FWAs) and enhanced leave schemes. Covers consultancy, infrastructure, and HR policy development.",
+      "max_amount": 105000,
+      "amount_note": "FWA Grant: S$70K + Enhanced Leave Grant: S$35K = max S$105K.",
+      "eligibility": [
+        "Registered in Singapore",
+        "Implementing FWAs",
+        "SMEs prioritised"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.tafep.sg/work-life-grant",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-sfec",
+      "name": "SkillsFuture Enterprise Credit (SFEC)",
+      "agency": "SkillsFuture Singapore (SSG)",
+      "category": "Training / Upskilling",
+      "description": "One-off S$10,000 credit for employers to offset 90% of out-of-pocket costs for enterprise and workforce transformation. Covers SkillsFuture courses, business transformation consultancy, job redesign.",
+      "max_amount": 10000,
+      "amount_note": "One-off S$10K credit. Covers 90% of qualifying costs. Valid for limited period.",
+      "eligibility": [
+        "Registered in Singapore",
+        "≥ 3 local employees with CPF",
+        "At least 30% local shareholding"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Min 3 local employees",
+      "url": "https://www.skillsfuture.gov.sg/sfec",
+      "currency": "SGD",
+      "funding_type": "credit",
+      "assist_tier": "diy",
+      "assist_label": "📋 DIY Guide",
+      "assist_price": "$497",
+      "assist_desc": "Step-by-step guide — you apply yourself"
+    },
+    {
+      "id": "sg-tgs",
+      "name": "Training Grant Scheme (TGS)",
+      "agency": "SkillsFuture Singapore (SSG)",
+      "category": "Training / Upskilling",
+      "description": "Course fee subsidies for employer-sponsored training. Covers all SSG-supported courses across industries. Base 50–70% for SMEs, enhanced up to 90% for SMEs and mature workers (40+). Absentee payroll support included.",
+      "max_amount": 0,
+      "amount_note": "SME course fee subsidy: 70% base, up to 90% enhanced. Absentee payroll support available.",
+      "eligibility": [
+        "Registered in Singapore",
+        "Employer-sponsored training",
+        "SSG-supported course"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.skillsfuture.gov.sg/employers",
+      "currency": "SGD",
+      "funding_type": "rebate",
+      "assist_tier": "diy",
+      "assist_label": "📋 DIY Guide",
+      "assist_price": "$497",
+      "assist_desc": "Step-by-step guide — you apply yourself"
+    },
+    {
+      "id": "sg-sctp",
+      "name": "SkillsFuture Career Transition Programme (SCTP)",
+      "agency": "SkillsFuture Singapore (SSG)",
+      "category": "Training / Upskilling",
+      "description": "Train-and-place programme for mid-career individuals transitioning to new sectors. Employers can tap trained talent or sponsor existing employees. Covers tech, healthcare, green economy, advanced manufacturing.",
+      "max_amount": 0,
+      "amount_note": "Trainee course fee subsidies 90–95%. Employers benefit from ready-trained talent pipeline.",
+      "eligibility": [
+        "Singaporean/PR trainees",
+        "Employers hiring from or sponsoring through programme"
+      ],
+      "industries": [
+        "Tech",
+        "Healthcare",
+        "Green Economy",
+        "Digital",
+        "Advanced Manufacturing"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.skillsfuture.gov.sg/sctp",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-ntuc-ctc",
+      "name": "NTUC Company Training Committee (CTC) Grant",
+      "agency": "NTUC / SNEF / WSG",
+      "category": "Training / Upskilling",
+      "description": "Grant for companies forming Company Training Committees to drive workforce transformation. Covers training, job redesign, and productivity improvements recommended by the CTC. Union-employer partnership.",
+      "max_amount": 350000,
+      "amount_note": "Up to 70% funding for transformation projects + absentee payroll support.",
+      "eligibility": [
+        "Registered in Singapore",
+        "Formed CTC",
+        "Unionised or willing to partner NTUC"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.ntuc.org.sg/ctc",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-smes-go-digital",
+      "name": "SMEs Go Digital Programme",
+      "agency": "IMDA",
+      "category": "Digital Transformation",
+      "description": "Flagship digitalisation programme. Pre-approved solutions with PSG support. Industry Digital Plans for 20+ sectors. Go Digital Advisor for personalised recs. Covers cybersecurity, data analytics, e-commerce, CRM, ERP, HR, accounting.",
+      "max_amount": 30000,
+      "amount_note": "Up to 50% PSG support. Per pre-approved solution per year.",
+      "eligibility": [
+        "Registered in Singapore",
+        "SME",
+        "Must use pre-approved solution"
+      ],
+      "industries": [
+        "All",
+        "20+ sector-specific IDPs"
+      ],
+      "employee_requirement": "SME criteria",
+      "url": "https://www.imda.gov.sg/how-we-can-help/smes-go-digital",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-dlp",
+      "name": "Digital Leaders Programme",
+      "agency": "IMDA",
+      "category": "Digital Transformation",
+      "description": "For SMEs ready for advanced digitalisation. Supports integrated solutions across multiple business functions. Deeper funding beyond standard PSG for multi-function digital transformation.",
+      "max_amount": 100000,
+      "amount_note": "Higher co-funding tier for advanced digital transformation. Tailored support beyond PSG.",
+      "eligibility": [
+        "Registered in Singapore",
+        "SME ready for advanced digitalisation",
+        "Multi-function integration"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "SME criteria",
+      "url": "https://www.imda.gov.sg/how-we-can-help/digital-leaders-programme",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-genai-navigator",
+      "name": "GenAI Navigator",
+      "agency": "IMDA / Enterprise Singapore",
+      "category": "AI / Tech",
+      "description": "NEW (2026): Helps SMEs adopt Generative AI. Provides AI readiness assessment, curated GenAI solution recommendations, implementation support, and PSG co-funding. Assessment and advisory free.",
+      "max_amount": 30000,
+      "amount_note": "PSG co-funding up to 50% for qualifying GenAI solutions. Assessment free.",
+      "eligibility": [
+        "Registered in Singapore",
+        "SME",
+        "New to GenAI adoption"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "SME criteria",
+      "url": "https://www.imda.gov.sg/how-we-can-help/smes-go-digital/genai-navigator",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-oip",
+      "name": "Open Innovation Platform (OIP)",
+      "agency": "IMDA",
+      "category": "AI / Tech",
+      "description": "Crowd-sourcing platform matching business challenges with tech solvers. Post problems; solvers propose. IMDA co-funds prototype development. Covers AI, IoT, blockchain, data analytics.",
+      "max_amount": 200000,
+      "amount_note": "Up to 70% co-funding for prototype development. Challenge-based.",
+      "eligibility": [
+        "Registered in Singapore",
+        "Clear business challenge",
+        "Willing to collaborate with solvers"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.openinnovation.sg",
+      "currency": "SGD",
+      "funding_type": "co_investment",
+      "assist_tier": "complex",
+      "assist_label": "🤝 Complex Application",
+      "assist_price": "$3,987",
+      "assist_desc": "Multi-stage, equity, long-running"
+    },
+    {
+      "id": "sg-ai-singapore",
+      "name": "AI Singapore Grants (100E Programme)",
+      "agency": "AI Singapore (AISG) / NRF",
+      "category": "AI / Tech",
+      "description": "National AI programme: 100 Experiments (100E). Companies propose AI use cases; AISG provides engineering talent + co-funding for POC development. NLP, computer vision, predictive analytics, recommendation systems.",
+      "max_amount": 250000,
+      "amount_note": "AISG provides AI engineers + co-funding up to S$250K per 6–12 month project.",
+      "eligibility": [
+        "Registered in Singapore",
+        "AI use case with business impact",
+        "Willing to co-invest"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://aisingapore.org/innovation/100-experiments/",
+      "currency": "SGD",
+      "funding_type": "co_investment",
+      "assist_tier": "complex",
+      "assist_label": "🤝 Complex Application",
+      "assist_price": "$3,987",
+      "assist_desc": "Multi-stage, equity, long-running"
+    },
+    {
+      "id": "sg-accreditation-imda",
+      "name": "Accreditation@SGTech",
+      "agency": "IMDA",
+      "category": "AI / Tech",
+      "description": "Accreditation for high-growth Singapore tech product companies. Opens government procurement and enterprise contract doors. Credibility badge for expansion.",
+      "max_amount": 0,
+      "amount_note": "Non-monetary: government procurement facilitation, enterprise credibility, growth support access.",
+      "eligibility": [
+        "Singapore-based tech product company",
+        "Product-market fit",
+        "Revenue traction"
+      ],
+      "industries": [
+        "Tech / Software"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.imda.gov.sg/how-we-can-help/accreditation",
+      "currency": "SGD",
+      "funding_type": "other",
+      "assist_tier": "diy",
+      "assist_label": "📋 DIY Guide",
+      "assist_price": "$497",
+      "assist_desc": "Step-by-step guide — you apply yourself"
+    },
+    {
+      "id": "sg-startup-founder",
+      "name": "Startup SG Founder",
+      "agency": "Enterprise Singapore",
+      "category": "Startup / Innovation",
+      "description": "First-time entrepreneur grant: S$50K (S$20K upfront + S$30K on milestones) + 12-month mentorship with Accredited Mentor Partners. Must co-match S$10K.",
+      "max_amount": 50000,
+      "amount_note": "S$50K grant: S$20K initial + S$30K milestones. Co-match S$10K required.",
+      "eligibility": [
+        "Singaporean/PR first-time entrepreneur",
+        "≥ 30% local shareholding",
+        "Innovative concept",
+        "< 6 months old"
+      ],
+      "industries": [
+        "Tech",
+        "Innovation-driven"
+      ],
+      "employee_requirement": "N/A (startup)",
+      "url": "https://www.startupsg.gov.sg/programmes/4894/startup-sg-founder",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-startup-tech",
+      "name": "Startup SG Tech",
+      "agency": "Enterprise Singapore",
+      "category": "Startup / Innovation",
+      "description": "Fast-track grant for deep-tech startups commercialising proprietary tech. POC: up to S$250K. POV: up to S$500K. Covers development, testing, commercialisation.",
+      "max_amount": 500000,
+      "amount_note": "POC up to S$250K. POV up to S$500K. Co-funding basis.",
+      "eligibility": [
+        "Registered < 5 years",
+        "≥ 30% local shareholding",
+        "Proprietary tech/IP",
+        "Deep-tech"
+      ],
+      "industries": [
+        "Deep Tech",
+        "MedTech",
+        "AI",
+        "Advanced Manufacturing",
+        "Biotech",
+        "AgriTech"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.startupsg.gov.sg/programmes/4896/startup-sg-tech",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "complex",
+      "assist_label": "🤝 Complex Application",
+      "assist_price": "$3,987",
+      "assist_desc": "Multi-stage, equity, long-running"
+    },
+    {
+      "id": "sg-startup-equity",
+      "name": "Startup SG Equity",
+      "agency": "Enterprise Singapore / EDBI",
+      "category": "Startup / Innovation",
+      "description": "Government co-investment matching private investment in startups. General tech: up to S$4M total. Deep tech: up to S$8M. Government matches 70% for general tech.",
+      "max_amount": 8000000,
+      "amount_note": "General tech: up to S$4M. Deep tech: up to S$8M. Government matches private investment.",
+      "eligibility": [
+        "Singapore-based startup",
+        "Institutional investor",
+        "Scalable",
+        "Deep-tech preferred"
+      ],
+      "industries": [
+        "Tech",
+        "Deep Tech",
+        "All innovation-driven"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.startupsg.gov.sg/programmes/4895/startup-sg-equity",
+      "currency": "SGD",
+      "funding_type": "co_investment",
+      "assist_tier": "complex",
+      "assist_label": "🤝 Complex Application",
+      "assist_price": "$3,987",
+      "assist_desc": "Multi-stage, equity, long-running"
+    },
+    {
+      "id": "sg-startup-accelerator",
+      "name": "Startup SG Accelerator",
+      "agency": "Enterprise Singapore",
+      "category": "Startup / Innovation",
+      "description": "Funding for incubators/accelerators nurturing high-growth Singapore startups. Supports programme operations, mentorship, and startup grants.",
+      "max_amount": 0,
+      "amount_note": "Amount varies by programme scope and duration.",
+      "eligibility": [
+        "Singapore-based accelerator",
+        "Track record",
+        "Structured programme"
+      ],
+      "industries": [
+        "Tech",
+        "Innovation-driven"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.startupsg.gov.sg/programmes/4897/startup-sg-accelerator",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-eis",
+      "name": "Enterprise Innovation Scheme (EIS)",
+      "agency": "IRAS / Enterprise Singapore",
+      "category": "Tax Incentive / Innovation",
+      "description": "400% tax deduction on qualifying innovation expenditure: R&D in Singapore, IP registration, IP acquisition/licensing, SSG-aligned training (up to S$400K per activity/YA). Innovation projects with polytechnics/ITE: 400% on up to S$50K/YA. NEW (Budget 2026): 400% on qualifying AI expenditure up to S$50K/YA (no cash payout for AI). Option to convert up to S$100K of total qualifying expenditure to cash at 20% conversion rate. Active YA 2024-2028.",
+      "max_amount": 100000,
+      "amount_note": "400% deduction on first S$400K per activity/YA. Cash conversion: up to S$100K/YA at 20% rate (increased from S$20K). AI: 400% on S$50K/YA (no cash option). Active YA 2024-2028.",
+      "eligibility": [
+        "Registered in Singapore",
+        "Qualifying innovation/R&D/IP/AI expenditure"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.iras.gov.sg/schemes/disbursement-schemes/enterprise-innovation-scheme-(eis)",
+      "currency": "SGD",
+      "funding_type": "tax_incentive",
+      "assist_tier": "diy",
+      "assist_label": "📋 DIY Guide",
+      "assist_price": "$497",
+      "assist_desc": "Step-by-step guide — you apply yourself"
+    },
+    {
+      "id": "sg-dtdi",
+      "name": "Double Tax Deduction for Internationalisation (DTDi)",
+      "agency": "IRAS / Enterprise Singapore",
+      "category": "Tax Incentive / Internationalisation",
+      "description": "200% tax deduction on overseas market expansion expenses. Covers overseas trips, trade fairs, marketing collateral, business development. Auto-approved up to S$150K/YA.",
+      "max_amount": 150000,
+      "amount_note": "200% deduction on first S$150K/YA (auto-approved). Above requires ESG approval.",
+      "eligibility": [
+        "Registered in Singapore",
+        "Qualifying overseas business development expenses"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.enterprisesg.gov.sg/financial-support/double-tax-deduction-for-internationalisation",
+      "currency": "SGD",
+      "funding_type": "tax_incentive",
+      "assist_tier": "diy",
+      "assist_label": "📋 DIY Guide",
+      "assist_price": "$497",
+      "assist_desc": "Step-by-step guide — you apply yourself"
+    },
+    {
+      "id": "sg-eeg",
+      "name": "Energy Efficiency Grant (EEG)",
+      "agency": "NEA / Enterprise Singapore",
+      "category": "Sustainability / Industry-Specific",
+      "description": "Supports F&B, retail, and manufacturing businesses to adopt energy-efficient equipment: air-con, refrigeration, cooking equipment, LED, industrial motors/compressors. Reduces energy costs while greening operations.",
+      "max_amount": 30000,
+      "amount_note": "Up to 70% of qualifying costs. Cap varies by sector.",
+      "eligibility": [
+        "Registered in Singapore",
+        "F&B / Retail / Manufacturing",
+        "Energy-efficient equipment"
+      ],
+      "industries": [
+        "F&B",
+        "Retail",
+        "Manufacturing"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.nea.gov.sg/energy-efficiency-grant",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-act-fund",
+      "name": "Agri-Food Cluster Transformation (ACT) Fund",
+      "agency": "Singapore Food Agency (SFA)",
+      "category": "Industry-Specific / F&B",
+      "description": "Supports local farms and food businesses for productive, climate-resilient, resource-efficient capabilities. Technology adoption, innovation, R&D. Supports Singapore's 30-by-30 food security goal.",
+      "max_amount": 2000000,
+      "amount_note": "Up to 70% co-funding. Multi-million tier for large-scale transformation.",
+      "eligibility": [
+        "Singapore farm/food business",
+        "Contributes to local food production"
+      ],
+      "industries": [
+        "Agriculture",
+        "Food Manufacturing",
+        "Aquaculture"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.sfa.gov.sg/food-farming/agri-food-cluster-transformation-fund",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-tdf",
+      "name": "Tourism Development Fund (TDF)",
+      "agency": "Singapore Tourism Board (STB)",
+      "category": "Industry-Specific / Tourism",
+      "description": "Supports tourism businesses to innovate, create new products, improve productivity. Covers tourism product development, events, digital transformation, sustainability, workforce upskilling.",
+      "max_amount": 1000000,
+      "amount_note": "Up to 70% co-funding. Larger grants for high-impact tourism products.",
+      "eligibility": [
+        "Registered in Singapore",
+        "Tourism-related business"
+      ],
+      "industries": [
+        "Tourism",
+        "Hospitality",
+        "Attractions",
+        "Events",
+        "Travel"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.stb.gov.sg/content/stb/en/assistance-and-licensing/grants-overview.html",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-mcf",
+      "name": "Maritime Cluster Fund (MCF)",
+      "agency": "Maritime and Port Authority (MPA)",
+      "category": "Industry-Specific / Maritime",
+      "description": "Supports maritime companies: business development, productivity, manpower, innovation. Covers training, internships, tech adoption, internationalisation, sustainability.",
+      "max_amount": 500000,
+      "amount_note": "Co-funding 50–70% depending on track.",
+      "eligibility": [
+        "Singapore maritime company",
+        "Maritime-related activities"
+      ],
+      "industries": [
+        "Maritime",
+        "Shipping",
+        "Port Services",
+        "Offshore",
+        "Marine Engineering"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.mpa.gov.sg/maritime-singapore/developing-manpower/maritime-cluster-fund",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-sg-eco-fund",
+      "name": "SG Eco Fund",
+      "agency": "MSE",
+      "category": "Sustainability / Industry-Specific",
+      "description": "Projects advancing environmental sustainability: waste reduction, resource efficiency, environmental outreach, circular economy, green community initiatives.",
+      "max_amount": 1000000,
+      "amount_note": "Up to 80% co-funding for qualifying sustainability projects.",
+      "eligibility": [
+        "Registered in Singapore",
+        "Sustainability project",
+        "Measurable impact"
+      ],
+      "industries": [
+        "All — environmental focus"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.mse.gov.sg/sgecofund",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sg-mice",
+      "name": "MICE Sustainability Grant",
+      "agency": "Singapore Tourism Board (STB)",
+      "category": "Industry-Specific / Events",
+      "description": "MICE businesses adopting sustainable practices: sustainability consultancy, certification, green venue upgrades, waste reduction tech for events.",
+      "max_amount": 30000,
+      "amount_note": "Up to 70% co-funding. Capped per project.",
+      "eligibility": [
+        "MICE sector business",
+        "Registered in Singapore"
+      ],
+      "industries": [
+        "Events",
+        "Conferences",
+        "Exhibitions",
+        "Hospitality"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.stb.gov.sg/content/stb/en/assistance-and-licensing/grants-overview.html",
+      "currency": "SGD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    }
+  ]
+}

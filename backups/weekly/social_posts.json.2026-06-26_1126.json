@@ -1,0 +1,35 @@
+{
+  "posts": [
+    {
+      "id": "sp-001",
+      "platform": "Facebook Group",
+      "group_context": "Singapore SME / F&B Business Owners",
+      "format": "Question answer — 'what grants available for F&B in Singapore?'",
+      "content": "Hey, for F&B businesses in Singapore there are actually a couple of solid government schemes that cover exactly what most café and restaurant owners need:\n\n1. 𝗣𝗿𝗼𝗱𝘂𝗰𝘁𝗶𝘃𝗶𝘁𝘆 𝗦𝗼𝗹𝘂𝘁𝗶𝗼𝗻𝘀 𝗚𝗿𝗮𝗻𝘁 (𝗣𝗦𝗚) — up to 50% funding (jumps to 70% for advanced solutions like AI/robotics) for pre-approved IT and equipment. POS systems, digital ordering, kitchen automation — all covered. Up to S$30K per solution, per year. Run by Enterprise Singapore/IMDA.\n\n2. 𝗘𝗻𝘁𝗲𝗿𝗽𝗿𝗶𝘀𝗲 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗺𝗲𝗻𝘁 𝗚𝗿𝗮𝗻𝘁 (𝗘𝗗𝗚) — bigger scope. Up to 70% of costs covered, typically S$30K to S$1M per project. Consultancy, training, equipment, even market expansion. Same agency: Enterprise Singapore.\n\nHeads up: both require your company to be Singapore-registered with at least 30% local shareholding.\n\nI run a free scan that checks your business against 100+ active government funding schemes across 7 countries. Takes about a minute — you just pick your country, industry, and what you need funding for: https://scalesmes.com\n\n(Full disclosure: we're a private consultancy, not a government agency. If your scan shows matches and you want help applying, that's what we do. But the scan itself is genuinely free with no obligation.)",
+      "grants_referenced": ["sg-psg", "sg-edg"],
+      "scan_link": "https://scalesmes.com",
+      "posted_at": "2026-06-26T09:00:00+08:00",
+      "engagement": null,
+      "qc_passed": true
+    },
+    {
+      "id": "sp-002",
+      "platform": "LinkedIn",
+      "format": "Professional post — Australian export & R&D grants",
+      "content": "Australian manufacturers and agritech businesses — are you claiming the R&D Tax Incentive?\n\nThe 𝗥&𝗗 𝗧𝗮𝘅 𝗜𝗻𝗰𝗲𝗻𝘁𝗶𝘃𝗲 (R&DTI) is one of Australia's most generous innovation programs: a 𝟰𝟯.𝟱% 𝗿𝗲𝗳𝘂𝗻𝗱𝗮𝗯𝗹𝗲 𝘁𝗮𝘅 𝗼𝗳𝗳𝘀𝗲𝘁 for companies with under $20M turnover. If you're developing new processes, testing formulations, or building prototypes, those costs are eligible — and there's no cap on qualifying expenditure. Run jointly by AusIndustry and the ATO.\n\nAnd if you're exporting (or want to start), the 𝗘𝘅𝗽𝗼𝗿𝘁 𝗠𝗮𝗿𝗸𝗲𝘁 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗺𝗲𝗻𝘁 𝗚𝗿𝗮𝗻𝘁 (EMDG) from Austrade reimburses up to A$80K per round for export promotion — tradeshows, marketing, market research, even training. Three tiers depending on where you are in your export journey. Turnover cap: under $20M.\n\nThese aren't niche programs. They're flagship federal schemes. But the paperwork deters a lot of business owners.\n\nWe built a free scan that checks your business against 100+ active schemes across 7 countries (Singapore, Hong Kong, Australia, Malaysia, Philippines, Vietnam, Thailand). No signup wall, no obligation — takes about a minute: https://scalesmes.com\n\n(We're a private consultancy — not affiliated with any government agency. If your scan comes back with matches, we can help with the application. If not, at least you know exactly where you stand.)",
+      "grants_referenced": ["au-rdti", "au-emdg"],
+      "scan_link": "https://scalesmes.com",
+      "posted_at": "2026-06-26T09:00:00+08:00",
+      "engagement": null,
+      "qc_passed": true
+    }
+  ],
+  "last_posted": "2026-06-26T09:00:00+08:00",
+  "crm_snapshot": {
+    "total_scans": 0,
+    "total_bought": 0,
+    "top_countries": "N/A — no scans yet",
+    "top_industries": "N/A — no scans yet",
+    "note": "CRM is empty. Posts selected based on grant database richness: SG has 34 schemes, AU has 19 schemes."
+  }
+}

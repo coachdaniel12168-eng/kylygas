@@ -1,0 +1,238 @@
+{
+  "country": "philippines",
+  "flag": "\ud83c\uddf5\ud83c\udded",
+  "generated_at": "2026-06-26T08:07:36.953626",
+  "fb_ads": [
+    {
+      "id": "fb-ad-philippines-001",
+      "country": "philippines",
+      "country_flag": "\ud83c\uddf5\ud83c\udded",
+      "angle": "free_money",
+      "headline": "Government Pays Up to 70% of Your Business Costs",
+      "body": "DOST SETUP: up to \u20b15M for equipment \u2014 no payback required. Free 60-second scan shows everything you qualify for. No obligation.",
+      "cta": "See What You Qualify For",
+      "image_description": "Clean dark card with big green number showing funding amount in PHP. \ud83c\uddf5\ud83c\udded flag subtle in corner. Minimal design, premium feel. Text: 'Up to [AMOUNT]' in bold white.",
+      "audience": {
+        "name": "Manufacturing/Processing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Food Processing",
+          "Manufacturing",
+          "Furniture",
+          "Handicrafts"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-philippines-002",
+      "country": "philippines",
+      "country_flag": "\ud83c\uddf5\ud83c\udded",
+      "angle": "pain_point",
+      "headline": "Struggling with Working capital access?",
+      "body": "Government schemes cover this. BMBE registration = income tax exemption. Free. Takes days.. Free eligibility check \u2014 takes 60 seconds.",
+      "cta": "Start Free Scan",
+      "image_description": "Professional office/workspace photo in Philippines. Warm lighting. Overlay semi-transparent dark card with green text: '[SOLUTION]'. Human element, relatable setting.",
+      "audience": {
+        "name": "Manufacturing/Processing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Food Processing",
+          "Manufacturing",
+          "Furniture",
+          "Handicrafts"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-philippines-003",
+      "country": "philippines",
+      "country_flag": "\ud83c\uddf5\ud83c\udded",
+      "angle": "fear",
+      "headline": "Your Competitors Are Claiming This. Are You?",
+      "body": "\u20b15M in DOST SETUP equipment funding \u2014 claimed by your competitor last month. Free GovFund scan shows what you're missing. 26+ schemes, 1 minute.",
+      "cta": "Scan Now",
+      "image_description": "Split screen: left side grey/empty, right side green/successful. \ud83c\uddf5\ud83c\udded on right. Text: 'Don't Get Left Behind'. Strong contrast, emotional pull.",
+      "audience": {
+        "name": "Manufacturing/Processing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Food Processing",
+          "Manufacturing",
+          "Furniture",
+          "Handicrafts"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-philippines-004",
+      "country": "philippines",
+      "country_flag": "\ud83c\uddf5\ud83c\udded",
+      "angle": "social_proof",
+      "headline": "Hundreds of Philippines Businesses Already Scanned",
+      "body": "Join them. 10 Philippine government schemes active. GovFund's AI scans every government scheme. Free eligibility check.",
+      "cta": "Scan Now",
+      "image_description": "Grid of company logos or profile avatars (generic). Text: 'X,XXX businesses scanned'. \ud83c\uddf5\ud83c\udded. Trust-building design. Testimonial-style.",
+      "audience": {
+        "name": "Manufacturing/Processing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Food Processing",
+          "Manufacturing",
+          "Furniture",
+          "Handicrafts"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-philippines-005",
+      "country": "philippines",
+      "country_flag": "\ud83c\uddf5\ud83c\udded",
+      "angle": "urgency",
+      "headline": "Funding Windows Close. Don't Miss Out.",
+      "body": "Government funding for Philippines businesses doesn't wait. Scan now, apply while funds are available.",
+      "cta": "Check Eligibility",
+      "image_description": "Calendar or countdown visual. Red accent for urgency. \ud83c\uddf5\ud83c\udded subtle. Text: 'Applications Close Soon'. Clean, time-pressure design.",
+      "audience": {
+        "name": "Manufacturing/Processing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Food Processing",
+          "Manufacturing",
+          "Furniture",
+          "Handicrafts"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    }
+  ],
+  "social_posts": [
+    {
+      "id": "social-philippines-001",
+      "country": "philippines",
+      "country_flag": "\ud83c\uddf5\ud83c\udded",
+      "type": "educational",
+      "content": "Did you know? DOST SETUP: up to \u20b15M for equipment \u2014 no payback required\n\nMost Philippines business owners miss at least 60% of the government schemes they qualify for.\n\nI built a free tool that scans all 9 government agencies in Philippines and tells you exactly what you can claim.\n\nTakes 60 seconds. No signup. No spam.\n\nLink in first comment \ud83d\udc47",
+      "hashtags": [
+        "#GovFund",
+        "#BusinessGrants",
+        "#SMEfunding",
+        "#GovernmentGrants",
+        "#Philippines",
+        "#PhilippinesBusiness",
+        "#DOST",
+        "#SETUP"
+      ],
+      "platforms": [
+        "Facebook Group",
+        "LinkedIn"
+      ],
+      "language": "English",
+      "best_time": "Weekday 8-10 AM or 12-2 PM local time"
+    },
+    {
+      "id": "social-philippines-002",
+      "country": "philippines",
+      "country_flag": "\ud83c\uddf5\ud83c\udded",
+      "type": "case_study_style",
+      "content": "A Philippines food manufacturer came to us last month. They had NO idea they qualified for 9 different government schemes.\n\nTotal eligible: PHP1.2M+ in grants and tax incentives.\n\nAll found in 60 seconds with our free scan.\n\nDon't leave money on the table. Link below.",
+      "hashtags": [
+        "#GovFund",
+        "#BusinessGrants",
+        "#SMEfunding",
+        "#GovernmentGrants",
+        "#Philippines",
+        "#PhilippinesBusiness",
+        "#DOST",
+        "#SETUP"
+      ],
+      "platforms": [
+        "Facebook Group",
+        "LinkedIn"
+      ],
+      "language": "English",
+      "best_time": "Weekday 8-10 AM or 12-2 PM local time"
+    },
+    {
+      "id": "social-philippines-003",
+      "country": "philippines",
+      "country_flag": "\ud83c\uddf5\ud83c\udded",
+      "type": "question_hook",
+      "content": "When was the last time you checked what government funding your Philippines business qualifies for?\n\nIf the answer is 'never' or 'last year' \u2014 you're probably missing out.\n\nSchemes change. New ones launch. Old ones expire.\n\nFree scan takes 60 seconds. Updated daily.\n\nCheck now \ud83d\udc47",
+      "hashtags": [
+        "#GovFund",
+        "#BusinessGrants",
+        "#SMEfunding",
+        "#GovernmentGrants",
+        "#Philippines",
+        "#PhilippinesBusiness",
+        "#DOST",
+        "#SETUP"
+      ],
+      "platforms": [
+        "Facebook Group",
+        "LinkedIn"
+      ],
+      "language": "English",
+      "best_time": "Weekday 8-10 AM or 12-2 PM local time"
+    }
+  ],
+  "landing_page_copy": {
+    "country": "philippines",
+    "flag": "\ud83c\uddf5\ud83c\udded",
+    "hero_headline": "Government Funding for Your Philippines Business \u2014 Found in 60 Seconds",
+    "hero_subheadline": "GovFund's AI scans all government schemes in Philippines. Grants, loans, tax incentives, rebates, wage subsidies \u2014 all in one scan.",
+    "hero_cta": "Check My Eligibility \u2014 Free",
+    "pain_point_section": {
+      "headline": "Running a Business in Philippines Is Expensive",
+      "points": [
+        "\ud83d\udcb8 Equipment upgrade costs",
+        "\ud83d\udcb8 Working capital access",
+        "\ud83d\udcb8 BMBE registration confusion",
+        "\ud83d\udcb8 Export certification costs"
+      ]
+    },
+    "solution_section": {
+      "headline": "The Government Has Money for This. We Find It.",
+      "points": [
+        "\u2705 DOST SETUP: up to \u20b15M for equipment \u2014 no payback required",
+        "\u2705 BMBE registration = income tax exemption. Free. Takes days.",
+        "\u2705 SB Corp RISE UP: working capital loans for micro enterprises",
+        "\u2705 10 Philippine government schemes active"
+      ]
+    },
+    "trust_section": {
+      "headline": "Why {profile['name']} Businesses Trust GovFund",
+      "points": [
+        "Covers all 9 government agencies",
+        "AI-powered matching \u2014 no human bias, no missed schemes",
+        "60-second scan, results instantly",
+        "Full application handling available"
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is GovFund a Philippines government agency?",
+        "a": "No. GovFund is a private consultancy. We are NOT a government agency. We help businesses navigate government schemes."
+      },
+      {
+        "q": "Is the scan really free?",
+        "a": "Yes. The eligibility scan is free and takes 60 seconds. Full application support is available through our paid plans."
+      },
+      {
+        "q": "What if I'm not eligible for anything?",
+        "a": "The scan will tell you exactly that \u2014 no cost, no obligation. But most businesses qualify for at least 3-5 schemes they didn't know about."
+      }
+    ],
+    "generated_at": "2026-06-26T08:07:36.953623"
+  },
+  "outreach_script": "Hey everyone \ud83d\udc4b\n\nI built a free tool that scans all government funding schemes in Philippines and tells you what your business qualifies for.\n\nDOST SETUP: up to \u20b15M for equipment \u2014 no payback required\n\nIt covers grants, loans, tax incentives, rebates, wage subsidies \u2014 everything. Takes 60 seconds.\n\nI've been sharing it with Philippines business owners and the average business qualifies for 8-12 schemes they didn't know existed.\n\nNo catch. No spam. Just a free scan.\n\nDrop a comment if you want the link or DM me directly.\n\n\ud83c\uddf5\ud83c\udded \ud83c\uddf5\ud83c\udded"
+}

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GovFund — Free Government Funding Scan | ScaleSMEs</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0e17;color:#e4e8f1;line-height:1.6}
+.container{max-width:900px;margin:0 auto;padding:20px}
+.hero{text-align:center;padding:60px 20px 40px;background:linear-gradient(135deg,#0f1729,#1a2744)}
+.hero .badge{display:inline-block;background:#22c55e20;color:#22c55e;border:1px solid #22c55e40;padding:6px 16px;border-radius:20px;font-size:14px;margin-bottom:20px}
+.hero h1{font-size:clamp(28px,5vw,48px);font-weight:800;margin-bottom:12px;line-height:1.2}
+.hero h1 span{color:#22c55e}
+.hero p{font-size:18px;color:#94a3b8;max-width:600px;margin:0 auto 12px}
+.hero .proof{font-size:13px;color:#64748b;margin-bottom:20px}
+.country-pills,.tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0}
+.tab{padding:8px 16px;border-radius:10px;border:1px solid #1e293b;background:transparent;color:#94a3b8;cursor:pointer;font-size:14px;transition:all .2s}
+.tab:hover,.tab.active{background:#22c55e15;border-color:#22c55e;color:#fff}
+.scan-form{background:#111827;border:1px solid #1e293b;border-radius:16px;padding:30px;margin:20px 0}
+.scan-form label{display:block;font-size:14px;color:#94a3b8;margin-bottom:6px;font-weight:600}
+.scan-form label span{color:#22c55e;font-size:12px;margin-left:6px;font-style:italic}
+.scan-form select,.scan-form input[type=text]{width:100%;padding:12px;background:#0f1729;border:1px solid #1e293b;border-radius:10px;color:#fff;font-size:15px;margin-bottom:16px;appearance:auto}
+.scan-form select:focus,.scan-form input:focus{outline:none;border-color:#22c55e}
+.checkbox-group{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.checkbox-group label{padding:8px 14px;border-radius:8px;border:1px solid #1e293b;cursor:pointer;font-size:13px;font-weight:400;color:#94a3b8;transition:all .2s;user-select:none}
+.checkbox-group label.checked{background:#22c55e10;border-color:#22c55e;color:#fff}
+.btn-primary{width:100%;padding:16px;background:#22c55e;color:#000;border:none;border-radius:12px;font-size:17px;font-weight:700;cursor:pointer;transition:all .2s}
+.btn-primary:hover{background:#16a34a;transform:translateY(-1px)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed}
+.results{display:none;background:#111827;border:1px solid #1e293b;border-radius:16px;padding:30px;margin:20px 0}
+.results.visible{display:block}
+.big-number{font-size:48px;font-weight:900;color:#22c55e;text-align:center;margin:10px 0}
+.big-number small{font-size:16px;color:#94a3b8;display:block}
+.summary-box{background:#0f1729;border-radius:12px;padding:20px;margin:20px 0;white-space:pre-wrap;font-size:14px;line-height:1.7}
+.match-card{background:#0f1729;border:1px solid #1e293b;border-radius:12px;padding:16px;margin-bottom:10px}
+.match-card .top{display:flex;justify-content:space-between;align-items:start;margin-bottom:4px}
+.match-card .name{font-weight:700;font-size:15px}
+.match-card .agency{color:#64748b;font-size:12px}
+.match-card .pct{background:#22c55e20;color:#22c55e;padding:4px 10px;border-radius:8px;font-weight:700;font-size:13px;white-space:nowrap}
+.match-card .desc{font-size:13px;color:#94a3b8;margin-top:4px}
+.match-card .reasons{margin-top:6px;display:flex;flex-wrap:wrap;gap:4px}
+.match-card .tag{background:#1e293b;padding:3px 10px;border-radius:6px;font-size:11px;color:#64748b}
+.pricing{text-align:center;margin-top:30px;padding-top:20px;border-top:1px solid #1e293b}
+.pricing h3{font-size:22px;margin-bottom:8px}
+.tiers{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+.tier{flex:1;min-width:200px;background:#0f1729;border:1px solid #1e293b;border-radius:14px;padding:20px;text-align:center}
+.tier.popular{border-color:#22c55e;position:relative}
+.tier.popular::before{content:'MOST POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#22c55e;color:#000;padding:3px 14px;border-radius:8px;font-size:11px;font-weight:700}
+.tier .price{font-size:32px;font-weight:900;margin:8px 0}
+.tier .price small{font-size:14px;color:#94a3b8}
+.tier .feat{font-size:13px;color:#94a3b8;margin:3px 0}
+.tier button{width:100%;margin-top:12px;padding:12px;border-radius:10px;border:none;font-weight:700;cursor:pointer;font-size:14px}
+.tier button.green{background:#22c55e;color:#000}
+.tier button.ghost{background:transparent;border:1px solid #1e293b;color:#fff}
+.flag-large{font-size:48px;text-align:center;margin-bottom:10px}
+.loading{text-align:center;padding:40px;display:none}
+.spinner{border:3px solid #1e293b;border-top:3px solid #22c55e;border-radius:50%;width:40px;height:40px;animation:spin .8s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error-box{background:#ef444420;border:1px solid #ef4444;border-radius:12px;padding:16px;margin:12px 0;color:#ef4444;font-size:14px;display:none}
+footer{text-align:center;padding:40px 20px;color:#475569;font-size:13px}
+footer a{color:#64748b}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">🏛️ Government Grants • Loans • Tax Incentives • Rebates • Wage Subsidies</div>
+  <h1>There's <span>Free Money</span> For Your Business.<br>We Get It For You.</h1>
+  <p>8 countries. Every form of government funding — grants, loans, tax offsets, credits, rebates. 60-second scan. No obligation.</p>
+  <p class="proof">✅ 100+ funding schemes tracked across 8 countries • Updated daily</p>
+</div>
+
+<div class="container">
+  <div class="tabs" id="tabBar"></div>
+
+  <div id="scanForm" class="scan-form">
+    <div class="flag-large" id="flagDisplay">🇸🇬</div>
+    <div style="background:#f59e0b10;border:1px solid #f59e0b30;border-radius:10px;padding:12px 16px;margin-bottom:20px;font-size:12px;color:#f59e0b;text-align:center">
+      ⚠️ <strong>GovFund is a private consultancy — NOT a government agency.</strong> We help you apply for government funding. We do not guarantee approval. <a href="anti-scam.html" style="color:#f59e0b">Learn how to spot scams →</a>
+    </div>
+    <div id="formFields"></div>
+    <button class="btn-primary" id="scanBtn" onclick="runScan()">🔍 Show Me What I Qualify For — Free</button>
+  </div>
+
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <p>Scanning government databases...</p>
+  </div>
+  <div class="error-box" id="errorBox"></div>
+
+  <div class="results" id="results">
+    <div id="resultsContent"></div>
+  </div>
+</div>
+
+<footer>
+  GovFund by <a href="https://scalesmes.com">ScaleSMEs</a> • No government affiliation • We simplify applications — you get the funding
+</footer>
+
+<script>
+var INTAKE = {
+  singapore: {
+    name:"Singapore",flag:"🇸🇬",currency:"S$",
+    fields:[
+      {id:"company_name",label:"Company Name",type:"text",required:true,note:"Official ACRA-registered name"},
+      {id:"industry",label:"Industry / Sector",type:"select",required:true,options:["Food Manufacturing","Food Services (F&B)","Retail","Wholesale Trade","Logistics & Transport","Construction & Built Environment","Maritime & Offshore","Precision Engineering","Electronics","Healthcare & Biomedical","Infocomm & Media (Tech)","Financial Services","Professional Services","Education","Tourism & Hospitality","Environmental Services","Energy & Clean Tech","Aerospace","Agriculture & Aquaculture","Manufacturing (General)","Other"]},
+      {id:"local_shareholding",label:"Local Shareholding",type:"select",required:true,options:["100% Singaporean/PR","51-99%","30-50%","Below 30%","Foreign-owned"],note:"Critical — most ESG grants require ≥30%"},
+      {id:"employees_sg",label:"Employees (Singapore)",type:"select",required:true,options:["1-10","11-50","51-100","101-200","201-500","500+"]},
+      {id:"years_in_business",label:"Years in Business",type:"select",required:true,options:["Less than 1 year","1-3 years","3-5 years","5-10 years","10+ years"]},
+      {id:"challenges",label:"What do you need? (Check all that apply)",type:"multiselect",required:true,options:["Hiring & retaining staff","Training & upskilling","Digital transformation","AI / automation","Expanding overseas","Innovation & R&D","Energy efficiency & sustainability","Financing / loans","Productivity improvement","Startup / new business","ESG / sustainability reporting","Older worker employment & CPF costs"]},
+      {id:"urgent_needs",label:"Anything specific you're looking for?",type:"text",required:false,note:"Free text — grant names, pain points, timelines"}
+    ]
+  },
+  hong_kong:{
+    name:"Hong Kong",flag:"🇭🇰",currency:"HK$",
+    fields:[
+      {id:"company_name",label:"Company Name",type:"text",required:true},
+      {id:"industry",label:"Industry",type:"select",required:true,options:["Trading & Import/Export","Manufacturing","Food & Beverage","Retail","Logistics & Supply Chain","IT","Financial Services","Professional Services","Construction","Creative Industries","Healthcare","Education","Tourism & Hospitality","Environmental Services","Other"]},
+      {id:"hk_registered",label:"Business Registration",type:"select",required:true,options:["Registered in HK with BR","Registered overseas with HK branch","Not yet registered"]},
+      {id:"employees_hk",label:"Employees (HK)",type:"select",required:true,options:["1-10","11-50","51-100","101-500","500+"]},
+      {id:"years_in_business",label:"Years in Business",type:"select",required:true,options:["Less than 1 year","1-3 years","3-5 years","5-10 years","10+ years"]},
+      {id:"challenges",label:"What do you need?",type:"multiselect",required:true,options:["Expanding to Mainland China / GBA","Expanding to ASEAN / overseas","Digital transformation","Technology upgrading","R&D and innovation","Branding and marketing","Working capital / trade financing","SME loan guarantees","Sustainability / ESG","Hiring and training"]},
+      {id:"urgent_needs",label:"Anything specific?",type:"text",required:false}
+    ]
+  },
+  australia:{
+    name:"Australia",flag:"🇦🇺",currency:"A$",
+    fields:[
+      {id:"company_name",label:"Company Name",type:"text",required:true},
+      {id:"industry",label:"Industry",type:"select",required:true,options:["Mining & Resources","Agriculture & Agritech","Food & Beverage Manufacturing","Technology & Software","Fintech & Financial Services","Clean Energy & Renewables","Healthcare & Medtech","Defence & Space","Advanced Manufacturing","Construction & Infrastructure","Education & Edtech","Tourism & Hospitality","Retail & E-commerce","Cybersecurity","Creative Industries","Professional Services","Logistics & Transport","Biotechnology","Other"]},
+      {id:"state",label:"State / Territory",type:"select",required:true,options:["New South Wales (NSW)","Victoria (VIC)","Queensland (QLD)","Western Australia (WA)","South Australia (SA)","Tasmania (TAS)","Northern Territory (NT)","Australian Capital Territory (ACT)"],note:"State grants are separate from federal — your state IS your moat"},
+      {id:"annual_turnover_aud",label:"Annual Turnover (A$)",type:"select",required:true,options:["Under A$2M","A$2M - A$10M","A$10M - A$20M","A$20M - A$50M","A$50M - A$250M","Above A$250M"],note:"Under A$20M = 43.5% refundable R&D offset"},
+      {id:"employees_au",label:"Employees (Australia)",type:"select",required:true,options:["1-5","6-20","21-50","51-200","200+"]},
+      {id:"years_in_business",label:"Years in Business",type:"select",required:true,options:["Less than 1 year","1-3 years","3-5 years","5-10 years","10+ years"]},
+      {id:"challenges",label:"What do you need?",type:"multiselect",required:true,options:["R&D and innovation (tax offset or grant)","Export / international expansion","Commercialising research / new product","Clean energy / sustainability","Digital transformation / cybersecurity","Hiring and workforce development","Manufacturing / industry growth","Defence / space industry","Indigenous business support","Startup / early-stage funding","Working capital / business loans"]},
+      {id:"urgent_needs",label:"Anything specific?",type:"text",required:false}
+    ]
+  },
+  indonesia:{
+    name:"Indonesia",flag:"🇮🇩",currency:"Rp",
+    fields:[
+      {id:"company_name",label:"Company Name",type:"text",required:true},
+      {id:"industry",label:"Industry",type:"select",required:true,options:["Manufacturing","Agriculture & Food Processing","Technology & Digital","Retail & Wholesale","Logistics & Transport","Tourism & Hospitality","Creative Economy","Fisheries & Marine","Construction","Other"]},
+      {id:"enterprise_type",label:"Enterprise Type",type:"select",required:true,options:["100% Indonesian-owned (UMKM)","Foreign-owned (PMA)","Joint Venture","Cooperative"],note:"UMKM vs PMA — different rulebooks"},
+      {id:"employees_id",label:"Employees",type:"select",required:true,options:["1-4 (micro)","5-19 (small)","20-99 (medium)","100+"]},
+      {id:"years_in_business",label:"Years in Business",type:"select",required:true,options:["Less than 1 year","1-3 years","3-5 years","5-10 years","10+ years"]},
+      {id:"challenges",label:"What do you need?",type:"multiselect",required:true,options:["Digital transformation / e-commerce","Export development","Technology upgrading / automation","Halal certification","Business financing / KUR loans","Innovation & R&D","Workforce training (Kartu Prakerja)","SME capacity building","Link & Match industry partnerships"]},
+      {id:"urgent_needs",label:"Anything specific?",type:"text",required:false}
+    ]
+  },
+  malaysia:{
+    name:"Malaysia",flag:"🇲🇾",currency:"RM",
+    fields:[
+      {id:"company_name",label:"Company Name",type:"text",required:true},
+      {id:"industry",label:"Industry",type:"select",required:true,options:["Manufacturing","Agriculture & Plantation","Food Processing","Technology & Digital","Halal Products & Services","Construction","Retail & Wholesale","Logistics & Transport","Tourism","Oil & Gas","Healthcare","Professional Services","Creative & Media","Education","Other"]},
+      {id:"bumiputera",label:"Bumiputera Status",type:"select",required:true,options:["100% Bumiputera-owned","51%+ Bumiputera-owned","Non-Bumiputera (Malaysian-owned)","Foreign-owned"],note:"Critical — TERAJU, MARA, PUNB access"},
+      {id:"sme_status",label:"SME Classification",type:"select",required:true,options:["Micro (revenue <RM300K or <5 staff)","Small (RM300K-RM15M or 5-75 staff)","Medium (RM15M-RM50M or 75-200 staff)","Large","Not sure — help me check"]},
+      {id:"years_in_business",label:"Years in Business",type:"select",required:true,options:["Less than 1 year","1-3 years","3-5 years","5-10 years","10+ years"]},
+      {id:"challenges",label:"What do you need?",type:"multiselect",required:true,options:["Automation / Industry 4.0","Digital transformation","Export / internationalisation","Halal certification","R&D and innovation","Working capital / financing","Branding and packaging","Workforce training","MSC status / tech acceleration","Sustainability / green technology"]},
+      {id:"urgent_needs",label:"Anything specific?",type:"text",required:false}
+    ]
+  },
+  philippines:{
+    name:"Philippines",flag:"🇵🇭",currency:"₱",
+    fields:[
+      {id:"company_name",label:"Company Name",type:"text",required:true},
+      {id:"industry",label:"Industry",type:"select",required:true,options:["Agriculture & Agri-processing","Food Manufacturing","Manufacturing (General)","IT / BPO","Retail & Wholesale","Construction","Tourism & Hospitality","Healthcare & Wellness","Creative Industries","Logistics & Transport","Renewable Energy","Fisheries & Aquaculture","Other"]},
+      {id:"bmbe_status",label:"BMBE Registration",type:"select",required:true,options:["Already BMBE registered","Eligible but not registered (assets < ₱3M)","Not eligible (assets above ₱3M)","What is BMBE?"],note:"BMBE = instant income tax exemption"},
+      {id:"employees_ph",label:"Employees",type:"select",required:true,options:["1-9 (micro)","10-99 (small)","100-199 (medium)","200+"]},
+      {id:"years_in_business",label:"Years in Business",type:"select",required:true,options:["Less than 1 year","1-3 years","3-5 years","5-10 years","10+ years"]},
+      {id:"challenges",label:"What do you need?",type:"multiselect",required:true,options:["Equipment & machinery (DOST SETUP)","Business financing / microloans","Product development & packaging","Export development","Digital transformation","Tax incentives (BOI/PEZA)","Shared facilities","Women's entrepreneurship","Microenterprise support","Startup and innovation"]},
+      {id:"urgent_needs",label:"Anything specific?",type:"text",required:false}
+    ]
+  },
+  vietnam:{
+    name:"Vietnam",flag:"🇻🇳",currency:"₫",
+    fields:[
+      {id:"company_name",label:"Company Name",type:"text",required:true},
+      {id:"industry",label:"Industry",type:"select",required:true,options:["Manufacturing & Processing","Agriculture & Aquaculture","IT & Software","Food Processing","Textiles & Garments","Electronics Assembly","Renewable Energy","Construction & Real Estate","Logistics & Transport","Tourism & Hospitality","Healthcare & Pharmaceuticals","Retail & E-commerce","Other"]},
+      {id:"enterprise_type",label:"Enterprise Type",type:"select",required:true,options:["100% Vietnamese-owned","Foreign-Invested Enterprise (FDI)","Joint Venture","State-Owned"],note:"FDI vs domestic — different rulebooks"},
+      {id:"province",label:"Province / Location",type:"select",required:true,options:["Ho Chi Minh City","Hanoi","Da Nang","Binh Duong / Dong Nai (Southern industrial)","Northern industrial (Bac Ninh, Hai Phong)","Central region","Mekong Delta","Other"]},
+      {id:"employees_vn",label:"Employees",type:"select",required:true,options:["1-10","11-50","51-100","101-200","201-500","500+"]},
+      {id:"years_in_business",label:"Years in Business",type:"select",required:true,options:["Less than 1 year","1-3 years","3-5 years","5-10 years","10+ years"]},
+      {id:"challenges",label:"What do you need?",type:"multiselect",required:true,options:["Technology upgrading / automation","R&D and innovation","Digital transformation","Export development","SME financing","Tax incentives (CIT, import duty)","Investment incentives","Clean energy / environmental tech","Startup incubation","Workforce training"]},
+      {id:"urgent_needs",label:"Anything specific?",type:"text",required:false}
+    ]
+  },
+  thailand:{
+    name:"Thailand",flag:"🇹🇭",currency:"฿",
+    fields:[
+      {id:"company_name",label:"Company Name",type:"text",required:true},
+      {id:"industry",label:"Industry",type:"select",required:true,options:["Agriculture & Food Processing","Automotive & Parts","Electronics & Electrical","Digital & Software","Tourism & Hospitality","Healthcare & Medical Devices","Biotechnology","Renewable Energy","Robotics & Automation","Logistics & Aviation","Creative & Design","Construction","Retail & Wholesale","Manufacturing (General)","Other"]},
+      {id:"boi_status",label:"BOI Promotion Status",type:"select",required:true,options:["Already BOI-promoted","Applied for BOI","Not BOI-promoted","Not sure what BOI is"],note:"BOI = tax holidays + work permits + land rights"},
+      {id:"thai_shareholding",label:"Thai Shareholding",type:"select",required:true,options:["51%+ Thai-owned","Less than 51% (Foreign majority)","100% Foreign-owned"]},
+      {id:"employees_th",label:"Employees",type:"select",required:true,options:["1-10","11-50","51-200","200+"]},
+      {id:"years_in_business",label:"Years in Business",type:"select",required:true,options:["Less than 1 year","1-3 years","3-5 years","5-10 years","10+ years"]},
+      {id:"challenges",label:"What do you need?",type:"multiselect",required:true,options:["BOI promotion application","Tax incentives & exemptions","Factory automation / IR 4.0","Digital transformation","R&D and technology","SME financing / soft loans","Export promotion","Workforce skills","Energy efficiency","Startup incubation"]},
+      {id:"urgent_needs",label:"Anything specific?",type:"text",required:false}
+    ]
+  }
+};
+
+var COUNTRY_ORDER = ['singapore','hong_kong','australia','indonesia','malaysia','philippines','vietnam','thailand'];
+var currentCountry = 'singapore';
+
+function init(){
+  var bar = document.getElementById('tabBar');
+  COUNTRY_ORDER.forEach(function(c){
+    var ic = INTAKE[c];
+    var btn = document.createElement('button');
+    btn.className = 'tab' + (c===currentCountry?' active':'');
+    btn.textContent = ic.flag + ' ' + ic.name;
+    btn.onclick = (function(country){ return function(){ switchCountry(country); }; })(c);
+    bar.appendChild(btn);
+  });
+  renderForm();
+}
+
+function switchCountry(c){
+  currentCountry = c;
+  var tabs = document.querySelectorAll('.tab');
+  for(var i=0;i<tabs.length;i++){
+    tabs[i].className = 'tab' + (COUNTRY_ORDER[i]===c?' active':'');
+  }
+  document.getElementById('results').classList.remove('visible');
+  document.getElementById('errorBox').style.display = 'none';
+  renderForm();
+}
+
+function renderForm(){
+  var ic = INTAKE[currentCountry];
+  document.getElementById('flagDisplay').textContent = ic.flag;
+  var html = '';
+  ic.fields.forEach(function(f){
+    if(f.type === 'text'){
+      html += '<label>'+f.label+(f.required?' *':'')+(f.note?' <span>'+f.note+'</span>':'')+'</label>';
+      html += '<input type="text" id="f_'+f.id+'" placeholder="'+f.label+'">';
+    }else if(f.type === 'select'){
+      html += '<label>'+f.label+(f.required?' *':'')+(f.note?' <span>'+f.note+'</span>':'')+'</label>';
+      html += '<select id="f_'+f.id+'">';
+      f.options.forEach(function(o){ html += '<option value="'+o+'">'+o+'</option>'; });
+      html += '</select>';
+    }else if(f.type === 'multiselect'){
+      html += '<label>'+f.label+(f.required?' *':'')+'</label>';
+      html += '<div class="checkbox-group" id="f_'+f.id+'">';
+      f.options.forEach(function(o){
+        html += '<label><input type="checkbox" value="'+o+'" style="display:none"><span>'+o+'</span></label>';
+      });
+      html += '</div>';
+    }
+  });
+  document.getElementById('formFields').innerHTML = html;
+  
+  // Add invisible honeypot field (bots fill this, humans can't see it)
+  var honeypot = document.createElement('div');
+  honeypot.style.cssText = 'position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;width:0;overflow:hidden';
+  honeypot.innerHTML = '<input type="text" id="f_website_url" name="website_url" tabindex="-1" autocomplete="off">';
+  document.getElementById('scanForm').appendChild(honeypot);
+
+  var groups = document.querySelectorAll('.checkbox-group');
+  for(var i=0;i<groups.length;i++){
+    (function(group){
+      var labels = group.querySelectorAll('label');
+      for(var j=0;j<labels.length;j++){
+        labels[j].addEventListener('click', function(){
+          var cb = this.querySelector('input');
+          cb.checked = !cb.checked;
+          if(cb.checked){ this.classList.add('checked'); }
+          else { this.classList.remove('checked'); }
+        });
+      }
+    })(groups[i]);
+  }
+}
+
+function buildProfile(){
+  var ic = INTAKE[currentCountry];
+  var profile = {country: currentCountry};
+  ic.fields.forEach(function(f){
+    if(f.type === 'multiselect'){
+      var checked = [];
+      var boxes = document.querySelectorAll('#f_'+f.id+' input:checked');
+      for(var i=0;i<boxes.length;i++) checked.push(boxes[i].value);
+      profile[f.id] = checked;
+    }else if(f.type === 'select'){
+      profile[f.id] = document.getElementById('f_'+f.id).value;
+    }else{
+      var val = document.getElementById('f_'+f.id).value;
+      profile[f.id] = val || undefined;
+    }
+  });
+  return profile;
+}
+
+function runScan(){
+  document.getElementById('errorBox').style.display = 'none';
+  document.getElementById('results').classList.remove('visible');
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('scanBtn').disabled = true;
+
+  var profile = buildProfile();
+  profile._submit_time = Math.floor(Date.now() / 1000);  // Anti-bot timing
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/api/grant-intake', true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onload = function(){
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('scanBtn').disabled = false;
+    if(xhr.status >= 200 && xhr.status < 300){
+      renderResults(JSON.parse(xhr.responseText));
+    }else{
+      document.getElementById('errorBox').style.display = 'block';
+      document.getElementById('errorBox').textContent = '⚠️ Server error — please try again';
+    }
+  };
+  xhr.onerror = function(){
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('scanBtn').disabled = false;
+    document.getElementById('errorBox').style.display = 'block';
+    document.getElementById('errorBox').textContent = '⚠️ Connection error — is the backend running?';
+  };
+  xhr.send(JSON.stringify(profile));
+}
+
+function renderResults(data){
+  var ic = INTAKE[currentCountry];
+  var html = '';
+
+  // Funding Type Breakdown
+  if(data.funding_summary && data.funding_summary.length){
+    html += '<div style="background:#0f1729;border-radius:14px;padding:20px;margin-bottom:20px">';
+    html += '<h3 style="margin-bottom:12px">💸 All Available Government Funding</h3>';
+    html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px">';
+    data.funding_summary.forEach(function(fs){
+      var amt = fs.total_amount > 0 ? fs.currency + fs.total_amount.toLocaleString() : 'Varies';
+      var parts = fs.label.split(' ');
+      var icon = parts[0];
+      var label = parts.slice(1).join(' ');
+      html += '<div style="background:#111827;border-radius:10px;padding:12px;text-align:center">';
+      html += '<div style="font-size:20px;margin-bottom:2px">' + icon + '</div>';
+      html += '<div style="font-size:11px;color:#94a3b8;margin-bottom:4px">' + label + '</div>';
+      html += '<div style="font-weight:700;color:#22c55e;font-size:14px">' + amt + '</div>';
+      html += '<div style="font-size:11px;color:#64748b">' + fs.count + ' schemes</div>';
+      html += '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  html += '<div class="big-number">' + data.matched_count + ' funding schemes<small>across ' + (data.funding_summary ? data.funding_summary.length : 'multiple') + ' types</small></div>';
+  html += '<div class="summary-box">' + data.summary.replace(/\\n/g,'<br>').replace(/\\*\\*(.+?)\\*\\*/g,'<strong>$1</strong>') + '</div>';
+
+  if(data.matches && data.matches.length){
+    html += '<h3 style="margin-top:20px">✅ ' + data.matches.length + ' Funding Schemes You Qualify For</h3>';
+    data.matches.forEach(function(m){
+      var typeLabel = '';
+      var assistBadge = '';
+      if(m.funding_type){
+        var types = {grant:'🏛️ Grant',loan:'🏦 Loan',tax_incentive:'💰 Tax Incentive',rebate:'🔄 Rebate',wage_subsidy:'👥 Wage Subsidy',credit:'🎫 Credit',co_investment:'🤝 Co-Investment',other:'📋 Other'};
+        typeLabel = types[m.funding_type] || '';
+      }
+      if(m.assist_label){
+        var tierColors = {diy:'#64748b',standard:'#22c55e',complex:'#f59e0b',enterprise:'#3b82f6'};
+        var tc = tierColors[m.assist_tier] || '#22c55e';
+        assistBadge = '<span style="background:'+tc+'20;color:'+tc+';padding:2px 8px;border-radius:6px;font-size:11px;margin-left:8px">'+m.assist_label+' ('+m.assist_price+')</span>';
+      }
+      html += '<div class="match-card"><div class="top"><span class="name">'+m.name+assistBadge+'</span><span class="pct">'+m.match_pct+'% match</span></div>';
+      html += '<div class="agency">'+typeLabel+' • '+m.agency+'</div>';
+      html += '<div class="desc">'+m.description.slice(0,150)+'...</div>';
+      var amt = m.amount_note || (m.max_amount > 0 ? 'Up to ' + ic.currency + m.max_amount.toLocaleString() : 'Varies');
+      html += '<div style="color:#22c55e;font-size:13px;margin-top:4px">💰 '+amt+'</div>';
+      if(m.reasons) html += '<div class="reasons">'+m.reasons.map(function(r){return '<span class="tag">'+r+'</span>';}).join('')+'</div>';
+      if(m.flagged) html += '<div style="color:#f59e0b;font-size:13px;margin-top:4px">⚠️ '+m.flag_reason+'</div>';
+      html += '</div>';
+    });
+  }
+
+  if(data.flagged_matches && data.flagged_matches.length){
+    html += '<h3 style="margin-top:20px;color:#f59e0b">⚠️ '+data.flagged_matches.length+' Grants Need Attention</h3>';
+    data.flagged_matches.forEach(function(m){
+      html += '<div class="match-card" style="border-color:#f59e0b30"><div class="top"><span class="name">'+m.name+'</span></div><div style="color:#f59e0b;font-size:13px">'+m.flag_reason+'</div></div>';
+    });
+  }
+
+  if(data.rejected && data.rejected.length){
+    html += '<h3 style="margin-top:20px;color:#ef4444">❌ '+data.rejected.length+' Grants You Can\'t Access</h3>';
+    data.rejected.forEach(function(r){
+      html += '<div style="padding:6px 0;font-size:13px"><span style="color:#ef4444">•</span> '+r.name+' — '+r.reason+'</div>';
+    });
+  }
+
+  html += '<div class="pricing"><h3>Want us to handle the paperwork?</h3><p style="color:#94a3b8;margin-bottom:10px">Every scheme shows what tier applies. Complex co-investments cost more — they involve months of negotiation.</p><div class="tiers">';
+  html += '<div class="tier"><h4>📋 DIY Guide</h4><div class="price">$497<small> USD</small></div><div class="feat">✅ Step-by-step guides for 3 schemes</div><div class="feat">✅ Annotated forms & templates</div><div class="feat">✅ Email support</div><div class="feat">❌ No refunds</div><div class="feat" style="color:#64748b">For: rebates, credits, tax claims</div><button class="ghost" onclick="openPayment('https://pay.airwallex.com/sghjtio1yvjk')">Get Started</button></div>';
+  html += '<div class="tier popular"><h4>✅ Done-For-You</h4><div class="price">$997<small> USD</small></div><div class="feat">✅ 1 full application — we write it</div><div class="feat">✅ All forms filled & submitted</div><div class="feat">✅ Email reply assistance</div><div class="feat">✅ 1 appeal letter if rejected</div><div class="feat">❌ No refunds</div><div class="feat" style="color:#22c55e">For: grants, loans, wage subsidies</div><button class="green" onclick="openPayment('https://pay.airwallex.com/sghjtio273r9')">Get Started</button></div>';
+  html += '<div class="tier"><h4>🏢 Enterprise</h4><div class="price">$1,997<small>/yr USD</small></div><div class="feat">✅ Up to 3 applications/year</div><div class="feat">✅ All Done-For-You benefits</div><div class="feat">✅ Quarterly re-scans</div><div class="feat">❌ No refunds</div><div class="feat" style="color:#3b82f6">For: multiple applications</div><button class="ghost" onclick="openPayment('https://pay.airwallex.com/sghjtio2eeyh')">Get Started</button></div>';
+  html += '<div class="tier"><h4>🤝 Complex</h4><div class="price">$3,987<small> USD</small></div><div class="feat">✅ Multi-stage application management</div><div class="feat">✅ Equity/co-investment negotiation</div><div class="feat">✅ Government liaison & meetings</div><div class="feat">✅ 3-12 month engagement</div><div class="feat">❌ No refunds</div><div class="feat" style="color:#f59e0b">For: co-investments, R&D tax, BOI</div><button class="ghost" onclick="openPayment('https://pay.airwallex.com/sghjtio2meqn')">Get Started</button></div>';
+  html += '</div></div>';
+
+  document.getElementById('resultsContent').innerHTML = html;
+  document.getElementById('results').classList.add('visible');
+  document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+
+function openPayment(url) {
+  window.open(url, '_blank');
+}
+
+init();
+</script>
+</body>
+</html>

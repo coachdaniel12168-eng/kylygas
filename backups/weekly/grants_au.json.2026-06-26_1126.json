@@ -1,0 +1,568 @@
+{
+  "country": "Australia",
+  "currency": "AUD",
+  "last_updated": "2026-06-26",
+  "total_grants": 19,
+  "grants": [
+    {
+      "id": "au-rdti",
+      "name": "Research and Development Tax Incentive (R&DTI)",
+      "agency": "AusIndustry / Australian Taxation Office (ATO)",
+      "category": "Tax Incentive / R&D",
+      "description": "The Australian Government's flagship R&D support program helping companies innovate by offsetting eligible R&D costs. Provides a refundable tax offset of 43.5% for small companies (turnover under $20M) and a non-refundable 38.5% offset for larger companies. Covers wages, consumables, contractor costs, and depreciation on R&D assets.",
+      "max_amount": 0,
+      "amount_note": "Refundable 43.5% tax offset for companies with turnover < $20M. Non-refundable 38.5% for larger companies. No cap on eligible expenditure.",
+      "eligibility": [
+        "Australian registered company",
+        "Conducting eligible R&D activities",
+        "Minimum $20,000 R&D spend per year",
+        "Must register with AusIndustry before tax return lodgement"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "No minimum",
+      "url": "https://business.gov.au/grants-and-programs/research-and-development-tax-incentive",
+      "currency": "AUD",
+      "funding_type": "tax_incentive",
+      "assist_tier": "complex",
+      "assist_label": "\ud83e\udd1d Complex Application",
+      "assist_price": "$3,987",
+      "assist_desc": "Multi-stage, equity, long-running"
+    },
+    {
+      "id": "au-emdg",
+      "name": "Export Market Development Grant (EMDG)",
+      "agency": "Austrade",
+      "category": "Export / Internationalisation",
+      "description": "Grants program helping Australian small and medium enterprises start and grow exports in international markets. Covers export marketing and promotional activities plus export training. Three tiers: ready to export (Tier 1), exporting within existing markets (Tier 2), and new key markets (Tier 3). Also supports representative bodies.",
+      "max_amount": 80000,
+      "amount_note": "Tier 1: up to $30K. Tier 2: up to $50K. Tier 3: up to $80K per round. Reimbursement of eligible export promotion expenses.",
+      "eligibility": [
+        "Australian SME",
+        "Annual turnover < $20M",
+        "Export marketing or promotional activity",
+        "Representative body supporting SME exporters"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "SME (turnover < $20M)",
+      "url": "https://www.austrade.gov.au/en/how-we-can-help-you/grants/export-market-development-grants",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "au-igp",
+      "name": "Industry Growth Program",
+      "agency": "Department of Industry, Science and Resources",
+      "category": "Innovation / Commercialisation",
+      "description": "Provides advisory services and grant funding for innovative SMEs undertaking commercialisation and growth projects aligned with the National Reconstruction Fund priority areas. Includes expert advisory support plus grants of $50K\u2013$250K for early-stage commercialisation and $100K\u2013$5M for larger growth projects. Covers value-add in resources, agriculture, transport, medical science, renewables, defence, and enabling capabilities.",
+      "max_amount": 5000000,
+      "amount_note": "Early-stage: $50K\u2013$250K. Growth/commercialisation: $100K\u2013$5M. Advisory service included at no cost to eligible businesses.",
+      "eligibility": [
+        "Australian SME",
+        "Innovative commercialisation or growth project",
+        "Aligned with NRF priority areas",
+        "Must receive advisory service first"
+      ],
+      "industries": [
+        "Resources",
+        "Agriculture / Agritech",
+        "Transport",
+        "Medical / Medtech",
+        "Renewables / Clean Energy",
+        "Defence",
+        "Advanced Manufacturing"
+      ],
+      "employee_requirement": "SME",
+      "url": "https://business.gov.au/grants-and-programs/industry-growth-program",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "complex",
+      "assist_label": "\ud83e\udd1d Complex Application",
+      "assist_price": "$3,987",
+      "assist_desc": "Multi-stage, equity, long-running"
+    },
+    {
+      "id": "au-epac",
+      "name": "Entrepreneurs' Programme \u2014 Accelerating Commercialisation",
+      "agency": "AusIndustry / Department of Industry",
+      "category": "Innovation / Commercialisation",
+      "description": "Part of the Entrepreneurs' Programme providing matched grant funding to help businesses commercialise novel products, processes, and services. Supports activities from proof-of-concept through to market launch. Provides expert facilitation and commercialisation guidance alongside funding.",
+      "max_amount": 1000000,
+      "amount_note": "Matched funding up to 50% of project costs. Maximum $1M per project. Includes facilitation support.",
+      "eligibility": [
+        "Australian registered company",
+        "Novel product, process or service",
+        "Clear commercialisation pathway",
+        "Co-contribution required"
+      ],
+      "industries": [
+        "All \u2014 innovation-focused",
+        "Advanced Manufacturing",
+        "Medtech",
+        "Agritech",
+        "Clean Energy",
+        "Digital / Tech"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://business.gov.au/grants-and-programs/entrepreneurs-programme",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "complex",
+      "assist_label": "\ud83e\udd1d Complex Application",
+      "assist_price": "$3,987",
+      "assist_desc": "Multi-stage, equity, long-running"
+    },
+    {
+      "id": "au-csiro-ks",
+      "name": "CSIRO Kick-Start Program",
+      "agency": "CSIRO (Commonwealth Scientific and Industrial Research Organisation)",
+      "category": "R&D / Innovation",
+      "description": "Dollar-matched funding paired with access to CSIRO's world-class research expertise for innovative Australian start-ups and SMEs. Supports R&D activities including prototype development, feasibility studies, and product testing. Projects run up to 12 months with CSIRO researchers.",
+      "max_amount": 50000,
+      "amount_note": "Matched funding $10K\u2013$50K. Dollar-for-dollar matching required. Access to CSIRO researchers included.",
+      "eligibility": [
+        "Australian start-up or SME",
+        "Annual turnover < $10M or trading < 3 years",
+        "Hold ACN or ICN",
+        "Registered for GST",
+        "Ability to provide matched funding"
+      ],
+      "industries": [
+        "All \u2014 R&D focused",
+        "Agrifood",
+        "Manufacturing",
+        "Emerging Tech",
+        "Medtech",
+        "Clean Energy"
+      ],
+      "employee_requirement": "SME (turnover < $10M)",
+      "url": "https://www.csiro.au/en/work-with-us/funding-programs/sme/csiro-kick-start",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "au-efasmall",
+      "name": "Small Business Export Loan",
+      "agency": "Export Finance Australia",
+      "category": "Financing / Export",
+      "description": "Government-backed export finance for Australian SMEs to support export contracts, working capital, equipment purchases, marketing, and online international growth. Loans up to $350K with flexible repayment terms. Helps businesses fulfil export orders and manage cash flow when expanding internationally.",
+      "max_amount": 350000,
+      "amount_note": "Loans up to $350K. Flexible terms. Covers working capital, equipment, marketing, and online export growth.",
+      "eligibility": [
+        "Australian registered business",
+        "Export or export supply chain activity",
+        "SME \u2014 annual turnover < $150M",
+        "Financially viable"
+      ],
+      "industries": [
+        "All \u2014 export focused"
+      ],
+      "employee_requirement": "SME (turnover < $150M)",
+      "url": "https://www.exportfinance.gov.au/",
+      "currency": "AUD",
+      "funding_type": "loan",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "au-esic",
+      "name": "Early Stage Innovation Company (ESIC) Tax Incentives",
+      "agency": "Australian Taxation Office (ATO)",
+      "category": "Tax Incentive / Startup",
+      "description": "Tax incentives for early-stage investors in qualifying innovative startups. Provides a 20% non-refundable carry-forward tax offset (capped at $200K per investor per year) and capital gains tax exemption for shares held 1\u201310 years. Encourages angel and venture capital investment in Australian innovation.",
+      "max_amount": 200000,
+      "amount_note": "20% tax offset on investments up to $200K per investor/year. CGT exemption for qualifying shares held 1\u201310 years.",
+      "eligibility": [
+        "Australian registered company",
+        "Must qualify as an Early Stage Innovation Company",
+        "Innovation test met",
+        "Incorporated < 3 years (or < 6 for IP-based)",
+        "Expenditure < $1M (or < $500K)"
+      ],
+      "industries": [
+        "All \u2014 innovation-driven startups"
+      ],
+      "employee_requirement": "Startup \u2014 any size",
+      "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/early-stage-innovation-company-tax-incentives",
+      "currency": "AUD",
+      "funding_type": "tax_incentive",
+      "assist_tier": "diy",
+      "assist_label": "\ud83d\udccb DIY Guide",
+      "assist_price": "$497",
+      "assist_desc": "Step-by-step guide \u2014 you apply yourself"
+    },
+    {
+      "id": "au-iba-bbp",
+      "name": "Indigenous Business Australia \u2014 Business Development & Assistance",
+      "agency": "Indigenous Business Australia (IBA)",
+      "category": "Indigenous Business / Financing",
+      "description": "IBA provides business loans, working capital, performance bonds, and business support to Aboriginal and Torres Strait Islander people starting, acquiring, or growing businesses. Loans from $1K to $5M+ with tailored business advice, mentoring, and workshops. Supports economic independence for Indigenous Australians.",
+      "max_amount": 5000000,
+      "amount_note": "Business loans from $1K to $5M+. Includes business support, mentoring, and workshops. Competitive interest rates.",
+      "eligibility": [
+        "Aboriginal or Torres Strait Islander person",
+        "Australian registered business",
+        "At least 50% Indigenous owned",
+        "Financially viable business proposal",
+        "Starting, acquiring, or growing a business"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://www.iba.gov.au/business/",
+      "currency": "AUD",
+      "funding_type": "loan",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "au-nsw-mvp",
+      "name": "NSW Minimum Viable Product (MVP) Ventures Program",
+      "agency": "Investment NSW",
+      "category": "Innovation / Tech / State \u2014 NSW",
+      "description": "NSW state government grant supporting early-stage startups and innovative SMEs to develop a minimum viable product and progress to commercialisation. Provides matched funding for product development, market validation, and commercialisation activities. Focused on tech-enabled and deep-tech sectors.",
+      "max_amount": 50000,
+      "amount_note": "Matched funding up to $50K. For product development, MVP creation, and commercialisation activities.",
+      "eligibility": [
+        "NSW-based startup or SME",
+        "Less than 200 employees",
+        "Innovative product or service",
+        "Co-investment required",
+        "High-growth potential"
+      ],
+      "industries": [
+        "Tech",
+        "Deep Tech",
+        "Digital",
+        "Software",
+        "AI",
+        "Medtech",
+        "Clean Energy"
+      ],
+      "employee_requirement": "Max 200 employees",
+      "url": "https://www.nsw.gov.au/grants-and-funding",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "au-nsw-rtbf",
+      "name": "NSW Research & Development Tax Incentive Top-Up",
+      "agency": "Revenue NSW / Investment NSW",
+      "category": "Tax Incentive / R&D / State \u2014 NSW",
+      "description": "NSW state-level incentive providing a 15% refundable R&D tax offset for eligible small companies with annual NSW R&D expenditure of $25K to $1M. Stacks with the federal R&DTI to reduce effective R&D costs. Designed to retain and grow R&D activity in NSW.",
+      "max_amount": 150000,
+      "amount_note": "15% refundable offset on eligible NSW R&D expenditure. Capped at $150K per company per year. Stacks with federal R&DTI.",
+      "eligibility": [
+        "Registered in NSW",
+        "Eligible for federal R&DTI",
+        "Annual NSW R&D spend $25K\u2013$1M",
+        "Turnover < $20M",
+        "Must claim federal R&DTI first"
+      ],
+      "industries": [
+        "All \u2014 R&D performing"
+      ],
+      "employee_requirement": "SME (turnover < $20M)",
+      "url": "https://www.revenue.nsw.gov.au/grants-schemes/rd-tax-incentive",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "au-nsw-safe",
+      "name": "NSW SafeWork Small Business Rebate",
+      "agency": "SafeWork NSW",
+      "category": "Workplace Safety / State \u2014 NSW",
+      "description": "NSW government rebate providing up to $1,000 for small businesses to purchase safety equipment or implement workplace health and safety improvements. Helps reduce workplace injuries and improve compliance with WHS regulations. Quick and simple application process.",
+      "max_amount": 1000,
+      "amount_note": "Up to $1,000 rebate for safety equipment and WHS improvements. One rebate per ABN.",
+      "eligibility": [
+        "NSW-based small business",
+        "Fewer than 50 full-time employees",
+        "Wage threshold applies",
+        "One rebate per ABN"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Max 50 FTE employees",
+      "url": "https://www.nsw.gov.au/grants-and-funding",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "au-vic-bsf",
+      "name": "VIC Business Support Fund \u2014 Digital & Innovation",
+      "agency": "Business Victoria / Department of Jobs, Skills, Industry and Regions",
+      "category": "Innovation / Digital / State \u2014 VIC",
+      "description": "Victorian state government suite of grants for business innovation, digital transformation, and capability building. Includes digital adoption grants, innovation vouchers, and capability uplift programs. Helps Victorian businesses adopt technology, improve processes, and develop new products.",
+      "max_amount": 100000,
+      "amount_note": "Grants typically $5K\u2013$100K depending on stream. Co-contribution of 25%\u201350% required. Multiple streams available.",
+      "eligibility": [
+        "Victorian-based business",
+        "Hold ABN",
+        "Operating in Victoria",
+        "Co-contribution capacity",
+        "Project aligns with program objectives"
+      ],
+      "industries": [
+        "All",
+        "Manufacturing",
+        "Digital / Tech",
+        "Food / Agribusiness",
+        "Professional Services"
+      ],
+      "employee_requirement": "Any \u2014 varies by program stream",
+      "url": "https://business.vic.gov.au/grants-and-programs",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "au-vic-lv",
+      "name": "LaunchVic \u2014 Victorian Startup Ecosystem Support",
+      "agency": "LaunchVic",
+      "category": "Startup / Ecosystem / State \u2014 VIC",
+      "description": "Victoria's dedicated startup agency providing grants and support to accelerators, incubators, founder programs, and startup ecosystem builders. Supports pre-revenue to Series A startups through funded programs. Focus on building Victoria's startup ecosystem through infrastructure and capability development.",
+      "max_amount": 500000,
+      "amount_note": "Grants for ecosystem partners (accelerators, incubators, programs). Amounts vary widely \u2014 $50K\u2013$500K+. Founder grants also available.",
+      "eligibility": [
+        "Victorian startup ecosystem organisation",
+        "Accelerator, incubator, or founder support program",
+        "Victorian-based founders for direct grants"
+      ],
+      "industries": [
+        "Tech",
+        "Digital",
+        "Deep Tech",
+        "All \u2014 startup ecosystem"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://launchvic.org/",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "au-vic-maninv",
+      "name": "VIC Made in Victoria \u2014 Manufacturing Growth Program",
+      "agency": "Business Victoria",
+      "category": "Manufacturing / State \u2014 VIC",
+      "description": "Victorian state grant supporting manufacturing businesses to invest in new equipment, technology adoption, process improvement, and job creation. Part of the Made in Victoria strategy to strengthen local manufacturing capability and supply chain resilience. Grants support capital investment and business transformation.",
+      "max_amount": 250000,
+      "amount_note": "Grants up to $250K with co-contribution of at least 50%. Supports capital equipment, tech adoption, and process improvement.",
+      "eligibility": [
+        "Victorian manufacturing business",
+        "Hold ABN",
+        "Operating in Victoria",
+        "Job creation or retention",
+        "Co-contribution required"
+      ],
+      "industries": [
+        "Manufacturing",
+        "Advanced Manufacturing",
+        "Food Processing",
+        "Medtech Manufacturing",
+        "Clean Energy Manufacturing"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://business.vic.gov.au/grants-and-programs",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "au-qld-bgf",
+      "name": "QLD Business Growth Fund",
+      "agency": "Department of Employment, Small Business and Training (DESBT)",
+      "category": "Business Growth / State \u2014 QLD",
+      "description": "Queensland state government program providing grants to high-growth small and medium businesses to accelerate growth. Supports businesses accessing new markets, adopting advanced technologies, creating jobs, and improving productivity. Requires co-investment and a clear growth strategy.",
+      "max_amount": 75000,
+      "amount_note": "Grants up to $75K. Co-contribution of at least 25%\u201350% required. For market expansion, tech adoption, productivity.",
+      "eligibility": [
+        "Queensland-based business",
+        "Fewer than 200 employees",
+        "High-growth potential",
+        "3+ years trading history",
+        "Co-investment capacity"
+      ],
+      "industries": [
+        "All",
+        "Advanced Manufacturing",
+        "Agribusiness",
+        "Tourism",
+        "Mining Services",
+        "Digital / Tech"
+      ],
+      "employee_requirement": "Max 200 employees",
+      "url": "https://www.business.qld.gov.au/running-business/support-and-assistance/grants",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "au-qld-ii",
+      "name": "QLD Ignite Ideas Fund",
+      "agency": "Department of Environment, Tourism, Science and Innovation",
+      "category": "Innovation / State \u2014 QLD",
+      "description": "Queensland government grant supporting innovative businesses to commercialise new products and services that will create jobs and drive economic growth. Tiered funding: Tier 1 up to $100K for early-stage, Tier 2 up to $500K for growth-stage commercialisation. Strong focus on scaling Queensland innovation.",
+      "max_amount": 500000,
+      "amount_note": "Tier 1: up to $100K. Tier 2: up to $500K. Matched co-investment required. For product commercialisation and market entry.",
+      "eligibility": [
+        "Queensland-based business",
+        "Fewer than 250 employees",
+        "Innovative product or service",
+        "Clear commercialisation plan",
+        "Job creation potential"
+      ],
+      "industries": [
+        "Tech",
+        "Digital",
+        "Cleantech",
+        "Medtech",
+        "Agritech",
+        "Advanced Manufacturing",
+        "Resources Tech"
+      ],
+      "employee_requirement": "Max 250 employees",
+      "url": "https://www.business.qld.gov.au/running-business/support-and-assistance/grants",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "au-defence-ic",
+      "name": "Defence Industry Capability Grants",
+      "agency": "Department of Defence / Centre for Defence Industry Capability (CDIC)",
+      "category": "Industry-Specific / Defence",
+      "description": "Federal grant program supporting Australian SMEs to build defence industry capability, win defence contracts, and integrate into global defence supply chains. Includes capability improvement grants, defence readiness assessments, export facilitation, and skilling support. Critical for Australia's sovereign defence industrial base.",
+      "max_amount": 250000,
+      "amount_note": "Capability grants up to $250K. Includes matched funding for defence readiness, skilling, and export readiness. Multiple streams.",
+      "eligibility": [
+        "Australian SME",
+        "Defence industry or supply chain",
+        "Australian registered company",
+        "Alignment with defence capability priorities",
+        "Financial viability"
+      ],
+      "industries": [
+        "Defence",
+        "Defence Manufacturing",
+        "Cyber Security",
+        "Space",
+        "Advanced Manufacturing",
+        "Engineering / Technical Services",
+        "Aerospace"
+      ],
+      "employee_requirement": "SME",
+      "url": "https://www.defence.gov.au/business-industry/grants",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "au-arena",
+      "name": "ARENA Renewable Energy & Cleantech Grants",
+      "agency": "Australian Renewable Energy Agency (ARENA)",
+      "category": "Industry-Specific / Clean Energy",
+      "description": "ARENA provides grant funding for Australian businesses and researchers developing, demonstrating, and deploying renewable energy and clean technology solutions. Covers solar, hydrogen, energy storage, grid integration, biofuels, energy efficiency, and emerging low-emissions technologies. Supports projects from early-stage research through to commercial deployment.",
+      "max_amount": 100000000,
+      "amount_note": "Grants from $100K to $100M+. Typically 30%\u201350% of project costs. Larger for strategic national projects. Multiple funding rounds.",
+      "eligibility": [
+        "Australian entity",
+        "Renewable energy or cleantech project",
+        "Project located in Australia",
+        "Co-investment capability",
+        "Scalable and replicable solution"
+      ],
+      "industries": [
+        "Renewable Energy",
+        "Solar",
+        "Hydrogen",
+        "Energy Storage",
+        "Clean Energy",
+        "Biofuels",
+        "Low Emissions Tech"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://arena.gov.au/funding/",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "au-cyber",
+      "name": "Cyber Security Small Business Grants",
+      "agency": "Australian Cyber Security Centre (ACSC) / AustCyber",
+      "category": "Industry-Specific / Cybersecurity",
+      "description": "Federal program providing grants and rebates to help Australian small businesses improve their cybersecurity posture. Includes funding for cybersecurity assessments, security software, employee training, and implementing Essential Eight mitigation strategies. Supports Australia's cyber resilience.",
+      "max_amount": 15000,
+      "amount_note": "Up to $15K for cybersecurity improvements, training, and software. Periodic rounds. Focus on practical cyber defence.",
+      "eligibility": [
+        "Australian small business",
+        "Fewer than 200 employees",
+        "Hold an ABN",
+        "Australian-based operations"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Max 200 employees",
+      "url": "https://www.cyber.gov.au/",
+      "currency": "AUD",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    }
+  ]
+}

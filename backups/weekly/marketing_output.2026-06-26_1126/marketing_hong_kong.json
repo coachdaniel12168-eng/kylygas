@@ -1,0 +1,233 @@
+{
+  "country": "hong_kong",
+  "flag": "\ud83c\udded\ud83c\uddf0",
+  "generated_at": "2026-06-26T08:07:36.953190",
+  "fb_ads": [
+    {
+      "id": "fb-ad-hong_kong-001",
+      "country": "hong_kong",
+      "country_flag": "\ud83c\udded\ud83c\uddf0",
+      "angle": "free_money",
+      "headline": "Government Pays Up to 70% of Your Business Costs",
+      "body": "BUD Fund: up to HK$7M for Mainland/FTA expansion. Free 60-second scan shows everything you qualify for. No obligation.",
+      "cta": "Scan Now",
+      "image_description": "Clean dark card with big green number showing funding amount in HKD. \ud83c\udded\ud83c\uddf0 flag subtle in corner. Minimal design, premium feel. Text: 'Up to [AMOUNT]' in bold white.",
+      "audience": {
+        "name": "Trading Companies",
+        "age": "30-60",
+        "industries": [
+          "Trading",
+          "Import/Export",
+          "Logistics"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-hong_kong-002",
+      "country": "hong_kong",
+      "country_flag": "\ud83c\udded\ud83c\uddf0",
+      "angle": "pain_point",
+      "headline": "Struggling with Rising operational?",
+      "body": "Government schemes cover this. EMF covers your trade fair costs \u2014 HK$1M available. Free eligibility check \u2014 takes 60 seconds.",
+      "cta": "Start Free Scan",
+      "image_description": "Professional office/workspace photo in Hong Kong. Warm lighting. Overlay semi-transparent dark card with green text: '[SOLUTION]'. Human element, relatable setting.",
+      "audience": {
+        "name": "Trading Companies",
+        "age": "30-60",
+        "industries": [
+          "Trading",
+          "Import/Export",
+          "Logistics"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-hong_kong-003",
+      "country": "hong_kong",
+      "country_flag": "\ud83c\udded\ud83c\uddf0",
+      "angle": "fear",
+      "headline": "Your Competitors Are Claiming This. Are You?",
+      "body": "Every month without BUD Fund = money lost to competitors expanding into GBA. Free GovFund scan shows what you're missing. 26+ schemes, 1 minute.",
+      "cta": "Start Free Scan",
+      "image_description": "Split screen: left side grey/empty, right side green/successful. \ud83c\udded\ud83c\uddf0 on right. Text: 'Don't Get Left Behind'. Strong contrast, emotional pull.",
+      "audience": {
+        "name": "Trading Companies",
+        "age": "30-60",
+        "industries": [
+          "Trading",
+          "Import/Export",
+          "Logistics"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-hong_kong-004",
+      "country": "hong_kong",
+      "country_flag": "\ud83c\udded\ud83c\uddf0",
+      "angle": "social_proof",
+      "headline": "Hundreds of Hong Kong Businesses Already Scanned",
+      "body": "Join them. 15 Hong Kong funding schemes active right now. GovFund's AI scans every government scheme. Free eligibility check.",
+      "cta": "Start Free Scan",
+      "image_description": "Grid of company logos or profile avatars (generic). Text: 'X,XXX businesses scanned'. \ud83c\udded\ud83c\uddf0. Trust-building design. Testimonial-style.",
+      "audience": {
+        "name": "Trading Companies",
+        "age": "30-60",
+        "industries": [
+          "Trading",
+          "Import/Export",
+          "Logistics"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-hong_kong-005",
+      "country": "hong_kong",
+      "country_flag": "\ud83c\udded\ud83c\uddf0",
+      "angle": "urgency",
+      "headline": "Funding Windows Close. Don't Miss Out.",
+      "body": "Government funding for Hong Kong businesses doesn't wait. Scan now, apply while funds are available.",
+      "cta": "Start Free Scan",
+      "image_description": "Calendar or countdown visual. Red accent for urgency. \ud83c\udded\ud83c\uddf0 subtle. Text: 'Applications Close Soon'. Clean, time-pressure design.",
+      "audience": {
+        "name": "Trading Companies",
+        "age": "30-60",
+        "industries": [
+          "Trading",
+          "Import/Export",
+          "Logistics"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    }
+  ],
+  "social_posts": [
+    {
+      "id": "social-hong_kong-001",
+      "country": "hong_kong",
+      "country_flag": "\ud83c\udded\ud83c\uddf0",
+      "type": "educational",
+      "content": "Did you know? BUD Fund: up to HK$7M for Mainland/FTA expansion\n\nMost Hong Kong business owners miss at least 60% of the government schemes they qualify for.\n\nI built a free tool that scans all 9 government agencies in Hong Kong and tells you exactly what you can claim.\n\nTakes 60 seconds. No signup. No spam.\n\nLink in first comment \ud83d\udc47",
+      "hashtags": [
+        "#GovFund",
+        "#BusinessGrants",
+        "#SMEfunding",
+        "#GovernmentGrants",
+        "#HongKong",
+        "#HongKongBusiness",
+        "#BUDFund",
+        "#EMF"
+      ],
+      "platforms": [
+        "Facebook Group",
+        "LinkedIn"
+      ],
+      "language": "English",
+      "best_time": "Weekday 8-10 AM or 12-2 PM local time"
+    },
+    {
+      "id": "social-hong_kong-002",
+      "country": "hong_kong",
+      "country_flag": "\ud83c\udded\ud83c\uddf0",
+      "type": "case_study_style",
+      "content": "A Hong Kong food manufacturer came to us last month. They had NO idea they qualified for 9 different government schemes.\n\nTotal eligible: HKD1.2M+ in grants and tax incentives.\n\nAll found in 60 seconds with our free scan.\n\nDon't leave money on the table. Link below.",
+      "hashtags": [
+        "#GovFund",
+        "#BusinessGrants",
+        "#SMEfunding",
+        "#GovernmentGrants",
+        "#HongKong",
+        "#HongKongBusiness",
+        "#BUDFund",
+        "#EMF"
+      ],
+      "platforms": [
+        "Facebook Group",
+        "LinkedIn"
+      ],
+      "language": "English",
+      "best_time": "Weekday 8-10 AM or 12-2 PM local time"
+    },
+    {
+      "id": "social-hong_kong-003",
+      "country": "hong_kong",
+      "country_flag": "\ud83c\udded\ud83c\uddf0",
+      "type": "question_hook",
+      "content": "When was the last time you checked what government funding your Hong Kong business qualifies for?\n\nIf the answer is 'never' or 'last year' \u2014 you're probably missing out.\n\nSchemes change. New ones launch. Old ones expire.\n\nFree scan takes 60 seconds. Updated daily.\n\nCheck now \ud83d\udc47",
+      "hashtags": [
+        "#GovFund",
+        "#BusinessGrants",
+        "#SMEfunding",
+        "#GovernmentGrants",
+        "#HongKong",
+        "#HongKongBusiness",
+        "#BUDFund",
+        "#EMF"
+      ],
+      "platforms": [
+        "Facebook Group",
+        "LinkedIn"
+      ],
+      "language": "English",
+      "best_time": "Weekday 8-10 AM or 12-2 PM local time"
+    }
+  ],
+  "landing_page_copy": {
+    "country": "hong_kong",
+    "flag": "\ud83c\udded\ud83c\uddf0",
+    "hero_headline": "Government Funding for Your Hong Kong Business \u2014 Found in 60 Seconds",
+    "hero_subheadline": "GovFund's AI scans all government schemes in Hong Kong. Grants, loans, tax incentives, rebates, wage subsidies \u2014 all in one scan.",
+    "hero_cta": "Check My Eligibility \u2014 Free",
+    "pain_point_section": {
+      "headline": "Running a Business in Hong Kong Is Expensive",
+      "points": [
+        "\ud83d\udcb8 Mainland China expansion costs",
+        "\ud83d\udcb8 Rising operational costs",
+        "\ud83d\udcb8 SME financing access",
+        "\ud83d\udcb8 Trade fair/exhibition costs"
+      ]
+    },
+    "solution_section": {
+      "headline": "The Government Has Money for This. We Find It.",
+      "points": [
+        "\u2705 BUD Fund: up to HK$7M for Mainland/FTA expansion",
+        "\u2705 EMF covers your trade fair costs \u2014 HK$1M available",
+        "\u2705 SME Financing Guarantee: 90% government-backed loans",
+        "\u2705 15 Hong Kong funding schemes active right now"
+      ]
+    },
+    "trust_section": {
+      "headline": "Why {profile['name']} Businesses Trust GovFund",
+      "points": [
+        "Covers all 9 government agencies",
+        "AI-powered matching \u2014 no human bias, no missed schemes",
+        "60-second scan, results instantly",
+        "Full application handling available"
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is GovFund a Hong Kong government agency?",
+        "a": "No. GovFund is a private consultancy. We are NOT a government agency. We help businesses navigate government schemes."
+      },
+      {
+        "q": "Is the scan really free?",
+        "a": "Yes. The eligibility scan is free and takes 60 seconds. Full application support is available through our paid plans."
+      },
+      {
+        "q": "What if I'm not eligible for anything?",
+        "a": "The scan will tell you exactly that \u2014 no cost, no obligation. But most businesses qualify for at least 3-5 schemes they didn't know about."
+      }
+    ],
+    "generated_at": "2026-06-26T08:07:36.953185"
+  },
+  "outreach_script": "Hey everyone \ud83d\udc4b\n\nI built a free tool that scans all government funding schemes in Hong Kong and tells you what your business qualifies for.\n\nBUD Fund: up to HK$7M for Mainland/FTA expansion\n\nIt covers grants, loans, tax incentives, rebates, wage subsidies \u2014 everything. Takes 60 seconds.\n\nI've been sharing it with Hong Kong business owners and the average business qualifies for 8-12 schemes they didn't know existed.\n\nNo catch. No spam. Just a free scan.\n\nDrop a comment if you want the link or DM me directly.\n\n\ud83c\udded\ud83c\uddf0 \ud83c\udded\ud83c\uddf0"
+}

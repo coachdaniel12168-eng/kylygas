@@ -1,0 +1,238 @@
+{
+  "country": "thailand",
+  "flag": "\ud83c\uddf9\ud83c\udded",
+  "generated_at": "2026-06-26T08:07:36.953891",
+  "fb_ads": [
+    {
+      "id": "fb-ad-thailand-001",
+      "country": "thailand",
+      "country_flag": "\ud83c\uddf9\ud83c\udded",
+      "angle": "free_money",
+      "headline": "Government Pays Up to 70% of Your Business Costs",
+      "body": "BOI promotion unlocks 3-8 years corporate tax holiday. Free 60-second scan shows everything you qualify for. No obligation.",
+      "cta": "Scan Now",
+      "image_description": "Clean dark card with big green number showing funding amount in THB. \ud83c\uddf9\ud83c\udded flag subtle in corner. Minimal design, premium feel. Text: 'Up to [AMOUNT]' in bold white.",
+      "audience": {
+        "name": "Manufacturing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Automotive",
+          "Electronics",
+          "Food Processing",
+          "Chemicals"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-thailand-002",
+      "country": "thailand",
+      "country_flag": "\ud83c\uddf9\ud83c\udded",
+      "angle": "pain_point",
+      "headline": "Struggling with FBA restrictions?",
+      "body": "Government schemes cover this. DEPA digital grants for software/tech companies. Free eligibility check \u2014 takes 60 seconds.",
+      "cta": "Start Free Scan",
+      "image_description": "Professional office/workspace photo in Thailand. Warm lighting. Overlay semi-transparent dark card with green text: '[SOLUTION]'. Human element, relatable setting.",
+      "audience": {
+        "name": "Manufacturing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Automotive",
+          "Electronics",
+          "Food Processing",
+          "Chemicals"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-thailand-003",
+      "country": "thailand",
+      "country_flag": "\ud83c\uddf9\ud83c\udded",
+      "angle": "fear",
+      "headline": "Your Competitors Are Claiming This. Are You?",
+      "body": "BOI application takes 3-6 months \u2014 start now or lose another year of tax holiday. Free GovFund scan shows what you're missing. 26+ schemes, 1 minute.",
+      "cta": "Start Free Scan",
+      "image_description": "Split screen: left side grey/empty, right side green/successful. \ud83c\uddf9\ud83c\udded on right. Text: 'Don't Get Left Behind'. Strong contrast, emotional pull.",
+      "audience": {
+        "name": "Manufacturing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Automotive",
+          "Electronics",
+          "Food Processing",
+          "Chemicals"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-thailand-004",
+      "country": "thailand",
+      "country_flag": "\ud83c\uddf9\ud83c\udded",
+      "angle": "social_proof",
+      "headline": "Hundreds of Thailand Businesses Already Scanned",
+      "body": "Join them. 6 Thailand government schemes active. GovFund's AI scans every government scheme. Free eligibility check.",
+      "cta": "Check Eligibility",
+      "image_description": "Grid of company logos or profile avatars (generic). Text: 'X,XXX businesses scanned'. \ud83c\uddf9\ud83c\udded. Trust-building design. Testimonial-style.",
+      "audience": {
+        "name": "Manufacturing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Automotive",
+          "Electronics",
+          "Food Processing",
+          "Chemicals"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    },
+    {
+      "id": "fb-ad-thailand-005",
+      "country": "thailand",
+      "country_flag": "\ud83c\uddf9\ud83c\udded",
+      "angle": "urgency",
+      "headline": "Funding Windows Close. Don't Miss Out.",
+      "body": "Government funding for Thailand businesses doesn't wait. Scan now, apply while funds are available.",
+      "cta": "Start Free Scan",
+      "image_description": "Calendar or countdown visual. Red accent for urgency. \ud83c\uddf9\ud83c\udded subtle. Text: 'Applications Close Soon'. Clean, time-pressure design.",
+      "audience": {
+        "name": "Manufacturing SMEs",
+        "age": "30-60",
+        "industries": [
+          "Automotive",
+          "Electronics",
+          "Food Processing",
+          "Chemicals"
+        ]
+      },
+      "budget": "US$10-25/day",
+      "language": "English"
+    }
+  ],
+  "social_posts": [
+    {
+      "id": "social-thailand-001",
+      "country": "thailand",
+      "country_flag": "\ud83c\uddf9\ud83c\udded",
+      "type": "educational",
+      "content": "Did you know? BOI promotion unlocks 3-8 years corporate tax holiday\n\nMost Thailand business owners miss at least 60% of the government schemes they qualify for.\n\nI built a free tool that scans all 7 government agencies in Thailand and tells you exactly what you can claim.\n\nTakes 60 seconds. No signup. No spam.\n\nLink in first comment \ud83d\udc47",
+      "hashtags": [
+        "#GovFund",
+        "#BusinessGrants",
+        "#SMEfunding",
+        "#GovernmentGrants",
+        "#Thailand",
+        "#ThailandBusiness",
+        "#BOI",
+        "#DEPA"
+      ],
+      "platforms": [
+        "Facebook Group",
+        "LinkedIn"
+      ],
+      "language": "English",
+      "best_time": "Weekday 8-10 AM or 12-2 PM local time"
+    },
+    {
+      "id": "social-thailand-002",
+      "country": "thailand",
+      "country_flag": "\ud83c\uddf9\ud83c\udded",
+      "type": "case_study_style",
+      "content": "A Thailand food manufacturer came to us last month. They had NO idea they qualified for 7 different government schemes.\n\nTotal eligible: THB1.2M+ in grants and tax incentives.\n\nAll found in 60 seconds with our free scan.\n\nDon't leave money on the table. Link below.",
+      "hashtags": [
+        "#GovFund",
+        "#BusinessGrants",
+        "#SMEfunding",
+        "#GovernmentGrants",
+        "#Thailand",
+        "#ThailandBusiness",
+        "#BOI",
+        "#DEPA"
+      ],
+      "platforms": [
+        "Facebook Group",
+        "LinkedIn"
+      ],
+      "language": "English",
+      "best_time": "Weekday 8-10 AM or 12-2 PM local time"
+    },
+    {
+      "id": "social-thailand-003",
+      "country": "thailand",
+      "country_flag": "\ud83c\uddf9\ud83c\udded",
+      "type": "question_hook",
+      "content": "When was the last time you checked what government funding your Thailand business qualifies for?\n\nIf the answer is 'never' or 'last year' \u2014 you're probably missing out.\n\nSchemes change. New ones launch. Old ones expire.\n\nFree scan takes 60 seconds. Updated daily.\n\nCheck now \ud83d\udc47",
+      "hashtags": [
+        "#GovFund",
+        "#BusinessGrants",
+        "#SMEfunding",
+        "#GovernmentGrants",
+        "#Thailand",
+        "#ThailandBusiness",
+        "#BOI",
+        "#DEPA"
+      ],
+      "platforms": [
+        "Facebook Group",
+        "LinkedIn"
+      ],
+      "language": "English",
+      "best_time": "Weekday 8-10 AM or 12-2 PM local time"
+    }
+  ],
+  "landing_page_copy": {
+    "country": "thailand",
+    "flag": "\ud83c\uddf9\ud83c\udded",
+    "hero_headline": "Government Funding for Your Thailand Business \u2014 Found in 60 Seconds",
+    "hero_subheadline": "GovFund's AI scans all government schemes in Thailand. Grants, loans, tax incentives, rebates, wage subsidies \u2014 all in one scan.",
+    "hero_cta": "Check My Eligibility \u2014 Free",
+    "pain_point_section": {
+      "headline": "Running a Business in Thailand Is Expensive",
+      "points": [
+        "\ud83d\udcb8 BOI promotion complexity",
+        "\ud83d\udcb8 FBA restrictions",
+        "\ud83d\udcb8 Automation/IR 4.0 costs",
+        "\ud83d\udcb8 SME soft loan access"
+      ]
+    },
+    "solution_section": {
+      "headline": "The Government Has Money for This. We Find It.",
+      "points": [
+        "\u2705 BOI promotion unlocks 3-8 years corporate tax holiday",
+        "\u2705 DEPA digital grants for software/tech companies",
+        "\u2705 OSMEP soft loans for SME development",
+        "\u2705 6 Thailand government schemes active"
+      ]
+    },
+    "trust_section": {
+      "headline": "Why {profile['name']} Businesses Trust GovFund",
+      "points": [
+        "Covers all 7 government agencies",
+        "AI-powered matching \u2014 no human bias, no missed schemes",
+        "60-second scan, results instantly",
+        "Full application handling available"
+      ]
+    },
+    "faq": [
+      {
+        "q": "Is GovFund a Thailand government agency?",
+        "a": "No. GovFund is a private consultancy. We are NOT a government agency. We help businesses navigate government schemes."
+      },
+      {
+        "q": "Is the scan really free?",
+        "a": "Yes. The eligibility scan is free and takes 60 seconds. Full application support is available through our paid plans."
+      },
+      {
+        "q": "What if I'm not eligible for anything?",
+        "a": "The scan will tell you exactly that \u2014 no cost, no obligation. But most businesses qualify for at least 3-5 schemes they didn't know about."
+      }
+    ],
+    "generated_at": "2026-06-26T08:07:36.953889"
+  },
+  "outreach_script": "Hey everyone \ud83d\udc4b\n\nI built a free tool that scans all government funding schemes in Thailand and tells you what your business qualifies for.\n\nBOI promotion unlocks 3-8 years corporate tax holiday\n\nIt covers grants, loans, tax incentives, rebates, wage subsidies \u2014 everything. Takes 60 seconds.\n\nI've been sharing it with Thailand business owners and the average business qualifies for 8-12 schemes they didn't know existed.\n\nNo catch. No spam. Just a free scan.\n\nDrop a comment if you want the link or DM me directly.\n\n\ud83c\uddf9\ud83c\udded \ud83c\uddf9\ud83c\udded"
+}

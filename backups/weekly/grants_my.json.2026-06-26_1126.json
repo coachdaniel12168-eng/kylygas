@@ -1,0 +1,217 @@
+{
+  "my_grants": [
+    {
+      "id": "mdec_digital",
+      "name": "MDEC Digital Transformation Grant",
+      "agency": "Malaysia Digital Economy Corporation (MDEC)",
+      "max_amount_myr": 200000,
+      "description": "Supports Malaysian SMEs in adopting digital technologies, automation, and e-commerce solutions. Covers software, hardware, training, and consultancy.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "technology",
+        "digital_transformation",
+        "ecommerce",
+        "automation",
+        "software"
+      ],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://mdec.my",
+      "application_time": "6-10 weeks",
+      "funding_ratio": "Up to 50% matching grant, max RM200,000",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sme_corp",
+      "name": "SME Corp Business Accelerator Grant",
+      "agency": "SME Corporation Malaysia",
+      "max_amount_myr": 250000,
+      "description": "Helps SMEs upgrade capabilities in technology adoption, certification, quality management, and market access. Covers both local and export-focused projects.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "technology",
+        "automation",
+        "certification",
+        "marketing",
+        "expansion",
+        "export"
+      ],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.smecorp.gov.my",
+      "application_time": "8-12 weeks",
+      "funding_ratio": "Up to 70% government funded",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "geran_inovasi",
+      "name": "Geran Inovasi SME",
+      "agency": "SME Corporation Malaysia",
+      "max_amount_myr": 500000,
+      "description": "Innovation grant for SMEs developing new products, services, or process improvements. Supports R&D, prototyping, IP registration, and commercialisation.",
+      "eligible_sectors": [
+        "technology",
+        "manufacturing",
+        "food"
+      ],
+      "eligible_uses": [
+        "innovation",
+        "product_development",
+        "prototyping",
+        "r&d"
+      ],
+      "min_employees": 3,
+      "min_years": 1,
+      "url": "https://www.smecorp.gov.my",
+      "application_time": "10-16 weeks",
+      "funding_ratio": "Up to 80% for approved innovation projects",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "market_dev",
+      "name": "Market Development Grant (MDG)",
+      "agency": "Malaysia External Trade Development Corporation (MATRADE)",
+      "max_amount_myr": 300000,
+      "description": "Supports SMEs in international market expansion \u2014 trade fairs, business missions, export promotion, international certification, and overseas marketing.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "export",
+        "overseas_markets",
+        "trade_shows",
+        "marketing",
+        "expansion",
+        "certification"
+      ],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.matrade.gov.my",
+      "application_time": "8-12 weeks",
+      "funding_ratio": "Up to 50% reimbursable, max RM300,000",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "automation",
+      "name": "Smart Automation Grant (SAG)",
+      "agency": "Ministry of International Trade and Industry (MITI)",
+      "max_amount_myr": 1000000,
+      "description": "Supports manufacturing and services SMEs to automate processes and adopt Industry 4.0 technologies including robotics, IoT, and AI.",
+      "eligible_sectors": [
+        "manufacturing",
+        "logistics",
+        "food"
+      ],
+      "eligible_uses": [
+        "automation",
+        "technology",
+        "iot",
+        "manufacturing",
+        "productivity",
+        "industry_4.0"
+      ],
+      "min_employees": 5,
+      "min_years": 1,
+      "url": "https://www.miti.gov.my",
+      "application_time": "12-16 weeks",
+      "funding_ratio": "Up to 50% matching, max RM1,000,000",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "hrdf",
+      "name": "HRDF Training Grant",
+      "agency": "Human Resource Development Corporation (HRD Corp)",
+      "max_amount_myr": 100000,
+      "description": "Covers training costs for upskilling employees. SMEs can claim course fees, allowances, and training equipment. Available to all registered employers.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "training",
+        "staff",
+        "upskilling",
+        "digital_skills"
+      ],
+      "min_employees": 1,
+      "min_years": 0,
+      "url": "https://hrdcorp.gov.my",
+      "application_time": "4-6 weeks",
+      "funding_ratio": "Up to 100% of training costs covered",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "status_halal",
+      "name": "Halal Industry Development Grant",
+      "agency": "Halal Development Corporation (HDC)",
+      "max_amount_myr": 150000,
+      "description": "Supports SMEs in obtaining Halal certification, developing Halal-compliant products, and marketing to global Halal markets.",
+      "eligible_sectors": [
+        "food",
+        "manufacturing"
+      ],
+      "eligible_uses": [
+        "certification",
+        "product_development",
+        "marketing",
+        "export",
+        "expansion"
+      ],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.hdcglobal.com",
+      "application_time": "6-10 weeks",
+      "funding_ratio": "Up to 70% for certification and product development",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "digital_malaysia",
+      "name": "SME Digitalisation Grant (RM5K)",
+      "agency": "Bank Negara Malaysia / SME Corp",
+      "max_amount_myr": 5000,
+      "description": "Quick-start grant for SMEs new to digitalisation. Covers business software subscriptions, e-commerce setup, digital marketing, and POS systems.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "digital_transformation",
+        "software",
+        "ecommerce",
+        "marketing"
+      ],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.smecorp.gov.my",
+      "application_time": "2-4 weeks",
+      "funding_ratio": "100% matching, up to RM5,000 (immediate)",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    }
+  ]
+}

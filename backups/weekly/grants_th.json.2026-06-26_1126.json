@@ -1,0 +1,164 @@
+{
+  "th_grants": [
+    {
+      "id": "depa_digital",
+      "name": "depa Digital Transformation Fund",
+      "agency": "Digital Economy Promotion Agency (depa)",
+      "max_amount_thb": 1000000,
+      "description": "Supports Thai SMEs in adopting digital technology, AI, data analytics, and e-commerce platforms. Covers 50-70% of project costs.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "technology",
+        "digital_transformation",
+        "ecommerce",
+        "ai",
+        "software",
+        "automation"
+      ],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.depa.or.th",
+      "application_time": "8-12 weeks",
+      "funding_ratio": "Up to 70% co-funding, max \u0e3f1,000,000",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "sme_promotion",
+      "name": "OSMEP SME Promotion Fund",
+      "agency": "Office of SMEs Promotion (OSMEP)",
+      "max_amount_thb": 500000,
+      "description": "General-purpose SME support fund covering business development, marketing, technology upgrades, productivity improvement, and expansion.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "technology",
+        "marketing",
+        "expansion",
+        "productivity",
+        "consulting"
+      ],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.sme.go.th",
+      "application_time": "8-12 weeks",
+      "funding_ratio": "Up to 50% matching, max \u0e3f500,000",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "boi_invest",
+      "name": "BOI Investment Promotion \u2014 SME Incentives",
+      "agency": "Thailand Board of Investment (BOI)",
+      "max_amount_thb": 3000000,
+      "description": "Tax incentives, import duty exemptions, and non-tax benefits for SMEs in targeted industries: manufacturing, agriculture, food processing, digital, and tourism.",
+      "eligible_sectors": [
+        "manufacturing",
+        "food",
+        "technology",
+        "logistics"
+      ],
+      "eligible_uses": [
+        "expansion",
+        "automation",
+        "technology",
+        "manufacturing",
+        "equipment"
+      ],
+      "min_employees": 10,
+      "min_years": 1,
+      "url": "https://www.boi.go.th",
+      "application_time": "12-16 weeks",
+      "funding_ratio": "Up to 8 years corporate tax exemption + import duty exemption",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "export_market",
+      "name": "DITP Export Promotion Grant",
+      "agency": "Department of International Trade Promotion (DITP)",
+      "max_amount_thb": 500000,
+      "description": "Supports Thai SMEs in overseas trade fairs, business matching, export promotion activities, and international marketing campaigns.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "export",
+        "overseas_markets",
+        "trade_shows",
+        "marketing",
+        "expansion"
+      ],
+      "min_employees": 0,
+      "min_years": 0,
+      "url": "https://www.ditp.go.th",
+      "application_time": "6-10 weeks",
+      "funding_ratio": "Up to 60% reimbursable, max \u0e3f500,000",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "skill_dev",
+      "name": "Skill Development Grant (DSD)",
+      "agency": "Department of Skill Development (DSD)",
+      "max_amount_thb": 200000,
+      "description": "Training and reskilling subsidies for SMEs \u2014 covers course fees, trainer costs, training equipment, and employee allowances during training periods.",
+      "eligible_sectors": [
+        "all"
+      ],
+      "eligible_uses": [
+        "training",
+        "staff",
+        "upskilling",
+        "digital_skills"
+      ],
+      "min_employees": 1,
+      "min_years": 0,
+      "url": "https://www.dsd.go.th",
+      "application_time": "4-8 weeks",
+      "funding_ratio": "Up to 100% of training costs covered",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "food_innovation",
+      "name": "Food Innopolis R&D Grant",
+      "agency": "National Food Institute / BOI",
+      "max_amount_thb": 2000000,
+      "description": "Supports food and agricultural SMEs in R&D, product innovation, food safety certification, and export-quality packaging development.",
+      "eligible_sectors": [
+        "food",
+        "manufacturing"
+      ],
+      "eligible_uses": [
+        "product_development",
+        "innovation",
+        "certification",
+        "export",
+        "r&d"
+      ],
+      "min_employees": 3,
+      "min_years": 1,
+      "url": "https://www.nfi.or.th",
+      "application_time": "12-16 weeks",
+      "funding_ratio": "Up to 75% for R&D projects",
+      "assist_tier": "standard",
+      "assist_label": "\u2705 We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "ads": [
+    {
+      "id": "ad-001",
+      "date": "2026-06-26",
+      "angle": "free_money",
+      "headline": "Your Business Qualifies for Grants",
+      "body": "Singapore SMEs — up to S$1M in govt grants available. EDG covers 70% of your upgrade costs. Free 60-sec scan. No obligation.",
+      "cta": "Check My Eligibility",
+      "image_description": "Clean dark card with big green number 'Up to S$1,000,000' next to Singapore flag. Professional, minimal design with high contrast.",
+      "audience": {
+        "country": "Singapore",
+        "age": "25-65",
+        "job_titles": ["Business Owner", "Founder", "Director", "Managing Director", "CEO", "SME Owner"],
+        "interests": ["Enterprise Singapore", "SME support", "business grants", "small business"]
+      },
+      "budget": "S$20/day",
+      "country": "SG"
+    },
+    {
+      "id": "ad-002",
+      "date": "2026-06-26",
+      "angle": "pain_point",
+      "headline": "Hiring Is Expensive. Govt Pays You.",
+      "body": "Senior Employment Credit: up to 8% wage offset for workers 55+. CPF offsets too. Plus training subsidies. Free scan shows all.",
+      "cta": "See What I Qualify For",
+      "image_description": "Employer desk with calculator and paperwork. Overlay text: 'Government pays up to 8% of senior worker wages' in bold green. Warm, human office setting.",
+      "audience": {
+        "country": "Singapore",
+        "age": "30-65",
+        "job_titles": ["Business Owner", "HR Director", "Managing Director", "Founder", "Operations Manager"],
+        "interests": ["SME support", "business grants", "hiring", "HR management", "small business"]
+      },
+      "budget": "S$15/day",
+      "country": "SG"
+    }
+  ],
+  "last_run": "2026-06-26"
+}

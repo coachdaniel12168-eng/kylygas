@@ -1,0 +1,73 @@
+{
+  "ideas_suggested": [
+    {
+      "date": "2026-06-26",
+      "id": "idea-001",
+      "summary": "Standardize legacy grant database schemas (MY, HK, ID, TH)",
+      "why": "MY, HK, ID, TH use old field names (max_amount_myr, eligible_sectors, eligible_uses) incompatible with new schema (SG, AU, VN, PH). The grant engine likely can't process old-format countries consistently. No category, funding_type, amount_note, or employee_requirement fields.",
+      "how": "Migrate each grants_*.json to use: id, name, agency, category, description, max_amount, amount_note, eligibility[], industries[], employee_requirement, url, currency, funding_type. Add country-level metadata (country, currency, last_updated, total_grants). Test grant engine matching against migrated data.",
+      "impact": "H",
+      "effort": "M"
+    },
+    {
+      "date": "2026-06-26",
+      "id": "idea-002",
+      "summary": "Wire up Indonesia in grant engine backend",
+      "why": "Indonesia has 6 grants in database and now has frontend intake form, but the grant engine (grant_engine.py) may not have Indonesia matching logic. Without backend support, Indonesia intake will fail or return empty.",
+      "how": "Add Indonesia country handler in grant_engine.py. Map intake fields (enterprise_type, umkm_size, employees_id) to grant eligibility filters. Test with sample profiles. Add IDR currency handling.",
+      "impact": "H",
+      "effort": "M"
+    },
+    {
+      "date": "2026-06-26",
+      "id": "idea-003",
+      "summary": "Automated grant count verification (anti-hallucination)",
+      "why": "The index.html claimed '120+ schemes' but actual count was 107. As grants are added/removed, this number drifts from reality. Manual counting failed.",
+      "how": "Add a script that counts grants across all country files and updates a 'total_grants' field. Have the frontend read this dynamically instead of hardcoding a number. Or have QC agent check and fix on each run.",
+      "impact": "M",
+      "effort": "L"
+    },
+    {
+      "date": "2026-06-26",
+      "id": "idea-004",
+      "summary": "Cross-reference validation between INTAKE (frontend) and country_intake.json (backend)",
+      "why": "Australia existed in COUNTRY_ORDER but had no INTAKE data in index.html — clicking the tab would crash the site. No automated check prevents this drift.",
+      "how": "Add a CI/pre-commit check or daily QC check that ensures every country in COUNTRY_ORDER has a matching INTAKE entry and every country in INTAKE has matching country_intake.json entry. Flag missing entries as errors.",
+      "impact": "H",
+      "effort": "L"
+    },
+    {
+      "date": "2026-06-26",
+      "id": "idea-005",
+      "summary": "Indonesia market entry — 278M population, largest SEA economy",
+      "why": "Indonesia already has 6 grants in database and is now wired into the frontend. It's the world's 4th most populous country with a massive UMKM sector (64M MSMEs). Government actively pushing digitalization (Bantuan Digitalisasi UMKM, Kartu Prakerja). No known competitors in AI grant matching for Indonesia.",
+      "how": "Complete the Indonesia pipeline: (1) translate intake form to Bahasa Indonesia, (2) add 10-15 more ID grants (BPOM, SNI certification, tourism, fisheries), (3) build Bahasa landing page, (4) target Indonesian SME Facebook ads (Rp15K-30K CPM vs S$10-15 in SG), (5) partner with local UMKM communities.",
+      "impact": "H",
+      "effort": "M"
+    }
+  ],
+  "ideas_implemented": [
+    {
+      "date": "2026-06-26",
+      "id": "imp-001",
+      "summary": "Fixed '120+ schemes' to '100+ schemes' — actual count verified at 107"
+    },
+    {
+      "date": "2026-06-26",
+      "id": "imp-002",
+      "summary": "Added Australia INTAKE form to index.html (was missing — caused crash)"
+    },
+    {
+      "date": "2026-06-26",
+      "id": "imp-003",
+      "summary": "Added Indonesia to frontend (INTAKE, COUNTRY_ORDER) and backend (country_intake.json)"
+    },
+    {
+      "date": "2026-06-26",
+      "id": "imp-004",
+      "summary": "Updated all country counts from 6/7 to 8 across MARKETING.md, COMPETITOR_ANALYSIS.md, index.html"
+    }
+  ],
+  "ideas_rejected": [],
+  "last_suggestion_date": "2026-06-26"
+}

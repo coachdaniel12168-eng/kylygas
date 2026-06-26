@@ -1,0 +1,320 @@
+{
+  "country": "Philippines",
+  "currency": "PHP",
+  "last_updated": "2026-06-26",
+  "total_grants": 10,
+  "grants": [
+    {
+      "id": "ph-psp",
+      "name": "Pondo sa Pagbabago at Pag-asenso (P3) / RISE UP",
+      "agency": "DTI / Small Business Corporation (SB Corp)",
+      "category": "Financing / Loans",
+      "description": "Flagship MSME microfinancing program offering affordable, collateral-free loans to micro and small enterprises. Replaced the 5-6 lending cycle with institutional financing at low interest rates (as low as 0.5% per month). RISE UP component adds multi-purpose loans with soft terms for MSMEs recovering from economic crises. Includes the Pondo sa Pagbabago (for micro) and RISE UP (for small-medium) tracks under the same SB Corp umbrella.",
+      "max_amount": 200000,
+      "amount_note": "Micro: PHP 5,000–200,000 at 0.5% monthly interest. RISE UP: up to PHP 5M for larger SMEs. No collateral required for micro loans. Apply via SBCorp Money app at app.sbcorp.ph.",
+      "eligibility": [
+        "Registered micro or small enterprise in the Philippines",
+        "At least 1 year in operation (existing business)",
+        "Filipino-owned",
+        "DTI/SEC registered",
+        "Must pass credit assessment"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Micro (≤9 employees) to Small (10-99 employees)",
+      "url": "https://www.sbcorp.gov.ph/",
+      "currency": "PHP",
+      "funding_type": "loan",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "ph-setup",
+      "name": "Small Enterprise Technology Upgrading Program (SETUP)",
+      "agency": "Department of Science and Technology (DOST)",
+      "category": "Technology / Innovation",
+      "description": "Nationwide program assisting MSMEs in adopting technological innovations to improve products, services, and operations. Provides funding for equipment acquisition, technology acquisition, food safety (HACCP), packaging and labelling, product testing, calibration, and consultancy. Includes technical training and technology transfer from DOST research institutes. Focuses on priority sectors: food processing, furniture, metals & engineering, GHD/IT, agriculture, and health.",
+      "max_amount": 5000000,
+      "amount_note": "Up to PHP 5M per project via DOST Regional Offices. Interest-free, payable over 3 years with grace period. Requires equity counterpart from the enterprise. Equipment and technology acquisition costs co-funded.",
+      "eligibility": [
+        "Registered MSME in the Philippines",
+        "At least 3 years in operation",
+        "Filipino-owned",
+        "Must be engaged in DOST priority sectors",
+        "Must commit to technology adoption and repayments"
+      ],
+      "industries": [
+        "Food Processing",
+        "Furniture",
+        "Metals & Engineering",
+        "Agriculture & Aquaculture",
+        "Health & Pharma",
+        "ICT / Electronics",
+        "Gifts, Houseware & Decorative Items (GHD)"
+      ],
+      "employee_requirement": "Any (MSME criteria)",
+      "url": "https://www.dost.gov.ph/programs-and-services/setup",
+      "currency": "PHP",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "ph-bmbe",
+      "name": "Barangay Micro Business Enterprise (BMBE) Incentives",
+      "agency": "DTI / Local Government Units",
+      "category": "Tax Incentives",
+      "description": "Under Republic Act No. 9178, micro businesses registered as BMBEs with assets of PHP 3M or less (excluding land) are eligible for significant incentives. Benefits include exemption from income tax on income arising from the BMBE's operations, exemption from minimum wage law coverage, priority access to government financing and capacity-building programs, and streamlined business registration through local government units. Registration is done at the Municipal/City Treasurer's Office. NOTE: DTI BMBE page no longer exists at old URL (404 as of Jun 2026). BMBE registration under RA 9178 still available at LGU level (City/Municipal Treasurer).",
+      "max_amount": 0,
+      "amount_note": "Non-monetary: full income tax exemption on BMBE-derived income. Exemption from minimum wage law (employees still receive SSS, PhilHealth). Priority to government financing. No cap on tax savings — depends on business income.",
+      "eligibility": [
+        "Registered as BMBE with the City/Municipal Treasurer",
+        "Total assets ≤ PHP 3,000,000 (excluding land)",
+        "Engaged in production, processing, or manufacturing",
+        "Registered with DTI (sole proprietorship) or SEC (corporation/partnership)",
+        "Filipino-owned"
+      ],
+      "industries": [
+        "All (production, manufacturing, processing, services)"
+      ],
+      "employee_requirement": "Micro enterprise (typically ≤9 employees)",
+      "url": "https://www.dti.gov.ph/",
+      "currency": "PHP",
+      "funding_type": "tax_incentive",
+      "assist_tier": "diy",
+      "assist_label": "📋 DIY Guide",
+      "assist_price": "$497",
+      "assist_desc": "Step-by-step guide — you apply yourself"
+    },
+    {
+      "id": "ph-create",
+      "name": "CREATE Act Investment Incentives (BOI / PEZA)",
+      "agency": "Board of Investments (BOI) / Philippine Economic Zone Authority (PEZA)",
+      "category": "Tax Incentives",
+      "description": "The Corporate Recovery and Tax Incentives for Enterprises (CREATE) Act (RA 11534) provides a unified tax incentive framework for registered business enterprises. Available incentives include Income Tax Holiday (ITH) for 4-7 years, followed by Special Corporate Income Tax (SCIT) at 5% on gross income or Enhanced Deductions (EDR) for 10 years. Additional incentives: duty exemption on imported capital equipment, VAT zero-rating on local purchases, and domestic input VAT exemption. Available to enterprises in the Strategic Investment Priority Plan (SIPP) sectors registered with BOI or PEZA. NOTE: BOI incentives page returns 403 (blocked). CREATE Act (RA 11534) recently amended by CREATE MORE Act (RA 12066). PEZA site accessible and administers incentives.",
+      "max_amount": 0,
+      "amount_note": "Income Tax Holiday: 4-7 years (depends on tier and location). SCIT: 5% on gross income for 10 years (export enterprises). EDR: enhanced deductions for 10 years. Duty-free importation of capital equipment. No maximum cap — value scales with investment size.",
+      "eligibility": [
+        "BOI-registered or PEZA-registered enterprise",
+        "Must be in SIPP (Strategic Investment Priority Plan) sectors",
+        "Minimum investment thresholds apply (varies by sector and location)",
+        "Must meet export requirements (70%+ for PEZA)",
+        "Must begin commercial operations within prescribed timeline"
+      ],
+      "industries": [
+        "Manufacturing",
+        "IT-BPM",
+        "Renewable Energy",
+        "Healthcare",
+        "Agriculture & Agribusiness",
+        "Infrastructure & Logistics",
+        "Research & Development",
+        "Electronics & Semiconductors",
+        "Tourism"
+      ],
+      "employee_requirement": "Any (varies by registration type)",
+      "url": "https://www.peza.gov.ph/",
+      "currency": "PHP",
+      "funding_type": "tax_incentive",
+      "assist_tier": "complex",
+      "assist_label": "🤝 Complex Application",
+      "assist_price": "$3,987",
+      "assist_desc": "Multi-stage, equity, long-running"
+    },
+    {
+      "id": "ph-ssf",
+      "name": "Shared Service Facilities (SSF) Program",
+      "agency": "DTI",
+      "category": "Capability Development",
+      "description": "Provides MSMEs with access to shared machinery, equipment, tools, and production facilities at no cost, enabling them to improve product quality, increase production capacity, and reduce operational costs. Facilities are set up as community-based common service centres managed by cooperatives, associations, or LGU partners. Examples include food processing centres, packaging and labelling equipment, weaving looms, fabrication shops, and testing laboratories. The program aims to address the capital constraints that prevent individual MSMEs from acquiring modern equipment.",
+      "max_amount": 0,
+      "amount_note": "Non-cash: shared access to machinery and equipment provided by DTI. Individual MSMEs access facilities for free or at minimal maintenance cost. DTI invests in equipment worth PHP 500K–5M per facility.",
+      "eligibility": [
+        "Registered MSME or a cooperative / association of MSMEs",
+        "Must operate within the area served by an SSF facility",
+        "Cooperatives and industry associations serve as facility co-operators",
+        "Filipino-owned"
+      ],
+      "industries": [
+        "Food Processing",
+        "Furniture & Woodworking",
+        "Textiles & Wearables",
+        "Metalworking & Fabrication",
+        "Agri-processing",
+        "Handicrafts"
+      ],
+      "employee_requirement": "Any (MSME level)",
+      "url": "https://www.dti.gov.ph/programs/shared-service-facilities/",
+      "currency": "PHP",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "ph-ict-dev",
+      "name": "DICT Digital Cities / ICT Development Programs",
+      "agency": "DICT (Department of Information and Communications Technology)",
+      "category": "Digital Transformation",
+      "description": "The Digital Cities program aims to transform 25+ cities outside Metro Manila into thriving ICT hubs by building digital infrastructure, developing ICT talent pipelines, and creating an enabling business environment for tech companies. DICT also runs various digital grants including the National ICT Ecosystem Framework, Tech4ED digital literacy centres, and the Startup Grant Fund under Republic Act 11337 (Innovative Startup Act). Programs include co-working spaces, broadband infrastructure, digital skills training, and innovation hubs. Individual matching grants may be available for qualified tech startups through DICT partnerships.",
+      "max_amount": 5000000,
+      "amount_note": "Startup Grant Fund: up to PHP 5M per startup (under RA 11337). Digital Cities: infrastructure and ecosystem investments by DICT. Individual grant amounts vary by program and partnership.",
+      "eligibility": [
+        "Registered startup or ICT enterprise in the Philippines",
+        "Operating in or relocating to a designated Digital City",
+        "Innovative/tech-driven business model (for startup grants)",
+        "Must meet DICT program-specific criteria",
+        "Filipino-owned or branch of international company creating local jobs"
+      ],
+      "industries": [
+        "ICT / Software Development",
+        "IT-BPM / BPO",
+        "Animation & Game Development",
+        "AI / Data Analytics",
+        "Cybersecurity",
+        "Digital Services",
+        "Creative Industries"
+      ],
+      "employee_requirement": "Any",
+      "url": "https://dict.gov.ph/digital-cities/",
+      "currency": "PHP",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "ph-otb",
+      "name": "One Town, One Product (OTOP) Program",
+      "agency": "DTI",
+      "category": "Capability Development",
+      "description": "DTI's flagship program to promote products and services unique to specific localities, enabling MSMEs to scale through product development, marketing, and promotion support. Provides interventions along the value chain: product design and development, packaging and labelling, standards and quality compliance, market access (trade fairs, e-commerce), and business advisory. Also includes OTOP NextGen for enterprises ready to scale up — combining product development, design, and market linkage support. Export-ready products receive additional promotion through international trade missions.",
+      "max_amount": 500000,
+      "amount_note": "In-kind support value: PHP 50K-500K per enterprise in product development, packaging design, marketing, and trade fair participation. Not a direct cash grant — DTI provides services and opportunities.",
+      "eligibility": [
+        "Registered MSME in the Philippines",
+        "Product or service tied to the locality",
+        "Must be endorsed by DTI provincial/regional office",
+        "Open to sole proprietorships, cooperatives, and community enterprises"
+      ],
+      "industries": [
+        "Food & Beverages",
+        "Home & Fashion Accessories",
+        "Gifts, Houseware & Decor (GHD)",
+        "Arts & Crafts",
+        "Processed Agricultural Products",
+        "Wellness & Personal Care",
+        "Wearables & Textiles"
+      ],
+      "employee_requirement": "Any (MSME level)",
+      "url": "https://www.dti.gov.ph/programs/otop/",
+      "currency": "PHP",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "ph-women",
+      "name": "Women's Enterprise Fund (SB Corp)",
+      "agency": "DTI / Small Business Corporation (SB Corp)",
+      "category": "Financing / Loans",
+      "description": "Specialized financing program for women-led and women-owned MSMEs in the Philippines. Offers accessible loan products designed to address the gender financing gap. Provides working capital, asset financing, and business expansion loans at competitive rates with flexible repayment terms. Part of the government's gender-responsive economic strategy to empower Filipina entrepreneurs. Loans are processed through the SBCorp Money mobile app for simplified application and approval. Includes mentorship and business development support components.",
+      "max_amount": 1000000,
+      "amount_note": "Up to PHP 1M per woman-owned/led enterprise. Competitive interest rates below market. Flexible repayment up to 36 months. No collateral required for micro loans up to PHP 200K.",
+      "eligibility": [
+        "At least 51% women-owned or women-led enterprise",
+        "Registered with DTI or SEC",
+        "Filipino-owned",
+        "Operating business (6+ months for established, 1+ months for startups)",
+        "Must pass SB Corp credit evaluation"
+      ],
+      "industries": [
+        "All"
+      ],
+      "employee_requirement": "Any (MSME)",
+      "url": "https://www.sbcorp.gov.ph/",
+      "currency": "PHP",
+      "funding_type": "loan",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "ph-export",
+      "name": "Export Business Expansion Financing (SB Corp)",
+      "agency": "DTI / Small Business Corporation (SB Corp)",
+      "category": "Internationalisation / Export",
+      "description": "Financing program for growing MSMEs seeking to penetrate foreign markets or already engaged in exporting Philippine products. Loans can be used for business expansion, increasing production capacity, modernization, procurement of equipment and machinery, and working capital for export orders. Complements DTI Export Marketing Bureau's market access programs. Supports MSMEs in meeting international quality standards and scaling up to fill export orders. Offers lower interest rates than commercial export financing.",
+      "max_amount": 5000000,
+      "amount_note": "Up to PHP 5M loan for export-oriented MSMEs. Competitive interest rates with flexible repayment terms. Can be used for equipment purchase, working capital, and capacity expansion.",
+      "eligibility": [
+        "Registered MSME exporting or planning to export",
+        "DTI/SEC registered",
+        "Filipino-owned",
+        "At least 1 year in operation",
+        "Demonstrated export potential or existing export contracts/orders"
+      ],
+      "industries": [
+        "Food & Agri-processing",
+        "Furniture & Woodcraft",
+        "Textiles & Garments",
+        "Electronics Components",
+        "Gifts, Houseware & Decor",
+        "Artisanal & Craft Products",
+        "Manufacturing"
+      ],
+      "employee_requirement": "Any (MSME)",
+      "url": "https://www.sbcorp.gov.ph/",
+      "currency": "PHP",
+      "funding_type": "loan",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    },
+    {
+      "id": "ph-startup",
+      "name": "Innovative Startup Grant Fund",
+      "agency": "DOST-PCIEERD / DTI / DICT",
+      "category": "Startup / Innovation",
+      "description": "Under Republic Act 11337 (Innovative Startup Act), the government established a Startup Grant Fund to provide financial support for innovative startups. Managed through DOST-PCIEERD (for tech/science-based), DTI (for general), and DICT (for ICT startups), the program offers research and development grants, prototype development funding, commercialization support, and market validation assistance. Includes the Startup Venture Fund for equity co-investment. Startups also gain access to the government's network of incubators, accelerators, and technology business incubators (TBIs).",
+      "max_amount": 5000000,
+      "amount_note": "R&D Grants: up to PHP 5M. Startup Venture Fund: equity co-investment (amount varies). DOST-PCIEERD: up to PHP 5M for technology startups. Additional incubation and accelerator support in-kind.",
+      "eligibility": [
+        "Registered startup (SEC/DTI) in the Philippines",
+        "Innovative or technology-driven business model",
+        "At least 60% Filipino-owned",
+        "Less than 5 years from registration (for startup-specific programs)",
+        "Must be endorsed by a DOST-recognized incubator/accelerator (for tech grants)"
+      ],
+      "industries": [
+        "ICT / Software",
+        "AgriTech",
+        "HealthTech",
+        "FinTech",
+        "CleanTech / Renewable Energy",
+        "AI / Machine Learning",
+        "EdTech",
+        "E-commerce & Logistics"
+      ],
+      "employee_requirement": "N/A (startup stage)",
+      "url": "https://dict.gov.ph/startup-grant-fund/",
+      "currency": "PHP",
+      "funding_type": "grant",
+      "assist_tier": "standard",
+      "assist_label": "✅ We Apply For You",
+      "assist_price": "$997",
+      "assist_desc": "Full application handled by us"
+    }
+  ]
+}

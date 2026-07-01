@@ -11,7 +11,20 @@
 <meta property="og:title" content="Rank GAS — Free AI Search Visibility Audit">
 <meta property="og:description" content="Get your free AI visibility score. See what ChatGPT, Perplexity, and Google AI Overviews are missing from your site.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://kylygas.com">
+<meta property="og:url" content="https://gas.proofposts.com">
+<link rel="canonical" href="https://gas.proofposts.com/">
+
+<!-- Organization Schema for entity signals -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Rank GAS",
+  "url": "https://gas.proofposts.com",
+  "description": "AI search visibility audit tool for SEO, AEO, and GEO ranking",
+  "sameAs": []
+}
+</script>
 
 <!-- Schema.org -->
 <script type="application/ld+json">
@@ -222,93 +235,284 @@ footer a { color: var(--accent); text-decoration: none; }
 </footer>
 
 <script>
-const API_BASE = 'https://kenneth-loan-dis-amendments.trycloudflare.com'; // ATEAM Backend via Cloudflare Tunnel
+/* ── Rank GAS: Honest Client-Side AI Visibility Audit ── */
+const CORS_PROXIES = [
+  'https://corsproxy.io/?url=',
+  'https://api.allorigins.win/raw?url=',
+];
 
 function scrollToAudit() {
   document.getElementById('auditUrl').scrollIntoView({behavior:'smooth'});
   document.getElementById('auditUrl').focus();
 }
 
+function normUrl(raw) {
+  let u = raw.trim();
+  if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
+  try { return new URL(u).href.replace(/\/$/, ''); } catch(e) { return null; }
+}
+
+async function fetchPage(url) {
+  for (const proxy of CORS_PROXIES) {
+    try {
+      const r = await fetch(proxy + encodeURIComponent(url), {signal: AbortSignal.timeout(8000)});
+      if (r.ok) return await r.text();
+    } catch(e) { continue; }
+  }
+  return null;
+}
+
+/* ── Real analyzers ── */
+function analyzeSEO(html, url) {
+  let score = 0, findings = [], fixes = [];
+  const hasTitle = /<title[^>]*>([^<]+)<\/title>/i.exec(html);
+  if (hasTitle) { score += 15; findings.push('Title tag: "' + hasTitle[1].slice(0,70) + '"'); }
+  else { fixes.push('Add a <title> tag (50-65 characters recommended)'); }
+
+  const hasDesc = /<meta[^>]+name=["']description["'][^>]*content=["']([^"']+)/i.exec(html);
+  if (hasDesc) { score += 15; findings.push('Meta description present'); }
+  else { fixes.push('Add a meta description (120-155 characters)'); }
+
+  const hasH1 = /<h1[^>]*>/i.test(html);
+  if (hasH1) { score += 10; findings.push('H1 heading found'); }
+  else { fixes.push('Add an H1 heading to your page'); }
+
+  const hasCanonical = /<link[^>]+rel=["']canonical["']/i.test(html);
+  if (hasCanonical) { score += 5; findings.push('Canonical URL set'); }
+  else { fixes.push('Add a canonical link to prevent duplicate content issues'); }
+
+  const imgCount = (html.match(/<img[^>]*>/gi) || []).length;
+  const altCount = (html.match(/alt=["'][^"']*["']/gi) || []).length;
+  if (imgCount === 0) { score += 5; findings.push('No images (or minimal — fine for text-heavy pages)'); }
+  else if (altCount >= imgCount * 0.8) { score += 5; findings.push(imgCount + ' images, ' + altCount + ' with alt text'); }
+  else { fixes.push('Add alt text to images (only ' + altCount + ' of ' + imgCount + ' have it)'); }
+
+  const isHTTPS = url.startsWith('https://');
+  if (isHTTPS) { score += 5; findings.push('HTTPS enabled'); }
+  else { fixes.push('Switch to HTTPS — Google ranks secure sites higher'); }
+
+  return {score: Math.min(score, 55), findings, fixes};
+}
+
+function analyzeAEO(html) {
+  let score = 0, findings = [], fixes = [];
+  const hasFAQ = /"@type"\s*:\s*"FAQPage"/i.test(html);
+  if (hasFAQ) { score += 20; findings.push('FAQPage schema detected — eligible for rich results'); }
+  else { fixes.push('Add FAQPage structured data — sites with FAQ schema appear in Google rich results'); }
+
+  const hasHowTo = /"@type"\s*:\s*"HowTo"/i.test(html);
+  if (hasHowTo) { score += 15; findings.push('HowTo schema detected'); }
+  else { findings.push('No HowTo schema — consider for instructional content'); }
+
+  const hasArticle = /"@type"\s*:\s*"Article"/i.test(html) || /<article[^>]*>/i.test(html);
+  if (hasArticle) { score += 10; findings.push('Article structure present'); }
+  else { fixes.push('Use <article> tags or Article schema for content pages'); }
+
+  const hasBreadcrumb = /"@type"\s*:\s*"BreadcrumbList"/i.test(html);
+  if (hasBreadcrumb) { score += 10; findings.push('BreadcrumbList schema detected'); }
+  else { fixes.push('Add BreadcrumbList structured data for better SERP display'); }
+
+  const paragraphBreakup = (html.match(/<\/p>/gi) || []).length;
+  if (paragraphBreakup >= 5) { score += 5; findings.push(paragraphBreakup + ' paragraphs — good readability for answer engines'); }
+  else { fixes.push('Break content into more short paragraphs for answer engine extraction'); }
+
+  return {score, findings, fixes};
+}
+
+function analyzeGEO(html, url) {
+  let score = 0, findings = [], fixes = [];
+  const hasOG = /og:title/i.test(html) && /og:description/i.test(html);
+  if (hasOG) { score += 15; findings.push('Open Graph tags present — AI models use these for citations'); }
+  else { fixes.push('Add Open Graph tags (og:title, og:description) — AI models use them to cite your content'); }
+
+  const hasSchema = /application\/ld\+json/i.test(html);
+  if (hasSchema) { score += 15; findings.push('JSON-LD structured data found'); }
+  else { fixes.push('Add JSON-LD structured data — AI models read schema.org markup to understand your content'); }
+
+  const hasOrg = /"@type"\s*:\s*"Organization"/i.test(html);
+  if (hasOrg) { score += 10; findings.push('Organization schema — helps AI attribute content to your brand'); }
+  else { fixes.push('Add Organization schema with sameAs links — builds entity signals for AI models'); }
+
+  const wordCount = (html.replace(/<[^>]*>/g, '').match(/\b\w+\b/g) || []).length;
+  if (wordCount > 500) { score += 10; findings.push(wordCount + ' words — sufficient depth for AI citation'); }
+  else if (wordCount > 150) { score += 5; findings.push(wordCount + ' words — borderline for AI citation depth'); }
+  else { fixes.push('Content is only ' + wordCount + ' words. AI models prefer 500+ words for meaningful citations'); }
+
+  const hasDate = /dateModified|datePublished|"datePublished"/i.test(html);
+  if (hasDate) { score += 5; findings.push('Publication date signals — AI models favor fresh content'); }
+  else { fixes.push('Add datePublished/dateModified metadata — AI models use freshness as a ranking signal'); }
+
+  return {score, findings, fixes};
+}
+
+function analyzeEntity(html) {
+  let score = 0, findings = [], fixes = [];
+  const hasSameAs = /sameAs/i.test(html);
+  if (hasSameAs) { score += 25; findings.push('sameAs links — strong entity signal'); }
+  else { fixes.push('Add sameAs links in Organization schema (LinkedIn, Twitter, Wikipedia) — this is the #1 entity signal'); }
+
+  const hasOrgSchema = /"@type"\s*:\s*"Organization"/i.test(html);
+  if (hasOrgSchema) { score += 20; findings.push('Organization entity declared'); }
+  else { fixes.push('Add Organization structured data — without it, AI models cannot associate content with your brand'); }
+
+  const hasAddress = /"@type"\s*:\s*"PostalAddress"/i.test(html) || /address/i.test(html);
+  if (hasAddress) { score += 10; findings.push('Location/address signals present'); }
+
+  return {score: Math.min(score, 55), findings, fixes};
+}
+
+function analyzeStructure(html) {
+  let score = 0, findings = [], fixes = [];
+  const h2s = (html.match(/<h2[^>]*>/gi) || []).length;
+  if (h2s >= 3) { score += 20; findings.push(h2s + ' H2 headings — well-structured for AI parsing'); }
+  else if (h2s >= 1) { score += 10; findings.push(h2s + ' H2 heading(s) — acceptable'); }
+  else { fixes.push('Add H2 subheadings — AI models use heading hierarchy to understand content structure'); }
+
+  const hasLists = /<[ou]l[^>]*>/i.test(html);
+  if (hasLists) { score += 15; findings.push('Lists/structured content — easy for AI to parse'); }
+  else { fixes.push('Use bulleted or numbered lists — AI models extract list content more reliably than paragraphs'); }
+
+  const hasViewport = /viewport/i.test(html);
+  if (hasViewport) { score += 10; findings.push('Mobile viewport configured'); }
+  else { fixes.push('Add viewport meta tag for mobile'); }
+
+  const hasLang = /html[^>]+lang=["']/i.test(html);
+  if (hasLang) { score += 10; findings.push('Language declared — helps AI target correctly'); }
+  else { fixes.push('Add lang attribute to <html> tag'); }
+
+  return {score: Math.min(score, 55), findings, fixes};
+}
+
+function analyzeCitation(html) {
+  let score = 0, findings = [], fixes = [];
+  const hasAuthor = /author/i.test(html) || /"@type"\s*:\s*"Person"/i.test(html);
+  if (hasAuthor) { score += 20; findings.push('Author/Person signals — AI models prefer attributable content'); }
+  else { fixes.push('Add author metadata — AI models prefer citing content with clear authorship'); }
+
+  const hasExternalLinks = (html.match(/href=["']https?:\/\/(?!.*gas\.proofposts)/gi) || []).length;
+  if (hasExternalLinks >= 3) { score += 15; findings.push(hasExternalLinks + ' external citations — good linking hygiene'); }
+  else if (hasExternalLinks >= 1) { score += 8; findings.push(hasExternalLinks + ' external link(s) — add more for credibility'); }
+  else { fixes.push('Link to authoritative external sources — AI models weigh citation patterns'); }
+
+  const hasQuotes = /<blockquote/i.test(html) || /<q[^>]*>/i.test(html);
+  if (hasQuotes) { score += 10; findings.push('Blockquote/citation markup present'); }
+
+  const hasUniqueTitle = /<title[^>]*>[^<]{15,}/i.test(html);
+  if (hasUniqueTitle) { score += 5; findings.push('Descriptive title — easier for AI to reference'); }
+
+  return {score: Math.min(score, 50), findings, fixes};
+}
+
+function analyzeCrawler(html) {
+  let score = 0, findings = [], fixes = [];
+  const hasRobots = /<meta[^>]+name=["']robots["']/i.test(html);
+  if (hasRobots) { score += 15; findings.push('Robots meta tag present'); }
+
+  const noNoindex = !/noindex/i.test(html);
+  if (noNoindex) { score += 20; findings.push('Page is indexable (no noindex directive)'); }
+  else { fixes.push('Remove noindex tag — your page is blocking search engines'); }
+
+  const hasSitemapRef = /sitemap/i.test(html);
+  if (hasSitemapRef) { score += 10; findings.push('Sitemap reference found'); }
+
+  const textRatio = html.replace(/<[^>]*>/g, '').length / Math.max(html.length, 1);
+  if (textRatio > 0.15) { score += 10; findings.push('Good text-to-code ratio (' + Math.round(textRatio*100) + '%)'); }
+  else { fixes.push('Low text-to-code ratio — reduce inline CSS/JS, move to external files'); }
+
+  return {score: Math.min(score, 55), findings, fixes};
+}
+
 async function runAudit() {
-  const url = document.getElementById('auditUrl').value.trim();
+  const rawUrl = document.getElementById('auditUrl').value.trim();
   const email = document.getElementById('auditEmail').value.trim();
-  if (!url) { alert('Please enter your website URL'); return; }
+  if (!rawUrl) { alert('Please enter your website URL'); return; }
+
+  const url = normUrl(rawUrl);
+  if (!url) { alert('Please enter a valid URL (e.g., https://example.com)'); return; }
 
   const result = document.getElementById('auditResult');
   result.classList.add('show');
-  result.innerHTML = '<div class="score-circle" style="animation:pulse 1.5s infinite">⚡</div><p style="text-align:center;color:#666">Analyzing ' + url + '…<br><small>Fetching page, scanning 7 dimensions</small></p>';
+  result.innerHTML = '<div class="score-circle" style="animation:pulse 1.5s infinite">⚡</div><p style="text-align:center;color:#666">Scanning ' + url + '…<br><small>Fetching your page, analyzing 7 dimensions</small></p>';
 
-  try {
-    const resp = await fetch(API_BASE + '/audit/kylygas', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url, email: email || undefined }),
-    });
-    const data = await resp.json();
+  const html = await fetchPage(url);
 
-    if (data.error) {
-      result.innerHTML = '<div class="score-circle score-low">!</div><p style="text-align:center;color:#c62828">' + data.error + '</p>';
-      return;
-    }
-
-    const dims = data.dimensions || [];
-    const colorMap = { SEO: '#1565c0', AEO: '#c62828', GEO: '#2e7d32', Entity: '#e65100', Structure: '#6c5ce7', Citation: '#f57c00', Crawler: '#00838f' };
-    const scoreClass = data.overall_score >= 70 ? 'score-high' : data.overall_score >= 50 ? 'score-mid' : 'score-low';
-
-    let dimGrid = '';
-    dims.forEach(d => {
-      const c = colorMap[d.name] || '#6c5ce7';
-      dimGrid += '<div style="text-align:center;padding:10px;background:white;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06)"><strong style="color:' + c + ';font-size:1.2em">' + d.score + '%</strong><br><small>' + d.name + '</small></div>';
-    });
-
-    let bars = dims.map(d => makeBar(d.name + ': ' + (d.findings[0] || 'OK'), d.score, colorMap[d.name] || '#6c5ce7')).join('');
-
-    let fixesHtml = '';
-    dims.forEach(d => {
-      if (d.fixes && d.fixes.length > 0) {
-        fixesHtml += '<div style="margin-bottom:10px"><strong>' + d.name + '</strong><ul style="list-style:none;font-size:.85em;margin:4px 0">';
-        d.fixes.forEach(f => { fixesHtml += '<li>🔧 ' + f + '</li>'; });
-        fixesHtml += '</ul></div>';
-      }
-    });
-
+  if (!html) {
+    // Honest fallback: could not reach the site
     result.innerHTML = `
-      <div class="score-circle ${scoreClass}">${data.overall_score}/100</div>
-      <p style="text-align:center;font-weight:600;font-size:1.1em">AI Visibility Score<br><small style="color:#666">${data.url}</small></p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0">${dimGrid}</div>
-      <h4 style="margin-bottom:8px">7-Dimension Breakdown</h4>${bars}
-      <div style="margin-top:16px;padding:16px;background:#f8f9fa;border-radius:8px">
-        <h4 style="margin-bottom:8px">Recommended Fixes</h4>${fixesHtml}
-      </div>
-      <p style="text-align:center;margin-top:12px;font-size:.85em">${data.sheet_saved ? '✅ Saved to Rank GAS dashboard' : '⚡ Real audit — powered by ATEAM engine'}</p>
-    `;
-  } catch (err) {
-    // Fallback: offline or API unreachable — use demo mode
-    fallbackAudit(url, email, result);
+      <div style="text-align:center;padding:20px">
+        <div class="score-circle" style="background:#fff3cd;color:#856404;width:80px;height:80px;font-size:1.8em;margin:0 auto 16px">?</div>
+        <p style="font-weight:600">Could not reach ${url}</p>
+        <p style="color:#666;font-size:.9em;margin:8px 0">Your site may be blocking automated checks, or our proxy was unavailable.</p>
+        <div style="margin-top:16px;padding:16px;background:#f8f9fa;border-radius:8px;text-align:left">
+          <strong>Here's what a full Rank GAS audit checks:</strong>
+          <ul style="margin-top:8px;font-size:.9em">
+            <li><strong>SEO:</strong> Title, meta description, H1, canonical, HTTPS, image alt text</li>
+            <li><strong>AEO:</strong> FAQPage schema, HowTo schema, Article structure, BreadcrumbList, paragraph breakup</li>
+            <li><strong>GEO:</strong> Open Graph tags, JSON-LD, Organization schema, word count, freshness signals</li>
+            <li><strong>Entity:</strong> sameAs links, Organization schema, location signals</li>
+            <li><strong>Structure:</strong> Heading hierarchy, lists, mobile viewport, language declaration</li>
+            <li><strong>Citation:</strong> Authorship, external links, blockquotes, title descriptiveness</li>
+            <li><strong>Crawler:</strong> Indexability, noindex status, text-to-code ratio</li>
+          </ul>
+        </div>
+        <p style="margin-top:12px;font-size:.85em;color:#666">Want a full audit? Our paid plans include manual review and a detailed fix roadmap.</p>
+      </div>`;
+    return;
   }
-}
 
-function fallbackAudit(url, email, el) {
-  const hash = url.split('').reduce((a,c)=>a+c.charCodeAt(0),0);
+  // Real analysis
   const dims = [
-    { name:'SEO', score:Math.min(95,(hash%35)+45) },
-    { name:'AEO', score:Math.min(90,(hash%30)+35) },
-    { name:'GEO', score:Math.min(85,(hash%25)+30) },
-    { name:'Entity', score:Math.min(90,(hash%28)+38) },
-    { name:'Structure', score:Math.min(88,(hash%32)+40) },
-    { name:'Citation', score:Math.min(80,(hash%22)+28) },
-    { name:'Crawler', score:Math.min(95,(hash%20)+50) },
+    {name:'SEO', ...analyzeSEO(html, url), color:'#1565c0'},
+    {name:'AEO', ...analyzeAEO(html), color:'#c62828'},
+    {name:'GEO', ...analyzeGEO(html, url), color:'#2e7d32'},
+    {name:'Entity', ...analyzeEntity(html), color:'#e65100'},
+    {name:'Crawler', ...analyzeCrawler(html), color:'#00838f'},
+    {name:'Structure', ...analyzeStructure(html), color:'#6c5ce7'},
+    {name:'Citation', ...analyzeCitation(html), color:'#f57c00'},
   ];
-  const overall = Math.round(dims.reduce((s,d)=>s+d.score,0)/dims.length);
-  const sc = overall >= 70 ? 'score-high' : overall >= 50 ? 'score-mid' : 'score-low';
-  const colorMap = { SEO:'#1565c0', AEO:'#c62828', GEO:'#2e7d32', Entity:'#e65100', Structure:'#6c5ce7', Citation:'#f57c00', Crawler:'#00838f' };
-  let grid='', bars='';
-  dims.forEach(d=>{const c=colorMap[d.name];grid+='<div style="text-align:center;padding:10px;background:white;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06)"><strong style="color:'+c+';font-size:1.2em">'+d.score+'%</strong><br><small>'+d.name+'</small></div>';bars+=makeBar(d.name,d.score,c);});
-  el.innerHTML='<div class="score-circle '+sc+'">'+overall+'/100</div><p style="text-align:center;font-weight:600;font-size:1.1em">AI Visibility Score (Demo)<br><small style="color:#666">'+url+'</small></p><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0">'+grid+'</div><h4 style="margin-bottom:8px">7-Dimension Breakdown</h4>'+bars+'<p style="text-align:center;margin-top:12px;font-size:.8em;color:#999">⚡ Demo mode — connect to ATEAM backend for real audits</p>';
-}
 
-function makeBar(label, score, color) {
-  return '<div style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;font-size:.85em;margin-bottom:2px"><span>' + label + '</span><span>' + score + '%</span></div><div style="background:#e2e8f0;border-radius:4px;height:8px"><div style="background:' + color + ';height:8px;border-radius:4px;width:' + score + '%"></div></div></div>';
+  // Normalize scores to percentages
+  const maxPerDim = {SEO:55, AEO:55, GEO:55, Entity:55, Structure:55, Citation:50, Crawler:55};
+  dims.forEach(d => { d.pct = Math.round((d.score / maxPerDim[d.name]) * 100); });
+
+  const overall = Math.round(dims.reduce((s,d) => s + d.pct, 0) / dims.length);
+  const scoreClass = overall >= 70 ? 'score-high' : overall >= 45 ? 'score-mid' : 'score-low';
+
+  // Dimension grid
+  let dimGrid = '';
+  dims.forEach(d => {
+    dimGrid += '<div style="text-align:center;padding:10px;background:white;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06)"><strong style="color:' + d.color + ';font-size:1.2em">' + d.pct + '%</strong><br><small>' + d.name + '</small></div>';
+  });
+
+  // Bars
+  let bars = '';
+  dims.forEach(d => {
+    const finding = d.findings[0] || 'OK';
+    bars += '<div style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;font-size:.85em;margin-bottom:2px"><span>' + d.name + ': ' + finding + '</span><span>' + d.pct + '%</span></div><div style="background:#e2e8f0;border-radius:4px;height:8px"><div style="background:' + d.color + ';height:8px;border-radius:4px;width:' + d.pct + '%"></div></div></div>';
+  });
+
+  // Fixes
+  let fixesHtml = '';
+  dims.forEach(d => {
+    if (d.fixes.length > 0) {
+      fixesHtml += '<div style="margin-bottom:10px"><strong style="color:' + d.color + '">' + d.name + '</strong><ul style="list-style:none;font-size:.85em;margin:4px 0">';
+      d.fixes.forEach(f => { fixesHtml += '<li>🔧 ' + f + '</li>'; });
+      fixesHtml += '</ul></div>';
+    }
+  });
+
+  if (!fixesHtml) fixesHtml = '<p style="color:#155724">🎉 No critical issues found! Your site is well-optimized for AI search visibility.</p>';
+
+  result.innerHTML = `
+    <div class="score-circle ${scoreClass}">${overall}/100</div>
+    <p style="text-align:center;font-weight:600;font-size:1.1em">AI Visibility Score<br><small style="color:#666">${url}</small></p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:8px;margin:16px 0">${dimGrid}</div>
+    <h4 style="margin-bottom:8px">7-Dimension Breakdown</h4>${bars}
+    <div style="margin-top:16px;padding:16px;background:#f8f9fa;border-radius:8px">
+      <h4 style="margin-bottom:8px">Priority Fixes</h4>${fixesHtml}
+    </div>
+    <p style="text-align:center;margin-top:12px;font-size:.85em;color:#666">✅ Real audit — your page was fetched and analyzed. <a href="pricing.html">Upgrade for detailed reports & competitor tracking →</a></p>
+  `;
 }
 </script>
 

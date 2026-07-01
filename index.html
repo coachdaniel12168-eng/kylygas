@@ -149,7 +149,8 @@ footer a { color: var(--accent); text-decoration: none; }
     <p>Enter your website URL. Get your score in seconds.</p>
     <div class="audit-input-group">
       <input type="url" id="auditUrl" placeholder="https://yourwebsite.com" autocomplete="url">
-      <input type="email" id="auditEmail" placeholder="Your email (to receive report)">
+      <input type="url" id="competitorUrl" placeholder="Competitor URL (optional)">
+      <input type="email" id="auditEmail" placeholder="Your email (we'll send the report)">
       <button onclick="runAudit()">Scan My Site</button>
     </div>
     <div class="audit-result" id="auditResult">
@@ -422,22 +423,162 @@ function analyzeCrawler(html) {
   return {score: Math.min(score, 55), findings, fixes};
 }
 
+async function analyzeUrl(url) {
+  const html = await fetchPage(url);
+  if (!html) return null;
+  const maxPerDim = {SEO:55, AEO:55, GEO:55, Entity:55, Structure:55, Citation:50, Crawler:55};
+  const raw = [
+    {name:'SEO', ...analyzeSEO(html, url), color:'#1565c0'},
+    {name:'AEO', ...analyzeAEO(html), color:'#c62828'},
+    {name:'GEO', ...analyzeGEO(html, url), color:'#2e7d32'},
+    {name:'Entity', ...analyzeEntity(html), color:'#e65100'},
+    {name:'Crawler', ...analyzeCrawler(html), color:'#00838f'},
+    {name:'Structure', ...analyzeStructure(html), color:'#6c5ce7'},
+    {name:'Citation', ...analyzeCitation(html), color:'#f57c00'},
+  ];
+  raw.forEach(d => { d.pct = Math.round((d.score / maxPerDim[d.name]) * 100); });
+  const overall = Math.round(raw.reduce((s,d) => s + d.pct, 0) / raw.length);
+  return { url, overall, dims: raw };
+}
+
+function renderResult(data, competitorData) {
+  const scoreClass = data.overall >= 70 ? 'score-high' : data.overall >= 45 ? 'score-mid' : 'score-low';
+
+  // Build your-site section
+  let dimGrid = '';
+  data.dims.forEach(d => {
+    dimGrid += '<div style="text-align:center;padding:10px;background:white;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06)"><strong style="color:' + d.color + ';font-size:1.2em">' + d.pct + '%</strong><br><small>' + d.name + '</small></div>';
+  });
+
+  let fixesHtml = '';
+  data.dims.forEach(d => {
+    if (d.fixes.length > 0) {
+      fixesHtml += '<div style="margin-bottom:10px"><strong style="color:' + d.color + '">' + d.name + '</strong><ul style="list-style:none;font-size:.85em;margin:4px 0">';
+      d.fixes.forEach(f => { fixesHtml += '<li>🔧 ' + f + '</li>'; });
+      fixesHtml += '</ul></div>';
+    }
+  });
+  if (!fixesHtml) fixesHtml = '<p style="color:#155724">🎉 No critical issues found! Your site is well-optimized.</p>';
+
+  // Build competitor comparison if available
+  let compHtml = '';
+  if (competitorData) {
+    const cScoreClass = competitorData.overall >= 70 ? 'score-high' : competitorData.overall >= 45 ? 'score-mid' : 'score-low';
+    const diff = data.overall - competitorData.overall;
+    const diffText = diff > 0 ? 'You lead by <strong style="color:#155724">+' + diff + ' points</strong>' 
+                   : diff < 0 ? 'Competitor leads by <strong style="color:#c62828">' + Math.abs(diff) + ' points</strong>'
+                   : '<strong>Tied</strong>';
+
+    let compRows = '';
+    data.dims.forEach((d, i) => {
+      const cd = competitorData.dims[i];
+      const dDiff = d.pct - cd.pct;
+      const arrow = dDiff > 0 ? '▲' : dDiff < 0 ? '▼' : '—';
+      const arrowColor = dDiff > 0 ? '#155724' : dDiff < 0 ? '#c62828' : '#999';
+      compRows += '<tr><td style="font-weight:600">' + d.name + '</td><td style="color:' + d.color + '">' + d.pct + '%</td><td>' + cd.pct + '%</td><td style="color:' + arrowColor + '">' + arrow + ' ' + Math.abs(dDiff) + '</td></tr>';
+    });
+
+    compHtml = `
+      <div style="margin-top:24px;padding:20px;background:white;border-radius:12px;border:2px solid #e2e8f0">
+        <h3 style="margin-bottom:4px">🏆 Competitor Comparison</h3>
+        <p style="color:#666;margin-bottom:16px">
+          <span style="font-weight:600">You:</span> ${data.url} · ${data.overall}/100 — 
+          <span style="font-weight:600">Competitor:</span> ${competitorData.url} · ${competitorData.overall}/100<br>
+          ${diffText}
+        </p>
+        <table style="width:100%;border-collapse:collapse;font-size:.9em">
+          <tr style="background:#f1f5f9"><th style="text-align:left;padding:8px">Dimension</th><th style="padding:8px">You</th><th style="padding:8px">Them</th><th style="padding:8px">Δ</th></tr>
+          ${compRows}
+        </table>
+        <p style="margin-top:12px;font-size:.85em;color:#666">▲ = you win this dimension. ▼ = competitor wins. <a href="pricing.html">Growth plan ($49/mo) includes unlimited competitor tracking →</a></p>
+      </div>`;
+  }
+
+  // Email send trigger (fire-and-forget)
+  const email = document.getElementById('auditEmail').value.trim();
+  if (email && email.includes('@') && email.includes('.')) {
+    sendReportEmail(email, data, competitorData);
+  }
+
+  return `
+    <div class="score-circle ${scoreClass}">${data.overall}/100</div>
+    <p style="text-align:center;font-weight:600;font-size:1.1em">AI Visibility Score<br><small style="color:#666">${data.url}</small></p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:8px;margin:16px 0">${dimGrid}</div>
+    <div style="margin-top:16px;padding:16px;background:#f8f9fa;border-radius:8px">
+      <h4 style="margin-bottom:8px">Priority Fixes</h4>${fixesHtml}
+    </div>
+    ${compHtml}
+    <p style="text-align:center;margin-top:12px;font-size:.85em;color:#666">✅ Real audit completed. ${email ? 'Report sent to <strong>' + email + '</strong>. ' : ''}<a href="pricing.html">Upgrade for detailed reports & competitor tracking →</a></p>
+  `;
+}
+
+async function sendReportEmail(email, data, competitorData) {
+  // EmailJS integration — needs user to create free account at emailjs.com
+  // Replace these placeholders: EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID
+  const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // ← Get from emailjs.com → Account → API Keys
+  const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // ← Create in Email Services (connect Gmail)
+  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // ← Create template in Email Templates
+
+  if (EMAILJS_PUBLIC_KEY.startsWith('YOUR_')) {
+    console.log('EmailJS not configured — skipping email send. Data logged to console.');
+    console.log('Audit for:', email, data);
+    return;
+  }
+
+  // Lazy-load EmailJS SDK
+  if (!window.emailjs) {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+    await new Promise((resolve, reject) => { script.onload = resolve; script.onerror = reject; document.head.appendChild(script); });
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  }
+
+  try {
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      to_email: email,
+      site_url: data.url,
+      overall_score: data.overall + '/100',
+      seo_score: data.dims[0].pct + '%',
+      aeo_score: data.dims[1].pct + '%',
+      geo_score: data.dims[2].pct + '%',
+      entity_score: data.dims[3].pct + '%',
+      crawler_score: data.dims[4].pct + '%',
+      structure_score: data.dims[5].pct + '%',
+      citation_score: data.dims[6].pct + '%',
+      competitor_url: competitorData ? competitorData.url : 'None',
+      competitor_score: competitorData ? competitorData.overall + '/100' : 'N/A',
+      fixes_list: data.dims.filter(d=>d.fixes.length>0).map(d=>'• ' + d.name + ': ' + d.fixes[0]).join('\n') || 'None needed',
+    });
+  } catch(e) {
+    console.log('EmailJS send failed:', e);
+  }
+}
+
 async function runAudit() {
   const rawUrl = document.getElementById('auditUrl').value.trim();
-  const email = document.getElementById('auditEmail').value.trim();
+  const rawComp = document.getElementById('competitorUrl').value.trim();
   if (!rawUrl) { alert('Please enter your website URL'); return; }
 
   const url = normUrl(rawUrl);
   if (!url) { alert('Please enter a valid URL (e.g., https://example.com)'); return; }
 
+  let compUrl = null;
+  if (rawComp) {
+    compUrl = normUrl(rawComp);
+    if (!compUrl) { alert('Please enter a valid competitor URL or leave it blank'); return; }
+  }
+
   const result = document.getElementById('auditResult');
   result.classList.add('show');
-  result.innerHTML = '<div class="score-circle" style="animation:pulse 1.5s infinite">⚡</div><p style="text-align:center;color:#666">Scanning ' + url + '…<br><small>Fetching your page, analyzing 7 dimensions</small></p>';
+  result.innerHTML = '<div class="score-circle" style="animation:pulse 1.5s infinite">⚡</div><p style="text-align:center;color:#666">Scanning ' + url + (compUrl ? ' + competitor…' : '…') + '<br><small>Fetching pages, analyzing 7 dimensions</small></p>';
 
-  const html = await fetchPage(url);
+  // Run audits in parallel if competitor provided
+  const [data, competitorData] = await Promise.all([
+    analyzeUrl(url),
+    compUrl ? analyzeUrl(compUrl) : Promise.resolve(null)
+  ]);
 
-  if (!html) {
-    // Honest fallback: could not reach the site
+  if (!data) {
     result.innerHTML = `
       <div style="text-align:center;padding:20px">
         <div class="score-circle" style="background:#fff3cd;color:#856404;width:80px;height:80px;font-size:1.8em;margin:0 auto 16px">?</div>
@@ -460,59 +601,14 @@ async function runAudit() {
     return;
   }
 
-  // Real analysis
-  const dims = [
-    {name:'SEO', ...analyzeSEO(html, url), color:'#1565c0'},
-    {name:'AEO', ...analyzeAEO(html), color:'#c62828'},
-    {name:'GEO', ...analyzeGEO(html, url), color:'#2e7d32'},
-    {name:'Entity', ...analyzeEntity(html), color:'#e65100'},
-    {name:'Crawler', ...analyzeCrawler(html), color:'#00838f'},
-    {name:'Structure', ...analyzeStructure(html), color:'#6c5ce7'},
-    {name:'Citation', ...analyzeCitation(html), color:'#f57c00'},
-  ];
+  if (compUrl && !competitorData) {
+    // Your site scanned OK but competitor failed
+    result.innerHTML = renderResult(data, null) + 
+      '<div style="margin-top:12px;padding:10px;background:#fff3cd;border-radius:8px;font-size:.85em;text-align:center">⚠️ Could not reach competitor site ' + compUrl + ' — comparison skipped.</div>';
+    return;
+  }
 
-  // Normalize scores to percentages
-  const maxPerDim = {SEO:55, AEO:55, GEO:55, Entity:55, Structure:55, Citation:50, Crawler:55};
-  dims.forEach(d => { d.pct = Math.round((d.score / maxPerDim[d.name]) * 100); });
-
-  const overall = Math.round(dims.reduce((s,d) => s + d.pct, 0) / dims.length);
-  const scoreClass = overall >= 70 ? 'score-high' : overall >= 45 ? 'score-mid' : 'score-low';
-
-  // Dimension grid
-  let dimGrid = '';
-  dims.forEach(d => {
-    dimGrid += '<div style="text-align:center;padding:10px;background:white;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06)"><strong style="color:' + d.color + ';font-size:1.2em">' + d.pct + '%</strong><br><small>' + d.name + '</small></div>';
-  });
-
-  // Bars
-  let bars = '';
-  dims.forEach(d => {
-    const finding = d.findings[0] || 'OK';
-    bars += '<div style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;font-size:.85em;margin-bottom:2px"><span>' + d.name + ': ' + finding + '</span><span>' + d.pct + '%</span></div><div style="background:#e2e8f0;border-radius:4px;height:8px"><div style="background:' + d.color + ';height:8px;border-radius:4px;width:' + d.pct + '%"></div></div></div>';
-  });
-
-  // Fixes
-  let fixesHtml = '';
-  dims.forEach(d => {
-    if (d.fixes.length > 0) {
-      fixesHtml += '<div style="margin-bottom:10px"><strong style="color:' + d.color + '">' + d.name + '</strong><ul style="list-style:none;font-size:.85em;margin:4px 0">';
-      d.fixes.forEach(f => { fixesHtml += '<li>🔧 ' + f + '</li>'; });
-      fixesHtml += '</ul></div>';
-    }
-  });
-
-  if (!fixesHtml) fixesHtml = '<p style="color:#155724">🎉 No critical issues found! Your site is well-optimized for AI search visibility.</p>';
-
-  result.innerHTML = `
-    <div class="score-circle ${scoreClass}">${overall}/100</div>
-    <p style="text-align:center;font-weight:600;font-size:1.1em">AI Visibility Score<br><small style="color:#666">${url}</small></p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:8px;margin:16px 0">${dimGrid}</div>
-    <h4 style="margin-bottom:8px">7-Dimension Breakdown</h4>${bars}
-    <div style="margin-top:16px;padding:16px;background:#f8f9fa;border-radius:8px">
-      <h4 style="margin-bottom:8px">Priority Fixes</h4>${fixesHtml}
-    </div>
-    <p style="text-align:center;margin-top:12px;font-size:.85em;color:#666">✅ Real audit — your page was fetched and analyzed. <a href="pricing.html">Upgrade for detailed reports & competitor tracking →</a></p>
-  `;
+  result.innerHTML = renderResult(data, competitorData);
 }
 </script>
 

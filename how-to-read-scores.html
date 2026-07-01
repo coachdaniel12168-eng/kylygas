@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Read Your Scores — Rank GAS</title>
+<meta name="description" content="Plain English guide to understanding your AI search visibility scores. What each dimension means and how to improve.">
+<link rel="canonical" href="https://gas.proofposts.com/how-to-read-scores.html">
+<meta property="og:url" content="https://gas.proofposts.com/how-to-read-scores.html">
+<style>
+:root{--primary:#6c5ce7;--dark:#1a1a2e;--light:#f8f9fa;--accent:#00cec9}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#333;line-height:1.7}.nav{background:var(--dark);padding:16px 24px;display:flex;gap:24px;align-items:center;flex-wrap:wrap}.nav .logo{color:var(--accent);font-weight:700;font-size:1.2em;text-decoration:none}.nav a{color:#aaa;text-decoration:none;font-size:.9em}.main{max-width:800px;margin:0 auto;padding:40px 24px}h1{font-size:2em;margin-bottom:8px}h2{color:var(--primary);margin:32px 0 12px}h3{color:var(--dark);margin:20px 0 8px}p,li{color:#475569;margin-bottom:14px}.score-table{width:100%;border-collapse:collapse;margin:16px 0;background:white;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06)}.score-table th{background:var(--dark);color:white;padding:10px;text-align:left}.score-table td{padding:10px;border-bottom:1px solid #eee}.highlight{background:#f0f4ff;padding:20px;border-radius:10px;margin:20px 0}.footer{background:var(--dark);color:#666;text-align:center;padding:24px;font-size:.85em;margin-top:40px}.footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+<nav class="nav"><a href="/" class="logo">Rank GAS</a><a href="ai-search-visibility.html">AI Visibility</a><a href="geo-ranking.html">GEO</a><a href="aeo-ranking.html">AEO</a><a href="seo-aeo-geo.html">Compare</a><a href="pricing.html">Pricing</a><a href="how-to-read-scores.html">Understanding Scores</a></nav>
+
+<main class="main">
+<h1>Understanding Your AI Search Visibility Scores</h1>
+<p>This page explains in plain English what each score means, why it matters, and how to improve it. No jargon — just what you need to know.</p>
+
+<div class="highlight">
+<strong>Quick summary:</strong> AI search visibility measures how likely ChatGPT, Perplexity, and Google AI Overviews are to cite your website when someone asks a question in your industry. The higher your score, the more AI-ready your site is.
+</div>
+
+<h2>Overall Score (X/100)</h2>
+<p>Your overall score is the average of 7 dimensions. Think of it like a school report card — each dimension is a subject, and your overall score is your GPA.</p>
+<table class="score-table">
+<tr><th>Score Range</th><th>What It Means</th></tr>
+<tr><td><strong>70-100</strong></td><td><span style="color:#155724">Strong AI presence.</span> Your site sends most of the signals AI models look for. You're likely already appearing in AI-generated answers for your industry.</td></tr>
+<tr><td><strong>45-69</strong></td><td><span style="color:#856404">Room for improvement.</span> Your site has some AI-friendly elements but is missing key signals. Competitors with higher scores are more likely to be cited.</td></tr>
+<tr><td><strong>0-44</strong></td><td><span style="color:#721c24">At risk.</span> Your site is mostly invisible to AI search engines. AI models cannot reliably extract or cite your content. Significant gaps need addressing.</td></tr>
+</table>
+
+<h2>The 7 Dimensions Explained</h2>
+
+<h3>1. SEO — Traditional Search Optimization</h3>
+<p><strong>What it checks:</strong> Title tags, meta descriptions, H1 headings, canonical URLs, HTTPS, image alt text.</p>
+<p><strong>Why it matters:</strong> These are the fundamentals. If Google can't understand your page, neither can an AI model. Think of SEO as making sure your content has a clear label and description. Without these basics, everything else is harder.</p>
+<p><strong>Quick fix:</strong> Add a title tag (50-65 characters) and a meta description (120-155 characters) to every page. These are the first things both Google and AI models read.</p>
+
+<h3>2. AEO — Answer Engine Optimization</h3>
+<p><strong>What it checks:</strong> FAQPage schema, HowTo schema, Article structure, BreadcrumbList, paragraph breakup.</p>
+<p><strong>Why it matters:</strong> Answer engines (Google's featured snippets, voice search, Siri, Alexa) need content structured as clear questions and answers. Without FAQ or HowTo markup, your content gets skipped when someone asks "what is..." or "how do I..."</p>
+<p><strong>Quick fix:</strong> Add FAQPage structured data to any page with Q&A content. This is the single highest-impact change for appearing in Google's "People also ask" and AI Overviews.</p>
+
+<h3>3. GEO — Generative Engine Optimization</h3>
+<p><strong>What it checks:</strong> Open Graph tags, JSON-LD structured data, Organization schema, word count, freshness signals.</p>
+<p><strong>Why it matters:</strong> ChatGPT, Perplexity, and Claude read your page differently than Google. They look for structured data (JSON-LD), authorship signals, and comprehensive content (500+ words). Without these, your site might as well be invisible to AI chatbots.</p>
+<p><strong>Quick fix:</strong> Add Open Graph tags and JSON-LD Organization schema. These tell AI models who you are and what your page is about — the AI equivalent of introducing yourself at a networking event.</p>
+
+<h3>4. Entity — Brand Identity Signals</h3>
+<p><strong>What it checks:</strong> sameAs links (social profiles, Wikipedia), Organization schema with entity declarations, location/address signals.</p>
+<p><strong>Why it matters:</strong> AI models build a "knowledge graph" of who you are. If your site has sameAs links connecting it to your LinkedIn, Wikipedia, or Crunchbase profile, the AI treats you as a verified, trustworthy entity. Without them, you're anonymous text — and AI models are reluctant to cite anonymous sources.</p>
+<p><strong>Quick fix:</strong> Add sameAs links in your Organization schema pointing to your LinkedIn company page, Twitter, and any Wikipedia or Crunchbase entry. This is the #1 entity signal AI models use.</p>
+
+<h3>5. Structure — Content Organization</h3>
+<p><strong>What it checks:</strong> H2 subheadings, bulleted/numbered lists, mobile viewport, language declaration.</p>
+<p><strong>Why it matters:</strong> AI models extract content by reading your heading hierarchy and pulling from structured elements like lists. Walls of unbroken paragraphs are hard for AI to excerpt cleanly. Well-structured content with H2s and bullet points gets cited more often because the AI can pull a clean, coherent excerpt.</p>
+<p><strong>Quick fix:</strong> Add H2 subheadings every 200-300 words and use bulleted lists for key points. Think of it as making your content "scoopable" for AI.</p>
+
+<h3>6. Citation — Trustworthiness Signals</h3>
+<p><strong>What it checks:</strong> Author metadata, external links to authoritative sources, blockquotes, title descriptiveness.</p>
+<p><strong>Why it matters:</strong> AI models prefer to cite content with clear authorship and good citation hygiene. If you link to authoritative sources (government sites, research, industry bodies), the AI sees you as part of a credible information ecosystem. Anonymous content with no external links looks like spam to an AI.</p>
+<p><strong>Quick fix:</strong> Add author bylines and link to 3+ authoritative external sources per page. Show the AI you're part of a credible conversation, not shouting into the void.</p>
+
+<h3>7. Crawler — Accessibility to AI</h3>
+<p><strong>What it checks:</strong> Robots meta tag, noindex status, sitemap references, text-to-code ratio.</p>
+<p><strong>Why it matters:</strong> If your page has a noindex tag or a very low text-to-code ratio (too much JavaScript, not enough readable text), AI crawlers can't access or understand your content. This is the plumbing — boring but essential.</p>
+<p><strong>Quick fix:</strong> Check for noindex tags (remove them if unintentional), add a sitemap.xml, and reduce inline CSS/JS by moving to external files.</p>
+
+<h2>How the Industry Survey Works</h2>
+<p>When you run a survey, we fetch and analyze every website you entered across all 7 dimensions. The results are displayed as a league table — ranked from highest to lowest overall score. Sites are labeled A, B, C, etc. in random order.</p>
+<p><strong>Important:</strong> Nobody can identify which site is which — including us. The survey is completely anonymous by design. This allows us to share industry benchmarks without revealing anyone's specific data.</p>
+<p>If you upgrade to a paid plan, you receive a named report that identifies your specific site's scores and gives you a personalized fix roadmap.</p>
+
+<h2>One Free Keyword Audit</h2>
+<p>After your industry survey, you get <strong>one additional free audit</strong> — this time for a specific keyword. For example, if you're a Singapore bakery, you could audit how the top-ranking sites for "best sourdough Singapore" score on AI visibility. This shows you exactly what the AI sees when someone searches your target keyword.</p>
+<p>To claim your keyword audit, email us with your preferred keyword. No further free audits are available after that.</p>
+
+</main>
+<footer class="footer">Rank GAS — AI Search Visibility Platform &copy; 2026 · <a href="/">Home</a> · <a href="pricing.html">Pricing</a> · <a href="how-to-read-scores.html">Understanding Scores</a></footer>
+</body>
+</html>

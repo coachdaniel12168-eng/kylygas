@@ -131,7 +131,7 @@ AI models don't "rank" sites like Google does. They decide whether to cite you b
 
 4. **Freshness** — datePublished metadata matters. AI models weight recency.
 
-Our Starter plan ($19/mo) tracks your scores over time and alerts you when they change. AI search algorithms update constantly — what scores 80 today might score 45 next month.
+Our Starter plan ($49/mo) tracks your scores over time and alerts you when they change. AI search algorithms update constantly — what scores 80 today might score 45 next month.
 
 → See plans: https://gas.proofposts.com/pricing.html
 
@@ -161,7 +161,7 @@ Try this: open Perplexity or ChatGPT, ask a question your customers search for. 
 
 Now ask yourself: is your site optimized for the same signals theirs is sending?
 
-Our Growth plan ($49/mo) includes competitor comparison — see how your AI visibility stacks up against 3 competitors, side by side. Same 7 dimensions. Same scoring.
+Our Growth plan ($99/mo) includes competitor comparison — see how your AI visibility stacks up against 3 competitors, side by side. Same 7 dimensions. Same scoring.
 
 → Compare your site against competitors: https://gas.proofposts.com/pricing.html
 
@@ -177,7 +177,7 @@ Every day your site isn't optimized for AI search:
 
 The compounding cost: AI models learn citation patterns. Once they start citing your competitor regularly, it takes 3x the effort to displace them.
 
-You already have your free audit results. The fixes are mapped out. The Starter plan is $19 — less than most domain renewals.
+You already have your free audit results. The fixes are mapped out. The Starter plan is $49 — less than most domain renewals.
 
 → Start fixing your AI visibility: https://gas.proofposts.com/pricing.html
 

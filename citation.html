@@ -2,39 +2,105 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Citation — How AI Models Decide Which Sources to Cite | Rank GAS<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do AI models decide which sources to cite?","acceptedAnswer":{"@type":"Answer","text":"AI models use 6 citation signals: entity verification (Organization schema + sameAs), authorship attribution, external citation patterns, content depth, recency, and content format (Q&A structure). These signals determine whether your content is cited or ignored."}},
+{"@type":"Question","name":"What is the strongest AI citation signal?","acceptedAnswer":{"@type":"Answer","text":"Entity verification — Organization schema with sameAs links to verified profiles (LinkedIn, Wikipedia, Crunchbase). AI models need to know who you are before they cite you. Anonymous sources without entity signals are rarely cited regardless of content quality."}},
+{"@type":"Question","name":"Do different AI platforms use different citation signals?","acceptedAnswer":{"@type":"Answer","text":"Yes. ChatGPT and Claude emphasize entity verification. Perplexity emphasizes recency and consensus. Google AI Overviews favor structured data. A comprehensive GEO strategy covers all five major platforms."}}
+]}
+</script>
+</title>
+<meta name="description" content="How AI models select sources for citation. The 6 citation signals that determine whether ChatGPT, Perplexity, and Google AI Overviews reference your content.">
 <link rel="canonical" href="https://gas.proofposts.com/citation.html">
-<title>AI Citation Optimization — Get Cited by ChatGPT & AI | Rank GAS</title>
-<meta name="description" content="Learn how to get cited by AI. AI citation optimization strategies for ChatGPT, Perplexity, Google AI Overviews. Make your content citation-ready.">
 <meta property="og:url" content="https://gas.proofposts.com/citation.html">
-<style>:root{--primary:#6c5ce7;--dark:#1a1a2e;--light:#f8f9fa;--accent:#00cec9}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#333;line-height:1.7}.nav{background:var(--dark);padding:16px 24px;display:flex;gap:24px;align-items:center}.nav .logo{color:var(--accent);font-weight:700;font-size:1.2em;text-decoration:none}.nav a{color:#aaa;text-decoration:none;font-size:.9em}.main{max-width:750px;margin:0 auto;padding:40px 24px}h1{font-size:2em;margin-bottom:8px}h2{color:var(--primary);margin:28px 0 10px}p,li{color:#475569;margin-bottom:14px}ul,ol{margin:10px 0 20px 20px}.cta{background:var(--primary);color:white;padding:24px;border-radius:12px;text-align:center;margin:32px 0}.cta a{color:white;font-weight:700}.footer{background:var(--dark);color:#666;text-align:center;padding:24px;font-size:.85em;margin-top:40px}.footer a{color:var(--accent)}</style>
+<style>
+:root{--primary:#6c5ce7;--dark:#1a1a2e;--light:#f8f9fa;--accent:#00cec9}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#333;line-height:1.8}.nav{background:var(--dark);padding:14px 24px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:100}.nav .logo{color:var(--accent);font-weight:700;font-size:1.1em;text-decoration:none}.nav a{color:#ccc;text-decoration:none;font-size:.85em}.main{max-width:850px;margin:0 auto;padding:40px 24px}h1{font-size:2.2em;margin-bottom:8px;color:var(--dark)}h2{color:var(--primary);margin:36px 0 14px;font-size:1.5em}h3{color:var(--dark);margin:24px 0 10px}p,li{color:#475569;margin-bottom:16px;font-size:1.05em}ul,ol{margin:12px 0 20px 24px}.highlight{background:#f0f4ff;padding:20px 24px;border-radius:10px;border-left:4px solid var(--primary);margin:24px 0}.signal{background:white;padding:20px 24px;border-radius:10px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:4px solid var(--accent)}.signal h3{margin-top:0;color:var(--primary)}.weight{display:inline-block;background:var(--primary);color:white;padding:2px 10px;border-radius:12px;font-size:.8em;font-weight:600}.cta-box{background:var(--primary);color:white;padding:28px;border-radius:12px;text-align:center;margin:32px 0}.cta-box a{color:white;font-weight:700;font-size:1.1em}.footer{background:var(--dark);color:#666;text-align:center;padding:24px;font-size:.85em;margin-top:40px}.footer a{color:var(--accent)}table{width:100%;border-collapse:collapse;margin:16px 0;background:white;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06)}th{background:var(--dark);color:white;padding:10px;text-align:left}td{padding:10px;border-bottom:1px solid #eee}
+</style>
 </head>
 <body>
-<nav class="nav"><a href="/" class="logo">Rank GAS</a><a href="ai-search-visibility.html">AI Visibility</a><a href="geo-ranking.html">GEO</a><a href="aeo-ranking.html">AEO</a><a href="chatgpt-seo.html">ChatGPT SEO</a><a href="citation.html">Citation</a><a href="pricing.html">Pricing</a></nav>
+<nav class="nav"><a href="/" class="logo">Rank GAS</a><a href="pricing.html">Pricing</a><a href="how-to-read-scores.html">Scores</a><a href="ai-search-visibility.html">AI Visibility</a><a href="citation.html">AI Citation</a></nav>
+
 <main class="main">
-<h1>AI Citation Optimization — How to Get Cited by AI</h1>
-<p>Getting cited by ChatGPT, Perplexity, Claude, and Google AI Overviews is the new SEO. A citation from an AI platform drives trust, traffic, and authority — but it requires different optimization strategies than traditional search ranking.</p>
+<h1>AI Citation: How AI Models Decide Which Sources to Cite</h1>
 
-<h2>What Makes Content Citation-Ready</h2>
-<p>AI models cite sources that meet specific criteria. Understanding these criteria is the foundation of citation optimization:</p>
-<ul>
-  <li><strong>Originality:</strong> AI models prefer unique information — original research, proprietary data, first-hand case studies. Content that rephrases existing sources is deprioritized.</li>
-  <li><strong>Extractability:</strong> Content must be structured so individual passages can be lifted cleanly. Short, self-contained paragraphs with clear attributions perform best.</li>
-  <li><strong>Verifiability:</strong> Claims backed by data, citations to primary sources, and transparent methodology increase citation likelihood.</li>
-  <li><strong>Recency:</strong> AI models heavily weight publication date. Content updated within the last 6 months has significantly higher citation rates.</li>
-  <li><strong>Authority Signals:</strong> Domain authority, author credentials, institutional affiliation, and cross-platform entity consistency all factor into citation decisions.</li>
-</ul>
+<p><strong>AI citation</strong> is the process by which AI models — ChatGPT, Perplexity, Claude, Google AI Overviews, and others — select which sources to reference in their generated responses. Understanding how AI citation works is the foundation of Generative Engine Optimization (GEO) and is essential for any business that wants to appear in AI-powered search results.</p>
 
-<h2>The Citation-Ready Content Framework</h2>
+<div class="highlight">
+<strong>Why citation matters:</strong> AI models do not "rank" content the way Google does. They <strong>decide whether to cite you</strong> — a binary yes/no decision for each query. If you are cited, your brand appears in the answer. If you are not, you are invisible. The difference between being cited and not comes down to a specific set of signals.
+</div>
+
+<h2>The 6 Citation Signals AI Models Use</h2>
+
+<div class="signal">
+<h3>1. Entity Verification <span class="weight">Weight: HIGH</span></h3>
+<p>AI models need to know <strong>who you are</strong> before they cite you. Organization schema with sameAs links to verified profiles (LinkedIn, Wikipedia, Crunchbase, Twitter/X, Wikidata) is the strongest entity signal. Sites without entity verification are treated as anonymous — and AI models are reluctant to cite anonymous sources because they cannot assess credibility.</p>
+<p><strong>How to fix:</strong> Add Organization JSON-LD schema with at least 3 sameAs links to verified profiles. This takes 5 minutes and is the highest-impact citation signal you can implement.</p>
+</div>
+
+<div class="signal">
+<h3>2. Authorship Attribution <span class="weight">Weight: HIGH</span></h3>
+<p>AI models strongly prefer attributable content. Pages with author bylines, Person schema, and clear publication information get cited far more often than anonymous content — even when the content quality is identical. Attribution allows the AI to assess the credibility of the source by tracing it to a known person or organization.</p>
+<p><strong>How to fix:</strong> Add author bylines to every article. Include Person schema with name, url, and jobTitle. Link to the author's LinkedIn or other verified profile.</p>
+</div>
+
+<div class="signal">
+<h3>3. External Citation Patterns <span class="weight">Weight: MEDIUM-HIGH</span></h3>
+<p>AI models observe which sources are linked to across the web. Content that is linked to by other authoritative sources accumulates citation credit — similar to how academic papers gain credibility through citations. Content with zero inbound links from other sites has no external validation signal.</p>
+<p><strong>How to fix:</strong> Link to 3+ authoritative external sources from each page. Get listed on industry directories, review sites, and partner pages. Every inbound citation increases your credibility weight.</p>
+</div>
+
+<div class="signal">
+<h3>4. Content Depth and Structure <span class="weight">Weight: MEDIUM</span></h3>
+<p>AI models need enough content depth to excerpt meaningfully. A 300-word page gives the AI one excerpt option. A 1,500-word page with clear headings, lists, and sections gives the AI 5-10 excerptable passages. Blockquotes, Q&A format, and structured lists further improve excerptability.</p>
+<p><strong>How to fix:</strong> Expand key pages to 1,000+ words. Use H2/H3 headings every 200-300 words. Include at least one bulleted list and one Q&A pair per page.</p>
+</div>
+
+<div class="signal">
+<h3>5. Recency and Freshness <span class="weight">Weight: MEDIUM</span></h3>
+<p>AI models weight recency heavily — especially for topics where information changes. Content with datePublished signals within the last 6 months is preferred. Content from 2+ years ago is rarely cited even if it is otherwise excellent. This is the most underutilized citation signal because most sites do not update old content or add date metadata.</p>
+<p><strong>How to fix:</strong> Add datePublished to all Article schema. Update dateModified on existing pages periodically (monthly for key pages). If content is from 2024 or earlier, update it with current information.</p>
+</div>
+
+<div class="signal">
+<h3>6. Content Format (Q&A Structure) <span class="weight">Weight: MEDIUM</span></h3>
+<p>AI models are built to answer questions. Content structured as clear questions and answers — with FAQPage schema — is easier for AI to parse and excerpt than generic prose. This is why FAQ pages and knowledge bases dominate AI citations: they match the AI's own format.</p>
+<p><strong>How to fix:</strong> Add FAQPage schema to pages that answer questions. Structure content as "Question → Answer" pairs. Even blog posts and guides benefit from including an "FAQ" section at the bottom.</p>
+</div>
+
+<h2>How Different AI Platforms Cite Sources</h2>
+
+<table>
+<tr><th>Platform</th><th>Citation Style</th><th>Source Visibility</th><th>Key Signal Preference</th></tr>
+<tr><td><strong>ChatGPT</strong></td><td>Inline citation with source links</td><td>Source name + link shown</td><td>Entity verification, content depth</td></tr>
+<tr><td><strong>Perplexity</strong></td><td>Numbered sources below answer</td><td>Source name + link + excerpt</td><td>Recency, multiple sources for consensus</td></tr>
+<tr><td><strong>Google AI Overviews</strong></td><td>Link cards beside summary</td><td>Thumbnail + title + link</td><td>Content structure, FAQPage schema</td></tr>
+<tr><td><strong>Claude</strong></td><td>Inline attribution without visible links</td><td>Brand mentioned in text</td><td>Authorship, entity authority</td></tr>
+<tr><td><strong>Gemini</strong></td><td>Source chips below response</td><td>Favicon + domain name</td><td>Entity signals, Google index presence</td></tr>
+</table>
+
+<p>Different platforms prioritize different signals. ChatGPT and Claude emphasize entity verification. Perplexity emphasizes recency and consensus across multiple sources. Google AI Overviews favor content from the Google index with strong structured data. A comprehensive GEO strategy covers all five platforms, not just one.</p>
+
+<h2>Measuring Citation Performance</h2>
+
+<p>Citation performance is harder to measure than traditional SEO because there is no unified "citation index" the way there is a Google index. However, practical approaches work:</p>
+
 <ol>
-<li><strong>Lead with the Answer:</strong> Place the core claim or data point in the first sentence of each section. AI models extract opening sentences at higher rates than buried conclusions.</li>
-<li><strong>Use Quotable Language:</strong> Write passages that could function as standalone quotes. Include clear attribution markers (author, date, source).</li>
-<li><strong>Include Structured Data:</strong> Article, Dataset, and ScholarlyArticle schema types specifically designed for citation contexts help AI parse academic and research content.</li>
-<li><strong>Build Citation Networks:</strong> When your content is cited by other authoritative sources, AI models register this as a trust signal. Publish original research that others will want to reference.</li>
-<li><strong>Monitor and Iterate:</strong> Track when and how your content appears in AI responses. Identify which pages get cited and double down on the patterns that work.</li>
+<li><strong>Query testing</strong> — Run a standard set of 10-20 industry queries across all major AI platforms weekly. Record which sources are cited for each query. Track changes over time.</li>
+<li><strong>Referral analytics</strong> — AI platforms that include source links (ChatGPT, Perplexity, Google AI Overviews) send referral traffic. Monitor your analytics for these sources.</li>
+<li><strong>Brand mention tracking</strong> — Even when AI platforms don't link to you, they may mention your brand by name. Tools like Rank GAS track brand mentions across AI platforms.</li>
+<li><strong>Competitor benchmarking</strong> — Compare your citation rate against 3-5 competitors for the same queries. This contextualizes your performance and reveals gaps.</li>
 </ol>
 
-<div class="cta"><p>Check your citation readiness score.</p><a href="/#audit">Run Free Audit →</a></div>
+<h2>The Compounding Advantage of Early Citation</h2>
+
+<p>AI models develop persistent citation habits. Once a model begins citing a particular source for a type of query, it tends to continue citing that source — both because the model has "learned" the source as authoritative and because future versions of the model are trained on outputs that already cite that source. This creates a compounding advantage for early movers. The sites that establish citation patterns in 2026 will be the default sources AI models reference in 2027 and beyond.</p>
+
+<div class="cta-box">
+<p>See which citation signals your site is missing. Compare against competitors.</p>
+<a href="/">Run Your Free Citation Audit →</a>
+</div>
+
 </main>
-<footer class="footer">Rank GAS — AI Search Visibility Platform &copy; 2026 · <a href="/">Home</a></footer>
+<footer class="footer">Rank GAS &copy; 2026 · <a href="/">Home</a> · <a href="pricing.html">Pricing</a></footer>
 </body>
 </html>

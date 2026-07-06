@@ -2,60 +2,93 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEO — Answer Engine Optimization Guide 2026 | Rank GAS<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is Answer Engine Optimization?","acceptedAnswer":{"@type":"Answer","text":"AEO is the practice of structuring content to appear in direct answers — featured snippets, voice search, People Also Ask boxes, and AI-generated summaries. It uses FAQPage, HowTo, Article, and BreadcrumbList schema."}},
+{"@type":"Question","name":"What is the most important AEO schema?","acceptedAnswer":{"@type":"Answer","text":"FAQPage schema. Sites with FAQPage markup appear in AI Overviews and People Also Ask at 3-5x the rate of pages without it. It is the single highest-impact AEO change for most sites."}},
+{"@type":"Question","name":"Should I focus on AEO or GEO first?","acceptedAnswer":{"@type":"Answer","text":"Start with AEO (2-4 weeks for quick wins with schema templates), then layer on GEO (4-12 weeks for entity building and content investment). The schemas overlap — FAQPage helps both, Organization schema helps both."}}
+]}
+</script>
+</title>
+<meta name="description" content="Answer Engine Optimization (AEO): how to structure content for featured snippets, voice search, and AI-generated answers. Complete framework with examples.">
 <link rel="canonical" href="https://gas.proofposts.com/aeo-ranking.html">
-<title>AEO Ranking — Answer Engine Optimization Guide | Rank GAS</title>
-<meta name="description" content="Master AEO (Answer Engine Optimization). Structure your content to appear in featured snippets, voice search, and direct answers across all platforms.">
 <meta property="og:url" content="https://gas.proofposts.com/aeo-ranking.html">
 <style>
-:root { --primary: #6c5ce7; --dark: #1a1a2e; --light: #f8f9fa; --accent: #00cec9; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #333; line-height:1.7; }
-.nav { background: var(--dark); padding: 16px 24px; display:flex; gap:24px; align-items:center; }
-.nav .logo { color: var(--accent); font-weight:700; font-size:1.2em; text-decoration:none; }
-.nav a { color: #aaa; text-decoration:none; font-size:.9em; }
-.content { max-width: 750px; margin: 0 auto; padding: 40px 24px; }
-h1 { font-size:2em; color: var(--dark); margin-bottom:12px; }
-h2 { color: var(--primary); margin: 28px 0 10px; font-size:1.3em; }
-p { margin-bottom:14px; }
-ul, ol { margin: 10px 0 20px 20px; }
-li { margin-bottom:6px; }
-.cta { background: var(--primary); color: white; padding: 24px; border-radius: 12px; text-align: center; margin: 32px 0; }
-.footer { background: var(--dark); color: #666; text-align: center; padding: 24px; font-size:.85em; margin-top: 40px; }
-.footer a { color: var(--accent); }
+:root{--primary:#6c5ce7;--dark:#1a1a2e;--light:#f8f9fa;--accent:#00cec9}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#333;line-height:1.8}.nav{background:var(--dark);padding:14px 24px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:100}.nav .logo{color:var(--accent);font-weight:700;font-size:1.1em;text-decoration:none}.nav a{color:#ccc;text-decoration:none;font-size:.85em}.main{max-width:850px;margin:0 auto;padding:40px 24px}h1{font-size:2.2em;margin-bottom:8px;color:var(--dark)}h2{color:var(--primary);margin:36px 0 14px;font-size:1.5em}h3{color:var(--dark);margin:24px 0 10px}p,li{color:#475569;margin-bottom:16px;font-size:1.05em}ul,ol{margin:12px 0 20px 24px}.highlight{background:#f0f4ff;padding:20px 24px;border-radius:10px;border-left:4px solid var(--primary);margin:24px 0}.schema-card{background:white;padding:20px;border-radius:10px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.06)}.schema-card h3{color:var(--primary);margin-top:0}.cta-box{background:var(--primary);color:white;padding:28px;border-radius:12px;text-align:center;margin:32px 0}.cta-box a{color:white;font-weight:700;font-size:1.1em}.footer{background:var(--dark);color:#666;text-align:center;padding:24px;font-size:.85em;margin-top:40px}.footer a{color:var(--accent)}table{width:100%;border-collapse:collapse;margin:16px 0;background:white;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06)}th{background:var(--dark);color:white;padding:10px;text-align:left}td{padding:10px;border-bottom:1px solid #eee}
 </style>
 </head>
 <body>
-<nav class="nav">
-  <a href="/" class="logo">Rank GAS</a>
-  <a href="/ai-search-visibility.html">AI Visibility</a>
-  <a href="/geo-ranking.html">GEO</a>
-  <a href="/aeo-ranking.html">AEO</a>
-  <a href="/seo-aeo-geo.html">Compare</a>
-</nav>
-<main class="content">
-<h1>How to Rank in AEO (Answer Engine Optimization)</h1>
-<p>Answer Engine Optimization (AEO) is the process of structuring your content so that answer engines — like Google's featured snippets, voice assistants (Siri, Alexa), and AI chatbots — can extract and deliver direct answers from your pages.</p>
+<nav class="nav"><a href="/" class="logo">Rank GAS</a><a href="pricing.html">Pricing</a><a href="how-to-read-scores.html">Scores</a><a href="ai-search-visibility.html">AI Visibility</a><a href="geo-ranking.html">GEO</a><a href="aeo-ranking.html">AEO</a></nav>
 
-<h2>What Is an Answer Engine?</h2>
-<p>An answer engine doesn't just return links — it returns the answer itself. When you ask Google "how to improve AI search visibility," the featured snippet at the top is AEO at work. When Alexa reads out a recipe, that's AEO.</p>
+<main class="main">
+<h1>AEO — Answer Engine Optimization: How to Get Your Content Into AI Answers</h1>
 
-<h2>5 AEO Best Practices</h2>
+<p><strong>Answer Engine Optimization (AEO)</strong> is the practice of structuring content so it appears in direct answers — featured snippets, voice search responses, "People Also Ask" boxes, and the AI-generated summaries that now appear before organic links on over half of Google searches.</p>
+
+<div class="highlight">
+<strong>Why AEO matters:</strong> Over <strong>60% of Google searches</strong> now trigger an AI-generated answer or featured snippet before organic links. When an answer appears, <strong>organic CTR drops 61%</strong> (Seer Interactive, Feb 2026). If your content is not optimized to BE the answer, you lose the click entirely.
+</div>
+
+<h2>The 5 AEO Schema Types That Matter Most</h2>
+
+<div class="schema-card">
+<h3>1. FAQPage Schema</h3>
+<p><strong>What it does:</strong> Tells search engines "this page contains questions and answers." Sites with FAQPage schema are eligible for rich results — expandable Q&A boxes directly in search results — and are more likely to be excerpted by AI-generated answers.</p>
+<p><strong>How to implement:</strong> Add a JSON-LD block with FAQPage type and a mainEntity array of Question/Answer pairs. Each question should be a real question a user would ask. Each answer should be concise (2-3 sentences) and directly address the question. Do not stuff keywords — write natural Q&A pairs.</p>
+<p><strong>Impact:</strong> Pages with FAQPage schema appear in AI Overviews and "People Also Ask" at 3-5x the rate of pages without it. This is the single highest-impact AEO change for most sites.</p>
+</div>
+
+<div class="schema-card">
+<h3>2. HowTo Schema</h3>
+<p><strong>What it does:</strong> Structures step-by-step instructional content so search engines can display it as a rich result with numbered steps, images, and estimated time. AI models extract HowTo content for procedural queries like "how to optimize for ChatGPT."</p>
+<p><strong>When to use:</strong> Any page that walks through a process with sequential steps. Tutorials, setup guides, recipes, and instructional articles all benefit from HowTo schema.</p>
+</div>
+
+<div class="schema-card">
+<h3>3. Article Schema</h3>
+<p><strong>What it does:</strong> Declares that a page is an article — not a product page, not a landing page. This helps AI models categorize the content correctly and extract it for informational queries. Article schema should include headline, author, datePublished, and publisher information.</p>
+</div>
+
+<div class="schema-card">
+<h3>4. BreadcrumbList Schema</h3>
+<p><strong>What it does:</strong> Shows the page's position in your site hierarchy directly in search results (e.g., Home > Blog > Article Title). This improves click-through rates on traditional SERPs and helps AI models understand your site structure for more accurate citation.</p>
+</div>
+
+<div class="schema-card">
+<h3>5. Organization + sameAs Schema</h3>
+<p><strong>What it does:</strong> Tells AI models who you are and connects your site to verified profiles. While primarily a GEO signal, it also impacts AEO by ensuring your brand is recognized when extracted in answers. Without Organization schema, AI models may cite your content without attributing it to your brand — which means you lose the branding benefit even if your content appears.</p>
+</div>
+
+<h2>Content Structure for Answer Engines</h2>
+
+<p>Beyond schema markup, how you structure your content matters enormously. AI models and answer engines extract content by reading:</p>
+
 <ol>
-  <li><strong>Answer-First Structure:</strong> Place the direct answer in the first paragraph, then elaborate</li>
-  <li><strong>Question-Based Headings:</strong> Use H2/H3 tags phrased as questions people actually ask</li>
-  <li><strong>Structured Data Markup:</strong> FAQPage, HowTo, and Q&A schema help answer engines parse your content</li>
-  <li><strong>Concise Paragraphs:</strong> Keep paragraphs under 3 sentences — ideal for voice and snippet extraction</li>
-  <li><strong>List & Table Formats:</strong> Numbered lists and comparison tables are heavily favored for snippets</li>
+<li><strong>Heading hierarchy</strong> — H1 defines the topic, H2 defines sections, H3 defines subsections. AI models use this structure to understand what each section is about and whether it answers a specific query.</li>
+<li><strong>Paragraph breakup</strong> — Content with 5+ short paragraphs is easier for AI to excerpt than one wall of text. Each paragraph should make one point. Aim for 2-4 sentences per paragraph.</li>
+<li><strong>Bulleted and numbered lists</strong> — AI models extract list content more reliably than paragraphs because the structure is unambiguous. Key points, steps, and features should always be in lists.</li>
+<li><strong>Direct answers</strong> — The first sentence after each H2 should directly answer the implied question. AI models often pull the first sentence of a section as the answer.</li>
 </ol>
 
-<h2>AEO vs GEO — What's the Difference?</h2>
-<p>AEO targets structured answer delivery (snippets, voice). GEO targets generative AI citation (ChatGPT, Perplexity). They overlap but require different optimization approaches. AEO needs schema markup and answer-first writing. GEO needs original data and citation signals.</p>
+<h2>AEO vs GEO: Which Should You Focus On?</h2>
 
-<div class="cta">
-  <p>Check your AEO readiness score.</p>
-  <a href="/#audit" style="color:white;font-weight:700;">Run Free AEO Audit →</a>
+<table>
+<tr><th>Factor</th><th>AEO</th><th>GEO</th></tr>
+<tr><td>Target platform</td><td>Google featured snippets, voice search, "People Also Ask"</td><td>ChatGPT, Perplexity, Claude, Google AI Overviews</td></tr>
+<tr><td>Primary signal</td><td>FAQPage, HowTo, Article schema</td><td>Organization + sameAs, OG tags, JSON-LD, content depth</td></tr>
+<tr><td>User sees</td><td>Rich result or snippet in search results</td><td>Citation within a generated paragraph</td></tr>
+<tr><td>Click potential</td><td>Higher — users click rich results to expand/read more</td><td>Lower — users often get full answer without clicking</td></tr>
+<tr><td>Difficulty</td><td>Lower — schema templates are straightforward</td><td>Higher — requires entity building and content investment</td></tr>
+</table>
+
+<p>In practice, you need both. AEO ensures you appear in Google's answer layer. GEO ensures you appear in AI chatbots. The schemas overlap — FAQPage helps both, Organization schema helps both, and good content structure helps both. Start with AEO (faster wins), then layer on GEO (higher long-term value).</p>
+
+<div class="cta-box">
+<p>Check your AEO score. See which schema types you're missing.</p>
+<a href="/">Run Your Free AI Visibility Audit →</a>
 </div>
+
 </main>
-<footer class="footer">Rank GAS — AI Search Visibility Platform &copy; 2026 · <a href="/">Home</a></footer>
+<footer class="footer">Rank GAS &copy; 2026 · <a href="/">Home</a> · <a href="pricing.html">Pricing</a></footer>
 </body>
 </html>

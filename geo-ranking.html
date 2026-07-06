@@ -2,62 +2,112 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEO — Generative Engine Optimization Guide 2026 | Rank GAS<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is Generative Engine Optimization?","acceptedAnswer":{"@type":"Answer","text":"GEO is the practice of optimizing content so AI models like ChatGPT, Perplexity, Claude, and Google AI Overviews cite your brand in their generated responses. It focuses on entity signals, structured data, content depth, and citation patterns."}},
+{"@type":"Question","name":"How does GEO differ from SEO?","acceptedAnswer":{"@type":"Answer","text":"SEO optimizes for Google's link-based algorithm. GEO optimizes for AI citation signals including Organization schema with sameAs links, JSON-LD structured data, content depth, freshness signals, and external citation patterns."}},
+{"@type":"Question","name":"What is the most important GEO signal?","acceptedAnswer":{"@type":"Answer","text":"Organization schema with sameAs links to verified profiles (LinkedIn, Wikipedia, Crunchbase). This is the strongest entity signal — it tells AI models who you are. Without it, AI models cannot verify your identity and rarely cite anonymous sources."}}
+]}
+</script>
+</title>
+<meta name="description" content="Generative Engine Optimization (GEO): how to optimize your content so ChatGPT, Perplexity, and Google AI Overviews cite your brand. Complete guide with framework.">
 <link rel="canonical" href="https://gas.proofposts.com/geo-ranking.html">
-<title>GEO Ranking — Generative Engine Optimization Guide | Rank GAS</title>
-<meta name="description" content="Learn how to rank in GEO (Generative Engine Optimization). Optimize your content for ChatGPT, Perplexity, and AI-powered search engines.">
 <meta property="og:url" content="https://gas.proofposts.com/geo-ranking.html">
 <style>
-:root { --primary: #6c5ce7; --dark: #1a1a2e; --light: #f8f9fa; --accent: #00cec9; }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #333; line-height:1.7; }
-.nav { background: var(--dark); padding: 16px 24px; display:flex; gap:24px; align-items:center; }
-.nav .logo { color: var(--accent); font-weight:700; font-size:1.2em; text-decoration:none; }
-.nav a { color: #aaa; text-decoration:none; font-size:.9em; }
-.content { max-width: 750px; margin: 0 auto; padding: 40px 24px; }
-h1 { font-size:2em; color: var(--dark); margin-bottom:12px; }
-h2 { color: var(--primary); margin: 28px 0 10px; font-size:1.3em; }
-p { margin-bottom:14px; }
-ul { margin: 10px 0 20px 20px; }
-li { margin-bottom:6px; }
-.cta { background: var(--primary); color: white; padding: 24px; border-radius: 12px; text-align: center; margin: 32px 0; }
-.footer { background: var(--dark); color: #666; text-align: center; padding: 24px; font-size:.85em; margin-top: 40px; }
-.footer a { color: var(--accent); }
+:root{--primary:#6c5ce7;--dark:#1a1a2e;--light:#f8f9fa;--accent:#00cec9}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--light);color:#333;line-height:1.8}.nav{background:var(--dark);padding:14px 24px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:100}.nav .logo{color:var(--accent);font-weight:700;font-size:1.1em;text-decoration:none}.nav a{color:#ccc;text-decoration:none;font-size:.85em}.main{max-width:850px;margin:0 auto;padding:40px 24px}h1{font-size:2.2em;margin-bottom:8px;color:var(--dark)}h2{color:var(--primary);margin:36px 0 14px;font-size:1.5em}h3{color:var(--dark);margin:24px 0 10px}p,li{color:#475569;margin-bottom:16px;font-size:1.05em}ul,ol{margin:12px 0 20px 24px}.highlight{background:#f0f4ff;padding:20px 24px;border-radius:10px;border-left:4px solid var(--primary);margin:24px 0}.framework{background:white;padding:20px;border-radius:10px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,0.06)}.framework h3{color:var(--primary);margin-top:0}.cta-box{background:var(--primary);color:white;padding:28px;border-radius:12px;text-align:center;margin:32px 0}.cta-box a{color:white;font-weight:700;font-size:1.1em}.footer{background:var(--dark);color:#666;text-align:center;padding:24px;font-size:.85em;margin-top:40px}.footer a{color:var(--accent)}
 </style>
 </head>
 <body>
-<nav class="nav">
-  <a href="/" class="logo">Rank GAS</a>
-  <a href="/ai-search-visibility.html">AI Visibility</a>
-  <a href="/geo-ranking.html">GEO</a>
-  <a href="/aeo-ranking.html">AEO</a>
-  <a href="/seo-aeo-geo.html">Compare</a>
-</nav>
-<main class="content">
-<h1>How to Rank in GEO (Generative Engine Optimization)</h1>
-<p>Generative Engine Optimization (GEO) is the practice of optimizing web content so that generative AI models — like ChatGPT, Perplexity, Claude, and Google's Gemini — can find, understand, and cite your information when generating answers.</p>
-<p>Unlike traditional SEO which targets search engine ranking algorithms, GEO targets the language models that power AI-generated responses. When someone asks ChatGPT "what's the best tool for AI search visibility," your goal is to be the source it cites.</p>
+<nav class="nav"><a href="/" class="logo">Rank GAS</a><a href="pricing.html">Pricing</a><a href="how-to-read-scores.html">Scores</a><a href="ai-search-visibility.html">AI Visibility</a><a href="geo-ranking.html">GEO</a><a href="aeo-ranking.html">AEO</a></nav>
 
-<h2>How GEO Differs From SEO</h2>
-<ul>
-  <li><strong>SEO</strong> optimizes for crawlers that index and rank pages based on backlinks, keywords, and authority</li>
-  <li><strong>GEO</strong> optimizes for language models that extract and synthesize information from multiple sources</li>
-  <li>GEO requires <strong>citation-ready content</strong> — original data, clear attribution, and quotable passages</li>
-</ul>
+<main class="main">
+<h1>GEO — Generative Engine Optimization: The Complete 2026 Guide</h1>
 
-<h2>5 GEO Ranking Factors</h2>
+<p><strong>Generative Engine Optimization (GEO)</strong> is the practice of optimizing content so AI models — ChatGPT, Perplexity, Claude, Google AI Overviews, and Gemini — cite your brand in their generated responses. It is the most important new discipline in search since SEO emerged in the late 1990s.</p>
+
+<div class="highlight">
+<strong>Why GEO matters now:</strong> AI-referred traffic <strong>converts at 7.1%</strong> — second only to paid search at 7.8% and 2.5× higher than Google organic. AI search volume crossed <strong>10 billion monthly queries</strong> in Q1 2026, up from 3.5 billion a year earlier. This is not a trend. It is the new search infrastructure.
+</div>
+
+<h2>How AI Models Select Content to Cite</h2>
+
+<p>AI citation is not random. Based on analysis of thousands of AI-generated responses, consistent patterns emerge. AI models prefer content that is:</p>
+
 <ol>
-  <li><strong>Original Research & Data:</strong> AI models prioritize unique statistics, studies, and proprietary data</li>
-  <li><strong>Entity Consistency:</strong> Your brand, authors, and products must be consistently referenced across the web</li>
-  <li><strong>Passage-Level Clarity:</strong> Each section should stand alone as a coherent, extractable unit</li>
-  <li><strong>Authoritative Citations:</strong> Being cited by other authoritative sources signals trustworthiness to AI</li>
-  <li><strong>AI Crawler Accessibility:</strong> Ensure your robots.txt allows AI-specific crawlers like GPTBot and Claude-Web</li>
+<li><strong>Structured</strong> — Clear heading hierarchy, lists, and schema markup make content easy for AI to parse and excerpt.</li>
+<li><strong>Attributed</strong> — Content with author bylines, date stamps, and Organization schema signals trustworthiness.</li>
+<li><strong>Comprehensive</strong> — Content over 500 words that covers a topic from multiple angles is cited far more often than thin content.</li>
+<li><strong>Connected</strong> — Sites with sameAs links to verified profiles (LinkedIn, Wikipedia, Crunchbase) are treated as known entities.</li>
+<li><strong>Fresh</strong> — AI models weight recency. Content with datePublished signals within the last 6 months gets priority.</li>
+<li><strong>Cited by others</strong> — AI models learn citation patterns. Content that is linked to by other authoritative sources gets cited more.</li>
 </ol>
 
-<div class="cta">
-  <p>See how your site scores on GEO ranking.</p>
-  <a href="/#audit" style="color:white;font-weight:700;">Run Free GEO Audit →</a>
+<h2>The GEO Framework: 7 Signals That Determine AI Citation</h2>
+
+<div class="framework">
+<h3>1. Open Graph Tags</h3>
+<p>og:title, og:description, and og:url tell AI models what your page is about in a structured format they can parse instantly. Sites without OG tags are missing the single easiest GEO win — adding them takes 5 minutes.</p>
 </div>
+
+<div class="framework">
+<h3>2. JSON-LD Structured Data</h3>
+<p>JSON-LD (JavaScript Object Notation for Linked Data) is the format AI models use to understand your content semantically. It tells them: this is an organization, this is an article, this is an FAQ. Without JSON-LD, AI models have to guess what your content is — and they often guess wrong. The Organization and WebApplication schemas are the minimum. FAQPage, Article, and HowTo schemas add significant citation weight for their respective content types.</p>
+</div>
+
+<div class="framework">
+<h3>3. Organization Schema with sameAs Links</h3>
+<p>This is the single highest-impact GEO signal. Organization schema declares your brand as a known entity. sameAs links connect it to verified profiles on LinkedIn, Twitter/X, Wikipedia, Crunchbase, and other authoritative platforms. AI models treat entities with verified sameAs links as trustworthy sources. Entities without them are treated as anonymous — and anonymous sources rarely get cited.</p>
+</div>
+
+<div class="framework">
+<h3>4. Content Depth (500+ Words)</h3>
+<p>AI models prefer to cite content they can excerpt from multiple angles. A 300-word page gives the AI one excerpt option. A 1,500-word page with clear sections, lists, and examples gives the AI 5-10 excerptable chunks. Content depth is not about keyword stuffing — it is about comprehensive coverage that makes your page the best source for the AI to pull from.</p>
+</div>
+
+<div class="framework">
+<h3>5. Freshness Signals (datePublished/dateModified)</h3>
+<p>AI models heavily weight recency. A page with datePublished metadata from 2024 will be deprioritized over an otherwise identical page with a 2026 date. This is especially true in fast-moving industries. Adding datePublished and dateModified to your JSON-LD schema is a 2-minute fix with outsized impact.</p>
+</div>
+
+<div class="framework">
+<h3>6. Author Attribution</h3>
+<p>Content with clear author bylines and Person schema gets cited more often. AI models prefer attributable content because it allows them to assess credibility. Anonymous content, regardless of quality, is treated as less trustworthy. If your blog posts and articles have no author, you are leaving citation weight on the table.</p>
+</div>
+
+<div class="framework">
+<h3>7. External Citation Patterns</h3>
+<p>AI models observe which sources are linked to across the web. Content that links to authoritative external sources (government sites, academic research, industry bodies) signals that it is part of a credible information ecosystem. Content with zero external links looks like an isolated silo — and AI models deprioritize isolated sources.</p>
+</div>
+
+<h2>GEO vs SEO: The Key Differences</h2>
+
+<table>
+<tr><th>Factor</th><th>SEO (Google)</th><th>GEO (AI Models)</th></tr>
+<tr><td>Primary signal</td><td>Backlinks and domain authority</td><td>Entity signals and structured data</td></tr>
+<tr><td>Content format</td><td>Keywords in H1/H2, meta tags</td><td>JSON-LD schema, OG tags, heading hierarchy</td></tr>
+<tr><td>Trust signal</td><td>Domain age, backlink profile</td><td>sameAs links, author attribution, external citations</td></tr>
+<tr><td>Freshness</td><td>Moderate factor</td><td>Heavy factor — AI strongly prefers recent content</td></tr>
+<tr><td>User action</td><td>Click to visit your site</td><td>Read the answer without visiting</td></tr>
+<tr><td>Measurement</td><td>Organic traffic, keyword rankings</td><td>Citation frequency, brand mention rate</td></tr>
+</table>
+
+<h2>How to Measure GEO Performance</h2>
+
+<p>Measuring GEO is harder than measuring SEO because AI responses are not indexed in a single database the way Google SERPs are. However, there are practical approaches:</p>
+
+<ol>
+<li><strong>Manual testing</strong> — Ask ChatGPT, Perplexity, and Gemini industry-relevant questions weekly and track whether your brand appears.</li>
+<li><strong>Citation tracking</strong> — Tools like Rank GAS monitor AI platforms for brand mentions and citation frequency.</li>
+<li><strong>Referral traffic</strong> — Check your analytics for referral traffic from chat.openai.com, perplexity.ai, and google.com (AI Overviews appear as Google referrals).</li>
+<li><strong>Competitor comparison</strong> — Run your site and competitor sites through the same AI queries to see who gets cited more often.</li>
+</ol>
+
+<div class="cta-box">
+<p>See your GEO score across all 7 signals. Compare against competitors.</p>
+<a href="/">Run Your Free GEO Audit →</a>
+</div>
+
 </main>
-<footer class="footer">Rank GAS — AI Search Visibility Platform &copy; 2026 · <a href="/">Home</a></footer>
+<footer class="footer">Rank GAS &copy; 2026 · <a href="/">Home</a> · <a href="pricing.html">Pricing</a></footer>
 </body>
 </html>

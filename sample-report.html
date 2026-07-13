@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Pro Report — Rank GAS</title>
+<style>
+:root { --primary: #6c5ce7; --dark: #1a1a2e; --accent: #00cec9; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI',system-ui,sans-serif; background:#f8f9fa; color:#333; line-height:1.7; }
+.nav { background:var(--dark); padding:16px 24px; display:flex; gap:24px; align-items:center; }
+.nav .logo { color:var(--accent); font-weight:700; font-size:1.2em; text-decoration:none; }
+.nav a { color:#aaa; text-decoration:none; font-size:.9em; }
+.main { max-width:800px; margin:0 auto; padding:40px 24px; }
+h1 { font-size:2em; margin-bottom:8px; }
+.section { background:white; padding:24px; border-radius:12px; margin:20px 0; box-shadow:0 2px 8px rgba(0,0,0,0.04); }
+.score-big { font-size:3em; font-weight:700; color:var(--primary); text-align:center; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.dim-score { padding:16px; border-radius:8px; text-align:center; }
+.dim-name { font-size:.85em; color:#666; }
+.dim-pct { font-size:1.5em; font-weight:700; }
+.btn { display:inline-block; padding:14px 32px; background:var(--primary); color:white; text-decoration:none; border-radius:10px; font-weight:700; font-size:1.1em; text-align:center; }
+</style>
+</head>
+<body>
+<nav class="nav"><a href="/" class="logo">Rank GAS</a><a href="pricing.html">Pricing</a><a href="sample-report.html">Sample Report</a></nav>
+<main class="main">
+<h1>Sample Pro Report</h1>
+<p style="color:#666;margin-bottom:32px">This is what Pro subscribers receive every month. A real audit with specific, actionable recommendations.</p>
+
+<div class="section" style="text-align:center">
+<div class="score-big">62/100</div>
+<p style="color:#666">Example: Mid-market SaaS Company — AI Search Visibility Score</p>
+</div>
+
+<div class="section">
+<h3>7-Dimension Breakdown</h3>
+<div class="grid2">
+<div class="dim-score" style="background:#d4edda"><div class="dim-name">SEO</div><div class="dim-pct" style="color:#155724">78%</div><div style="font-size:.8em;color:#155724">Strong — titles, meta, HTTPS all in place. Add canonical URLs to 3 blog posts.</div></div>
+<div class="dim-score" style="background:#fff3cd"><div class="dim-name">AEO</div><div class="dim-pct" style="color:#856404">45%</div><div style="font-size:.8em;color:#856404">Missing FAQPage and HowTo schema on product pages. High-impact fix.</div></div>
+<div class="dim-score" style="background:#fff3cd"><div class="dim-name">GEO</div><div class="dim-pct" style="color:#856404">52%</div><div style="font-size:.8em;color:#856404">Open Graph tags present, but missing Organization JSON-LD. Add sameAs links.</div></div>
+<div class="dim-score" style="background:#d4edda"><div class="dim-name">Entity</div><div class="dim-pct" style="color:#155724">70%</div><div style="font-size:.8em;color:#155724">Organization schema present. Add LinkedIn and Crunchbase to sameAs.</div></div>
+<div class="dim-score" style="background:#d4edda"><div class="dim-name">Crawler</div><div class="dim-pct" style="color:#155724">85%</div><div style="font-size:.8em;color:#155724">Clean. No blockers. Sitemap submitted.</div></div>
+<div class="dim-score" style="background:#fff3cd"><div class="dim-name">Structure</div><div class="dim-pct" style="color:#856404">55%</div><div style="font-size:.8em;color:#856404">Good H2 usage, but missing bulleted lists on service pages.</div></div>
+<div class="dim-score" style="background:#f8d7da"><div class="dim-name">Citation</div><div class="dim-pct" style="color:#721c24">38%</div><div style="font-size:.8em;color:#721c24">No author bylines. Few external links. This is the biggest opportunity.</div></div>
+</div>
+</div>
+
+<div class="section">
+<h3>Top 3 Priority Fixes</h3>
+<ol style="font-size:.95em">
+<li><strong>Add author bylines to all blog posts and service pages.</strong> AI models heavily weight authorship. Add a 2-line bio with LinkedIn link to every page. Estimated time: 30 minutes. Impact: +15-20 citation points.</li>
+<li><strong>Add FAQPage schema to your 5 most-visited pages.</strong> This is the single highest-impact AEO fix. We provide the exact JSON-LD template to paste. Estimated time: 20 minutes. Impact: +25 AEO points.</li>
+<li><strong>Link to 3-5 authoritative industry sources from your key pages.</strong> External citations signal credibility to AI models. We recommend which sources based on your industry. Estimated time: 45 minutes. Impact: +10-15 citation points.</li>
+</ol>
+</div>
+
+<div style="text-align:center;margin:32px 0">
+<a href="https://pay.airwallex.com/sghkcbr4clpj" class="btn">Get Your Pro Report — $243/mo</a>
+<p style="font-size:.85em;color:#999;margin-top:8px">7-day free trial · Cancel anytime</p>
+</div>
+</main>
+</body>
+</html>

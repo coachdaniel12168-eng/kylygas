@@ -352,10 +352,10 @@ async function autoFindCompetitors(){
 
 /* Main survey */
 async function runSurvey(){
-  const email=document.getElementById('auditEmail').value.trim();
   const urls=[];
   for(let i=1;i<=5;i++){const v=document.getElementById('siteUrl'+i).value.trim();if(v)urls.push(v)}
   
+  const email=document.getElementById('auditEmail').value.trim();if(!email||!email.includes('@')){alert('Please enter your email to receive the full report.');return}
   if(urls.length<1){alert('Enter at least your website URL.');return}
   if(urls.length<4){alert('Please enter at least 4 websites total (your site + 3 competitors) for a meaningful survey. Use "Find Competitors" above if needed.');return}
   

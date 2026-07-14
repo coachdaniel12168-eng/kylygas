@@ -473,7 +473,10 @@ async function runSurvey(){
   // Email capture — store for follow-up
   if(email&&email.includes('@')&&email.includes('.')){
     try{
-      await fetch('https://filing-serves-chef-officials.trycloudflare.com/webhook/kylygaseo-submit'+new URLSearchParams({email,industry:document.getElementById('industry').value.trim(),sites:validUrls.join(','),timestamp:new Date().toISOString()}),{signal:AbortSignal.timeout(3000)});
+      await Promise.all([
+  fetch('https://filing-serves-chef-officials.trycloudflare.com/webhook/kylygaseo-submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:validUrls[0],name:document.getElementById('industry').value.trim()||'Lead',country:'SG',status:'Free Audit Completed'}),signal:AbortSignal.timeout(5000)}),
+  fetch('https://filing-serves-chef-officials.trycloudflare.com/webhook/rankgas-welcome',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,name:document.getElementById('industry').value.trim()||'there'}),signal:AbortSignal.timeout(5000)})
+]).catch(()=>{});
     }catch(e){console.log('Sheet logging skipped (not configured)')}
   }
 }

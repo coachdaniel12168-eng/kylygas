@@ -474,8 +474,8 @@ async function runSurvey(){
   if(email&&email.includes('@')&&email.includes('.')){
     try{
       await Promise.all([
-  fetch('https://initially-shed-promote-bay.trycloudflare.com/webhook/kylygaseo-submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:validUrls[0],name:document.getElementById('industry').value.trim()||'Lead',country:'SG',status:'Free Audit Completed'}),signal:AbortSignal.timeout(5000)}),
-  fetch('https://initially-shed-promote-bay.trycloudflare.com/webhook/rankgas-welcome',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,name:document.getElementById('industry').value.trim()||'there'}),signal:AbortSignal.timeout(5000)})
+  fetch('https://inn-broad-calibration-racial.trycloudflare.com/webhook/kylygaseo-submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:validUrls[0],name:document.getElementById('industry').value.trim()||'Lead',country:'SG',status:'Free Audit Completed'}),signal:AbortSignal.timeout(5000)}),
+  fetch('https://inn-broad-calibration-racial.trycloudflare.com/webhook/rankgas-welcome',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,name:document.getElementById('industry').value.trim()||'there'}),signal:AbortSignal.timeout(5000)})
 ]).catch(()=>{});
     }catch(e){console.log('Sheet logging skipped (not configured)')}
   }

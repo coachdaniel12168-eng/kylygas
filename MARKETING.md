@@ -1,4 +1,4 @@
-# Rank GAS — Marketing Assets (Launch Ready)
+# GASEO — Marketing Assets (Launch Ready)
 
 ## Social Media Posts
 
@@ -11,7 +11,7 @@ Here's the uncomfortable truth: your SEO score means nothing to an AI model. AI 
 
 We built a free tool that audits your site against 7 dimensions AI models actually care about: SEO, AEO, GEO, Entity, Structure, Citation, and Crawler access. Takes 30 seconds.
 
-→ https://gas.proofposts.com
+→ https://proofposts.com
 
 No signup. No credit card. Just your score and a fix checklist.
 
@@ -25,7 +25,7 @@ SEO tools check meta tags. AI search checks whether ChatGPT would actually cite 
 
 Different game. Different rules.
 
-Free audit → gas.proofposts.com
+Free audit → proofposts.com
 
 ---
 
@@ -38,9 +38,9 @@ Open ChatGPT or Perplexity. Ask "what's the best [your industry] in [your city]?
 
 If your business isn't in the answer, you're invisible to AI search. And AI search is growing faster than Google did in 2005.
 
-We built Rank GAS to fix this. Free audit — it scans your website across 7 dimensions and tells you exactly what's missing for AI visibility.
+We built GASEO to fix this. Free audit — it scans your website across 7 dimensions and tells you exactly what's missing for AI visibility.
 
-→ https://gas.proofposts.com
+→ https://proofposts.com
 
 Takes 30 seconds. No signup wall. If your score is below 50, we show you exactly what to fix.
 
@@ -49,7 +49,7 @@ Takes 30 seconds. No signup wall. If your score is below 50, we show you exactly
 ### Post 4 — LinkedIn (Case Study Style)
 **Topic:** What a 72/100 audit looks like
 **Text:**
-Ran our own site through Rank GAS this morning. Got 72/100.
+Ran our own site through GASEO this morning. Got 72/100.
 
 The audit caught three things I'd missed:
 • No sameAs links in our Organization schema — zero entity signals for AI models
@@ -58,7 +58,7 @@ The audit caught three things I'd missed:
 
 None of these show up in standard SEO tools. All of them matter for AI citation.
 
-Built this tool because the gap between traditional SEO and AI search visibility is real and growing. Free audit at gas.proofposts.com
+Built this tool because the gap between traditional SEO and AI search visibility is real and growing. Free audit at proofposts.com
 
 ---
 
@@ -95,7 +95,7 @@ Built this tool because the gap between traditional SEO and AI search visibility
 ### Email 1 — Immediate (Score Delivery)
 **Subject:** Your AI Visibility Score: {score}/100
 **Body:**
-Here's your Rank GAS audit result for {url}.
+Here's your GASEO audit result for {url}.
 
 Overall score: {score}/100
 • SEO: {seo}%
@@ -114,7 +114,7 @@ Overall score: {score}/100
 
 → See your full report with fix roadmap: {link}
 
-Rank GAS
+GASEO
 
 ---
 
@@ -133,7 +133,7 @@ AI models don't "rank" sites like Google does. They decide whether to cite you b
 
 Our Starter plan ($99/mo) tracks your scores over time and alerts you when they change. AI search algorithms update constantly — what scores 80 today might score 45 next month.
 
-→ See plans: https://gas.proofposts.com/pricing.html
+→ See plans: https://proofposts.com/pricing.html
 
 ---
 
@@ -150,7 +150,7 @@ Three weeks after that: they appeared in a ChatGPT response for the first time w
 
 AI search visibility is fixable. But you have to know what's broken first.
 
-→ Check your score: https://gas.proofposts.com
+→ Check your score: https://proofposts.com
 
 ---
 
@@ -163,7 +163,7 @@ Now ask yourself: is your site optimized for the same signals theirs is sending?
 
 Our Pro plan ($243/mo) includes competitor comparison — see how your AI visibility stacks up against 3 competitors, side by side. Same 7 dimensions. Same scoring.
 
-→ Compare your site against competitors: https://gas.proofposts.com/pricing.html
+→ Compare your site against competitors: https://proofposts.com/pricing.html
 
 ---
 
@@ -179,11 +179,11 @@ The compounding cost: AI models learn citation patterns. Once they start citing 
 
 You already have your free audit results. The fixes are mapped out. The Starter plan is $49 — less than most domain renewals.
 
-→ Start fixing your AI visibility: https://gas.proofposts.com/pricing.html
+→ Start fixing your AI visibility: https://proofposts.com/pricing.html
 
 This is the last email in this sequence. But your audit link never expires — come back anytime.
 
-Rank GAS
+GASEO
 
 ---
 
@@ -195,5 +195,5 @@ Rank GAS
 4. "Entity SEO: Why AI Search Engines Care About Who You Are"
 5. "Google AI Overviews: What We Know About Citation Patterns (June 2026)"
 6. "7 Signals AI Models Look For That Google Ignores"
-7. "How We Scored Our Own Site: A Rank GAS Self-Audit Breakdown"
+7. "How We Scored Our Own Site: A GASEO Self-Audit Breakdown"
 8. "The Difference Between SEO, AEO, and GEO — Explained Simply"

@@ -1,0 +1,26 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Stage deployable files
+        run: |
+          mkdir -p stage/functions
+          cp *.html stage/
+          cp og-image.png stage/ 2>/dev/null || true
+          cp _headers robots.txt sitemap.xml stage/
+          cp functions/*.js stage/functions/
+
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
+          CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
+        run: npx wrangler@latest pages deploy stage --project-name=proofposts --branch=main

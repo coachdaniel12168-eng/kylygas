@@ -53,9 +53,9 @@ th { background:var(--dark); color:white; }
 
 <div class="grid">
   <div class="card"><h3>Free</h3><div class="price">$0</div><ul><li>1 website scan</li><li>SEO/AEO/GEO visibility score</li><li>Missing elements checklist</li><li>Basic recommendations</li></ul><a href="/#audit" class="btn">Start Free</a></div>
-    <div class="card featured"><h3>Starter</h3><div class="price">$99<span>/mo</span></div><ul><li>1 website monitored</li><li>Monthly AI visibility report</li><li>Track 50 keywords</li><li>Fix checklist · Meta tag optimizer</li><li>Schema validator</li><li>7-day free trial · Cancel anytime</li></ul><a href="https://pay.airwallex.com/sghkcbr3lj66" class="btn">Subscribe — $99/mo</a></div>
-    <div class="card"><h3>Pro</h3><div class="price">$243<span>/mo</span></div><ul><li>3 websites (you + 2 competitors)</li><li>Everything in Starter</li><li>Track 150 keywords</li><li>Competitor comparison (bi-weekly)</li><li>FAQ page generator · Schema library</li><li>Content gap analysis (monthly)</li><li>Blog content optimizer</li><li>Bi-weekly reports · 7-day free trial</li></ul><a href="https://pay.airwallex.com/sghkcbr4clpj" class="btn">Subscribe — $243/mo</a></div>
-    <div class="card"><h3>Agency</h3><div class="price">$585<span>/mo</span></div><ul><li>5 websites (you + 4 competitors) · weekly comparison every Monday</li><li>Everything in Pro</li><li>Track 300 keywords · daily position updates</li><li>Competitor movement alerts (within 24hr)</li><li>Full GEO page-by-page optimizer</li><li>Brand mention monitor (daily, 4 AI platforms)</li><li>AI citation tracker with monthly comparison</li><li>12-month historical trends</li><li>Single-client dashboard · CSV & PDF export</li><li>Weekly reports · Same-day support</li><li>7-day free trial · Cancel anytime</li></ul><a href="https://pay.airwallex.com/sghkcbr507zm" class="btn">Subscribe — $585/mo</a></div>
+    <div class="card featured"><h3>Starter</h3><div class="price">$99<span>/mo</span></div><ul><li>1 website monitored</li><li>Monthly AI visibility report</li><li>Track 50 keywords</li><li>Fix checklist · Meta tag optimizer</li><li>Schema validator</li><li>7-day free trial · Cancel anytime</li></ul><a href="#" class="btn" onclick="startCheckout('starter'); return false;">Subscribe — $99/mo</a></div>
+    <div class="card"><h3>Pro</h3><div class="price">$243<span>/mo</span></div><ul><li>3 websites (you + 2 competitors)</li><li>Everything in Starter</li><li>Track 150 keywords</li><li>Competitor comparison (bi-weekly)</li><li>FAQ page generator · Schema library</li><li>Content gap analysis (monthly)</li><li>Blog content optimizer</li><li>Bi-weekly reports · 7-day free trial</li></ul><a href="#" class="btn" onclick="startCheckout('pro'); return false;">Subscribe — $243/mo</a></div>
+    <div class="card"><h3>Agency</h3><div class="price">$585<span>/mo</span></div><ul><li>5 websites (you + 4 competitors) · weekly comparison every Monday</li><li>Everything in Pro</li><li>Track 300 keywords · daily position updates</li><li>Competitor movement alerts (within 24hr)</li><li>Full GEO page-by-page optimizer</li><li>Brand mention monitor (daily, 4 AI platforms)</li><li>AI citation tracker with monthly comparison</li><li>12-month historical trends</li><li>Single-client dashboard · CSV & PDF export</li><li>Weekly reports · Same-day support</li><li>7-day free trial · Cancel anytime</li></ul><a href="#" class="btn" onclick="startCheckout('agency'); return false;">Subscribe — $585/mo</a></div>
 </div>
 
 <div class="compare"><h2>Plan Comparison</h2>
@@ -85,5 +85,24 @@ th { background:var(--dark); color:white; }
 <footer class="footer">GASEO — AI Search Visibility Platform &copy; 2026 · <a href="/">Home</a> · <a href="pricing.html">Pricing</a>
 <p style="font-size:.8em;color:#888">Updated: 25 August 2026</p>
 </footer>
+
+<script>
+function startCheckout(plan) {
+  var email = prompt('Enter your email to start your subscription:');
+  if (!email || email.indexOf('@') < 0) { if (email) alert('Please enter a valid email address.'); return; }
+  fetch('/billing-checkout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ plan: plan, email: email })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(d) {
+    if (d.url) { window.location.href = d.url; }
+    else { alert(d.error || 'Could not start checkout. Please try again.'); }
+  })
+  .catch(function() { alert('Could not start checkout. Please try again.'); });
+}
+</script>
+
 </body>
 </html>

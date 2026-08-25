@@ -177,7 +177,7 @@ Every day your site isn't optimized for AI search:
 
 The compounding cost: AI models learn citation patterns. Once they start citing your competitor regularly, it takes 3x the effort to displace them.
 
-You already have your free audit results. The fixes are mapped out. The Starter plan is $49 — less than most domain renewals.
+You already have your free audit results. The fixes are mapped out. The Starter plan is $99 — less than most domain renewals.
 
 → Start fixing your AI visibility: https://proofposts.com/pricing.html
 

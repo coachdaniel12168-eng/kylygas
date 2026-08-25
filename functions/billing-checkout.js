@@ -69,6 +69,7 @@ export async function onRequestPost({ request, env }) {
         customer_data: { email },
         line_items: [{ price_id: priceId, quantity: 1 }],
         mode: "SUBSCRIPTION",
+        subscription_data: { trial_period_days: 7 },
         success_url: "https://proofposts.com/?subscribed=1",
         cancel_url: "https://proofposts.com/#pricing",
       }),

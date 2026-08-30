@@ -37,12 +37,36 @@ export async function onRequestPost({ request, env }) {
   const plan = String(body.plan || "").toLowerCase();
   const email = String(body.email || "").trim().toLowerCase();
   const priceId = PLAN_PRICES[plan];
+  const audit = (body.audit && typeof body.audit === "object") ? body.audit : null;
 
   if (!priceId) {
     return json({ error: "Unknown plan. Use starter, pro, or agency." }, 400, headers);
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return json({ error: "Please enter a valid email address." }, 400, headers);
+  }
+
+  // Persist subscriber intent (email + plan + day-0 audit scores) for the report cadence.
+  const su = env.SUPABASE_URL, sk = env.SUPABASE_SERVICE_KEY;
+  if (su && sk) {
+    try {
+      const row = { customer_email: email, plan, status: "checkout_started" };
+      if (audit) {
+        row.site_url = audit.site || null;
+        row.competitor_urls = Array.isArray(audit.competitors) ? audit.competitors : null;
+        row.initial_scores = (audit.overall || audit.dims) ? { overall: audit.overall, dims: audit.dims } : null;
+        row.industry = audit.industry || null;
+      }
+      await fetch(su + "/rest/v1/gaseo_subscribers?on_conflict=customer_email", {
+        method: "POST",
+        headers: {
+          apikey: sk, Authorization: "Bearer " + sk,
+          "Content-Type": "application/json",
+          Prefer: "resolution=merge-duplicates,return=representation,missing=default",
+        },
+        body: JSON.stringify(row),
+      });
+    } catch (e) { /* non-fatal — checkout must not fail on store errors */ }
   }
 
   const clientId = env.AIRWALLEX_CLIENT_ID;
@@ -69,7 +93,7 @@ export async function onRequestPost({ request, env }) {
         customer_data: { email },
         line_items: [{ price_id: priceId, quantity: 1 }],
         mode: "SUBSCRIPTION",
-        subscription_data: { trial_period_days: 7 },
+        subscription_data: { trial_period_days: 30 },
         success_url: "https://proofposts.com/?subscribed=1",
         cancel_url: "https://proofposts.com/#pricing",
       }),

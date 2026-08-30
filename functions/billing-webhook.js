@@ -74,6 +74,39 @@ export async function onRequestPost({ request, env }) {
     const plan = planFromEvent(event);
     const dataStr = JSON.stringify(data).slice(0, 800);
 
+    // Sync the subscriber lifecycle into the report-cadence store (best effort).
+    const su = env.SUPABASE_URL, sk = env.SUPABASE_SERVICE_KEY;
+    if (su && sk && email && !email.startsWith("(")) {
+      try {
+        const t = type.toLowerCase();
+        let status = "active";
+        if (t.includes("cancel")) status = "cancelled";
+        else if (t.includes("past_due")) status = "past_due";
+        else if (t.includes("create")) status = "trial_active";
+        const now = new Date().toISOString();
+        const row = { customer_email: email, status, updated_at: now };
+        // trial_end from the subscription object if present (ISO or unix seconds)
+        const te = obj.trial_end || data.trial_end;
+        if (te) {
+          row.trial_end = typeof te === "number" ? new Date(te * 1000).toISOString() : te;
+          // Day-14 progress report = trial_start + 14 days
+          const ts = obj.trial_start || data.trial_start;
+          const start = ts ? (typeof ts === "number" ? new Date(ts * 1000) : new Date(ts)) : new Date();
+          row.trial_start = start.toISOString();
+          row.next_report_at = new Date(start.getTime() + 14 * 86400000).toISOString();
+        }
+        await fetch(su + "/rest/v1/gaseo_subscribers?on_conflict=customer_email", {
+          method: "POST",
+          headers: {
+            apikey: sk, Authorization: "Bearer " + sk,
+            "Content-Type": "application/json",
+            Prefer: "resolution=merge-duplicates,return=representation,missing=default",
+          },
+          body: JSON.stringify(row),
+        });
+      } catch (e) { /* best effort */ }
+    }
+
     const resendKey = env.RESEND_API_KEY || "";
     if (resendKey) {
       try {

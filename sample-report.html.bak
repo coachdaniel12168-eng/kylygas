@@ -64,29 +64,5 @@ h1 { font-size:2em; margin-bottom:8px; }
 </main>
 <footer style="text-align:center;padding:20px;font-size:.8em;color:#888"><p>Updated: 4 September 2026</p></footer>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"83ea6bb95b9443d78b5546f65fc7cc17"}'></script>
-
-<script>
-(function () {
-  var host = location.hostname;
-  if (host !== 'gaseo.scalesmes.com') return;
-  var P = {
-    '99':  { price: '49',  link: 'https://pay.airwallex.com/sghlymuq6gvt' },
-    '243': { price: '129', link: 'https://pay.airwallex.com/sghlymuq97ne' },
-    '585': { price: '299', link: 'https://pay.airwallex.com/sghlymuqbw3n' }
-  };
-  document.querySelectorAll('.card').forEach(function (card) {
-    var priceEl = card.querySelector('.price');
-    var btn = card.querySelector('a.btn[href*="airwallex"]');
-    if (!priceEl || !btn) return;
-    var m = (priceEl.textContent || '').match(/(\d+)/);
-    if (!m) return;
-    var map = P[m[1]];
-    if (!map) return;
-    priceEl.innerHTML = '$' + map.price + '<span>/mo</span>';
-    btn.href = map.link;
-    btn.textContent = 'Subscribe — $' + map.price + '/mo';
-  });
-})();
-</script>
 </body>
 </html>

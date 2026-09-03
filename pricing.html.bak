@@ -87,32 +87,5 @@ th { background:var(--dark); color:white; }
 </footer>
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"83ea6bb95b9443d78b5546f65fc7cc17"}'></script>
-
-<script>
-// Domain-aware GASEO pricing (Daniel 2026-09-04):
-// proofposts.com (canonical) -> US9/243/585
-// gaseo.scalesmes.com        -> US9/129/299 (SEA entry pricing)
-(function () {
-  var host = location.hostname;
-  if (host !== 'gaseo.scalesmes.com') return; // proofposts.com + www keep current prices
-  var P = {
-    '99':  { price: '49',  link: 'https://pay.airwallex.com/sghlymuq6gvt' },
-    '243': { price: '129', link: 'https://pay.airwallex.com/sghlymuq97ne' },
-    '585': { price: '299', link: 'https://pay.airwallex.com/sghlymuqbw3n' }
-  };
-  document.querySelectorAll('.card').forEach(function (card) {
-    var priceEl = card.querySelector('.price');
-    var btn = card.querySelector('a.btn[href*="airwallex"]');
-    if (!priceEl || !btn) return;
-    var m = (priceEl.textContent || '').match(/(\d+)/);
-    if (!m) return;
-    var map = P[m[1]];
-    if (!map) return;
-    priceEl.innerHTML = '$' + map.price + '<span>/mo</span>';
-    btn.href = map.link;
-    btn.textContent = 'Subscribe — $' + map.price + '/mo';
-  });
-})();
-</script>
 </body>
 </html>

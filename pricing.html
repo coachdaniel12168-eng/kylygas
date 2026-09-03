@@ -89,28 +89,70 @@ th { background:var(--dark); color:white; }
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"83ea6bb95b9443d78b5546f65fc7cc17"}'></script>
 
 <script>
-// Domain-aware GASEO pricing (Daniel 2026-09-04):
-// proofposts.com (canonical) -> US9/243/585
-// gaseo.scalesmes.com        -> US9/129/299 (SEA entry pricing)
 (function () {
   var host = location.hostname;
-  if (host !== 'gaseo.scalesmes.com') return; // proofposts.com + www keep current prices
-  var P = {
-    '99':  { price: '49',  link: 'https://pay.airwallex.com/sghlymuq6gvt' },
-    '243': { price: '129', link: 'https://pay.airwallex.com/sghlymuq97ne' },
-    '585': { price: '299', link: 'https://pay.airwallex.com/sghlymuqbw3n' }
+  if (host !== 'gaseo.scalesmes.com') return;
+
+  var PRICE = { '99': '49', '243': '129', '585': '299' };
+  var LINK = {
+    'sghlyikyht4w': 'https://pay.airwallex.com/sghlymuq6gvt',
+    'sghlyikyl36x': 'https://pay.airwallex.com/sghlymuq97ne',
+    'sghlyikynm8q': 'https://pay.airwallex.com/sghlymuqbw3n'
   };
-  document.querySelectorAll('.card').forEach(function (card) {
-    var priceEl = card.querySelector('.price');
-    var btn = card.querySelector('a.btn[href*="airwallex"]');
-    if (!priceEl || !btn) return;
-    var m = (priceEl.textContent || '').match(/(\d+)/);
-    if (!m) return;
-    var map = P[m[1]];
-    if (!map) return;
-    priceEl.innerHTML = '$' + map.price + '<span>/mo</span>';
-    btn.href = map.link;
-    btn.textContent = 'Subscribe — $' + map.price + '/mo';
+
+  // 1. Swap Airwallex button hrefs first (attributes are not text nodes)
+  document.querySelectorAll('a[href*="airwallex.com"]').forEach(function (a) {
+    for (var oldSlug in LINK) {
+      if (a.href.indexOf(oldSlug) !== -1) {
+        a.href = LINK[oldSlug];
+        break;
+      }
+    }
+  });
+
+  // 2. Rewrite visible text: "$99" -> "$49" etc. (text nodes only, skip scripts/styles)
+  function walk(node) {
+    if (node.nodeType === 3) { // TEXT_NODE
+      var v = node.nodeValue;
+      if (v.indexOf('$') !== -1) {
+        node.nodeValue = v.split('$99').join('$49')
+                          .split('$243').join('$129')
+                          .split('$585').join('$299');
+      }
+      return;
+    }
+    if (node.nodeName === 'SCRIPT' || node.nodeName === 'STYLE') return;
+    var kids = node.childNodes;
+    for (var i = 0; i < kids.length; i++) walk(kids[i]);
+  }
+  if (document.body) walk(document.body);
+
+  // 3. Meta description (attribute content, not a text node)
+  var meta = document.querySelector('meta[name="description"]');
+  if (meta && meta.content) {
+    meta.content = meta.content.split('$99').join('$49')
+                               .split('$243').join('$129')
+                               .split('$585').join('$299');
+  }
+
+  // 4. JSON-LD FAQ schema (data-only script text)
+  document.querySelectorAll('script[type="application/ld+json"]').forEach(function (s) {
+    if (s.textContent.indexOf('$') !== -1) {
+      s.textContent = s.textContent.split('$99').join('$49')
+                                   .split('$243').join('$129')
+                                   .split('$585').join('$299');
+    }
+  });
+
+  // 5. Title attribute / og tags / any remaining attribute containing prices
+  document.querySelectorAll('[title*="$"], [content*="$"], [value*="$"]').forEach(function (el) {
+    ['title', 'content', 'value'].forEach(function (attr) {
+      if (el.hasAttribute(attr) && el.getAttribute(attr).indexOf('$') !== -1) {
+        el.setAttribute(attr, el.getAttribute(attr).split('$99').join('$49')
+                               .split('$243').join('$129')
+                               .split('$585').join('$299'));
+      }
+    });
   });
 })();
 </script>

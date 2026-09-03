@@ -84,7 +84,13 @@ export async function onRequestPost({ request, env }) {
         else if (t.includes("past_due")) status = "past_due";
         else if (t.includes("create")) status = "trial_active";
         const now = new Date().toISOString();
-        const row = { customer_email: email, status, updated_at: now };
+        const planMatch = String(plan).match(/GASEO (starter|pro|agency)/i);
+        const row = {
+          customer_email: email,
+          plan: planMatch ? planMatch[1].toLowerCase() : "gaseo",
+          subscription_id: obj.id || obj.subscription_id || null,
+          status, updated_at: now,
+        };
         // trial_end from the subscription object if present (ISO or unix seconds)
         const te = obj.trial_end || data.trial_end;
         if (te) {

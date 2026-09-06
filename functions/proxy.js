@@ -46,20 +46,35 @@ export async function onRequestGet({ request }) {
       return new Response("host not allowed", { status: 403, headers });
     }
 
-    const resp = await fetch(parsed.toString(), {
-      redirect: "follow",
-      signal: AbortSignal.timeout(12000),
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
-        Accept: "text/html,application/xhtml+xml,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9",
-      },
-    });
-    if (!resp.ok) return new Response("upstream " + resp.status, { status: 502, headers });
+    let current = parsed;
+    for (let hop = 0; hop < 5; hop++) {
+      if (isBlockedHost(current.hostname)) {
+        return new Response("host not allowed", { status: 403, headers });
+      }
+      const resp = await fetch(current.toString(), {
+        redirect: "manual",
+        signal: AbortSignal.timeout(12000),
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+          Accept: "text/html,application/xhtml+xml,*/*;q=0.8",
+          "Accept-Language": "en-US,en;q=0.9",
+        },
+      });
+      if (resp.status >= 300 && resp.status < 400 && resp.headers.get("location")) {
+        const next = new URL(resp.headers.get("location"), current);
+        if (next.protocol !== "http:" && next.protocol !== "https:") {
+          return new Response("bad redirect", { status: 400, headers });
+        }
+        current = next;
+        continue;
+      }
+      if (!resp.ok) return new Response("upstream " + resp.status, { status: 502, headers });
 
-    const text = await resp.text();
-    return new Response(text.slice(0, 800000), { status: 200, headers });
+      const text = await resp.text();
+      return new Response(text.slice(0, 800000), { status: 200, headers });
+    }
+    return new Response("too many redirects", { status: 502, headers });
   } catch (e) {
     return new Response("proxy error", { status: 502, headers });
   }

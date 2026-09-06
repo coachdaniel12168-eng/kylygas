@@ -45,15 +45,17 @@ export async function onRequestPost({ request, env }) {
   const signature = request.headers.get("x-signature") || "";
   const timestamp = request.headers.get("x-timestamp") || "";
 
-  // Verify signature (skip only if secret not yet configured — bootstrap state).
-  if (secret) {
-    if (!signature || !timestamp) {
-      return new Response(JSON.stringify({ error: "missing signature headers" }), { status: 401, headers });
-    }
-    const expected = await hmacHex(secret, timestamp + rawBody);
-    if (expected !== signature) {
-      return new Response(JSON.stringify({ error: "signature mismatch" }), { status: 400, headers });
-    }
+  // Verify signature — FAIL CLOSED. If the webhook secret is not configured,
+  // refuse to process events rather than accept unsigned (forgeable) ones.
+  if (!secret) {
+    return new Response(JSON.stringify({ error: "webhook not configured" }), { status: 503, headers });
+  }
+  if (!signature || !timestamp) {
+    return new Response(JSON.stringify({ error: "missing signature headers" }), { status: 401, headers });
+  }
+  const expected = await hmacHex(secret, timestamp + rawBody);
+  if (expected !== signature) {
+    return new Response(JSON.stringify({ error: "signature mismatch" }), { status: 400, headers });
   }
 
   let event = {};

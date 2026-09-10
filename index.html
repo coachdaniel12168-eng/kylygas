@@ -339,17 +339,23 @@ async function autoFindCompetitors(){
   
   const needed=Math.min(emptySlots.length,4);
   const query=encodeURIComponent(industry+' company website');
+  // Bing returns real result markup through these CORS proxies; Google answers with a
+  // JavaScript challenge page (no extractable URLs), so Bing is the search engine here.
+  const SEARCH_BLOCK=/(bing|bingj|microsoft|live|msn|yahoo|google|youtube|facebook|wikipedia|duckduckgo|schema|w3|proofposts)\./i;
+  function extractDomains(html){
+    let list=[];
+    const cites=html.match(/<cite[^>]*>[\s\S]*?<\/cite>/gi)||[];
+    cites.forEach(function(c){const t=c.replace(/<[^>]*>/g,' ');const m=t.match(/https?:\/\/[^\s›<]+/i);if(m)list.push(m[0])});
+    if(!list.length){list=html.match(/https?:\/\/(?:www\.)?[\w.-]+\.[a-z]{2,}(?:\/[^\s"'<]*)?/gi)||[]}
+    return [...new Set(list.map(function(u){try{return new URL(u).origin}catch(e){return null}}).filter(Boolean))]
+      .filter(function(u){try{return !SEARCH_BLOCK.test(new URL(u).hostname)}catch(e){return false}});
+  }
   let urls=[];
-  
   for(const proxy of CORS_PROXIES){
     try{
-      const r=await fetch(proxy+'https://www.google.com/search?q='+query+'&num='+(needed+2),{signal:AbortSignal.timeout(8000)});
+      const r=await fetch(proxy+'https://www.bing.com/search?q='+query+'&count='+(needed+6),{signal:AbortSignal.timeout(9000)});
       if(!r.ok)continue;
-      const text=await r.text();
-      // Extract domain names from search results
-      const matches=text.match(/https?:\/\/(www\.)?[\w.-]+\.[a-z]{2,}(\/[^\s"<]*)?/gi)||[];
-      urls=[...new Set(matches.map(u=>{try{const p=new URL(u);return p.origin}catch(e){return null}}).filter(Boolean))];
-      urls=urls.filter(u=>!u.includes('google.com')&&!u.includes('youtube.com')&&!u.includes('facebook.com')&&!u.includes('wikipedia.org'));
+      urls=extractDomains(await r.text());
       if(urls.length>=needed)break;
     }catch(e){continue}
   }

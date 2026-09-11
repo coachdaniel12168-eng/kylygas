@@ -516,7 +516,7 @@ async function runSurvey(){
       await Promise.all([
   fetch('https://gaseo-n8n.linkfly.site/webhook/kylygaseo-submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:validUrls[0],email:email,name:document.getElementById('industry').value.trim()||'Lead',country:'SG',status:'Free Audit Completed',score:clientData?clientData.overall:null}),signal:AbortSignal.timeout(5000)}),
   fetch('https://gaseo-n8n.linkfly.site/webhook/rankgas-welcome-v2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,name:document.getElementById('industry').value.trim()||'there'}),signal:AbortSignal.timeout(5000)})
-]).catch(()=>{});
+]).catch(function(){try{var _r=document.getElementById('auditResult');if(_r&&!_r.querySelector('.reportEmailNotice')){var _n=document.createElement('div');_n.className='reportEmailNotice';_n.style.cssText='margin-top:18px;padding:14px 16px;border-radius:10px;background:#fff8e1;border:1px solid #f0c36d;font-size:.92em;color:#5a4300;line-height:1.5';_n.innerHTML='<strong>One thing to know:</strong> we could not send your report email automatically just now. Your full results are on this page &mdash; please screenshot or print it to keep them. If no email arrives, write to <a href="mailto:support@proofposts.com">support@proofposts.com</a> and we will send your report manually.';_r.appendChild(_n);}}catch(e){}});
     }catch(e){console.log('Sheet logging skipped (not configured)')}
   }
 }

@@ -27,7 +27,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"What is AI search visibility?","acceptedAnswer":{"@type":"Answer","text":"AI search visibility measures how often your website appears in AI-powered search results from ChatGPT, Perplexity, Google AI Overviews, and other generative engines. It combines SEO, AEO, and GEO signals that AI models use to decide whether to cite your content."}},
-{"@type":"Question","name":"How does the free audit work?","acceptedAnswer":{"@type":"Answer","text":"Enter your website and 3-5 competitor URLs. Our engine fetches and analyzes them across 7 dimensions. You get an anonymous league table showing how your industry compares, with your site identified privately."}},
+{"@type":"Question","name":"How does the free audit work?","acceptedAnswer":{"@type":"Answer","text":"Enter your website and 3-4 competitor URLs. Our engine fetches and analyzes them across 7 dimensions. You get an anonymous league table showing how your industry compares, with your site identified privately."}},
 {"@type":"Question","name":"Who shows up when someone searches for my product on ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"If your site has proper structured data, entity signals, and citation patterns, ChatGPT cites you. If not, it cites your competitor. Our free audit shows you exactly which signals you're missing and how to fix them."}},
 {"@type":"Question","name":"How much does GASEO cost?","acceptedAnswer":{"@type":"Answer","text":"The industry survey and your first keyword audit are free — no credit card required. Paid monitoring plans (starting at $99/mo) add ongoing AI visibility tracking, competitor comparison, and a fix roadmap."}},
 {"@type":"Question","name":"What's the difference between SEO, AEO, and GEO?","acceptedAnswer":{"@type":"Answer","text":"SEO optimizes for Google's traditional blue-link results. AEO (Answer Engine Optimization) optimizes for being the direct answer in featured snippets and voice search. GEO (Generative Engine Optimization) optimizes for being cited by AI models like ChatGPT and Perplexity. GASEO measures all three."}}
@@ -139,7 +139,7 @@ footer a { color: var(--accent); text-decoration: none; }
 <section class="hero">
   <div class="container">
     <h1>AI Search Visibility <span>Industry Survey</span></h1>
-    <p class="subtitle">Enter 3-5 websites in your industry. We audit all of them across 7 AI search dimensions and show you how the sector compares. Completely anonymous — no URLs are shown in the results.</p>
+    <p class="subtitle">Enter 4-5 websites in your industry. We audit all of them across 7 AI search dimensions and show you how the sector compares. Completely anonymous — no URLs are shown in the results.</p>
   </div>
 </section>
 
@@ -209,7 +209,7 @@ footer a { color: var(--accent); text-decoration: none; }
     <label>Website 3 <span class="opt">(competitor)</span></label>
     <input type="url" id="siteUrl3" placeholder="https://competitor2.com">
 
-    <label>Website 4 <span class="opt">(competitor — optional)</span></label>
+    <label>Website 4 <span class="opt">(competitor)</span></label>
     <input type="url" id="siteUrl4" placeholder="https://competitor3.com">
 
     <label>Website 5 <span class="opt">(competitor — optional)</span></label>
@@ -361,7 +361,9 @@ async function autoFindCompetitors(){
     try{
       const r=await fetch(proxy+'https://www.bing.com/search?q='+query+'&count='+(needed+6),{signal:AbortSignal.timeout(9000)});
       if(!r.ok)continue;
-      urls=extractDomains(await r.text());
+      // Merge across proxies: a later proxy returning fewer or zero domains must not
+      // wipe out a good result from an earlier one (corsproxy=401, allorigins=0 yield).
+      urls=[...new Set(urls.concat(extractDomains(await r.text())))];
       if(urls.length>=needed)break;
     }catch(e){continue}
   }

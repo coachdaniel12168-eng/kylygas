@@ -315,7 +315,7 @@ return{score:Math.min(s,50),findings:f,fixes:x}}
 
 function analyzeCrawler(h){let s=0,f=[],x=[];
 if(/<meta[^>]+name=["']robots["']/i.test(h)){s+=15;f.push('Robots meta')};
-if(!/noindex/i.test(h)){s+=20;f.push('Indexable')}else x.push('noindex detected');
+const _robotsMeta=(h.match(/<meta[^>]+name=["']robots["'][^>]*>/i)||[''])[0];if(!/noindex/i.test(_robotsMeta)){s+=20;f.push('Indexable')}else x.push('noindex detected');
 if(/sitemap/i.test(h)){s+=10;f.push('Sitemap ref')};
 const tr=h.replace(/<[^>]*>/g,'').length/Math.max(h.length,1);
 if(tr>0.15){s+=10;f.push('Good text ratio ('+Math.round(tr*100)+'%)')}else x.push('Low text ratio');

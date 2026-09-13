@@ -1,0 +1,28 @@
+# GASEO — proofposts.com
+
+> GASEO runs industry-wide AI search visibility surveys. We measure where real websites appear when customers ask AI (ChatGPT, Perplexity, Gemini, Grok, Google AI Overviews) where to buy.
+
+## What GASEO is
+- Free AI search visibility audit: compare how you and up to 4 named competitors rank across SEO, AEO (answer engines), AIO (Google AI Overviews) and GEO (generative engines).
+- Industry Survey reports: see the aggregate standing of whole sectors (e.g., SG health, SG finance) when AI answers customers.
+
+## Key pages
+- [Home — start a free audit](https://proofposts.com/): enter a website + up to 4 competitors, get a 7-dimension visibility read.
+- [How to read your scores](https://proofposts.com/how-to-read-scores): what each dimension and score means.
+- [Sample report](https://proofposts.com/sample-report): an example audit output before you run your own.
+- [SEO + AEO + GEO explained](https://proofposts.com/seo-aeo-geo): the three visibility layers GASEO measures.
+- [GEO ranking guide](https://proofposts.com/geo-ranking): how generative engines pick who they name.
+- [AEO ranking guide](https://proofposts.com/aeo-ranking): how answer engines (ChatGPT, Perplexity, Gemini) source their answers.
+- [AI search visibility trends 2026](https://proofposts.com/ai-search-trends-2026): where AI-driven discovery is heading.
+- [Benchmarking: who the AI names in each sector](https://proofposts.com/benchmarking).
+- [Citation guide](https://proofposts.com/citation): how to earn citations from AI engines.
+- [ChatGPT SEO](https://proofposts.com/chatgpt-seo): appearing inside ChatGPT answers.
+- [AI citation guide](https://proofposts.com/ai-citation-guide).
+- [Geo optimization guide](https://proofposts.com/geo-optimization-guide).
+- [Pricing — monitoring plans](https://proofposts.com/pricing).
+
+## Structured data
+GASEO pages carry JSON-LD (WebPage + Organization schema). The free audit accepts any public website URL.
+
+## Contact
+Support: hello@proofposts.com

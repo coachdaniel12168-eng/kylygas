@@ -17,6 +17,7 @@ jobs:
           cp *.html stage/
           cp og-image.png stage/ 2>/dev/null || true
           cp _headers robots.txt sitemap.xml stage/
+          cp *.txt stage/ 2>/dev/null || true
           cp functions/*.js stage/functions/
 
       - name: Deploy to Cloudflare Pages

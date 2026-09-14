@@ -71,7 +71,10 @@ export async function onRequestPost({ request, env }) {
   if (!rawUrl) return json({ ok: false, error: "bad-url" }, 400);
 
   const domain = hostOf(rawUrl);
-  if (!domain || !domain.includes(".")) return json({ ok: false, error: "bad-domain" }, 400);
+  // A hostname needs real labels and a TLD. `includes(".")` accepted ".." and let a
+  // path-traversal string through as a lead.
+  const HOST_RE = /^(?!-)[a-z0-9-]{1,63}(\.[a-z0-9-]{1,63})*\.[a-z]{2,24}$/i;
+  if (!domain || !HOST_RE.test(domain)) return json({ ok: false, error: "bad-domain" }, 400);
 
   const base = env.KYLY_SUPABASE_URL;
   const key = env.KYLY_SUPABASE_SERVICE_KEY;

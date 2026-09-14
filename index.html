@@ -517,6 +517,11 @@ async function runSurvey(){
   
   // Email capture — store for follow-up
   if(email&&email.includes('@')&&email.includes('.')){
+    // Store the lead in our OWN database first, and independently of the n8n webhooks
+    // below. Those have answered HTTP 200 while storing nothing, so they must never be
+    // the only path a lead can take. This call is deliberately outside the Promise.all
+    // so an n8n timeout cannot stop the lead being saved.
+    fetch('/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,url:validUrls[0],name:document.getElementById('industry').value.trim()||'',industry:document.getElementById('industry').value.trim()||'',score:clientData?clientData.overall:null,campaign:'organic'}),signal:AbortSignal.timeout(8000)}).then(function(r){return r.json()}).then(function(j){if(!j||!j.ok){console.error('lead NOT stored:',j)}}).catch(function(e){console.error('lead store request failed:',e)});
     try{
       await Promise.all([
   fetch('https://gaseo-n8n.linkfly.site/webhook/kylygaseo-submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:validUrls[0],email:email,name:document.getElementById('industry').value.trim()||'Lead',country:'SG',status:'Free Audit Completed',score:clientData?clientData.overall:null}),signal:AbortSignal.timeout(5000)}),

@@ -74,7 +74,8 @@ export async function onRequestPost({ request, env }) {
   }
 
   const row = {
-    project_id: "proofposts",
+    // kyly.projects row for GASEO / proofposts (FK target)
+    project_id: "0a0f95a8-b5d6-4f8a-bb2c-4178c770fa38",
     company: name || domain,
     domain,
     contact_name: name || null,
@@ -84,7 +85,6 @@ export async function onRequestPost({ request, env }) {
     campaign: clean(body.campaign, 80) || "organic",
     icp_score: score,
     stage: "new",
-    status: "new",
     last_contact_at: new Date().toISOString(),
   };
 

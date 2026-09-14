@@ -57,7 +57,15 @@ export async function onRequestPost({ request, env }) {
   const name = clean(body.name, MAX.name);
   const rawUrl = clean(body.url, MAX.url);
   const industry = clean(body.industry, MAX.industry);
-  const score = Number.isFinite(Number(body.score)) ? Math.round(Number(body.score)) : null;
+  // icp_score is a 0-1 proportion in the schema (leads_icp_score_check), but the audit
+  // page sends a 0-100 score. Sending 62 straight through failed the CHECK and lost the
+  // lead. Normalise here so a real customer can never be rejected by the constraint.
+  let score = null;
+  if (Number.isFinite(Number(body.score))) {
+    const raw = Number(body.score);
+    score = raw > 1 ? raw / 100 : raw;
+    score = Math.min(1, Math.max(0, score));
+  }
 
   if (!email || !EMAIL_RE.test(email)) return json({ ok: false, error: "bad-email" }, 400);
   if (!rawUrl) return json({ ok: false, error: "bad-url" }, 400);

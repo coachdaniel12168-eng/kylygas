@@ -257,7 +257,7 @@ footer a { color: var(--accent); text-decoration: none; }
 
 <script>
 /* ── GASEO: Anonymous Industry Survey Engine ── */
-const CORS_PROXIES = ['/proxy?url=', 'https://corsproxy.io/?url=', 'https://api.allorigins.win/raw?url=', 'https://proxy.cors.sh/'];
+const CORS_PROXIES = ['/proxy?url='];
 const SITE_LABELS = ['Site A', 'Site B', 'Site C', 'Site D', 'Site E', 'Site F'];
 const COLORS = ['#6c5ce7','#00cec9','#f57c00','#1565c0','#c62828','#00838f'];
 const DIM_COLORS = {SEO:'#1565c0',AEO:'#c62828',GEO:'#2e7d32',Entity:'#e65100',Crawler:'#00838f',Structure:'#6c5ce7',Citation:'#f57c00'};
@@ -567,7 +567,6 @@ function showUpgradePrompt() {
     }
   });
 
-  // 2. Rewrite visible text: "$99" -> "$49" etc. (text nodes only, skip scripts/styles)
   function walk(node) {
     if (node.nodeType === 3) { // TEXT_NODE
       var v = node.nodeValue;

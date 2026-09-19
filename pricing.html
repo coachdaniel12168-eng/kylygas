@@ -129,7 +129,6 @@ th { background:var(--dark); color:white; }
     }
   });
 
-  // 2. Rewrite visible text: "$99" -> "$49" etc. (text nodes only, skip scripts/styles)
   function walk(node) {
     if (node.nodeType === 3) { // TEXT_NODE
       var v = node.nodeValue;

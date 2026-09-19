@@ -16,9 +16,29 @@ jobs:
           mkdir -p stage/functions
           cp *.html stage/
           cp og-image.png stage/ 2>/dev/null || true
+          cp *.js stage/ 2>/dev/null || true
+          cp *.svg *.ico *.webp stage/ 2>/dev/null || true
           cp _headers robots.txt sitemap.xml stage/
           cp *.txt stage/ 2>/dev/null || true
           cp functions/*.js stage/functions/
+
+      - name: Guard - staged pages must not reference an unpublished asset
+        run: |
+          python3 - <<'EOF'
+          import re, os, sys, glob
+          missing = []
+          for p in sorted(glob.glob("stage/*.html")):
+              h = open(p, encoding="utf-8", errors="replace").read()
+              for m in re.finditer(r'(?:src|href)="(/[^"?#]+?)"', h):
+                  f = m.group(1).lstrip("/")
+                  if f and "." in os.path.basename(f) and not os.path.exists(os.path.join("stage", f)):
+                      missing.append((os.path.basename(p), f))
+          if missing:
+              for a, b in sorted(set(missing)):
+                  print("MISSING ASSET: %s references %s" % (a, b))
+              sys.exit("DEPLOY BLOCKED: staged pages reference assets that are not published")
+          print("asset guard PASS: every local reference in stage/ exists")
+          EOF
 
       - name: Deploy to Cloudflare Pages
         env:

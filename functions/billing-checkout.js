@@ -20,6 +20,13 @@ function uuid() {
   });
 }
 
+function isoPlusDays(days) {
+  // Airwallex trial periods are set with an absolute end timestamp (its docs use
+  // subscription_data.trial_ends_at). A relative trial_period_days is silently ignored,
+  // which made the hosted checkout charge the first month immediately.
+  return new Date(Date.now() + days * 86400000).toISOString().replace(/\.\d{3}Z$/, "+0000");
+}
+
 function json(resp, status, headers) {
   return new Response(JSON.stringify(resp), { status, headers });
 }
@@ -93,7 +100,7 @@ export async function onRequestPost({ request, env }) {
         customer_data: { email },
         line_items: [{ price_id: priceId, quantity: 1 }],
         mode: "SUBSCRIPTION",
-        subscription_data: { trial_period_days: 30 },
+        subscription_data: { trial_ends_at: isoPlusDays(30) },
         success_url: "https://proofposts.com/?subscribed=1",
         cancel_url: "https://proofposts.com/#pricing",
       }),

@@ -23,9 +23,12 @@ async function hmacHex(secret, data) {
 }
 
 function planFromEvent(event) {
+  // The event carries an Airwallex price id, so return the plan NAME: returning the price id made
+  // the caller's /GASEO (starter|pro|agency)/ test fail, so every row read plan="gaseo" and every
+  // notification email printed "Plan: pri_...". Match the longest id first (ids share a prefix).
   const needle = JSON.stringify(event);
   for (const pid of Object.keys(PLAN_PRICES)) {
-    if (needle.includes(pid)) return PLAN_PRICES[pid];
+    if (needle.includes(PLAN_PRICES[pid])) return "GASEO " + pid;
   }
   return "GASEO (unknown plan)";
 }

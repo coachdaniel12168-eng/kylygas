@@ -248,7 +248,14 @@ async function runSurvey(){
   allData.forEach(d=>{d.dims.forEach(dd=>{dd.fixes.forEach(fx=>{const k=dd.name+': '+fx;fixCounts[k]=(fixCounts[k]||0)+1})})});
   const topFixes=Object.entries(fixCounts).sort((a,b)=>b[1]-a[1]).slice(0,5);
   
-  result.innerHTML='<h3 style="text-align:center;margin-bottom:4px">🏭 Industry Survey Results</h3><p style="text-align:center;color:#666;font-size:.9em;margin-bottom:16px">'+allData.length+' websites analyzed · '+new Date().toLocaleDateString()+' · <a href="how-to-read-scores.html" class="explanation-link">Detailed score guide →</a></p>'+
+  // Honest reporting (2026-09-22): name any submitted site we could not fetch, and never print
+  // a rank label for a site that is absent from the table (previously printed "identified as undefined").
+  const unreached=validUrls.filter(function(u){return !allData.some(function(d){return d.url===u})});
+  const countLine=allData.length+(unreached.length?" of "+validUrls.length:"")+" websites analyzed"+(unreached.length?" ("+unreached.length+" could not be reached: "+unreached.map(function(u){return u.replace(/^https?:\/\//,"")}).join(", ")+")":"");
+  const privateView=clientRank>=0
+    ? '🔒 <strong>Private view:</strong>Your site is identified as <strong>'+labels[clientRank]+'</strong> above. If you share these results with competitors, they will <em>not</em> see your label — all they receive is the anonymous league table without any "Your Site" indicator.'
+    : '🔒 <strong>Private view:</strong>We could not fetch your own site this run, so it is not in the table above. Your details are saved and this URL is on our review list. Check the URL and run the survey again.';
+  result.innerHTML='<h3 style="text-align:center;margin-bottom:4px">🏭 Industry Survey Results</h3><p style="text-align:center;color:#666;font-size:.9em;margin-bottom:16px">'+countLine+' · '+new Date().toLocaleDateString()+' · <a href="how-to-read-scores.html" class="explanation-link">Detailed score guide →</a></p>'+
     '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:20px">'+
     '<div style="text-align:center;padding:12px;background:white;border-radius:8px"><strong style="font-size:1.4em;color:'+COLORS[0]+'">'+avgScore+'</strong><br><small>Industry Average</small></div>'+
     '<div style="text-align:center;padding:12px;background:white;border-radius:8px"><strong style="font-size:1.4em;color:#155724">'+topScore+'</strong><br><small>Top Score</small></div>'+
@@ -259,7 +266,7 @@ async function runSurvey(){
     dimDetail+
     clientInsights+
     '<div style="margin-top:16px;padding:16px;background:#f8f9fa;border-radius:8px"><h4 style="margin-bottom:8px">Most Common Gaps Across the Industry</h4><ol style="font-size:.9em">'+topFixes.map(([k,c])=>'<li><strong>'+c+'/'+allData.length+' sites:</strong> '+k+'</li>').join('')+'</ol></div>'+
-    '<div class="reminder-box">🔒 <strong>Private view:</strong>Your site is identified as <strong>'+labels[clientRank]+'</strong> above. If you share these results with competitors, they will <em>not</em> see your label — all they receive is the anonymous league table without any "Your Site" indicator. <a href="how-to-read-scores.html">Learn what each score means →</a></div>'+
+    '<div class="reminder-box">'+privateView+' <a href="how-to-read-scores.html">Learn what each score means →</a></div>'+
     '<div style="text-align:center;margin-top:20px"><button id="aiRecBtn" onclick="showUpgradePrompt()" style="background:#6c5ce7;color:white;border:none;padding:14px 32px;border-radius:10px;font-size:1.05em;cursor:pointer;font-weight:600">🤖 Get AI Recommendations</button></div><div id="aiRecResult" style="margin-top:16px;display:none"></div><p style="text-align:center;margin-top:14px;font-size:.85em;color:#666">Ready to fix your gaps? <a href="pricing.html"><strong>Starter plan ($99/mo)</strong></a> gives you a plain-English fix checklist. 30-day free trial. | <a href="pricing.html">See all plans →</a></p>';
   
   // Email capture — store for follow-up

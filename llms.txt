@@ -11,6 +11,8 @@
 - [How to read your scores](https://proofposts.com/how-to-read-scores): what each dimension and score means.
 - [Sample report](https://proofposts.com/sample-report): an example audit output before you run your own.
 - [SEO + AEO + GEO explained](https://proofposts.com/seo-aeo-geo): the three visibility layers GASEO measures.
+- [AI search visibility](https://proofposts.com/ai-search-visibility): why the AI answer above your link took the click, and how the tools choose who to cite.
+- [FAQ — the questions asked before a first audit](https://proofposts.com/faq): what a citation is worth, what we cannot promise, how long it takes, and what happens to your data.
 - [GEO ranking guide](https://proofposts.com/geo-ranking): how generative engines pick who they name.
 - [AEO ranking guide](https://proofposts.com/aeo-ranking): how answer engines (ChatGPT, Perplexity, Gemini) source their answers.
 - [AI search visibility trends 2026](https://proofposts.com/ai-search-trends-2026): where AI-driven discovery is heading.
@@ -22,7 +24,7 @@
 - [Pricing — monitoring plans](https://proofposts.com/pricing).
 
 ## Structured data
-GASEO pages carry JSON-LD (WebPage + Organization schema). The free audit accepts any public website URL.
+GASEO pages carry JSON-LD: Organization, WebSite and WebApplication on the home page, FAQPage on the 11 pages that answer questions, Article on the four guides, WebPage elsewhere. The free audit accepts any public website URL.
 
 ## Contact
-Support: hello@proofposts.com
+Support: support@proofposts.com

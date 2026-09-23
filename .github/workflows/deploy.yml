@@ -40,6 +40,43 @@ jobs:
           print("asset guard PASS: every local reference in stage/ exists")
           EOF
 
+      - name: Guard - FAQPage markup must be visible on the page
+        run: |
+          python3 - <<'EOF'
+          import re, sys, glob, json, html
+          bad = []
+          for p in sorted(glob.glob("stage/*.html")):
+              body = open(p, encoding="utf-8", errors="replace").read()
+              vis = re.sub(r"<script\b.*?</script>", "", body, flags=re.S | re.I)
+              vis = re.sub(r"<style\b.*?</style>", "", vis, flags=re.S | re.I)
+              vis = re.sub(r"<[^>]*>", " ", vis)
+              vis = re.sub(r"\s+", " ", html.unescape(vis))
+              for blk in re.findall(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>', body, flags=re.S | re.I):
+                  try:
+                      o = json.loads(blk)
+                  except Exception:
+                      continue
+                  stack = [o]
+                  while stack:
+                      x = stack.pop()
+                      if isinstance(x, dict):
+                          if x.get("@type") == "FAQPage":
+                              for q in x.get("mainEntity", []) or []:
+                                  for label, s in (("question", q.get("name", "")),
+                                                   ("answer", (q.get("acceptedAnswer") or {}).get("text", ""))):
+                                      s = re.sub(r"\s+", " ", html.unescape(s or "")).strip()
+                                      if s and s not in vis:
+                                          bad.append((p, label, s[:60]))
+                          stack.extend(x.values())
+                      elif isinstance(x, list):
+                          stack.extend(x)
+          if bad:
+              for p, label, s in bad:
+                  print("FAQPAGE TEXT NOT VISIBLE: %s %s: %s" % (p, label, s))
+              sys.exit("DEPLOY BLOCKED: FAQPage markup must describe content visible on the page")
+          print("faq-visibility guard PASS: every FAQPage question and answer is visible on its page")
+          EOF
+
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}

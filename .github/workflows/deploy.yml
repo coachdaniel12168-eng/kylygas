@@ -77,6 +77,67 @@ jobs:
           print("faq-visibility guard PASS: every FAQPage question and answer is visible on its page")
           EOF
 
+      - name: Guard - JSON-LD dateModified must equal the sitemap lastmod
+        run: |
+          python3 - <<'EOF'
+          import re, sys, os, glob
+          sm = open("stage/sitemap.xml", encoding="utf-8").read()
+          lm = dict(re.findall(r"<loc>([^<]+)</loc>(?:<priority>[^<]*</priority>)?<lastmod>([^<]+)</lastmod>", sm))
+          if not lm:
+              sys.exit("DEPLOY BLOCKED: sitemap.xml carries no <lastmod> values to compare")
+          bad = []
+          for url, d in sorted(lm.items()):
+              path = url.split("proofposts.com", 1)[-1] or "/"
+              fname = (path.strip("/") or "index") + ".html"
+              for f in (["stage/index.html"] if path == "/" else ["stage/%s" % fname]):
+                  if not os.path.exists(f):
+                      continue
+                  h = open(f, encoding="utf-8", errors="replace").read()
+                  for v in sorted(set(re.findall(r'"dateModified"\s*:\s*"([^"]+)"', h))):
+                      if v != d:
+                          bad.append((path, v, d))
+          if bad:
+              for p, v, d in bad:
+                  print("DATE DISAGREEMENT: %s JSON-LD dateModified=%s sitemap lastmod=%s" % (p, v, d))
+              sys.exit("DEPLOY BLOCKED: a page's JSON-LD date and its sitemap lastmod must agree")
+          print("date-consistency guard PASS: every staged dateModified equals its sitemap lastmod")
+          EOF
+
+      - name: Guard - no orphan page in the sitemap
+        run: |
+          python3 - <<'EOF'
+          import re, sys, os, glob
+          sm = open("stage/sitemap.xml", encoding="utf-8").read()
+          locs = re.findall(r"<loc>([^<]+)</loc>", sm)
+          inbound = {}
+          for f in sorted(glob.glob("stage/*.html")):
+              me = "/" + os.path.basename(f)[:-5]
+              if os.path.basename(f) == "index.html":
+                  me = "/"
+              h = open(f, encoding="utf-8", errors="replace").read()
+              for href in re.findall(r'href="([^"]+)"', h):
+                  if href.startswith(("mailto:", "tel:", "#", "javascript:")):
+                      continue
+                  if href.startswith("http"):
+                      if "proofposts.com" not in href:
+                          continue
+                      tgt = "/" + href.split("proofposts.com", 1)[1].lstrip("/")
+                  else:
+                      tgt = "/" + href.lstrip("/")
+                  tgt = tgt.split("#")[0].split("?")[0]
+                  if tgt.endswith(".html"):
+                      tgt = tgt[:-5] or "/"
+                  if tgt != me:
+                      inbound.setdefault(tgt, set()).add(me)
+          orphans = [(u, [(u.split("proofposts.com", 1)[-1] or "/")]) for u in locs
+                     if (u.split("proofposts.com", 1)[-1] or "/") not in inbound]
+          if orphans:
+              for u, p in orphans:
+                  print("ORPHAN IN SITEMAP: %s is linked from no other page" % p[0])
+              sys.exit("DEPLOY BLOCKED: every sitemap URL must be reachable by an internal link")
+          print("orphan guard PASS: every sitemap URL is linked from another published page")
+          EOF
+
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}

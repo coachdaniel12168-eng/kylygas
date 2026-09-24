@@ -80,31 +80,69 @@ async function analyzeUrl(url){
   return{url,overall:Math.round(raw.reduce((s,d)=>s+d.pct,0)/raw.length),dims:raw}}
 
 /* Auto-find competitors via web search */
+/* Relevance rule (25 Sep 2026, measured before shipping): a domain is only offered as a
+   "competitor" when a word from the industry the visitor typed appears in its result title or
+   hostname — whole word, so "Research" does not satisfy "search". Measured on the live Bing
+   markup this page receives: for "AI search visibility software" Bing answers with generic AI
+   homepages (openai.com, chatgpt.com, gemini.google.com, Chinese AI-tool directories), and
+   scoring a visitor's league table against OpenAI is worse than finding nobody. When nothing in
+   the visitor's sector comes back, the page says so and asks for the URLs instead. */
+const INDUSTRY_STOPWORDS=new Set(('ai a an and or of for in on to at by the with we us it is be do no up as so if me my your our best top software company companies website websites site sites tool tools platform platforms service services app apps product products solution solutions provider providers online free cheap affordable price pricing singapore sg malaysia asia global small business businesses startup startups agency agencies firm firms shop store supplier suppliers manufacturer manufacturers consultant consultants consulting inc ltd pte llc gmbh co').split(' '));
+function industryTokens(industry){return (industry.toLowerCase().match(/[a-z0-9]{2,}/g)||[]).filter(function(t){return !INDUSTRY_STOPWORDS.has(t)})}
+function sectorRelevant(host,title,tokens){
+  if(!tokens.length)return true;
+  const hay=(host.replace(/\./g,' ')+' '+title).toLowerCase();
+  return tokens.some(function(t){return new RegExp('\\b'+t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b').test(hay)});
+}
 async function autoFindCompetitors(){
   const industry=document.getElementById('industry').value.trim();
   if(!industry){alert('Enter an industry or keyword first (e.g., "Singapore SaaS")');return}
   const status=document.getElementById('autoFindStatus');status.style.display='block';status.textContent='Searching for competitors…';
-  
+
   // Check how many competitor slots are empty (sites 2-5)
   const emptySlots=[];
   for(let i=2;i<=5;i++){const v=document.getElementById('siteUrl'+i).value.trim();if(!v)emptySlots.push(i)}
   if(emptySlots.length===0){status.textContent='All competitor slots are already filled.';return}
-  
+
   const needed=Math.min(emptySlots.length,4);
+  const tokens=industryTokens(industry);
   const query=encodeURIComponent(industry+' company website');
-  // Bing returns real result markup through these CORS proxies; Google answers with a
-  // JavaScript challenge page (no extractable URLs), so Bing is the search engine here.
+  // Bing returns real result markup through this proxy; Google answers with a JavaScript
+  // challenge page (no extractable URLs), so Bing is the search engine here.
   const SEARCH_BLOCK=/(bing|bingj|microsoft|live|msn|yahoo|google|youtube|facebook|wikipedia|duckduckgo|schema|w3|proofposts)\./i;
   const BLOCKED_TLD=/^(bing|bingj|microsoft|live|msn|yahoo|google|youtube|facebook|wikipedia|duckduckgo|schema|w3|proofposts)$/i;
+
   function extractDomains(html){
-    let list=[];
-    const cites=html.match(/<cite[^>]*>[\s\S]*?<\/cite>/gi)||[];
-    cites.forEach(function(c){const t=c.replace(/<[^>]*>/g,' ');const m=t.match(/https?:\/\/[^›<]+/i);if(m)list.push(m[0].replace(/\s+/g,''))});
-    if(!list.length){list=html.match(/https?:\/\/(?:www\.)?[\w.-]+\.[a-z]{2,}(?:\/[^\s"'<]*)?/gi)||[]}
-    return [...new Set(list.map(function(u){try{return new URL(u).origin}catch(e){return null}}).filter(Boolean))]
-      .filter(function(u){try{const h=new URL(u).hostname;const tld=h.split('.').pop();
-        if(!/^[a-z]{2,24}$/.test(tld))return false;
-        return !BLOCKED_TLD.test(tld)&&!SEARCH_BLOCK.test(h);}catch(e){return false}});
+    let found=[];
+    // One chunk per organic result block, then the result's own cite (target URL) and title.
+    const chunks=html.split(/<li[^>]*class="[^"]*b_algo[^"]*"/i);chunks.shift();
+    chunks.forEach(function(blk){
+      blk=blk.slice(0,4000);
+      const c=blk.match(/<cite[^>]*>[\s\S]*?<\/cite>/i);
+      if(!c)return;
+      const m=c[0].replace(/<[^>]*>/g,' ').match(/https?:\/\/[^›<\s]+/i);
+      if(!m)return;
+      let host='';
+      try{host=new URL(m[0]).hostname}catch(e){return}
+      const a=blk.match(/<h2[^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/i);
+      found.push({host:host,title:a?a[1].replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim():''});
+    });
+    if(!found.length){
+      (html.match(/<cite[^>]*>[\s\S]*?<\/cite>/gi)||[]).forEach(function(c){
+        const m=c.replace(/<[^>]*>/g,' ').match(/https?:\/\/[^›<\s]+/i);
+        if(!m)return;
+        try{found.push({host:new URL(m[0]).hostname,title:''})}catch(e){}
+      });
+    }
+    const seen={};
+    return found.filter(function(r){
+      const tld=r.host.split('.').pop();
+      if(!/^[a-z]{2,24}$/.test(tld))return false;
+      if(BLOCKED_TLD.test(tld)||SEARCH_BLOCK.test(r.host))return false;
+      if(seen[r.host])return false;
+      seen[r.host]=1;
+      return sectorRelevant(r.host,r.title,tokens);
+    }).map(function(r){return 'https://'+r.host});
   }
   let urls=[];
   for(const proxy of CORS_PROXIES){
@@ -112,22 +150,24 @@ async function autoFindCompetitors(){
       const r=await fetch(proxy+'https://www.bing.com/search?q='+query+'&count='+(needed+6),{signal:AbortSignal.timeout(9000)});
       if(!r.ok)continue;
       // Merge across proxies: a later proxy returning fewer or zero domains must not
-      // wipe out a good result from an earlier one (corsproxy=401, allorigins=0 yield).
+      // wipe out a good result from an earlier one.
       urls=[...new Set(urls.concat(extractDomains(await r.text())))];
       if(urls.length>=needed)break;
     }catch(e){continue}
   }
-  
+
   if(urls.length===0){
-    status.textContent='Could not find competitors automatically. Please enter URLs manually.';
+    status.textContent='No '+industry+' company came back from the search — thinking of 3-4 rivals yourself is faster than waiting. Enter their URLs below; they are what the league table scores.';
     return;
   }
-  
+
   // Fill empty slots
   for(let j=0;j<needed&&j<urls.length;j++){
     document.getElementById('siteUrl'+emptySlots[j]).value=urls[j];
   }
-  status.textContent='Found '+Math.min(needed,urls.length)+' competitor(s). Review and edit if needed.';
+  status.textContent=urls.length<needed
+    ? 'Found '+urls.length+' site(s) in your sector — add the rest yourself, the search had no more relevant results.'
+    : 'Found '+Math.min(needed,urls.length)+' competitor(s). Review and edit if needed.';
 }
 
 /* Main survey */

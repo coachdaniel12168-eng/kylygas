@@ -66,16 +66,13 @@ export async function onRequestPost({ request, env }) {
   }
 
   const type = String(event.name || event.type || event.event_type || "unknown");
-  const interesting = type.startsWith("subscription.") || type.startsWith("billing.")
-    || type === "payment_intent.succeeded" || type === "payment_attempt.paid";
+  const interesting = type.startsWith("subscription.") || type.startsWith("billing.");
 
   if (interesting) {
     const data = event.data || {};
     const obj = data.object || data;
     const email =
-      obj.customer_email || data.customer_email || obj.email || data.email
-      || (obj.metadata && obj.metadata.email) || (data.metadata && data.metadata.email)
-      || (obj.customer && obj.customer.email) || "(email not in payload)";
+      obj.customer_email || data.customer_email || obj.email || data.email || "(email not in payload)";
     const plan = planFromEvent(event);
     const dataStr = JSON.stringify(data).slice(0, 800);
 

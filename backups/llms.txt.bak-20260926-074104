@@ -23,17 +23,6 @@
 - [Geo optimization guide](https://proofposts.com/geo-optimization-guide).
 - [Pricing — monitoring plans](https://proofposts.com/pricing).
 
-## Pricing (as charged at the checkout, USD)
-- Starter — US$99/month. Pro — US$243/month. Agency — US$585/month.
-- Every plan starts with 30 days free: nothing is charged at signup, the first payment is due on day 30, and cancelling before then costs nothing.
-- Every paid plan promises one dated before/after AI visibility report, measured from the AI-answer log, each period. If that report does not land, that period is not charged.
-- Refunds and cancellation: https://proofposts.com/refund  ·  Start a plan: https://proofposts.com/start
-- We do not promise a specific AI model will cite you; the scores are estimates from public signals we can measure.
-
-## Help
-- You paid and something did not arrive: https://proofposts.com/help
-- Support: support@proofposts.com (replies within one working day)
-
 ## Structured data
 GASEO pages carry JSON-LD: Organization, WebSite and WebApplication on the home page, FAQPage on the 11 pages that answer questions, Article on the four guides, WebPage elsewhere. The free audit accepts any public website URL.
 

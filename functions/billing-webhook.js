@@ -30,6 +30,16 @@ function planFromEvent(event) {
   return "GASEO (unknown plan)";
 }
 
+// When the event itself happened. Airwallex's Event object carries a unique `id` and a
+// `created_at` (their docs, read 29 Sep 2026); returns null when the payload has neither,
+// in which case the ordering guard stands down rather than guess.
+function eventTimeOf(event) {
+  const raw = event.created_at || (event.data && (event.data.created_at || event.data.updated_at));
+  if (!raw) return null;
+  const t = typeof raw === "number" ? (raw > 1e12 ? raw : raw * 1000) : Date.parse(raw);
+  return t && !isNaN(t) ? new Date(t).toISOString() : null;
+}
+
 export async function onRequestGet() {
   return new Response(JSON.stringify({ error: "POST only" }), {
     status: 405,
@@ -79,6 +89,17 @@ export async function onRequestPost({ request, env }) {
     const plan = planFromEvent(event);
     const dataStr = JSON.stringify(data).slice(0, 800);
 
+    // ORDER / DUPLICATE SAFETY (29 Sep 2026). Airwallex retries a failed delivery for about
+    // three days and its docs state that duplicates can arrive and order is not guaranteed, so
+    // an event is applied to the subscriber record only when it is NEWER than the last event
+    // already applied, and never when it repeats that event's id. Measured before the fix: a
+    // `subscription.active` applied at 17:02:35Z was overwritten to status=cancelled by a
+    // replay carrying created_at 27 days earlier, i.e. a paid subscriber could be recorded as
+    // cancelled by a stale retry.
+    const eventId = event.id ? String(event.id) : null;
+    const eventAt = eventTimeOf(event);
+    let record = "written";
+
     // Sync the subscriber lifecycle into the report-cadence store (best effort).
     const su = env.SUPABASE_URL, sk = env.SUPABASE_SERVICE_KEY;
     if (su && sk && email && !email.startsWith("(")) {
@@ -90,11 +111,33 @@ export async function onRequestPost({ request, env }) {
         else if (t.includes("create")) status = "trial_active";
         const now = new Date().toISOString();
         const planMatch = String(plan).match(/GASEO (starter|pro|agency)/i);
+        // Read the row we already hold (fails OPEN: if this read fails we write as before and
+        // never drop an event).
+        let prev = null;
+        try {
+          const q = await fetch(
+            su + "/rest/v1/gaseo_subscribers?select=last_event_at,last_event_id&customer_email=eq."
+            + encodeURIComponent(email) + "&limit=1",
+            { headers: { apikey: sk, Authorization: "Bearer " + sk } }
+          );
+          const j = await q.json();
+          if (Array.isArray(j) && j.length) prev = j[0];
+        } catch (e) { prev = null; }
+        const dup = !!(prev && prev.last_event_id && eventId && prev.last_event_id === eventId);
+        const prevAt = prev && prev.last_event_at ? Date.parse(prev.last_event_at) : NaN;
+        const stale = !!(prev && eventAt && !isNaN(prevAt) && Date.parse(eventAt) < prevAt);
+        if (dup || stale) {
+          record = dup ? "NOT APPLIED - duplicate of event " + eventId
+                       : "NOT APPLIED - event older than the one already applied";
+          console.log("gaseo webhook: " + record + " (" + email + ", " + type + ")");
+        } else {
         const row = {
           customer_email: email,
           plan: planMatch ? planMatch[1].toLowerCase() : "gaseo",
           subscription_id: obj.id || obj.subscription_id || null,
           status, updated_at: now,
+          ...(eventId ? { last_event_id: eventId } : {}),
+          ...(eventAt ? { last_event_at: eventAt } : {}),
         };
         // trial_end from the subscription object if present (ISO or unix seconds)
         const te = obj.trial_end || data.trial_end;
@@ -115,6 +158,7 @@ export async function onRequestPost({ request, env }) {
           },
           body: JSON.stringify(row),
         });
+        }
       } catch (e) { /* best effort */ }
     }
 
@@ -133,6 +177,7 @@ export async function onRequestPost({ request, env }) {
               "Plan: " + plan + "\n" +
               "Event: " + type + "\n" +
               "Customer email: " + email + "\n\n" +
+              "Subscriber record: " + record + "\n" +
               "Raw event:\n" + dataStr,
           }),
         });

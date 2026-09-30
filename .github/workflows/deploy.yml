@@ -138,6 +138,34 @@ jobs:
           print("orphan guard PASS: every sitemap URL is linked from another published page")
           EOF
 
+      - name: Guard - retired claims must not come back
+        run: |
+          python3 - <<'EOF'
+          import sys, glob
+          # Each pattern was measured live on 30 Sep 2026 and removed by hand.
+          # A later job that writes one of them back is blocked at deploy time.
+          BANNED = [
+              ("Every time", "an absolute guarantee about model output"),
+              ("Google / BrightEdge", "a merged attribution Google never published"),
+              ("below 50%", "an unsourced claim about a population we have not measured"),
+              ("500+ words", "a word-count rule; Google states there is no ideal page length"),
+              ("1,000+ words", "a word-count rule; Google states there is no ideal page length"),
+              ("3-5x the rate", "an unsourced multiplier"),
+              ("excerpted 3x", "an unsourced multiplier"),
+          ]
+          bad = []
+          for p in sorted(glob.glob("stage/*.html")):
+              h = open(p, encoding="utf-8", errors="replace").read()
+              for s, why in BANNED:
+                  if s in h:
+                      bad.append((p, s, why))
+          if bad:
+              for p, s, why in bad:
+                  print("RETIRED CLAIM BACK: %s contains %r (%s)" % (p, s, why))
+              sys.exit("DEPLOY BLOCKED: a claim retired on 30 Sep 2026 was reintroduced")
+          print("retired-claims guard PASS")
+          EOF
+
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}

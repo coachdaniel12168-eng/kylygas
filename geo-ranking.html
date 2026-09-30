@@ -49,7 +49,7 @@
 <ol>
 <li><strong>Structured</strong> — Clear heading hierarchy, lists, and schema markup make content easy for AI to parse and excerpt.</li>
 <li><strong>Attributed</strong> — Content with author bylines, date stamps, and Organization schema signals trustworthiness.</li>
-<li><strong>Comprehensive</strong> — Content over 500 words that covers a topic from multiple angles is cited far more often than thin content.</li>
+<li><strong>Comprehensive</strong> — the page covers the topic from several angles. Google states there is no ideal page length; what earns an excerpt is a section that answers the question on its own.</li>
 <li><strong>Connected</strong> — Sites with sameAs links to verified profiles (LinkedIn, Wikipedia, Crunchbase) are treated as known entities.</li>
 <li><strong>Fresh</strong> — AI models weight recency. Content with datePublished signals within the last 6 months gets priority.</li>
 <li><strong>Cited by others</strong> — AI models learn citation patterns. Content that is linked to by other authoritative sources gets cited more.</li>
@@ -64,7 +64,7 @@
 
 <div class="framework">
 <h3>2. JSON-LD Structured Data</h3>
-<p>JSON-LD (JavaScript Object Notation for Linked Data) is the format AI models use to understand your content semantically. It tells them: this is an organization, this is an article, this is an FAQ. Without JSON-LD, AI models have to guess what your content is — and they often guess wrong. The Organization and WebApplication schemas are the minimum. FAQPage, Article, and HowTo schemas add significant citation weight for their respective content types.</p>
+<p>JSON-LD (JavaScript Object Notation for Linked Data) is the format AI models use to understand your content semantically. It tells them: this is an organization, this is an article, this is an FAQ. Google is explicit that structured data is not required for its generative AI features; we still check it, because a page that states plainly what it is and who published it is easier to trust and to quote. The Organization and WebApplication schemas are the minimum. FAQPage, Article, and HowTo schemas add significant citation weight for their respective content types.</p>
 </div>
 
 <div class="framework">
@@ -73,8 +73,8 @@
 </div>
 
 <div class="framework">
-<h3>4. Content Depth (500+ Words)</h3>
-<p>AI models prefer to cite content they can excerpt from multiple angles. A 300-word page gives the AI one excerpt option. A 1,500-word page with clear sections, lists, and examples gives the AI 5-10 excerptable chunks. Content depth is not about keyword stuffing — it is about comprehensive coverage that makes your page the best source for the AI to pull from.</p>
+<h3>4. Content Depth</h3>
+<p>AI models prefer to cite content they can excerpt from more than one angle. A short page with a single point gives the model one passage to lift; the same topic split into clear sections, each opening with a direct answer, gives it several. Depth is coverage of the question, not a word count — Google states plainly that there is no ideal page length.</p>
 </div>
 
 <div class="framework">

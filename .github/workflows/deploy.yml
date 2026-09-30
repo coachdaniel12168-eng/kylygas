@@ -166,6 +166,38 @@ jobs:
           print("retired-claims guard PASS")
           EOF
 
+      - name: Guard - every published page must be in the sitemap or declare noindex
+        run: |
+          python3 - <<'EOF'
+          import re, sys, os, glob
+          sm = open("stage/sitemap.xml", encoding="utf-8").read()
+          locs = re.findall(r"<loc>([^<]+)</loc>", sm)
+          paths = set()
+          for u in locs:
+              p = u.split("proofposts.com", 1)[-1] or "/"
+              p = p.split("#")[0].split("?")[0]
+              if p.endswith(".html"):
+                  p = p[:-5] or "/"
+              paths.add(p)
+          bad = []
+          for f in sorted(glob.glob("stage/*.html")):
+              b = os.path.basename(f)
+              me = "/" if b == "index.html" else "/" + b[:-5]
+              if me in paths:
+                  continue
+              h = open(f, encoding="utf-8", errors="replace").read()
+              m = re.search(r"<meta[^>]*name=[\"\x27]robots[\"\x27][^>]*content=[\"\x27]([^\"\x27]*)[\"\x27]", h, re.I)
+              if m and "noindex" in m.group(1).lower():
+                  print("exempt (noindex): %s" % b)
+                  continue
+              bad.append((b, me))
+          if bad:
+              for b, m in bad:
+                  print("PUBLISHED BUT NOT IN SITEMAP AND NOT NOINDEX: %s -> %s" % (b, m))
+              sys.exit("DEPLOY BLOCKED: every published page must be in sitemap.xml or declare noindex")
+          print("sitemap-coverage guard PASS: every published page is in the sitemap or noindex")
+          EOF
+
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}

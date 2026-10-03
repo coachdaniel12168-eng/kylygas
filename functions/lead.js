@@ -87,9 +87,9 @@ export async function onRequestPost({ request, env }) {
   const row = {
     // kyly.projects row for GASEO / proofposts (FK target)
     project_id: "0a0f95a8-b5d6-4f8a-bb2c-4178c770fa38",
-    company: name || domain,
+    company: clean(body.company, MAX.name) || domain,
     domain,
-    contact_name: name || null,
+    contact_name: clean(body.contact_name, MAX.name) || null,
     contact_email: email,
     contact_role: industry || null,
     source: "proofposts.com/audit",

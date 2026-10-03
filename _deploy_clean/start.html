@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start your 30-day free trial — GASEO</title>
+<meta name="description" content="Start your 30-day free GASEO trial. Nothing is charged today: your first payment is due on day 30, and you get your before/after AI visibility report at day 30.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://proofposts.com/start.html">
+<style>
+:root { --primary:#6c5ce7; --dark:#1a1a2e; }
+* { box-sizing: border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; color:#222; background:#f7f7fb; }
+.top-nav { background:var(--dark); padding:14px 24px; }
+.top-nav a { color:#fff; text-decoration:none; font-weight:600; padding:12px 6px; display:inline-block; }
+main { max-width:620px; margin:0 auto; padding:28px 20px 60px; }
+h1 { font-size:1.6em; color:var(--dark); margin:0 0 8px; }
+p.lede { font-size:1.02em; color:#444; margin:0 0 20px; }
+.card { background:#fff; border:2px solid #eee; border-radius:14px; padding:22px; }
+.plan { font-weight:700; color:var(--dark); font-size:1.15em; margin:0 0 6px; }
+.plan small { font-weight:400; color:#666; }
+label { display:block; margin:16px 0 6px; font-weight:600; font-size:.95em; }
+input { width:100%; padding:14px; font-size:1em; border:2px solid #ddd; border-radius:10px; }
+button { width:100%; min-height:52px; margin-top:20px; background:var(--primary); color:#fff; border:none;
+  border-radius:10px; font-size:1.05em; font-weight:700; cursor:pointer; }
+button[disabled] { opacity:.6; cursor:wait; }
+.note { font-size:.9em; color:#555; margin:14px 0 0; }
+.msg { margin-top:16px; padding:14px; border-radius:10px; font-size:.95em; display:none; }
+.msg.ok { background:#eefbf2; border:1px solid #b7e4c7; color:#155724; display:block; }
+.msg.bad { background:#fff5f5; border:1px solid #f5c2c0; color:#7a1f1c; display:block; }
+a.btn { display:inline-block; min-height:44px; padding:12px 16px; }
+footer { text-align:center; padding:24px 16px 50px; color:#777; font-size:.88em; }
+footer a { color:#555; padding:10px 6px; display:inline-block; }
+</style>
+</head>
+<body>
+<nav class="top-nav"><a href="/">GASEO — AI Search Visibility</a></nav>
+<main>
+  <h1>Start your 30-day free trial</h1>
+  <p class="lede">Nothing is charged today. Your first payment is due on <strong>day 30</strong>, and your
+  before/after AI visibility report lands at day 30 — the dated record that shows whether AI assistants
+  started citing you. Cancel any time before day 30 and you pay nothing.</p>
+
+  <div class="card">
+    <p class="plan" id="planLine">Loading your plan…</p>
+    <p class="note" id="planNote"></p>
+
+    <form id="trialForm">
+      <label for="email">Your email <span style="font-weight:400;color:#666">(the receipt and the report go here)</span></label>
+      <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@yourbusiness.com">
+      <label for="site">Your website <span style="font-weight:400;color:#666">(optional)</span></label>
+      <input type="text" id="site" name="site" inputmode="url" placeholder="yourbusiness.com">
+      <button type="submit" id="goBtn">Start my free month</button>
+    </form>
+
+    <div class="msg" id="msg" role="status" aria-live="polite"></div>
+    <p class="note">Prefer to read it in writing first? The full terms are at
+      <a href="terms.html">Terms</a>, <a href="privacy.html">Privacy</a> and
+      <a href="refund.html">Refund policy</a>. Questions before you start:
+      <a href="mailto:support@proofposts.com">support@proofposts.com</a>.</p>
+  </div>
+</main>
+<footer>
+  GASEO — AI Search Visibility Platform © 2026 ·
+  <a href="/">Home</a> · <a href="pricing.html">Pricing</a> · <a href="terms.html">Terms</a> ·
+  <a href="privacy.html">Privacy</a> · <a href="refund.html">Refund policy</a>
+  <p style="font-size:12px;opacity:.75;margin:10px 0 0;line-height:1.4;">Automated analysis — please verify critical findings before acting.</p>
+</footer>
+<script>
+(function () {
+  var PLANS = {
+    starter: { name: 'Starter', usd: 99 },
+    pro:     { name: 'Pro',     usd: 243 },
+    agency:  { name: 'Agency',  usd: 585 }
+  };
+  var q = new URLSearchParams(location.search);
+  var key = (q.get('plan') || 'starter').toLowerCase();
+  var plan = PLANS[key] || PLANS.starter;
+  document.getElementById('planLine').innerHTML =
+    plan.name + ' — <small>US$' + plan.usd + '/month after your free month</small>';
+  document.getElementById('planNote').textContent =
+    'Your card is set up on the secure Airwallex page and charged US$' + plan.usd +
+    ' on day 30 only. Cancel any time before then and nothing is charged.';
+
+  var form = document.getElementById('trialForm');
+  var msg = document.getElementById('msg');
+  var btn = document.getElementById('goBtn');
+
+  function say(kind, text) {
+    msg.className = 'msg ' + kind;
+    msg.textContent = text;
+  }
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var email = (document.getElementById('email').value || '').trim();
+    if (!email || email.indexOf('@') < 1) { say('bad', 'Please enter the email address you want the receipt and report sent to.'); return; }
+    btn.disabled = true;
+    btn.textContent = 'Opening the secure page…';
+    fetch('/billing-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ plan: key, email: email, site: document.getElementById('site').value, source: 'start.html' })
+    }).then(function (r) {
+      return r.json().then(function (j) { return { ok: r.ok, j: j }; });
+    }).then(function (res) {
+      var j = res.j || {};
+      var url = j.url || j.checkout_url || j.redirect_url || (j.data && j.data.url);
+      if (res.ok && url) { window.location.href = url; return; }
+      throw new Error(j.error || j.message || 'the checkout service did not return a link');
+    }).catch(function (e) {
+      say('bad', 'We could not open the secure page just now (' + e.message + '). Nothing has been charged. ' +
+        'Email support@proofposts.com and we will set your free month up by hand, same working day.');
+      btn.disabled = false;
+      btn.textContent = 'Try again';
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -166,6 +166,17 @@ jobs:
           print("retired-claims guard PASS")
           EOF
 
+      - name: Guard - the survey upgrade CTA must use the trial lane
+        run: |
+          python3 - <<'EOF'
+          import re, sys
+          s = open("stage/survey-engine.js", encoding="utf-8").read()
+          if re.search(r"pay\.airwallex\.com", s):
+              sys.exit("DEPLOY BLOCKED: survey-engine.js carries a raw Airwallex pay link - the upgrade CTA must go through /start?plan=pro so the trial and the subscriber row are captured")
+          if "/start?plan=pro" not in s:
+              sys.exit("DEPLOY BLOCKED: survey-engine.js no longer names the Pro trial lane (/start?plan=pro) - a reword must not make this guard blind")
+          print("upgrade-CTA guard PASS: the survey upgrade CTA uses the Pro trial lane")
+          EOF
       - name: Guard - every published page must be in the sitemap or declare noindex
         run: |
           python3 - <<'EOF'

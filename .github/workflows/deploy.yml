@@ -241,6 +241,57 @@ jobs:
           print("printed-date guard PASS: %d page(s) print the same date their sitemap entry carries" % checked)
           EOF
 
+      - name: Guard - title and description length on every published page
+        run: |
+          python3 - <<'EOF'
+          import re, sys, os, glob, html
+
+          D = sys.argv[1] if len(sys.argv) > 1 else "stage"
+          TITLE_MAX, DESC_MIN, DESC_MAX = 60, 70, 157
+          ATTRS = re.compile(r"([a-zA-Z:0-9-]+)\s*=\s*(\"[^\"]*\"|'[^']*')")
+
+
+          def attrs_of(tag):
+              out = {}
+              for k, v in ATTRS.findall(tag):
+                  out[k.lower()] = v.strip("\"'")
+              return out
+
+
+          def description(h):
+              for m in re.finditer(r"<meta\b[^>]*>", h, re.I):
+                  a = attrs_of(m.group(0))
+                  if a.get("name", "").lower() == "description":
+                      return a.get("content", "")
+              return None
+
+
+          bad, checked = [], 0
+          for f in sorted(glob.glob(os.path.join(D, "*.html"))):
+              b = os.path.basename(f)
+              h = open(f, encoding="utf-8", errors="replace").read()
+              if re.search(r"name=[\"']robots[\"'][^>]*content=[\"'][^\"']*noindex", h, re.I):
+                  print("exempt (noindex): %s" % b)
+                  continue
+              t = re.search(r"<title>(.*?)</title>", h, re.S)
+              d = description(h)
+              tl = len(html.unescape(t.group(1)).strip()) if t else 0
+              dl = len(html.unescape(d).strip()) if d else 0
+              checked += 1
+              if not t:
+                  bad.append((b, "no <title>"))
+              elif tl > TITLE_MAX:
+                  bad.append((b, "title %d chars (max %d)" % (tl, TITLE_MAX)))
+              if d is None:
+                  bad.append((b, "no meta description"))
+              elif not (DESC_MIN <= dl <= DESC_MAX):
+                  bad.append((b, "description %d chars (must be %d-%d)" % (dl, DESC_MIN, DESC_MAX)))
+          if bad:
+              for b, why in bad:
+                  print("BLOCKED: %s - %s" % (b, why))
+              sys.exit("DEPLOY BLOCKED: every published page needs a title <= %d chars and a description of %d-%d chars" % (TITLE_MAX, DESC_MIN, DESC_MAX))
+          print("titles/descriptions guard PASS: %d page(s), every title <= %d chars, every description %d-%d chars" % (checked, TITLE_MAX, DESC_MIN, DESC_MAX))
+          EOF
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
